@@ -1,0 +1,42 @@
+{{ 'marquee.out.css' | asset_url | stylesheet_tag }}
+
+{% style %}
+  .marquee--{{ section.id }} .marquee__text {
+      animation-duration: {{ section.settings.speed }}s;
+  }
+{% endstyle %}
+
+<div class="marquee marquee--{{ section.id }}">
+  <div class="marquee__text caption-c2 caption-c2-md ">
+    {% if section.settings.text != blank %}
+        {%- for i in (1..30) -%}
+          {{ section.settings.text }}
+        {% endfor %} 
+    {% endif %}   
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Marquee",
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text",
+      "default": "<p>Learn more about the 12 Proven Causes of Aging in <a>our science</a></p>"
+    },
+    {
+      "type": "text",
+      "id": "speed",
+      "label": "Speed",
+      "default": "30"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Marquee"
+    }
+  ]
+}
+{% endschema %}

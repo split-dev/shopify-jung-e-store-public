@@ -1,0 +1,414 @@
+@import "./settings/variables";
+@import "./settings/mixins";
+
+.blog-card {
+  position: relative;
+  min-height: 860px;
+  overflow: hidden;
+  @media (min-width: 992px) and (max-width: 1199.98px) {
+    min-height: auto;
+    padding-top: 140px !important;
+  }
+  @media (min-width: 768px) and (max-width: 991.98px) {
+    min-height: auto;
+    padding-top: 110px !important;
+    padding-bottom: 75px !important;
+  }
+  @include media-breakpoint-down(md) {
+    min-height: auto;
+  }
+  // .blog-card__box
+
+  &__bg {
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+      pointer-events: none;
+    }
+  }
+
+  &__box {
+    @include media-breakpoint-down(md) {
+      position: relative;
+      padding-bottom: 63px;
+    }
+  }
+
+  // .blog-card__info
+
+  &__info {
+    position: relative;
+    max-width: 530px;
+    width: 100%;
+    margin-right: 50px;
+    @include media-breakpoint-down(big-xl) {
+      margin-right: 144px;
+    }
+    @include media-breakpoint-down(xxxl) {
+      margin-right: 116px;
+    }
+    @include media-breakpoint-down(xl) {
+      max-width: 375px;
+      margin-right: 50px;
+    }
+    @include media-breakpoint-down(lg) {
+      max-width: 45%;
+    }
+    @include media-breakpoint-down(md) {
+      position: static;
+      max-width: 100%;
+      margin-right: 0;
+      margin-bottom: 48px;
+      padding-right: 16px;
+    }
+    .swiper-navigation {
+      width: fit-content;
+      margin: auto 0 0 0;
+      .swiper-button-next {
+        min-width: 48px;
+        height: 48px;
+        position: static;
+        display: block !important;
+        margin: 0 !important;
+        svg {
+          border-radius: 50%;
+        }
+        &:hover {
+          svg {
+            background: $white;
+            path {
+              fill: $black !important;
+            }
+          }
+        }
+        &::after {
+          content: none;
+        }
+      }
+      .swiper-button-prev {
+        min-width: 48px;
+        height: 48px;
+        position: static;
+        display: block !important;
+        margin: 0 !important;
+        margin-right: 40px !important;
+        svg {
+          border-radius: 50%;
+        }
+        &:hover {
+          svg {
+            background: $white;
+            path {
+              fill: $black !important;
+            }
+          }
+        }
+        &::after {
+          content: none;
+        }
+      }
+    }
+    .swiper-slide {
+      &.swiper-slide-prev {
+        .blog-card__text {
+          h2 {
+            transform: translateY(-100%) !important;
+          }
+        }
+        .blog-card__text-anim {
+          transform: translateY(-100%) !important;
+        }
+      }
+      &.swiper-slide-active {
+        .blog-card__text {
+          h2 {
+            transform: translateY(0) !important;
+          }
+        }
+        .blog-card__text-anim {
+          transform: translateY(0) !important;
+        }
+      }
+    }
+
+    .swiper-pagination {
+      position: static;
+      margin: 0 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .swiper-pagination-bullet {
+        position: relative;
+        min-width: 4px;
+        width: 4px;
+        height: 4px;
+        background-color: $white !important;
+        border-radius: 8px;
+        opacity: 1 !important;
+        &::before {
+          content: "";
+          display: block;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 4px;
+          bottom: 0;
+          background-color: $white !important;
+          border-radius: 8px;
+          z-index: 2;
+        }
+        &.swiper-pagination-bullet-active {
+          width: 50px;
+          display: block;
+          background-color: #ffffff5c !important;
+          transition: $duration-default;
+          @include media-breakpoint-down(sm) {
+            width: 50px;
+          }
+          &::before {
+            animation-name: line;
+            animation-duration: 3000ms;
+          }
+        }
+      }
+    }
+  }
+
+  // .blog-card__slider-control
+
+  &__slider-control {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    @include media-breakpoint-down(md) {
+      right: 16px;
+    }
+
+    .swiper-pagination {
+      position: relative;
+      width: fit-content;
+      margin: 0;
+      height: auto;
+      bottom: 0;
+      align-items: flex-end;
+    }
+  }
+
+  .container {
+    padding-right: 0 !important;
+  }
+
+  &__wrapper {
+    width: 100%;
+    overflow: hidden;
+    @include media-breakpoint-up(big-xl) {
+      overflow: visible;
+    }
+  }
+
+  // .blog-card__image
+
+  &__image {
+    max-height: 603px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    overflow: hidden;
+    @include media-breakpoint-down(xl) {
+      max-height: 463px;
+    }
+    @include media-breakpoint-down(md) {
+      max-height: 410px;
+    }
+  }
+
+  // .blog-card__info-slider
+
+  &__info-slider {
+    height: 100%;
+    .swipe-slide {
+      opacity: 1 !important;
+    }
+  }
+
+  // .blog-card__text
+
+  &__text {
+    overflow: hidden;
+    margin-bottom: 25px;
+    @include media-breakpoint-down(md) {
+      margin-bottom: 16px;
+    }
+    h2 {
+      color: $white;
+      transition: 600ms;
+      transform: translateY(100%);
+    }
+  }
+
+  // .blog-card__desc
+
+  &__desc {
+    line-height: 160%;
+    color: $white;
+    overflow: hidden;
+    .blog-card__text-anim {
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      transition: 600ms;
+      transform: translateY(100%);
+    }
+  }
+
+  // .blog-card__url
+
+  &__url {
+    margin-top: auto;
+    margin-bottom: 80px;
+    @include media-breakpoint-down(md) {
+      margin-top: 16px;
+      margin-bottom: 0;
+    }
+    a {
+      color: $white;
+      letter-spacing: 2.88px;
+      text-decoration-line: underline;
+      text-transform: uppercase;
+    }
+  }
+
+  // .blog-card__image-slider
+
+  &__image-slider {
+    margin-right: 48px;
+    margin-left: 0;
+    width: 100%;
+    @include media-breakpoint-down(big-xl) {
+      margin-right: 30px;
+    }
+    @include media-breakpoint-down(xxxl) {
+      margin-right: 27px;
+    }
+    &--one {
+      max-width: 416px;
+      min-width: 416px;
+      height: 100%;
+      @include media-breakpoint-down(xl) {
+        max-width: 320px;
+        min-width: 320px;
+      }
+      @include media-breakpoint-down(lg) {
+        max-width: 285px;
+        min-width: 285px;
+      }
+      @include media-breakpoint-down(md) {
+        max-width: 236px;
+        min-width: 236px;
+      }
+    }
+    &--two {
+      max-width: 353px;
+      min-width: 353px;
+      height: 85%;
+      @include media-breakpoint-down(xl) {
+        max-width: 272px;
+        min-width: 272px;
+      }
+      @include media-breakpoint-down(lg) {
+        max-width: 242px;
+        min-width: 242px;
+      }
+      @include media-breakpoint-down(md) {
+        max-width: 200px;
+        min-width: 200px;
+      }
+    }
+    &--three {
+      max-width: 301px;
+      min-width: 301px;
+      height: 75%;
+      margin-right: 0;
+      @include media-breakpoint-down(xl) {
+        max-width: 231px;
+        min-width: 231px;
+      }
+      @include media-breakpoint-down(lg) {
+        max-width: 205px;
+        min-width: 205px;
+      }
+      @include media-breakpoint-down(md) {
+        max-width: 170px;
+        min-width: 170px;
+      }
+    }
+    // .swiper-wrapper {
+    //   height: 630px;
+    //   @include media-breakpoint-down(xl) {
+    //     height: 475px;
+    //   }
+    //   @include media-breakpoint-down(lg) {
+    //     height: 415px;
+    //   }
+    //   @include media-breakpoint-down(md) {
+    //     height: 343px;
+    //   }
+    // }
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: fit-content;
+      position: relative;
+    }
+
+    .swiper-slide img {
+      display: block;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      aspect-ratio: 416/603;
+      overflow: hidden;
+      transition: height 0.5s;
+    }
+
+    .swiper-wrapper {
+      max-height: 816px;
+    }
+  }
+
+  // .blog-card__img
+
+  &__img {
+    position: relative;
+    min-height: 600px;
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+@keyframes line {
+  from {
+    width: 4px;
+  }
+  to {
+    width: 100%;
+  }
+}

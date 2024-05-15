@@ -1,0 +1,122 @@
+@import "./settings/variables";
+@import "./settings/mixins";
+
+.recharge-widget {
+  fieldset {
+    border: none;
+  }
+
+  .recharge-widget__input {
+    display: none;
+
+    &:checked + label {
+      color: $white-900;
+      svg {
+        circle {
+          fill: $white-900;
+        }
+      }
+    }
+  }
+
+  .recharge-widget__label {
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: $white-600;
+    cursor: pointer;
+
+    svg {
+      position: relative;
+      margin-right: 10px;
+      circle {
+        fill: transparent;
+      }
+    }
+
+    .recharge-widget__label-checkbox {
+      display: flex;
+      align-items: center;
+    }
+
+    .recharge-widget__label--old-price {
+      text-decoration: line-through;
+    }
+
+    .recharge-widget__label--sale-price {
+      color: $white-900;
+    }
+  }
+
+  // .recharge-widget__label-text
+
+  &__label-text {
+    display: inline-block;
+    .subscribe-text {
+      @include media-breakpoint-down(sm) {
+        display: block;
+      }
+    }
+  }
+
+  // .recharge-widget__options
+
+  &__options {
+  }
+
+  // .recharge-widget__field
+
+  &__field {
+    &.one-time-purchase {
+      border-top: 1px solid $white-500;
+      margin-bottom: 32px;
+      .recharge-widget__label {
+        padding: 16px 0 24px;
+      }
+    }
+
+    &.subscribe {
+      .recharge-widget__label {
+        padding: 24px 0 0;
+        @include media-breakpoint-down(sm) {
+          height: 78px;
+        }
+      }
+    }
+  }
+
+  // .recharge-widget__percent-save
+
+  &__percent-save {
+    color: $coral-500;
+  }
+
+  // .recharge-widget__checked
+
+  &__checked {
+    display: flex;
+    gap: 32px;
+    margin-bottom: 10px;
+
+    @include media-breakpoint-down(sm) {
+      gap: 16px;
+    }
+
+    & > div {
+      display: flex;
+      color: $white-700;
+
+      @include media-breakpoint-down(sm) {
+        font-size: 16px;
+      }
+
+      svg {
+        fill: $white-700;
+        width: 16px;
+        height: 18px;
+        margin-right: 4px;
+      }
+    }
+  }
+}

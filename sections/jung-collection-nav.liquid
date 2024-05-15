@@ -1,0 +1,277 @@
+{{ 'collection-navigation.out.css' | asset_url | stylesheet_tag }}
+
+<style>
+  .collection-navigation-sticky {
+    position: sticky;
+    top: 77px;
+    z-index: 2;
+    transition: top 0.15s ease-out;
+  }
+
+  @media(max-width: 989.98px){
+    .collection-navigation-sticky {
+      top: 47px;
+    }
+  }
+
+  .shopify-section-header-hidden ~ #MainContent .collection-navigation-sticky {
+    top: 0;
+  }
+
+  .section-header.scrolled-past-header .header {
+    border-bottom: 1px solid white;
+  }
+
+</style>
+
+<div class="collection-nav">
+  <div class="container">
+    <div class="collection-nav__blocks">
+      {%- for block in section.blocks -%}
+        {%- liquid
+            assign block_title = block.settings.block_title 
+            assign block_index = "block-" | append: forloop.index 
+        -%}
+        <div class="collection-nav__block {{ block_index }}">
+          <h5 class="collection-nav__block-title">{{ block_title }}</h5>
+          {% for i in (1..4) %}
+            {% liquid  
+                assign icon_selector =  "icon_" | append: i
+                assign icon = block.settings[icon_selector]
+                assign icon_text_selector =  "icon_text_" | append: i
+                assign icon_text = block.settings[icon_text_selector] 
+                assign icon_text_handleize = icon_text | handleize
+                assign anchor_link_selector =  "anchor_link_" | append: i
+                assign anchor_link = block.settings[anchor_link_selector] 
+                assign link = ''
+
+                if anchor_link != blank
+                  assign handleize = anchor_link | handleize
+                  assign link = '#'| append: handleize 
+                else
+                  assign link = '#'
+                endif
+                
+                assign icon_key = 'key_' | append: forloop.index
+            %}
+            {% if icon != blank and icon_text != blank %}
+              <a
+                href="{{ link }}"
+                class="collection-nav__item"
+                data-nav-item="{{ icon_text_handleize }}">
+                {% render 'icons', icon: icon, index: icon_key %}
+                <div class="collection-nav__item-text">{{ icon_text }}</div>
+              </a>
+            {% endif %}
+          {% endfor %}
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+{% schema %}
+  {
+    "name": "Collection navigation",
+    "class": "collection-navigation-sticky",
+    "limit": 1,
+    "enabled_on": {
+      "templates": ["collection"]
+    },
+    "blocks": [
+      {
+        "type": "item",
+        "name": "Item",
+        "settings": [
+          {
+            "type": "text",
+            "id": "block_title",
+            "default": "MASTER FORMULA",
+            "label": "Block title"
+          },
+          {
+            "type": "header",
+            "content": "Icon 1"
+          },
+          {
+            "type": "select",
+            "id": "icon_1",
+            "label": "Icon 1",
+            "options": [
+              {
+                "value": "essentials",
+                "label": "Essentials"
+              },
+              {
+                "value": "fasting",
+                "label": "Fasting"
+              },
+              {
+                "value": "glucose",
+                "label": "Glucose"
+              },
+              {
+                "value": "sleep",
+                "label": "Sleep"
+              }, {
+                "value": "skin",
+                "label": "Skin"
+              }, {
+                "value": "testing",
+                "label": "Testing"
+              }, {
+                "value": "bundles",
+                "label": "Bundles"
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "id": "icon_text_1",
+            "label": "Icon text"
+          }, {
+            "type": "text",
+            "id": "anchor_link_1",
+            "info": "Use section title",
+            "label": "Anchor link"
+          }, {
+            "type": "header",
+            "content": "Icon 2"
+          }, {
+            "type": "select",
+            "id": "icon_2",
+            "label": "Icon",
+            "options": [
+              {
+                "value": "essentials",
+                "label": "Essentials"
+              },
+              {
+                "value": "fasting",
+                "label": "Fasting"
+              },
+              {
+                "value": "glucose",
+                "label": "Glucose"
+              },
+              {
+                "value": "sleep",
+                "label": "Sleep"
+              }, {
+                "value": "skin",
+                "label": "Skin"
+              }, {
+                "value": "testing",
+                "label": "Testing"
+              }, {
+                "value": "bundles",
+                "label": "Bundles"
+              }
+            ]
+          }, {
+            "type": "text",
+            "id": "icon_text_2",
+            "label": "Icon text"
+          }, {
+            "type": "text",
+            "id": "anchor_link_2",
+            "info": "Use section title",
+            "label": "Anchor link"
+          }, {
+            "type": "header",
+            "content": "Icon 3"
+          }, {
+            "type": "select",
+            "id": "icon_3",
+            "label": "Icon",
+            "options": [
+              {
+                "value": "essentials",
+                "label": "Essentials"
+              },
+              {
+                "value": "fasting",
+                "label": "Fasting"
+              },
+              {
+                "value": "glucose",
+                "label": "Glucose"
+              },
+              {
+                "value": "sleep",
+                "label": "Sleep"
+              }, {
+                "value": "skin",
+                "label": "Skin"
+              }, {
+                "value": "testing",
+                "label": "Testing"
+              }, {
+                "value": "bundles",
+                "label": "Bundles"
+              }
+            ]
+          }, {
+            "type": "text",
+            "id": "icon_text_3",
+            "label": "Icon text"
+          }, {
+            "type": "text",
+            "id": "anchor_link_3",
+            "info": "Use section title",
+            "label": "Anchor link"
+          }, {
+            "type": "header",
+            "content": "Icon 4"
+          }, {
+            "type": "select",
+            "id": "icon_4",
+            "label": "Icon",
+            "options": [
+              {
+                "value": "essentials",
+                "label": "Essentials"
+              },
+              {
+                "value": "fasting",
+                "label": "Fasting"
+              },
+              {
+                "value": "glucose",
+                "label": "Glucose"
+              },
+              {
+                "value": "sleep",
+                "label": "Sleep"
+              }, {
+                "value": "skin",
+                "label": "Skin"
+              }, {
+                "value": "testing",
+                "label": "Testing"
+              }, {
+                "value": "bundles",
+                "label": "Bundles"
+              }
+            ]
+          }, {
+            "type": "text",
+            "id": "icon_text_4",
+            "label": "Icon text"
+          }, {
+            "type": "text",
+            "id": "anchor_link_4",
+            "info": "Use section title",
+            "label": "Anchor link"
+          }
+        ]
+      }
+
+    ],
+    "settings": [],
+    "presets": [
+      {
+        "name": "JUNG Collection navigation"
+      }
+    ]
+  }
+{% endschema %}

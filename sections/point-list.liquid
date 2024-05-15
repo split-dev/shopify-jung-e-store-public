@@ -1,0 +1,505 @@
+<link rel="stylesheet" href="{{ 'point-list.out.css' | asset_url }}">
+<noscript>
+  {{- 'point-list.out.css' | asset_url | stylesheet_tag -}}
+</noscript>
+
+{%- assign settings = section.settings -%}
+
+{%- style -%}
+  #point--list--{{ section.id }} {
+    padding-top: {{ settings.padding_top_mobile }}px;
+    padding-bottom: {{ settings.padding_bottom_mobile }}px;
+  }
+
+  .point--list {
+    color: {{ settings.text_color }};
+    border-color: {{ settings.text_color }};
+    background-color: {{ settings.background_color }};
+  }
+
+  .point--list__item-reference.hidden {
+      display: none;
+  }
+
+  @media screen and (min-width: 768px) {
+    #point--list--{{ section.id }} {
+      padding-top: {{ settings.padding_top }}px;
+      padding-bottom: {{ settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<section
+  class="point--list section-{{ section.id }} container container--small"
+  id="point--list--{{ section.id }}"
+>
+  {%- if settings.title != blank -%}
+    <h2 class="point--list__title heading-h2">
+      {{ settings.title }}
+    </h2>
+  {%- endif -%}
+
+  {%- liquid
+    assign metafield = ''
+
+    if settings.metafield_select == 'scientific_studiеs'
+      assign metafield = product.metafields.custom.scientific_studies.value
+    elsif settings.metafield_select == 'references'
+      assign metafield = product.metafields.custom.references.value
+      assign metafield_51_100 = product.metafields.custom.references_51_100.value
+      assign metafield_101_150 = product.metafields.custom.references_101_150.value
+    endif
+  -%}
+
+  <{{ settings.list_type }} class="point--list__points">
+    {% if settings.data_type == 'block' %}
+      {% for block in section.blocks %}
+        {%- case block.type -%}
+          {%- when 'point' -%}
+            {%- assign bs = block.settings -%}
+
+            <li
+              class="point--list__item {% if settings.show_more_button and settings.metafield_select == 'references' %}point--list__item-reference {% endif %} {% if forloop.index0 > 10 %}hidden{% endif %}"
+            >
+              {%- if bs.url != blank -%}
+                <a href="{{ bs.url | default: '#' }}" class="point--list__item--link"> Reference link</a>
+              {%- endif -%}
+              {% if bs.title != blank %}
+                <div class="point--list__item--head">
+                  <h4 class="point--list__item--title caption-c2">
+                    {{ bs.title }}
+                  </h4>
+
+                  {% if bs.icon_position == 'heading' %}
+                    {% if bs.icon != 'none' %}
+                      {%- render 'icons', icon: 'arrow_btn' -%}
+                    {% endif %}
+                  {% endif %}
+                </div>
+              {% endif %}
+
+              <div class="point--list__item--description--box">
+                {%- if bs.description != blank -%}
+                  <p class="point--list__item--description">
+                    {%- if settings.list_type == 'ol' -%}
+                      <span class="point--list__item--description--number"> {{ forloop.index }}. </span>
+                    {%- endif -%}
+                    <span>
+                      {{ bs.description }}
+                    </span>
+                  </p>
+                {%- endif -%}
+
+                {% if settings.icon_position == 'description' %}
+                  {% if bs.icon != 'none' %}
+                    <span class="point--list__item--icon">
+                      {%- render 'icons', icon: 'arrow_btn' -%}
+                    </span>
+                  {% endif %}
+                {% endif %}
+              </div>
+            </li>
+        {%- endcase -%}
+      {% endfor %}
+    {%- elsif settings.data_type == 'meta' -%}
+      {% for object in metafield %}
+        <li
+          class="point--list__item {% if settings.show_more_button and settings.metafield_select == 'references' %} point--list__item-reference {% endif %}{% if settings.shorter %}xl-mr-100px {% endif %}{% if forloop.index > 10 %}hidden{% endif %}"
+        >
+          {%- if settings.metafield_select == 'references' -%}
+            <a href="{{ object.reference_url | default: '#' }}" target="_blank" class="point--list__item--link">
+              Reference link</a
+            >
+          {%- endif -%}
+          {% if object.title != blank %}
+            <div class="point--list__item--head">
+              <h4 class="point--list__item--title caption-c2">
+                {{ object.title }}
+              </h4>
+              {% if settings.icon_position == 'heading' %}
+                <a href="{{ object.link }}" target="_blank">
+                  <span class="point--list__item--icon">
+                    {%- render 'icons', icon: 'arrow_btn' -%}
+                  </span>
+                </a>
+              {% endif %}
+            </div>
+          {% endif %}
+
+          <div class="point--list__item--description--box">
+            {%- if object.description != blank -%}
+              <p class="point--list__item--description">
+                {%- if settings.list_type == 'ol' -%}
+                  <span class="point--list__item--description--number"> {{ forloop.index }}. </span>
+                {%- endif -%}
+                <span>
+                  {{ object.description }}
+                </span>
+              </p>
+            {%- endif -%}
+
+            {% if settings.icon_position == 'description' %}
+              <span class="point--list__item--icon">
+                {%- render 'icons', icon: 'arrow_btn' -%}
+              </span>
+            {% endif %}
+          </div>
+        </li>
+      {% endfor %}
+      {% for object in metafield_51_100 %}
+        {% liquid
+          assign index = forloop.index | plus: 50
+        %}
+        <li
+          class="point--list__item{% if settings.show_more_button and settings.metafield_select == 'references' %} point--list__item-reference{% endif %}  hidden {% if settings.shorter %}xl-mr-100px {% endif %}"
+        >
+          {%- if settings.metafield_select == 'references' -%}
+            <a href="{{ object.reference_url | default: '#' }}" target="_blank" class="point--list__item--link">
+              Reference link</a
+            >
+          {%- endif -%}
+          {% if object.title != blank %}
+            <div class="point--list__item--head">
+              <h4 class="point--list__item--title caption-c2">
+                {{ object.title }}
+              </h4>
+              {% if settings.icon_position == 'heading' %}
+                <a href="{{ object.link }}" target="_blank">
+                  <span class="point--list__item--icon">
+                    {%- render 'icons', icon: 'arrow_btn' -%}
+                  </span>
+                </a>
+              {% endif %}
+            </div>
+          {% endif %}
+
+          <div class="point--list__item--description--box">
+            {%- if object.description != blank -%}
+              <p class="point--list__item--description">
+                {%- if settings.list_type == 'ol' -%}
+                  <span class="point--list__item--description--number"> {{ index }}. </span>
+                {%- endif -%}
+                <span>
+                  {{ object.description }}
+                </span>
+              </p>
+            {%- endif -%}
+
+            {% if settings.icon_position == 'description' %}
+              <span class="point--list__item--icon">
+                {%- render 'icons', icon: 'arrow_btn' -%}
+              </span>
+            {% endif %}
+          </div>
+        </li>
+      {% endfor %}
+      {% for object in metafield_101_150 %}
+        {% liquid
+          assign index = forloop.index | plus: 100
+        %}
+        <li
+          class="point--list__item{% if settings.show_more_button and settings.metafield_select == 'references' %} point--list__item-reference{% endif %}  hidden {% if settings.shorter %}xl-mr-100px {% endif %}"
+        >
+          {%- if settings.metafield_select == 'references' -%}
+            <a href="{{ object.reference_url | default: '#' }}" target="_blank" class="point--list__item--link">
+              Reference link</a
+            >
+          {%- endif -%}
+          {% if object.title != blank %}
+            <div class="point--list__item--head">
+              <h4 class="point--list__item--title caption-c2">
+                {{ object.title }}
+              </h4>
+              {% if settings.icon_position == 'heading' %}
+                <a href="{{ object.link }}" target="_blank">
+                  <span class="point--list__item--icon">
+                    {%- render 'icons', icon: 'arrow_btn' -%}
+                  </span>
+                </a>
+              {% endif %}
+            </div>
+          {% endif %}
+
+          <div class="point--list__item--description--box">
+            {%- if object.description != blank -%}
+              <p class="point--list__item--description">
+                {%- if settings.list_type == 'ol' -%}
+                  <span class="point--list__item--description--number"> {{ index }}. </span>
+                {%- endif -%}
+                <span>
+                  {{ object.description }}
+                </span>
+              </p>
+            {%- endif -%}
+
+            {% if settings.icon_position == 'description' %}
+              <span class="point--list__item--icon">
+                {%- render 'icons', icon: 'arrow_btn' -%}
+              </span>
+            {% endif %}
+          </div>
+        </li>
+      {% endfor %}
+    {% endif %}
+  </{{ settings.list_type }}>
+
+  {%- if settings.show_more_button and settings.button_text != blank -%}
+    <div class="point--list__button--box">
+      <button
+        class="point--list__button"
+        id="loadMoreBtn"
+        data-type="loadMoreBtn"
+      >
+        {{ settings.button_text }}
+      </button>
+    </div>
+  {%- endif -%}
+</section>
+
+{% if settings.show_more_button %}
+  <script>
+    {%- if settings.metafield_select == 'references' -%}
+      const referencesShowMoreBtn = document.querySelector('.section-{{ section.id }} button[data-type="loadMoreBtn"]');
+
+      function showNextItems() {
+        const items = document.querySelectorAll('.section-{{ section.id }} .point--list__item-reference.hidden');
+        let itemsRemoved = 0;
+
+        items.forEach((item, index) => {
+          if (index < 10) {
+            item.classList.remove('hidden');
+            itemsRemoved++;
+          }
+        });
+
+        if (items.length === itemsRemoved) {
+          referencesShowMoreBtn.disabled = true;
+          referencesShowMoreBtn.textContent = 'No more items';
+        };
+      };
+
+      referencesShowMoreBtn.addEventListener('click', showNextItems);
+
+      {%- elsif settings.metafield_select == 'scientific_studiеs' -%}
+
+        const scientificShowMoreBtn = document.querySelector('.section-{{ section.id }} button[data-type="loadMoreBtn"]');
+        const scientificList = document.querySelectorAll(".section-{{ section.id }} .point--list__item");
+        let itemToShow = 10;
+
+        [...scientificList].forEach((item, idx) => {
+          if(idx >= 10){
+            item.classList.add("hidden");
+          }
+        });
+
+        const showMoreListener = () => {
+          itemToShow = itemToShow + 10;
+
+          [...scientificList].forEach((item, idx) => {
+            if (itemToShow > idx) {
+              item.classList.remove("hidden");
+            }
+          });
+
+          if(itemToShow >= [...scientificList].length) {
+            scientificShowMoreBtn.textContent = 'No more items';
+            scientificShowMoreBtn.disabled = true;
+          }
+        }
+
+        scientificShowMoreBtn.addEventListener('click', showMoreListener);
+    {%- endif -%}
+  </script>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Points list",
+  "settings": [
+    {
+      "type": "select",
+      "id": "data_type",
+      "label": "Data type",
+      "options": [
+        {
+          "value": "block",
+          "label": "Blocks"
+        },
+        {
+          "value": "meta",
+          "label": "Metadata"
+        }
+      ],
+      "default": "meta"
+    },
+    {
+      "type": "select",
+      "id": "metafield_select",
+      "label": "Metafield select",
+      "options": [
+        {
+          "value": "scientific_studiеs",
+          "label": "Scientific studiеs"
+        },
+        {
+          "value": "references",
+          "label": "References"
+        }
+      ],
+      "default": "scientific_studiеs"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_more_button",
+      "label": "Show more button",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "Show More"
+    },
+    {
+      "type": "select",
+      "id": "list_type",
+      "label": "List type",
+      "options": [
+        {
+          "value": "ol",
+          "label": "Numbered"
+        },
+        {
+          "value": "ul",
+          "label": "Unnumbered"
+        }
+      ],
+      "default": "ul"
+    },
+    {
+      "type": "select",
+      "id": "icon_position",
+      "label": "Icon position",
+      "options": [
+        {
+          "value": "heading",
+          "label": "Heading"
+        },
+        {
+          "value": "description",
+          "label": "Description"
+        }
+      ],
+      "default": "heading"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#000"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#fff"
+    },
+    {
+      "type": "checkbox",
+      "id": "shorter",
+      "label": "Small container",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top_mobile",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom_mobile",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 80
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Point",
+      "type": "point",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description"
+        },
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "options": [
+            {
+              "value": "arrow-right",
+              "label": "Arrow"
+            },
+            {
+              "value": "none",
+              "label": "None"
+            }
+          ],
+          "default": "arrow-right"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "URL"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Points list",
+      "settings": {}
+    }
+  ]
+}
+{% endschema %}

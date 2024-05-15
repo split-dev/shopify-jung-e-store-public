@@ -1,0 +1,57 @@
+{
+  "sections": {
+    "banner_image_769GGJ": {
+      "type": "banner-image",
+      "disabled": true,
+      "settings": {
+        "subscription_page": false,
+        "header": "Privacy Policy",
+        "description": "",
+        "button_label": "Shop all",
+        "button_link": "",
+        "image": "shopify:\/\/shop_images\/ashwin-vaswani-ViXb3PXSC-8-unsplash.jpg",
+        "image_mobile": "shopify:\/\/shop_images\/ashwin-vaswani-ViXb3PXSC-8-unsplash.jpg",
+        "opacity": 0,
+        "container": "container",
+        "text_align": "left",
+        "banner_height": "banner-large"
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "1709189918a992529a": {
+      "type": "apps",
+      "blocks": {
+        "shop_quiz_product_recommender_inline_quiz_jLmThy": {
+          "type": "shopify:\/\/apps\/shop-quiz-product-recommender\/blocks\/inline-quiz\/672f3d48-fd3b-4227-8778-c6e58c4f8a98",
+          "settings": {
+            "quiz_id": "jyHQrE",
+            "quiz_height": 720,
+            "quiz_autoscroll": false,
+            "quiz_fixed_height": false
+          }
+        }
+      },
+      "block_order": [
+        "shop_quiz_product_recommender_inline_quiz_jLmThy"
+      ],
+      "custom_css": [
+        ".rh-widget,.rh-widget iframe {min-height: calc(100vh - 59px) !important;}",
+        "@media (max-width: 620px) {.rh-widget, .rh-widget iframe {min-height: calc(100vh - 44px) !important; }}",
+        "@media (max-width: 430px) {.rh-widget, .rh-widget iframe {min-height: calc(100vh - 87px) !important; }}"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    }
+  },
+  "order": [
+    "banner_image_769GGJ",
+    "main",
+    "1709189918a992529a"
+  ]
+}

@@ -1,0 +1,250 @@
+{{ 'our-science.out.css' | asset_url | stylesheet_tag }}
+
+{% liquid
+    assign image = section.settings.image 
+    assign color_background = section.settings.color_background
+    assign show_modal = section.settings.show_modal
+%}
+
+{% style %}
+    .our-science--{{ section.id }}{
+        padding-top: {{ section.settings.padding_top_mobile }}px;
+        padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+        background-color: {{ color_background }};
+    }
+
+    @media screen and (min-width: 990px) {
+        .our-science--{{ section.id }} {
+            padding-top: {{ section.settings.padding_top }}px;
+            padding-bottom: {{ section.settings.padding_bottom }}px;
+        }
+    }
+{% endstyle %}
+
+<div class="our-science our-science--{{ section.id }} {{ section.settings.image_position }}">
+    <div class="container container--medium">
+        <div class="our-science__wrapper {{ section.settings.image_position }}">
+            <div class="our-science__image">
+                {% if show_modal %}
+                    <div class="our-science__zoom" data-zoom="{{ section.id }}">
+                        {% render 'icons', icon: 'zoom' %} 
+                    </div>
+                {% endif %}
+                {% if image != blank %}
+                        <picture>
+                            {{
+                              image
+                              | image_url: width: 1500
+                              | image_tag:
+                                width: imageWidth,
+                                height: imageHeight,
+                                class: 'lazy',
+                                sizes: '100vw',
+                                widths: '375, 550, 750, 1100, 1500',
+                                loading: 'lazy',
+                                alt: image.alt
+                            }}
+                        </picture> 
+                {% else %}
+                    {{ 'lifestyle-2' | placeholder_svg_tag: 'placeholder-svg' }}
+                {% endif %}
+            </div>
+            <div class="our-science__content">
+                <div class="our-science__block">
+                    {% for block in section.blocks %}
+                        {% liquid 
+                            assign header = block.settings.header
+                            assign heading_size = block.settings.heading_size
+                            assign richtext = block.settings.richtext
+                            assign position = block.settings.position
+                        %}
+                        {%  case block.type %}  
+                            {%  when "header" %}
+                                {% if header != blank %}
+                                    <h2 class="our-science__header {{ heading_size }}">
+                                        {{ header }}
+                                    </h2>
+                                {% endif %}
+                            {% when "richtext" %}
+                                {% if richtext != blank %}
+                                    <div class="our-science__richtext body-b2 body-b2-md">
+                                        {{ richtext }}
+                                    </div>
+                                {% endif %}
+                            {% when "position" %}
+                                {% if position != blank %}
+                                    <div class="our-science__position caption-c2 caption-c2-md">
+                                        {{ position }}
+                                    </div>
+                                {% endif %}
+                        {% endcase %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+ 
+{% if show_modal %}
+    <div class="our-science__modal" data-modal="{{ section.id }}">
+        <div class="container">
+            <div class="our-science__modal-close">
+                {% render 'icons', icon: 'close-24' %}
+            </div>
+            <div class="our-science__modal-image">
+                <picture>
+                    {{
+                      image
+                      | image_url: width: 750
+                      | image_tag:
+                        width: imageWidth,
+                        height: imageHeight,
+                        class: 'lazy',
+                        sizes: '100vw',
+                        widths: '375, 550, 750',
+                        loading: 'lazy',
+                        alt: image.alt
+                    }}
+                </picture> 
+            </div>
+        </div>
+    </div>
+{% endif %}
+
+{% schema %}
+  {
+    "name": "Our science img with text",
+    "settings": [
+        {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+        },
+        {
+            "type": "checkbox",
+            "id": "show_modal",
+            "label": "Show modal on mobile",
+            "default": false
+        },
+        {
+            "type": "select",
+            "id": "image_position",
+            "label": "Image position",
+            "options": [
+                {
+                    "value": "left",
+                    "label": "Left"
+                },
+                {
+                    "value": "right",
+                    "label": "Right"
+                }
+            ]
+        },
+        {
+            "type": "color",
+            "id": "color_background",
+            "label": "Background color",
+            "default": "#F5F5F5"
+        },
+        {
+            "type": "range",
+            "id": "padding_top_mobile",
+            "min": 0,
+            "max": 80,
+            "step": 1,
+            "unit": "px",
+            "label": "t:sections.all.padding.padding_top_mobile",
+            "default": 0
+        },
+        {
+            "type": "range",
+            "id": "padding_bottom_mobile",
+            "min": 0,
+            "max": 80,
+            "step": 1,
+            "unit": "px",
+            "label": "t:sections.all.padding.padding_bottom_mobile",
+            "default": 80
+        },
+        {
+            "type": "range",
+            "id": "padding_top",
+            "min": 0,
+            "max": 80,
+            "step": 1,
+            "unit": "px",
+            "label": "t:sections.all.padding.padding_top",
+            "default": 80
+        },
+        {
+            "type": "range",
+            "id": "padding_bottom",
+            "min": 0,
+            "max": 80,
+            "step": 1,
+            "unit": "px",
+            "label": "t:sections.all.padding.padding_bottom",
+            "default": 80
+        }
+    ],
+    "blocks": [
+        {
+            "name": "Header",
+            "type": "header",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "header",
+                    "label": "Title",
+                    "default": "Letter from our founder"
+                },
+                {
+                    "type": "select",
+                    "id": "heading_size",
+                    "label": "Heading size",
+                    "options": [
+                        {
+                            "value": "heading-h2 heading-h2-md",
+                            "label": "H2"
+                        },
+                        {
+                            "value": "heading-h3 heading-h3-md",
+                            "label": "H3"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Richtext",
+            "type": "richtext",
+            "settings": [
+                {
+                    "type": "richtext",
+                    "id": "richtext",
+                    "label": "Richtext",
+                    "default": "<p>Seventy-five percent of US healthcare spending, or about $37 trillion annually, goes to treating preventable chronic diseases. Chronic diseases that are driven by aging. What if, instead, we zeroed in on cellular aging and halted the decline? Welcome to longevity science - the next frontier in preventive health. At Jung, we're not just envisioning this future; we're creating it.</p>"
+                }
+            ]
+        },
+        {
+            "name": "Position",
+            "type": "position",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "position",
+                    "label": "Position",
+                    "default": "- Simon Sakhai, Founder of JUNG"
+                }
+            ]
+        }
+    ],
+    "presets": [
+      {
+        "name": "Our science img with text"
+      }
+    ]
+  }
+{% endschema %}

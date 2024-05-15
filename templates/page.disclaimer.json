@@ -1,0 +1,29 @@
+{
+  "sections": {
+    "24035431-08bb-4683-8b06-88b0284a1968": {
+      "type": "banner-image",
+      "settings": {
+        "subscription_page": false,
+        "header": "Disclaimer",
+        "description": "",
+        "button_label": "Shop all",
+        "button_link": "",
+        "image": "shopify:\/\/shop_images\/Screenshot_2024-01-16_at_5.38.57_PM.png",
+        "image_mobile": "shopify:\/\/shop_images\/Screenshot_2024-01-16_at_5.38.57_PM.png",
+        "opacity": 0,
+        "container": "container",
+        "text_align": "center",
+        "banner_height": "banner-small"
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "24035431-08bb-4683-8b06-88b0284a1968",
+    "main"
+  ]
+}

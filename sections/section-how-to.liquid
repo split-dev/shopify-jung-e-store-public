@@ -1,0 +1,94 @@
+{{ 'section-how-to.out.css' | asset_url | stylesheet_tag }}
+
+{% liquid 
+    assign background_color = section.settings.background_color
+%} 
+
+{% style %} 
+    .how-to--{{ section.id }} {
+        background-color: {{ background_color }};
+    }
+{% endstyle %}
+
+<div class="how-to how-to--{{ section.id }}">
+    <div class="container">
+        <div class="how-to__wrapper">
+            {%- for block in section.blocks -%}
+                    {% liquid 
+                        assign title = block.settings.title
+                        assign richtext = block.settings.richtext
+                        assign svg_code = block.settings.svg_code
+                    %} 
+                        {% case block.type %} 
+                            {% when "header" %}
+                                {% if title != blank %}
+                                    <div class="how-to__header heading-h2 heading-h2-md">{{ title }}</div>
+                                {% endif %}
+                            {% when "richtext" %}
+                                {% if richtext != blank %}
+                                    <div class="how-to__text body-b2 body-b2-md">{{ richtext }}</div>
+                                {% endif %}
+                            {% when "svg" %}
+                                {% if svg_code != blank  %}
+                                   <div class="how-to__svg">{{ svg_code }}</div>
+                                {% endif %}
+                        {% endcase %} 
+            {%- endfor -%}
+        </div>
+    </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Section 'How to'",
+    "blocks": [
+        {
+            "type": "header",
+            "name": "Header",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "title",
+                    "default": "Anti-aging is getting old.",
+                    "label": "Title"
+                }
+            ]
+        },
+        {
+            "type": "richtext",
+            "name": "Richtext",
+            "settings": [
+                {
+                    "type": "richtext",
+                    "id": "richtext",
+                    "default": "<p>There’s no difference between ‘internal’ and ‘external’ aging, as far as your physiology is concerned, it all answers to the same process. Traditional anti-aging approaches have focused on masking the signs of aging through superficial procedures or cosmetic interventions that focus on the surface level, without tackling the root cause.</p>",
+                    "label": "Text"
+                }
+            ]
+        },
+        {
+            "type": "svg",
+            "name": "SVG",
+            "settings": [
+                {
+                    "type": "html",
+                    "id": "svg_code",
+                    "label": "SVG code"
+                }
+            ]
+        }
+    ],
+    "settings": [
+        {
+            "type": "color_background",
+            "id": "background_color",
+            "label": "Background color"
+        }
+    ],
+    "presets": [
+      {
+        "name": "Section 'How to'"
+      }
+    ]
+  }
+{% endschema %}

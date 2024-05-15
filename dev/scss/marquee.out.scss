@@ -1,0 +1,46 @@
+@import "./settings/variables";
+@import "./settings/mixins";
+
+.marquee {
+    white-space: nowrap;
+    overflow: hidden;
+    border-top: 1px solid $white-900;
+    border-bottom: 1px solid $white-900;
+    width: 100%;
+    display: flex;
+
+    .marquee__text {
+        padding-left: 100%;
+        display: block;
+        animation-name: marquee;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        color: $white-900;
+        display: flex;
+        p {
+            margin: 0;
+            padding: 16px 64px 16px 0;
+            color: $white-900;
+            @include media-breakpoint-down(lg){
+                padding: 12px 32px 12px 0;
+            }
+        }
+
+        a {
+            color: $coral-500;
+            text-decoration: none;
+        }
+        
+    }
+
+    &:hover {
+        .marquee__text {
+            animation-play-state: paused;
+        } 
+    }
+}
+
+@keyframes marquee {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(-100%, 0); }
+ }

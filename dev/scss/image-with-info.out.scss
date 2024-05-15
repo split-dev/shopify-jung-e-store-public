@@ -1,0 +1,144 @@
+@import "./settings/variables";
+@import "./settings/mixins";
+
+.image-with-info {
+
+    .container {
+        @include media-breakpoint-down(big-xl){
+            padding: 0 204px 0 171px;
+        }
+
+        @include media-breakpoint-down(xxxl){
+            padding: 0 60px 0 43px;
+        }
+
+        @include media-breakpoint-down(xxl){
+            padding: 0 40px 0 23px;
+        }
+
+        @include media-breakpoint-down(lg){
+            padding: 0 40px;
+        }
+
+        @include media-breakpoint-down(md){
+            padding: 0 16px;
+        }
+    }
+
+    // .image-with-info__wrapper
+
+    &__wrapper {
+        display: flex;
+        gap: 127px;
+
+        @include media-breakpoint-down(big-xl){
+            gap: 40px;
+        }
+
+        @include media-breakpoint-down(xxxl){
+            gap: 24px;
+        }
+
+        @include media-breakpoint-down(lg){
+            flex-direction: column;
+            gap: 40px;
+        }
+    }
+
+    // .image-with-info__sticker
+
+    &__sticker {
+        display: none;
+        width: 150px;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        z-index: -1;
+        @include media-breakpoint-down(lg){
+            display: block;
+        }
+    }
+
+    // .image-with-info__image
+
+    &__image {
+        min-width: 665px;
+        width: 100%;
+        padding: 57px 107px 209px 62px;
+        img {
+            max-width: 100%;
+        }
+
+        @include media-breakpoint-down(xl){
+            min-width: 465px;
+        }
+
+        @include media-breakpoint-down(lg){
+            padding: 0 30px 30px 0;
+            min-width: 100%;
+            position: relative;
+            img {
+                width: 100%;
+                position: relative;
+                z-index: 2;
+            }
+        }
+    }
+
+    // .image-with-info__content
+
+    &__content {
+
+    }
+
+    // .image-with-info__block
+
+    &__block {
+
+    }
+
+    // .image-with-info__header
+
+    &__header {
+        color: $white-900;
+        
+        &.heading-h2 {
+            padding: 32px 0 16px;
+        }
+
+        &.heading-h3 {
+            padding: 16px 0;
+        }
+
+        @include media-breakpoint-down(lg){
+            &.heading-h2 {
+                padding: 0 0 8px;
+            }
+
+            &.heading-h3 {
+                padding: 8px 0 16px;
+            }
+        }
+    }
+
+    // .image-with-info__richtext
+
+    &__richtext {
+        color: $white-900;
+        p {
+            margin: 16px 0;
+        }
+        @include media-breakpoint-down(lg){
+            p {
+                margin: 8px 0;
+            }
+        }
+    }
+
+    // .image-with-info__position
+
+    &__position {
+        color: $white-600;
+    }
+}
+

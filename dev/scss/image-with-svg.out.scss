@@ -1,0 +1,197 @@
+@import "./settings/variables";
+@import "./settings/mixins";
+@import "./settings/helpers";
+
+@include animateBluredShowText($white, 'whiteText-title');
+@include animateBluredShowText($white, 'whiteText-body');
+
+@keyframes animateSVGelems {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+.image-with-svg {
+    position: relative;
+    overflow: hidden;
+    .container {
+        height: 100%;
+    }
+
+    // .image-with-svg__media
+
+    &__media {
+        height: 660px;
+        @include media-breakpoint-down(xxl){
+            height: 600px;
+        }
+
+        @include media-breakpoint-down(lg){
+           height: 700px;
+        }
+    }
+
+    // .image-with-svg__background
+
+    &__background {
+        height: 100%;
+        position: relative;
+        video {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            position: relative;
+        }
+
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            z-index: 2;
+        }
+
+        &.desktop {
+            @include media-breakpoint-down(lg){
+                display: none;
+            }    
+        }
+
+        &.mobile {
+            display: none;
+            @include media-breakpoint-down(lg){
+                display: block;
+            }
+        }
+    }
+
+    // .image-with-svg__content
+
+    &__content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        z-index: 4;
+    }
+
+    // .image-with-svg__blocks
+ 
+    &__blocks {
+        padding-top: 80px;
+    }
+
+    // .image-with-svg__title
+
+    &__title {
+        line-height: 1.25; /* to avoid text clipping after animation */
+        color: $white;
+        text-align: center;
+        margin-bottom: 16px;
+
+        &--dt {
+            @include setAnimationBluredHideText('whiteText-title');
+            @include media-breakpoint-down(lg){
+                display: none;
+            }
+        }
+        &--mb {
+            display: none;
+            @include media-breakpoint-down(lg){
+                display: block;
+                p {
+                    margin: 0 0;
+                    @include setAnimationBluredHideText('whiteText-title');
+                }
+            }
+        }
+    }
+
+    // .image-with-svg__richtext
+
+    &__richtext {
+        color: $white;
+        text-align: center;
+        max-width: 696px;
+        margin: 0 auto;
+
+        @include setAnimationBluredHideText('whiteText-body');
+
+        & > * {
+            margin: 0;
+        }
+    }
+
+    // .image-with-svg__svg
+
+    &__svg {
+       position: absolute;
+       bottom: -5px;
+       left: 50%;
+       transform: translate3d(-50%, -5px, 0);
+       svg {
+            bottom: -6px;
+            position: relative;
+            g {
+                opacity: 0;
+                transform: translateY(50px);
+                animation-delay: 0.5s;
+                &:nth-child(2n) { animation-delay: 0.7s; }
+                &:nth-child(3n) { animation-delay: 0.77s; }
+                &:nth-child(4n) { animation-delay: 0.84s; }
+                &:nth-child(5n) { animation-delay: 0.91s; }
+                &:nth-child(6n) { animation-delay: 0.98s; }
+                &:nth-child(7n) { animation-delay: 1.05s; }
+                &:nth-child(8n) { animation-delay: 1.12s; }
+                &:nth-child(9n) { animation-delay: 1.19s; }
+                &:nth-child(10n) { animation-delay: 1.26s; }
+                &:nth-child(11n) { animation-delay: 1.33s; }
+                &:nth-child(12n) { animation-delay: 1.4s; }
+                &:nth-child(13n) { animation-delay: 1.47s; }
+                &:nth-child(14n) { animation-delay: 1.54s; }
+                &:nth-child(15n) { animation-delay: 1.61s; }
+                &:nth-child(16n) { animation-delay: 1.68s; }
+                &:nth-child(17n) { animation-delay: 1.75s; }
+            }
+        }
+        @include media-breakpoint-down(sm){
+            svg {
+                max-width: 375px;
+            }
+        }
+    }
+}
+
+
+.intersecting {
+    .image-with-svg__title {
+        &--dt {
+            @include setAnimationBluredShowText('whiteText-title');
+        }
+        &--mb {
+            p {
+                @include setAnimationBluredShowText('whiteText-title');
+            }
+        }
+    }
+    .image-with-svg__richtext {
+        @include setAnimationBluredShowText('whiteText-body');
+    }
+    .image-with-svg__svg svg g {
+        animation-name: animateSVGelems;
+        animation-duration: 500ms;
+        animation-timing-function: ease-in;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+    }
+}

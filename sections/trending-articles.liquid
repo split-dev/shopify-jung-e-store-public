@@ -1,0 +1,93 @@
+{{ 'trending-articles.out.css' | asset_url | stylesheet_tag }}
+
+{% liquid 
+    assign header = section.settings.header
+    assign article = section.settings.article
+    assign sorted_articles = blog.articles | sort: 'popularity' | reverse
+
+%}
+
+<div class="trending-articles trending-articles--{{ section.id }}">
+    <div class="container container--small">
+        <div class="trending-articles__content">
+            {% for article in sorted_articles %}
+                {% if forloop.first %}
+                    <div class="trending-articles__main">
+                            {% if header != blank %}
+                                <h2 class="trending-articles__heading heading-h2 heading-h2-md">{{ header }}</h2>
+                            {% endif %}
+                            <div class="trending-articles__article">
+                                <div class="trending-articles__overflow"> </div>
+                                <div class="trending-articles__article-img">
+                                    {{
+                                        article.image 
+                                        | image_url: width: 1780
+                                        | image_tag:
+                                            width: imageWidth,
+                                            height: imageHeight,
+                                            sizes: '100vw',
+                                            widths: '375, 550, 750, 1100, 1500, 1780',
+                                            alt: article.image.alt,
+                                            class: 'lazy',
+                                            loading: 'lazy'
+                                    }}
+                                </div>
+                                <div class="trending-articles__overflow-content">
+                                    <h2 class="heading-h2 heading-h2-md">{{ article.title }}</h2>
+                                    <a href="{{ article.url }}" class="trending-articles__read-more cta1-l cta1-l-md">
+                                        Read more
+                                    </a>  
+                                </div>
+                            </div> 
+                    </div>
+                {% endif %}
+            {% endfor %}
+            <div class="trending-articles__secondary">
+                {% for article in sorted_articles %}
+                    {% if forloop.index == 2 or forloop.index == 3 %}
+                        <div class="trending-articles__article">
+                            <div class="trending-articles__overflow"> </div>
+                            <div class="trending-articles__article-img">
+                                {{
+                                    article.image 
+                                    | image_url: width: 750
+                                    | image_tag:
+                                        width: imageWidth,
+                                        height: imageHeight,
+                                        sizes: '100vw',
+                                        widths: '375, 550, 750',
+                                        alt: article.image.alt,
+                                        class: 'lazy',
+                                        loading: 'lazy'
+                                }}
+                            </div>
+                            <div class="trending-articles__overflow-content">
+                                    <h2 class="heading-h3 heading-h3-md">{{ article.title }}</h2>
+                                    <a href="{{ article.url }}" class="trending-articles__read-more cta1-l cta1-l-md">
+                                        Read more
+                                    </a>  
+                            </div>
+                        </div> 
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{% schema %}
+  {
+    "name": "Trending articles",
+    "settings": [
+        {
+            "type": "text",
+            "id": "header",
+            "label": "Header"
+        }
+    ],
+    "presets": [
+      {
+        "name": "Trending articles"
+      }
+    ]
+  }
+{% endschema %}

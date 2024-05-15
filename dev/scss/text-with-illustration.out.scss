@@ -1,0 +1,105 @@
+@import "./settings/variables";
+@import "./settings/mixins";
+
+.text-with-illustration {
+    position: relative;
+
+    @include media-breakpoint-down(lg){
+        padding-bottom: 80px;
+    }
+    
+    // .text-with-illustration__video
+
+    &__video {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        aspect-ratio: 820/800;
+        overflow: hidden;
+
+        .mobile {
+            display: none;
+        }
+
+        @include media-breakpoint-down(xl){
+            aspect-ratio: 343/339;
+            max-width: 500px;
+        }
+        @include media-breakpoint-down(lg){
+            position: relative;
+            margin: 0 auto;
+            .desktop {
+                display: none;
+            }
+
+            .mobile {
+                display: block;
+            }
+        }
+        video {
+            max-width: 100%;
+            object-fit: cover;
+            height: 100%;
+            @include media-breakpoint-down(xl){
+                object-fit: contain;
+            }
+
+            @include media-breakpoint-down(xl){
+                object-fit: cover;
+            }
+        }
+    }
+
+    // .text-with-illustration__content
+
+    &__content {
+        max-width: 760px;
+        padding: 222px 0 222px;
+        position: relative;
+        z-index: 2;
+
+        @include media-breakpoint-down(xxl){
+            max-width: 520px;
+        }
+
+        @include media-breakpoint-down(lg){
+            padding: 80px 0 24px;
+            max-width: 100%;
+        }
+    }
+
+    // .text-with-illustration__header
+
+    &__header {
+        color: $white;
+        @include media-breakpoint-down(lg){
+            margin-bottom: 18px;
+        }
+    }
+
+    // .text-with-illustration__richtext
+
+    &__richtext {
+        color: $white;
+        margin-top: 16px;
+        & > * {
+            margin: 0;
+        }
+        @include media-breakpoint-down(lg){
+            margin-top: 0;
+        }
+    }
+
+    // .text-with-illustration__mobile-svg
+
+    &__mobile-svg {
+        display: none;
+        justify-content: center;
+        margin-top: 24px;
+        @include media-breakpoint-down(lg){
+            display: flex;
+        }
+    }
+}
+

@@ -1,0 +1,231 @@
+@import "./settings/variables";
+@import "./settings/mixins";
+
+.feedback-product {
+  transition: $duration-default;
+  // .feedback-product__box
+
+  &__box {
+  }
+
+  // .feedback-product__title
+
+  &__title {
+    h2 {
+      letter-spacing: 0.96px;
+    }
+    margin-bottom: 32px;
+  }
+
+  // .feedback-product__slider
+
+  &__slider {
+    max-width: 921px;
+    width: 100%;
+    @include media-breakpoint-down(md) {
+      max-width: 100%;
+    }
+  }
+
+  // .feedback-product__slide
+
+  &__slide {
+  }
+
+  // .feedback-product__slide-box
+
+  &__slide-box {
+    min-height: 472px;
+    border-radius: 64px;
+    border: 1px solid $black;
+    background: $white;
+    backdrop-filter: blur(2px);
+    background-color: $white;
+    @include media-breakpoint-down(md) {
+      border-radius: 48px;
+    }
+  }
+
+  // .feedback-product__info
+
+  &__info {
+    flex: 1;
+    padding: 45px 64px;
+    margin: auto;
+    @include media-breakpoint-down(md) {
+      padding: 32px 24px;
+    }
+  }
+
+  // .feedback-product__title-slide
+
+  &__title-slide {
+    width: 100%;
+    margin-bottom: 16px;
+    h3 {
+      line-height: 120%;
+      letter-spacing: 0.64px;
+      @include media-breakpoint-down(md) {
+        font-style: italic;
+        letter-spacing: 0.48px;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  // .feedback-product__body-slide
+
+  &__body-slide {
+    font-style: normal;
+    line-height: 160%;
+    margin-bottom: 26px;
+    p {
+      margin-top: 0;
+    }
+  }
+
+  // .feedback-product__without-body-text
+
+  &__without-body-text {
+    margin-top: 48px;
+  }
+
+  // .feedback-product__bottom-slide
+
+  &__bottom-slide {
+    width: 100%;
+  }
+
+  // .feedback-product__author-slide
+
+  &__author-slide {
+    color: $silver;
+    line-height: 120%;
+    letter-spacing: 2.88px;
+    text-transform: uppercase;
+    @include media-breakpoint-down(md) {
+      color: $black;
+      letter-spacing: 0.36px;
+    }
+  }
+
+  // .feedback-product__date-slide
+
+  &__date-slide {
+    @include media-breakpoint-down(md) {
+      color: $black;
+    }
+  }
+
+  // .feedback-product__img
+
+  &__img {
+    flex: 1;
+    max-width: 359px;
+    width: 100%;
+    position: relative;
+    @include media-breakpoint-down(md) {
+      padding-bottom: 88%;
+      max-width: 100%;
+    }
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 0 64px 64px 0;
+      @include media-breakpoint-down(md) {
+        border-radius: 48px 48px 0 0;
+      }
+    }
+  }
+
+  .swiper-navigation {
+    max-width: 285px;
+    width: 100%;
+    margin: 32px auto 0;
+    align-items: center;
+    justify-content: space-between;
+    @include media-breakpoint-down(md) {
+      max-width: 258px;
+    }
+    .swiper-button-next {
+      min-width: 48px;
+      height: 48px;
+      position: static;
+      display: block !important;
+      margin: 0 !important;
+      background-image: url("https://cdn.shopify.com/s/files/1/0625/2150/8004/files/Icon_Button_next.svg?v=1697005859");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 100%;
+      &::after {
+        content: none;
+      }
+    }
+    .swiper-pagination {
+      position: static;
+      margin: 0 40px;
+      display: flex;
+      align-items: center;
+      .swiper-pagination-bullet {
+        position: relative;
+        min-width: 4px;
+        width: 4px;
+        height: 4px;
+        background-color: $black !important;
+        border-radius: 8px;
+        opacity: 1 !important;
+        &::before {
+          content: "";
+          display: block;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 4px;
+          bottom: 0;
+          background-color: $black !important;
+          border-radius: 8px;
+          z-index: 2;
+        }
+        &.swiper-pagination-bullet-active {
+          width: 74px;
+          display: block;
+          background-color: #7272725c !important;
+          transition: $duration-default;
+          @include media-breakpoint-down(md) {
+            width: 50px;
+          }
+          &::before {
+            animation-name: line;
+          }
+        }
+      }
+    }
+    .swiper-button-prev {
+      min-width: 48px;
+      height: 48px;
+      position: static;
+      display: block !important;
+      margin: 0 !important;
+      background-image: url("https://cdn.shopify.com/s/files/1/0625/2150/8004/files/Icon_Button_prev.svg?v=1697005975");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 100%;
+      &::after {
+        content: none;
+      }
+    }
+  }
+}
+
+@keyframes line {
+  from {
+    width: 4px;
+  }
+  to {
+    width: 100%;
+  }
+}

@@ -1,0 +1,162 @@
+@import "./settings/variables";
+@import "./settings/mixins";
+
+.videos-with-text {
+    overflow: hidden;
+    // .couple-videos__media
+    &__media {
+        display: flex;
+        position: relative;
+
+
+        @include media-breakpoint-down(lg) {
+           flex-direction: column;
+        }
+    }
+
+    // .couple-videos__content
+
+    &__content {
+        overflow: hidden;
+        position: relative;
+        height: 800px;
+
+        &.first {
+            width: 57.8%;
+        }
+
+        &.second {
+            width: calc(100% - 57.8%);
+        }
+
+        @include media-breakpoint-down(big-xl){
+            &.first {
+                width: 55.84%;
+            }
+    
+            &.second {
+                width: calc(100% - 55.84%);
+            }
+        }
+
+        @include media-breakpoint-down(xxxl){
+            &.first {
+                width: 56.9%;
+            }
+    
+            &.second {
+                width: calc(100% - 56.9%);
+            }
+        }
+
+        @include media-breakpoint-down(lg) {
+            height: 503px;
+            &.first {
+                width: 100%;
+                border-right: none;
+            }
+    
+            &.second {
+                width: 100%;
+            }
+        }
+        
+        video {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            transform: scale(1.01);
+        }
+
+        .placeholder-svg {
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+
+        img {
+            height: 100%;
+            object-fit: cover;
+            width: 100%;
+        }
+    }
+
+    // .videos-with-text__overflow-content
+
+	&__overflow-content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        z-index: 8;
+        display: flex;
+        align-items: center;
+
+        .container {
+            width: 100%;
+            @include media-breakpoint-down(lg) {
+               padding: 0;
+               position: relative;
+            }
+        }
+
+        @include media-breakpoint-down(lg) {
+            align-items: flex-start;
+        }
+    }
+
+	// .videos-with-text__overflow-circle
+
+	&__overflow-circle {
+        width: 690px;
+        height: 690px;
+        background-color: $white;
+        border-radius: 50%;
+        padding: 77px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        @include media-breakpoint-down(xxl) {
+            width: 590px;
+            height: 590px;
+            padding: 57px;
+        }
+
+        @include media-breakpoint-down(xl) {
+            width: 490px;
+            height: 490px;
+        }
+
+        @include media-breakpoint-down(xl) {
+            width: 423px;
+            height: 423px;
+            padding: 40px;
+            text-align: center;
+        }
+
+        @include media-breakpoint-down(lg) {
+            margin: 40px auto;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+
+	// .videos-with-text__overflow-header
+
+	&__overflow-header {
+        margin-bottom: 16px;
+        color: $white-900;
+	}
+
+	// .videos-with-text__overflow-text
+
+	&__overflow-text {
+        color: $white-900;
+	}
+}
+
+
+

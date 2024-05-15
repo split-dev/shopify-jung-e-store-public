@@ -1,0 +1,434 @@
+{
+  "sections": {
+    "banner": {
+      "type": "main-collection-banner",
+      "disabled": true,
+      "settings": {
+        "show_collection_description": false,
+        "show_collection_image": false,
+        "color_scheme": "background-1"
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "disabled": true,
+      "settings": {
+        "products_per_page": 16,
+        "columns_desktop": 4,
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "enable_filtering": true,
+        "filter_type": "horizontal",
+        "enable_sorting": true,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "4a2fb173-d209-4e8e-be6b-1856b0f3492b": {
+      "type": "collection-title",
+      "settings": {
+      }
+    },
+    "38e700d0-4545-4c65-bcfa-391afc677bc0": {
+      "type": "jung-collection-nav",
+      "blocks": {
+        "4706ca02-a668-4ca1-911b-928bc57db57b": {
+          "type": "item",
+          "settings": {
+            "block_title": "MASTER FORMULA",
+            "icon_1": "essentials",
+            "icon_text_1": "Foundation",
+            "anchor_link_1": "Master Formula",
+            "icon_2": "c-nav-fasting",
+            "icon_text_2": "",
+            "anchor_link_2": "",
+            "icon_3": "c-nav-essentials",
+            "icon_text_3": "",
+            "anchor_link_3": "",
+            "icon_4": "c-nav-essentials",
+            "icon_text_4": "",
+            "anchor_link_4": ""
+          }
+        },
+        "85d88aa9-02cf-410a-a951-11e43f4e3de9": {
+          "type": "item",
+          "settings": {
+            "block_title": "LONGEVITY BOOSTERS",
+            "icon_1": "fasting",
+            "icon_text_1": "Fasting",
+            "anchor_link_1": "FASTING & CALORIC RESTRICTION",
+            "icon_2": "glucose",
+            "icon_text_2": "Glucose",
+            "anchor_link_2": "Blood glucose x longevity",
+            "icon_3": "sleep",
+            "icon_text_3": "Sleep",
+            "anchor_link_3": "Sleep optimization",
+            "icon_4": "skin",
+            "icon_text_4": "Skin",
+            "anchor_link_4": "Skin barrier"
+          }
+        },
+        "f223e053-80a1-420d-893a-12f128c67b84": {
+          "type": "item",
+          "settings": {
+            "block_title": "TEST & TRACK",
+            "icon_1": "testing",
+            "icon_text_1": "Testing",
+            "anchor_link_1": "Testing",
+            "icon_2": "c-nav-testing",
+            "icon_text_2": "",
+            "anchor_link_2": "",
+            "icon_3": "c-nav-essentials",
+            "icon_text_3": "",
+            "anchor_link_3": "",
+            "icon_4": "c-nav-essentials",
+            "icon_text_4": "",
+            "anchor_link_4": ""
+          }
+        },
+        "5e96d566-fd8f-43ad-a642-8df89edaf621": {
+          "type": "item",
+          "disabled": true,
+          "settings": {
+            "block_title": "Save",
+            "icon_1": "bundles",
+            "icon_text_1": "Bundles",
+            "anchor_link_1": "Bundles",
+            "icon_2": "c-nav-essentials",
+            "icon_text_2": "",
+            "anchor_link_2": "",
+            "icon_3": "c-nav-essentials",
+            "icon_text_3": "",
+            "anchor_link_3": "",
+            "icon_4": "c-nav-essentials",
+            "icon_text_4": "",
+            "anchor_link_4": ""
+          }
+        }
+      },
+      "block_order": [
+        "4706ca02-a668-4ca1-911b-928bc57db57b",
+        "85d88aa9-02cf-410a-a951-11e43f4e3de9",
+        "f223e053-80a1-420d-893a-12f128c67b84",
+        "5e96d566-fd8f-43ad-a642-8df89edaf621"
+      ],
+      "settings": {
+      }
+    },
+    "8e6f91dc-ba6b-4794-b1cc-54c2196c4cfe": {
+      "type": "collection-product",
+      "blocks": {
+        "3ca1cf92-edbf-4056-a514-776a67119d4e": {
+          "type": "Product",
+          "settings": {
+            "product": "longevity-foundation-master-longevity-protocol",
+            "testing_product": false,
+            "product_description": "",
+            "background_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "3ca1cf92-edbf-4056-a514-776a67119d4e"
+      ],
+      "settings": {
+        "navbar_item": "Essentials",
+        "time": "",
+        "text_color": "#000000",
+        "top_border": false,
+        "bottom_border": false,
+        "icon_svg": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" width=\"84\" height=\"84\" viewbox=\"0 0 84 84\" fill=\"none\"><rect width=\"83\" height=\"83\" x=\".5\" y=\".5\" fill=\"#000\" rx=\"41.5\"><\/rect><circle cx=\"41.594\" cy=\"41.596\" r=\"21.712\" stroke=\"#fff\"><\/circle><path stroke=\"#fff\" d=\"M38.86 51.693v.5h5.47v-7.546h7.861v-5.292h-7.86v-7.546H38.86v7.546H31v5.292h7.86v7.046Z\"><\/path><rect width=\"83\" height=\"83\" x=\".5\" y=\".5\" stroke=\"#fff\" rx=\"41.5\"><\/rect><\/svg>",
+        "title": "The Master Formula",
+        "subtitle": "",
+        "text": "<p>Over the past decade, science has begun mapping the root causes of biological aging. Known as 'The 12 Hallmarks of Aging', this offers us a framework to address each driver of aging, one by one. With this newfound understanding, specific 'longevity molecules' have drawn attention for their unique ability to target each hallmark. These are not just 'health' supplements - longevity molecules are selected and studied for their specific ability to intervene within the complex mechanisms of aging. <\/p>",
+        "video": "shopify:\/\/files\/videos\/essentials-compressed.mp4"
+      }
+    },
+    "01dd860f-1bf3-4b6e-8c86-06b485ec1ff1": {
+      "type": "collection-product",
+      "blocks": {
+        "eb49a519-a716-4d73-b718-bca72cd426e4": {
+          "type": "Product",
+          "settings": {
+            "product": "fasting-tonic",
+            "testing_product": false,
+            "product_description": "",
+            "background_color": "#F95123"
+          }
+        }
+      },
+      "block_order": [
+        "eb49a519-a716-4d73-b718-bca72cd426e4"
+      ],
+      "settings": {
+        "navbar_item": "Fasting",
+        "time": "",
+        "text_color": "#ffffff",
+        "top_border": false,
+        "bottom_border": false,
+        "icon_svg": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" width=\"84\" height=\"84\" viewbox=\"0 0 84 84\" fill=\"none\"><rect width=\"84\" height=\"84\" fill=\"#000\" rx=\"42\"><\/rect><g clip-path=\"url(#a)\"><path stroke=\"#fff\" stroke-linecap=\"round\" d=\"M34.248 22.483c3.12 7.012 12.626 9.506 8.102 14.805-4.525 5.298-10.453 5.921-13.885 3.896-2.746-1.621-4.68-.676-5.304 0-.78-.52-2.746-.967-4.368 1.402-2.028 2.96-3.9 13.557 4.836 16.83 6.989 2.618 12.164-.1 13.88-1.659m0 0c-1.525-.46-4.157-1.38-6.513-3.532m6.513 3.532c3.842.502 8.932.7 13.908-.543m-20.421-2.99c-1.153-1.053-2.171-2.58-2.782-4.007-2.414-5.64-5.053-4.67-5.521-1.554-.468 3.117 3.311 7.743 8.303 5.562Zm20.421 2.99c1.3.405 4.256 2.295 5.13 6.41m-5.13-6.41c2.51-.627 4.434-1.27 6.377-2.342m0 0c5.598-3.089 9.687-8.837 9.046-18.262-1.23-18.104-18.619-11.943-22.207-12.41-.916-.273-2.943-1.7-3.726-5.227m16.887 35.899c1.3 1.618 4.025 5.915 4.525 10.154\"><\/path><circle cx=\"53.394\" cy=\"41.883\" r=\"9.281\" stroke=\"#fff\" stroke-linecap=\"round\"><\/circle><path stroke=\"#fff\" stroke-linecap=\"round\" d=\"M58.447 41.884a5.051 5.051 0 1 1-10.103 0\"><\/path><circle cx=\"48.342\" cy=\"39.416\" r=\".705\" fill=\"#fff\"><\/circle><circle cx=\"58.447\" cy=\"39.416\" r=\".705\" fill=\"#fff\"><\/circle><\/g><defs><clippath id=\"a\"><path fill=\"#fff\" d=\"M16.152 16.154h51.692v51.692H16.152z\"><\/path><\/clippath><\/defs><\/svg>",
+        "title": "FASTING & CALORIC RESTRICTION",
+        "subtitle": "",
+        "text": "<p>Intermittent fasting and caloric restriction have garnered significant interest for their potential to enhance healthy longevity. These practices not only stimulate autophagy, cellular renewal,  reduced oxidative stress, and promote mitochondrial efficiency, but they also improve metabolic health, including better glucose regulation and insulin sensitivity. In fact, a landmark study by Columbia University (the 'CALERIE trial’) showed that caloric restriction can slow the pace of biological aging in humans as measured by a DNA methylation test.<\/p>",
+        "video": "shopify:\/\/files\/videos\/fastingvideo.mp4"
+      }
+    },
+    "eeb8fee2-e9d3-499a-9700-3e397b5d00a1": {
+      "type": "collection-product",
+      "blocks": {
+        "ff374688-b1f4-4efc-9be0-7ab63860a680": {
+          "type": "Product",
+          "settings": {
+            "product": "glucose-blocker",
+            "testing_product": false,
+            "product_description": "",
+            "background_color": "#7FB069"
+          }
+        }
+      },
+      "block_order": [
+        "ff374688-b1f4-4efc-9be0-7ab63860a680"
+      ],
+      "settings": {
+        "navbar_item": "Glucose",
+        "time": "",
+        "text_color": "#000000",
+        "top_border": false,
+        "bottom_border": false,
+        "icon_svg": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" width=\"84\" height=\"84\" viewbox=\"0 0 84 84\" fill=\"none\"><rect width=\"84\" height=\"84\" fill=\"#000\" rx=\"42\"><\/rect><g clip-path=\"url(#a)\"><g filter=\"url(#b)\"><path stroke=\"#fff\" d=\"M51.476 26.654v.5h2.968v-3.458h3.458v-2.968h-3.458V17.27h-2.968v3.458h-3.458v2.968h3.458v2.958Z\"><\/path><\/g><path stroke=\"#fff\" stroke-linecap=\"round\" d=\"M35.958 23.204v.959a3.75 3.75 0 0 1-3.75 3.75v0a3.75 3.75 0 0 0-3.748 3.748v.436a4.185 4.185 0 0 0 4.185 4.186h12.73m-9.417-4.36v0a6.976 6.976 0 0 0 6.976-6.975v-3.14m2.441 10.115h4.011a4.534 4.534 0 0 1 4.534 4.534v0a4.534 4.534 0 0 1-4.534 4.534h-18.31M25.843 38.9v0a7.673 7.673 0 0 0 7.673 7.673h16.741m5.58-2.965v0a7.848 7.848 0 0 1-7.847 7.848H34.389m-5.93-2.616v0a7.673 7.673 0 0 0 7.674 7.673h5.929m8.196-2.442v.585a6.043 6.043 0 0 1-6.043 6.042v0c-.707 0-1.281.574-1.281 1.282v5.52m-6.104-8.72v0a4.218 4.218 0 0 1 2.093 3.643v5.425\"><\/path><\/g><defs><clippath id=\"a\"><path fill=\"#fff\" d=\"M16.152 16.154h51.692v51.692H16.152z\"><\/path><\/clippath><filter id=\"b\" width=\"240.885\" height=\"240.885\" x=\"-67.482\" y=\"-98.231\" color-interpolation-filters=\"sRGB\" filterunits=\"userSpaceOnUse\"><feflood flood-opacity=\"0\" result=\"BackgroundImageFix\"><\/feflood><fegaussianblur in=\"BackgroundImageFix\" stddeviation=\"57.5\"><\/fegaussianblur><fecomposite in2=\"SourceAlpha\" operator=\"in\" result=\"effect1_backgroundBlur_880_48573\"><\/fecomposite><feblend in=\"SourceGraphic\" in2=\"effect1_backgroundBlur_880_48573\" result=\"shape\"><\/feblend><\/filter><\/defs><\/svg>",
+        "title": "Glucose Restriction",
+        "subtitle": "",
+        "text": "<p>Maintaining healthy blood sugar levels is pivotal for longevity, given the unprecedented level of sugar and carbohydrates in modern diets. Healthy blood sugar combats insulin resistance, chronic inflammation, and supports hormonal health, crucial for systemic well-being. It also maintains mitochondrial function and minimizes harmful by-products that damage cells and causes wrinkles. Importantly, stable glucose levels influence transcriptional pathways and activate longevity genes, such as hTERT and FOXO proteins, which protect DNA integrity and enhance metabolic flexibility. <\/p>",
+        "video": "shopify:\/\/files\/videos\/glucosevideo.mp4"
+      }
+    },
+    "0170e59f-cc76-40e6-a0eb-6e8b7fb37c45": {
+      "type": "collection-product",
+      "blocks": {
+        "a6b93845-fb6f-470e-bc67-30eec976bf33": {
+          "type": "Product",
+          "settings": {
+            "product": "advanced-sleep-repair",
+            "testing_product": false,
+            "product_description": "",
+            "background_color": "#C0A6E1"
+          }
+        }
+      },
+      "block_order": [
+        "a6b93845-fb6f-470e-bc67-30eec976bf33"
+      ],
+      "settings": {
+        "navbar_item": "Sleep",
+        "time": "",
+        "text_color": "#000000",
+        "top_border": false,
+        "bottom_border": false,
+        "icon_svg": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" width=\"84\" height=\"85\" viewbox=\"0 0 84 85\" fill=\"none\"><rect width=\"84\" height=\"84\" y=\".5\" fill=\"#000\" rx=\"42\"><\/rect><path stroke=\"#fff\" d=\"M29.323 41.846v.5h2.431V39.83h2.515V37.4h-2.515v-2.516H29.324V37.4h-2.516V39.83h2.515v2.016ZM44.04 26.5v.5h2.074v-1.887H48V23.04h-1.886v-1.886H44.04v1.886h-1.886v2.073h1.886V26.5Z\"><\/path><mask id=\"a\" fill=\"#fff\"><path fill-rule=\"evenodd\" d=\"M38.08 54.335c9.826 0 17.791-7.965 17.791-17.791 0-.945-.074-1.873-.215-2.778a17.75 17.75 0 0 1 6.149 13.453c0 9.826-7.966 17.792-17.792 17.792-8.88 0-16.242-6.507-17.575-15.014a17.722 17.722 0 0 0 11.642 4.338Z\" clip-rule=\"evenodd\"><\/path><\/mask><path fill=\"#fff\" d=\"m55.656 33.766.654-.756-2.066-1.79.424 2.7.988-.154ZM26.438 49.997l.654-.756-2.066-1.789.424 2.7.988-.155ZM54.87 36.544c0 9.273-7.518 16.791-16.791 16.791v2c10.378 0 18.791-8.413 18.791-18.791h-2Zm-.203-2.623c.133.854.203 1.73.203 2.623h2c0-.997-.078-1.977-.228-2.933l-1.975.31Zm.333.6a16.75 16.75 0 0 1 5.804 12.698h2a18.75 18.75 0 0 0-6.495-14.21L55 34.523Zm5.804 12.698c0 9.274-7.518 16.792-16.792 16.792v2c10.379 0 18.792-8.413 18.792-18.792h-2ZM44.013 64.011c-8.38 0-15.329-6.141-16.588-14.169l-1.975.31c1.408 8.986 9.182 15.859 18.563 15.859v-2ZM38.08 53.335a16.722 16.722 0 0 1-10.988-4.094l-1.31 1.512a18.722 18.722 0 0 0 12.298 4.582v-2Z\" mask=\"url(#a)\"><\/path><\/svg>",
+        "title": "Sleep optimization",
+        "subtitle": "",
+        "text": "<p>Sleep is nature’s longevity miracle: some of the most important biological rejuvenation mechanisms – like cellular repair, muscle growth, protein synthesis - happen during sleep. Sleep is the common denominator of brain health, hormone health, mental health, heart health, metabolic health, and immune health. In fact, it’s been found that the health risks associated with poor sleep are comparable to smoking. But not all sleep is created equal, and while it may be tempting to focus on sleep length, it’s sleep quality that can make the biggest difference. Sadly, as you age, your circadian rhythm dysregulates, life gets in the way,  and your body has an increasingly difficult time getting quality sleep and its myriad of benefits. <\/p>",
+        "video": "shopify:\/\/files\/videos\/sleepvideo.mp4"
+      }
+    },
+    "0dd73c44-0be6-44e1-9041-52a3018d7edd": {
+      "type": "collection-product",
+      "blocks": {
+        "abe9ec21-680c-405e-b76b-e469f4482dcf": {
+          "type": "Product",
+          "settings": {
+            "product": "cellular-skin-renewal",
+            "testing_product": false,
+            "product_description": "",
+            "background_color": "#F6AE2D"
+          }
+        }
+      },
+      "block_order": [
+        "abe9ec21-680c-405e-b76b-e469f4482dcf"
+      ],
+      "settings": {
+        "navbar_item": "Skin",
+        "time": "",
+        "text_color": "#000000",
+        "top_border": false,
+        "bottom_border": false,
+        "icon_svg": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" width=\"84\" height=\"85\" viewbox=\"0 0 84 85\" fill=\"none\"><rect width=\"84\" height=\"84\" y=\".5\" fill=\"#000\" rx=\"42\"><\/rect><path stroke=\"#fff\" stroke-linecap=\"round\" d=\"M18.574 63.5v-7.27h7.473m0 0v7.27m0-7.27h7.731m0 0v7.27m0-7.27h7.73m0 0v7.27m0-7.27h7.732m0 7.27v-7.27m0 0h7.73m0 7.27v-7.27m0 0h7.731v7.27\"><\/path><path stroke=\"#fff\" d=\"M23.33 45.73v.5H25.94V43.4h2.83v-2.609h-2.83v-2.83H23.33v2.83H20.5V43.401h2.83v2.33ZM42.398 36.846v.5H44.828V34.83h2.516V32.4h-2.516v-2.516H42.398V32.4h-2.516V34.83h2.516v2.016ZM59.852 44.115v.5h2.252v-2.2h2.2v-2.253h-2.2v-2.2h-2.252v2.2H57.65v2.252h2.2v1.701Z\"><\/path><circle cx=\"30.693\" cy=\"24.732\" r=\"2.423\" stroke=\"#fff\"><\/circle><circle cx=\"46.037\" cy=\"48.961\" r=\"1.615\" stroke=\"#fff\"><\/circle><circle cx=\"61.382\" cy=\"25.538\" r=\".808\" stroke=\"#fff\"><\/circle><\/svg>",
+        "title": "Skin Health",
+        "subtitle": "",
+        "text": "<p>Skin is your largest organ - it's literally holding you together. But keeping skin young and healthy is not just for show - it's a real health concern. Skin plays a critical role in protection, sensation, and temperature regulation, and is the body’s largest buildup of senescent cells. These ‘zombie cells’ leave the skin, cause damage, and accelerates aging throughout the rest of the body. Sadly, most skincare is cosmetic, failing to address the deeper mechanisms of skin aging. Longevity Science heralds a new era for this organ, as it maps out the unique process of dermal aging and its complex relationship with the body's health.<\/p>",
+        "video": "shopify:\/\/files\/videos\/skinvideo.mp4"
+      }
+    },
+    "095d5b3e-03f4-4f94-b18b-a3e069f43c41": {
+      "type": "collection-product",
+      "blocks": {
+        "fc45ee1b-1f90-48c2-b311-06229457a473": {
+          "type": "Product",
+          "settings": {
+            "product": "bioage-testing",
+            "testing_product": true,
+            "product_description": "",
+            "background_color": "#D0D0D0"
+          }
+        }
+      },
+      "block_order": [
+        "fc45ee1b-1f90-48c2-b311-06229457a473"
+      ],
+      "settings": {
+        "navbar_item": "Testing",
+        "time": "",
+        "text_color": "#000000",
+        "top_border": false,
+        "bottom_border": false,
+        "icon_svg": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" width=\"84\" height=\"85\" viewbox=\"0 0 84 85\" fill=\"none\"><rect width=\"84\" height=\"84\" y=\".5\" fill=\"#000\" rx=\"42\"><\/rect><circle cx=\"41.594\" cy=\"42.096\" r=\"21.712\" stroke=\"#fff\"><\/circle><path stroke=\"#fff\" stroke-linecap=\"round\" d=\"M59.268 42.097c0 9.76-7.913 17.673-17.673 17.673-9.76 0-17.673-7.913-17.673-17.673 0-9.76 7.912-17.673 17.673-17.673 9.76 0 17.673 7.912 17.673 17.673Z\"><\/path><path stroke=\"#fff\" d=\"M40.378 45.73v.5H42.808v-2.515h2.516V41.285H42.81v-2.516H40.379v2.515h-2.516v2.431h2.515v2.015Z\"><\/path><\/svg>",
+        "title": "Testing",
+        "subtitle": "",
+        "text": "<p>COMING FALL 2024. Biological age testing is  central to longevity science. By distinguishing between chronological age — the number of years since birth — and biological age, reflecting the true condition of a body, we're offered a new way of measuring health. But a biological age is just the beginning - biomarker testing, comprehensive health diagnostics, and simple at-home measurement tools are your trusted partners in achieving longevity goals. <\/p>",
+        "video": "shopify:\/\/files\/videos\/testing-compressed.mp4"
+      }
+    },
+    "9d848f97-01a9-4f66-a248-adc3a89d4c87": {
+      "type": "collection-product",
+      "blocks": {
+        "427195f8-816a-499d-984e-fcb174d07e00": {
+          "type": "Product",
+          "settings": {
+            "product": "fasting-tonic",
+            "testing_product": false,
+            "product_description": "",
+            "background_color": "linear-gradient(173deg, rgba(192, 166, 225, 1) 5.75%, rgba(243, 90, 49, 1) 110.76%)"
+          }
+        },
+        "17aaf25a-669d-4cea-812a-c35c32e18624": {
+          "type": "Product",
+          "settings": {
+            "product": "glucose-blocker",
+            "testing_product": false,
+            "product_description": "",
+            "background_color": "linear-gradient(173deg, rgba(128, 177, 106, 1) 5.75%, rgba(247, 175, 46, 1) 110.76%)"
+          }
+        },
+        "5f7338d5-8114-43ac-8855-f7df20da59d3": {
+          "type": "Product",
+          "settings": {
+            "product": "longevity-foundation-master-longevity-protocol",
+            "testing_product": false,
+            "product_description": "",
+            "background_color": "linear-gradient(173deg, rgba(193, 167, 226, 1) 5.62%, rgba(56, 32, 87, 1) 146.06%)"
+          }
+        },
+        "e78eb3fe-bf7d-474c-a3bf-e30d25b3c39e": {
+          "type": "Product",
+          "settings": {
+            "product": "glucose-blocker",
+            "testing_product": false,
+            "product_description": "",
+            "background_color": "linear-gradient(173deg, rgba(249, 81, 35, 1) 5.62%, rgba(247, 175, 46, 1) 146.06%)"
+          }
+        }
+      },
+      "block_order": [
+        "427195f8-816a-499d-984e-fcb174d07e00",
+        "17aaf25a-669d-4cea-812a-c35c32e18624",
+        "5f7338d5-8114-43ac-8855-f7df20da59d3",
+        "e78eb3fe-bf7d-474c-a3bf-e30d25b3c39e"
+      ],
+      "disabled": true,
+      "settings": {
+        "navbar_item": "Bundles",
+        "time": "3500",
+        "text_color": "#000000",
+        "top_border": false,
+        "bottom_border": false,
+        "icon_svg": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" width=\"84\" height=\"85\" viewbox=\"0 0 84 85\" fill=\"none\"><rect width=\"84\" height=\"84\" y=\".5\" fill=\"#000\" rx=\"42\"><\/rect><g clip-path=\"url(#a)\"><path stroke=\"#fff\" d=\"M16.8 42.5v13.569l12.6 5.815M16.8 42.5l12.924-5.816M16.8 42.5l12.6 5.492M42 67.7V53.484M42 67.7l-12.6-5.816M42 67.7l12.923-6.122M42 53.484l-12.6-5.492M42 53.484l12.6-5.636M66.555 42.5v13.569l-11.631 5.51m11.63-19.08-11.953-5.815M66.555 42.5 54.6 47.848M29.724 28.93v12.923L42 47.023M29.724 28.93 42 23.115l12.6 5.816m-24.877 0 5.456 2.584M42 47.023l12.6-5.17V28.932M42 47.023V34.746m12.6-5.815-6.3 2.907M42 34.746l-6.82-3.23m6.82 3.23 6.3-2.908M29.4 61.884V47.992m0 0 5.78-16.477m0 0L42 27.638m12.6 20.21.324 13.73m-.323-13.73-6.3-16.01m0 0-6.3-4.2m0 0 3.85-7.7a3.273 3.273 0 0 1 2.133-1.711c3.22-.805 5.455 3.142 3.108 5.49l-.189.188a3.347 3.347 0 0 1-1.165.757L42 27.638Zm0 0-3.03-7.069a3.828 3.828 0 0 0-2.976-2.281l-.678-.097c-2.7-.386-4.76 2.364-3.631 4.846a3.452 3.452 0 0 0 2.05 1.847l8.265 2.754Z\"><\/path><\/g><defs><clippath id=\"a\"><path fill=\"#fff\" d=\"M16.152 16.654h51.692v51.692H16.152z\"><\/path><\/clippath><\/defs><\/svg>",
+        "title": "Bundles",
+        "subtitle": "",
+        "text": "<p>Skin is your largest organ - and it's literally holding you together. And unlike the rest of your organs, (which are protected by the skin barrier), your skin is constantly exposed to environmental damage, resulting in your body’s largest buildup of senescent cells. And these zombie cells don’t just make your skin age: they travel into your bloodstream, and wreak havoc on the rest of your body. Keeping skin young and healthy is not just for show - it's a health concern. <\/p>",
+        "video": "shopify:\/\/files\/videos\/bundles-compressed.mp4"
+      }
+    },
+    "ca60ea4e-b157-400e-8dac-16a3e06fd800": {
+      "type": "full-bg-text",
+      "blocks": {
+        "template--17130863132836__ca60ea4e-b157-400e-8dac-16a3e06fd800-icon-1": {
+          "type": "icon",
+          "settings": {
+            "svg_icon": "shopify:\/\/shop_images\/Group_2.svg",
+            "svg_size_desktop": 385,
+            "svg_size_mobile": 100,
+            "svg_size_mobile_large": 254,
+            "heading_icon": ""
+          }
+        },
+        "template--17130863132836__ca60ea4e-b157-400e-8dac-16a3e06fd800-heading-1": {
+          "type": "heading",
+          "settings": {
+            "heading": "This is just the beginning"
+          }
+        },
+        "template--17130863132836__ca60ea4e-b157-400e-8dac-16a3e06fd800-text-1": {
+          "type": "text",
+          "settings": {
+            "text": ""
+          }
+        },
+        "template--17130863132836__ca60ea4e-b157-400e-8dac-16a3e06fd800-button-1": {
+          "type": "button",
+          "settings": {
+            "button_label": "Our Science",
+            "button_link": "shopify:\/\/pages\/our-science",
+            "button_style_secondary": true,
+            "button_label_2": "",
+            "button_link_2": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--17130863132836__ca60ea4e-b157-400e-8dac-16a3e06fd800-icon-1",
+        "template--17130863132836__ca60ea4e-b157-400e-8dac-16a3e06fd800-heading-1",
+        "template--17130863132836__ca60ea4e-b157-400e-8dac-16a3e06fd800-text-1",
+        "template--17130863132836__ca60ea4e-b157-400e-8dac-16a3e06fd800-button-1"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "bg_img": "shopify:\/\/shop_images\/DTS_Misc_1-compressed.jpg",
+        "bg_image_mob": "shopify:\/\/shop_images\/DTS_Misc_1-mob-compressed.jpg",
+        "padding_top": 92,
+        "padding_bottom": 132,
+        "padding_top_mb": 80,
+        "padding_bottom_mb": 80
+      }
+    },
+    "custom_liquid_iYEBQG": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<script type=\"text\/javascript\">\nvar _learnq = _learnq || [];\n\tdocument.getElementById(“ProductSubmitButton-3ca1cf92-edbf-4056-a514-776a67119d4e”).addEventListener('click',function (){\n \t\t_learnq.push(['track', 'Added to Cart', item]);\n\t});<\/script>",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "product-grid",
+    "4a2fb173-d209-4e8e-be6b-1856b0f3492b",
+    "38e700d0-4545-4c65-bcfa-391afc677bc0",
+    "8e6f91dc-ba6b-4794-b1cc-54c2196c4cfe",
+    "01dd860f-1bf3-4b6e-8c86-06b485ec1ff1",
+    "eeb8fee2-e9d3-499a-9700-3e397b5d00a1",
+    "0170e59f-cc76-40e6-a0eb-6e8b7fb37c45",
+    "0dd73c44-0be6-44e1-9041-52a3018d7edd",
+    "095d5b3e-03f4-4f94-b18b-a3e069f43c41",
+    "9d848f97-01a9-4f66-a248-adc3a89d4c87",
+    "ca60ea4e-b157-400e-8dac-16a3e06fd800",
+    "custom_liquid_iYEBQG"
+  ]
+}

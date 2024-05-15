@@ -1,0 +1,222 @@
+@import "./settings/variables";
+@import "./settings/mixins";
+
+.customer {
+    height: 100%;
+
+    // .customer__content
+
+    &__content {
+        height: 100%;
+    }
+
+    // .customer__wrapper
+   
+    &__wrapper {
+        position: relative;
+        min-height: 847px;
+        height: 100%;
+
+        @include media-breakpoint-down(md){
+            min-height: fit-content;
+        }
+    }
+
+    // .customer__title
+
+    &__title {
+        margin-bottom: 16px;
+    }
+
+    // .customer__subtitle 
+
+    &__subtitle {
+        color: $white-900;
+        max-width: 416px;
+        margin: 0;
+        .customer__sign-up-link {
+            color: $white-900;
+            display: inline-block;
+            text-decoration: none;
+            font-weight: 500;
+        }
+    }
+
+    // .customer__form
+
+    &__form {
+        .field {
+            margin: 16px 0 0 0;
+            input {
+                border-radius: 0;
+                border-bottom: 1px solid #3D3D3D;
+                background-color: transparent;
+                padding: 20px 20px 12px 0;
+                height: 58px;
+                &:focus,
+                &:not(:placeholder-shown),
+                &:-webkit-autofill {
+                    border-bottom: 1px solid $white-900;
+                    -webkit-box-shadow: 0 0 0px 1000px $white inset;
+                }
+
+                &::placeholder {
+                    color: transparent;
+                }
+            }
+
+            &::after {
+                border-radius: 0;
+                border: none;
+            }
+
+            label {
+                left: 0;
+                top: 21px;
+                font-size: 16px;
+                color: $white-800;
+            }
+
+            .delete-text {
+                position: absolute;
+                cursor: pointer;
+                top: 25px;
+                right: 0;
+                display: none;
+            }
+        }
+
+        .field input:focus,
+        .field input:not(:placeholder-shown),
+        .field input:-webkit-autofill {
+
+            & ~ label {
+                left: 0;
+                top: 0;
+                font-size: 12px;
+            }
+
+            & ~ .delete-text {
+                display: block;
+            }
+        }
+
+        .customer__submit-btn {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 24px;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+
+            .btn {
+                @include media-breakpoint-down(md){
+                    font-size: 16px;
+                    height: 47px;
+                }
+            }
+
+            .customer__recover-link  {
+                text-decoration: none;
+                color: $white-900;
+                @include media-breakpoint-down(md){
+                    font-size: 12px;
+                }
+            }
+        }
+
+        .customer__login-line {
+            height: 1px;
+            margin: 32px 0;
+            width: 100%;
+            background-color: $white-800;
+            position: relative;
+
+            span {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                color: $white-800;
+                padding: 0 12px;
+                background-color: $white;
+            }
+        }
+    }
+
+    // .customer__form-content
+
+    &__form-content {
+        max-width: 496px;
+        padding-top: 140px;
+        @include media-breakpoint-down(big-xl){
+            max-width: 424px;
+        }
+
+        @include media-breakpoint-down(md){
+            max-width: 100%;
+            width: 100%;
+            padding-top: 88px;
+            margin-bottom: 47px;
+        }
+    }
+
+    // .customer__media
+
+    &__media {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 49.2vw;
+
+        @include media-breakpoint-down(big-xl){
+            width: 43.4vw;
+        }
+
+        @include media-breakpoint-down(xxxl){
+            width: 32.22vw;
+        }
+
+        @include media-breakpoint-down(md){
+            position: unset;
+            width: 100%;
+        }
+    }
+
+    // .customer__media-content
+
+    &__media-content {
+        height: 100%;
+        @include media-breakpoint-down(md){
+            aspect-ratio: 375/302;
+            overflow: hidden;
+        }
+        img {
+            max-width: 100%;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    form {
+        margin-top: 32px;
+    }
+}
+
+.page-type-login{
+    .section-header .header__heading-logo-wrapper svg path {
+        fill: $white-900;
+    }
+}
+
+#social_login_frame {
+    height: 100px !important; 
+    margin: 0 !important;
+}
+
+#rc_login{
+   display: none !important;
+}
+

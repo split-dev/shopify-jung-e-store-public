@@ -1,0 +1,88 @@
+{{ 'article-section.out.css' | asset_url | stylesheet_tag }}
+
+{% liquid 
+    assign article = section.settings.article
+    assign border_top = section.settings.border_top
+    assign border_bottom = section.settings.border_bottom
+%}
+
+{% if border_top %}
+    {% style %} 
+        .article-section--{{ section.id }} {
+            border-top: 1px solid black;
+        }
+    {% endstyle %}
+{% endif %}
+
+{% if border_bottom %}
+    {% style %} 
+        .article-section--{{ section.id }} {
+            border-bottom: 1px solid black;
+        }
+    {% endstyle %}
+{% endif %}
+
+<div class="article-section article-section--{{ section.id }}">
+    <div class="article-section__content">
+        {% for block in section.blocks %}
+            <div class="article-section__article">
+                {{
+                    block.settings.article.image 
+                    | image_url: width: 1500
+                    | image_tag:
+                        width: imageWidth,
+                        height: imageHeight,
+                        sizes: '100vw',
+                        widths: '375, 550, 750,1100, 1500',
+                        alt: block.settings.article.image.alt,
+                        class: 'lazy',
+                        loading: 'lazy'
+                }}
+                <div class="article-section__overflow-content">
+                    <h2 class="heading-h2 heading-h2-md">{{ block.settings.article.title }}</h2>
+                    <a href="{{ block.settings.article.url }}" class="article-section__read-more cta1-l cta1-l-md">
+                        Read more
+                    </a>  
+                </div>
+            </div>  
+        {% endfor %}
+    </div>
+</div>
+{% schema %}
+  {
+    "name": "Article section",
+    "max_blocks": 2,
+    "settings": [
+        {
+            "type": "checkbox",
+            "id": "border_top",
+            "label": "Border top",
+            "default": true
+        },
+        {
+            "type": "checkbox",
+            "id": "border_bottom",
+            "label": "Border bottom",
+            "default": false
+        }
+    ],
+    "blocks": [
+        {
+            "name": "Article",
+            "type": "Article",
+            "settings": [
+                {
+                    "type": "article",
+                    "id": "article",
+                    "label": "Article"
+                }
+            ]
+        }
+    ],
+    "presets": [
+      {
+        "name": "Article section"
+      }
+    ]
+  }
+{% endschema %}

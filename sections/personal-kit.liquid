@@ -1,0 +1,237 @@
+<link rel="stylesheet" href="{{ 'personal-kit.out.css' | asset_url }}">
+<noscript>
+  {{- 'personal-kit.out.css' | asset_url | stylesheet_tag -}}
+</noscript>
+
+{% liquid
+  assign product_metafield = product.metafields.custom.section_personal_kit.value
+  assign header = section.settings.header
+  if product_metafield.section_header != blank
+    assign header = product_metafield.section_header
+  endif
+
+  assign section_description = section.settings.section_description
+  if product_metafield.section_subtitle != blank
+    assign section_description = product_metafield.section_subtitle | metafield_tag
+  endif
+
+  assign background_color = section.settings.background_color
+%}
+
+{% style %}
+  .personal-kit--{{ section.id }} .personal-kit__block {
+    background-color: {{ background_color }};
+  }
+{% endstyle %}
+
+<section class="personal-kit personal-kit--{{ section.id }}">
+  <div class="container container--medium">
+    <div class="personal-kit__header">
+      {% if header != blank %}
+        <h2 class="heading-h2 heading-h2-md">{{ header }}</h2>
+      {% endif %}
+      {% if section_description %}
+        <div class="personal-kit__section-description body-b2 body-b2-md">{{ section_description }}</div>
+      {% endif %}
+    </div>
+
+    <div class="personal-kit__wrapper">
+      <div class="personal-kit__content-block">
+        {% for block in section.blocks %}
+          {% case block.type %}
+            {% when 'one_time_purchase' %}
+              {% liquid
+                assign title = block.settings.title
+                if product_metafield.single_block_name != blank
+                  assign title = product_metafield.single_block_name
+                endif
+
+                assign image = block.settings.image
+                if product_metafield.single_block_image != blank
+                  assign image = product_metafield.single_block_image
+                endif
+
+                assign richtext = block.settings.richtext
+                if product_metafield.single_block_text != blank
+                  assign richtext = product_metafield.single_block_text | metafield_tag
+                endif
+              %}
+              <div class="personal-kit__one-time-purchase">
+                {% if title %}
+                  <h2 class="personal-kit__title caption-c2 caption-c2-md">{{ title }}</h2>
+                {%- endif -%}
+                <div class="personal-kit__block personal-kit__time-purchase">
+                  {% if image != blank %}
+                    <div class="personal-kit__media">
+                      <div class="personal-kit__img-box">
+                        {%- if image != blank -%}
+                          {{
+                            image
+                            | image_url: width: 2000
+                            | image_tag:
+                              width: imageWidth,
+                              height: imageHeight,
+                              class: 'lazy',
+                              sizes: '100vw',
+                              widths: '375, 550, 750, 1100',
+                              loading: 'lazy',
+                              alt: 'image'
+                          }}
+                        {%- endif -%}
+                      </div>
+                    </div>
+                  {% endif %}
+                  {% if richtext %}
+                    <div class="personal-kit__richtext body-b2 body-b2-md">{{ richtext }}</div>
+                  {% endif %}
+                </div>
+              </div>
+            {% when 'subscribe' %}
+              {% liquid
+                assign title = block.settings.title
+
+                if product_metafield.double_block_name != blank
+                  assign title = product_metafield.double_block_name
+                endif
+
+                assign image = block.settings.image
+                if product_metafield.double_block_image != blank
+                  assign image = product_metafield.double_block_image
+                endif
+
+                assign richtext = block.settings.richtext
+                if product_metafield.double_block_text_1_block != blank
+                  assign richtext = product_metafield.double_block_text_1_block | metafield_tag
+                endif
+
+                assign item_list = block.settings.item_list
+                if product_metafield.double_block_text_2_block != blank
+                  assign item_list = product_metafield.double_block_text_2_block | metafield_tag
+                endif
+              %}
+              <div class="personal-kit__subscribe">
+                {% if title %}
+                  <h2 class="personal-kit__title caption-c2 caption-c2-md">{{ title }}</h2>
+                {%- endif -%}
+                <div class="personal-kit__block">
+                  <div class="personal-kit__block-image">
+                    {% if image != blank %}
+                      <div class="personal-kit__media">
+                        <div class="personal-kit__img-box">
+                          {%- if image != blank -%}
+                            {{
+                              image
+                              | image_url: width: 2000
+                              | image_tag:
+                                width: imageWidth,
+                                height: imageHeight,
+                                class: 'lazy',
+                                sizes: '100vw',
+                                widths: '375, 550, 750, 1100',
+                                loading: 'lazy',
+                                alt: 'image'
+                            }}
+                          {%- endif -%}
+                        </div>
+                      </div>
+                    {% endif %}
+                    {% if richtext %}
+                      <div class="personal-kit__richtext body-b2 body-b2-md">{{ richtext }}</div>
+                    {% endif %}
+                  </div>
+                  <div class="personal-kit__block-item-list">
+                    {% if item_list %}
+                      <div class="personal-kit__richtext body-b2 body-b2-md">{{ item_list }}</div>
+                    {% endif %}
+                  </div>
+                </div>
+              </div>
+          {% endcase %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Personal kit",
+  "class": "personal-kit-section",
+  "limit": 1,
+  "settings": [
+    {
+      "type": "text",
+      "id": "header",
+      "label": "Header",
+      "default": "Your personal longevity kit, engineered for life"
+    },
+    {
+      "type": "richtext",
+      "id": "section_description",
+      "label": "Section description",
+      "default": "<p>More than just a supplement, each product is a complete protocol and lifestyle program, synergistically formulated to work best together, and with ongoing use. </p>"
+    },
+    {
+      "type": "color_background",
+      "id": "background_color",
+      "label": "Background color"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "one_time_purchase",
+      "name": "One Time Purchase",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Block title"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "richtext",
+          "id": "richtext",
+          "label": "Description"
+        }
+      ]
+    },
+    {
+      "type": "subscribe",
+      "name": "Subscribe",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Block title"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "richtext",
+          "id": "richtext",
+          "label": "Description"
+        },
+        {
+          "type": "richtext",
+          "id": "item_list",
+          "label": "Advantages"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Personal kit"
+    }
+  ]
+}
+{% endschema %}

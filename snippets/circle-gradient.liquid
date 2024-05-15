@@ -1,0 +1,30 @@
+<div class="circle-gradient" style="fill: linear-gradient(271deg, #FFF -44.94%, rgba(255, 255, 255, 0.00) 63.88%);">
+    {% if color == 'dark' %}
+        {% assign svg_color = '#000' %} 
+    {% else %}
+        {% assign svg_color = '#fff' %} 
+    {% endif %}
+    {% assign svg_id = id | append: color  %} 
+
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="234"
+      height="100%"
+      fill="none"
+      viewBox="0 0 234 647"
+      preserveAspectRatio="none">
+      <defs>
+        <linearGradient
+          id="{{svg_id}}"
+          x1="-158.392"
+          x2="218.857"
+          y1="521.088"
+          y2="522.959"
+          gradientTransform="scale(.68421 .68393)"
+          gradientUnits="userSpaceOnUse">
+          <stop offset="0" style="stop-color:{{svg_color}};stop-opacity:1" />
+          <stop offset="1" style="stop-color:{{svg_color}};stop-opacity:0" />
+        </linearGradient>
+      </defs><path d="M0 323.46C0 144.82 88.402 0 129.754 0c204.23 0 19.992 144.82 19.992 323.46 0 178.645 202.27 327.36-19.992 323.466C88.402 646.926 0 502.106 0 323.46Zm0 0" style="stroke:none;fill-rule:nonzero;fill:url(#{{svg_id}})" />
+    </svg>
+</div>

@@ -1,0 +1,79 @@
+{{ 'recharge-widget.out.css' | asset_url | stylesheet_tag }}
+
+<div class="recharge-widget" id="recharge-widget">
+  {%- liquid
+    assign current_variant = product.selected_or_first_available_variant | default: product.variants.first
+    assign current_selling_plan_allocation = current_variant.selected_selling_plan_allocation
+
+    if current_selling_plan_allocation == null and current_variant.requires_selling_plan
+      assign current_selling_plan_allocation = current_variant.selling_plan_allocations | first
+    endif
+
+    assign offer = current_selling_plan_allocation | default: current_variant
+    assign oldPrice = offer.selling_plan_allocations[0].compare_at_price
+    assign offerPrice = offer.selling_plan_allocations[0].price
+    assign discountPercent = offerPrice | times: 100 | divided_by: oldPrice
+    assign percent = 100 | minus: discountPercent
+  -%}
+
+  {% if product.selling_plan_groups.size > 0 %}
+    <div class="recharge-widget__options">
+      {% for group in product.selling_plan_groups %}
+        <fieldset>
+          <legend class="hidden">Recharge Payment Options</legend>
+          {% for selling_plan in group.selling_plans %}
+            <div class="recharge-widget__field subscribe">
+              <input
+                id="subscribe"
+                type="radio"
+                name="subscribe"
+                value="{{ selling_plan.id }}"
+                class="recharge-widget__input"
+                checked
+              >
+              <label for="subscribe" class="recharge-widget__label caption-c2 caption-c2-md">
+                <div class="recharge-widget__label-checkbox">
+                  {% render 'icons', icon: 'radio-btn' %}
+                  <div class="recharge-widget__label-text">
+                    <span class="subscribe-text">Subscribe</span>
+                    <span class="recharge-widget__percent-save">(save {{ percent }}%)</span>
+                  </div>
+                </div>
+                <div>
+                  <span class="recharge-widget__label--old-price">{{ oldPrice | money_without_trailing_zeros }}</span
+                  >&nbsp;
+                  <span class="recharge-widget__label--sale-price">
+                    {{- offerPrice | money_without_trailing_zeros -}}
+                  </span>
+                </div>
+              </label>
+              <div class="recharge-widget__checked">
+                <div class="body-b3 body-b3-md">
+                  {% render 'icons', icon: 'checked' %}
+                  Cancel anytime
+                </div>
+                <div class="body-b3 body-b3-md">
+                  {% render 'icons', icon: 'checked' %}
+                  No commitment
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+          <div class="recharge-widget__field one-time-purchase">
+            <input id="one-time-purchase" type="radio" name="subscribe" class="recharge-widget__input" value="">
+            <label for="one-time-purchase" class="recharge-widget__label caption-c2 caption-c2-md">
+              <div class="recharge-widget__label-checkbox">
+                {% render 'icons', icon: 'radio-btn' %}
+                <span>One-time purchase</span>
+              </div>
+              <div>
+                {{ product.price | money_without_trailing_zeros }}
+              </div>
+            </label>
+          </div>
+        </fieldset>
+      {% endfor %}
+     </div>
+  {% endif %}
+</div>
+

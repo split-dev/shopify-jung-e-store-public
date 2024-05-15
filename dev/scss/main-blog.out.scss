@@ -1,0 +1,106 @@
+@import "./settings/variables";
+@import "./settings/mixins";
+
+.main-blog {
+    padding: 120px 0;
+
+    @include media-breakpoint-down(big-xl) {
+        padding: 80px 0 96px;
+    }
+
+    @include media-breakpoint-down(lg) {
+        padding: 80px 0;
+    }
+
+    .blog-articles {
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: 32px;
+        row-gap: 48px;
+
+        @include media-breakpoint-down(big-xl) {
+           column-gap: 24px;
+        }
+
+        @include media-breakpoint-down(md) {
+            grid-template-columns: 1fr;
+            row-gap: 40px;
+        }
+    }
+
+    .article-card-wrapper {
+        .card__inner {
+            aspect-ratio: 415/460;
+            overflow: hidden;
+        }
+    }
+
+    .title--primary {
+        margin: 0 0 48px;
+        @include media-breakpoint-down(lg) {
+            margin: 0 0 32px;
+        }
+    }
+
+    .card__information {
+        padding: 24px 0 0;
+
+        .card__heading {
+            padding-bottom: 16px;
+        }
+
+        .article-card__excerpt {
+            margin: 0 0 24px;
+            color: $white-900;
+
+        }
+
+        .card_read_more {
+            color: $white-900;
+        }
+    }
+
+    .pagination-wrapper {
+        margin-top: 69px;
+        @include media-breakpoint-down(big-xl) {
+            margin-top: 48px;
+        }
+        .pagination__item {
+            &:not(.pagination__item--prev, .pagination__item--next){
+                padding: 13px 14px;
+                border-radius: 56px;
+                border: 1px solid $white-900;
+                width: 48px;
+                height: 48px;
+            }
+            &.pagination__item--current{
+                background-color: $white-900;
+                color: $white;
+
+                &::after {
+                    display: none;
+                }
+            }
+
+            &:not([href]) {
+                cursor: pointer;
+            }
+
+            svg {
+                pointer-events: none;
+            }
+
+            &.pagination__item--next {
+                svg {
+                    transform: rotate(180deg);
+                }
+            }
+        }
+
+        .pagination__list{
+            gap: 16px;
+            li {
+                margin: 0;
+            }
+        }
+    }
+}

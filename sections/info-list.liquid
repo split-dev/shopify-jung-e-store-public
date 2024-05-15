@@ -1,0 +1,260 @@
+<link rel="stylesheet" href="{{ 'info-list.out.css' | asset_url }}">
+<noscript>
+  {{- 'info-list.out.css' | asset_url | stylesheet_tag -}}
+</noscript>
+
+{%- assign settings = section.settings -%}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ settings.padding_top_mobile }}px;
+    padding-bottom: {{ settings.padding_bottom_mobile }}px;
+  }
+
+  @media screen and (min-width: 768px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ settings.padding_top }}px;
+      padding-bottom: {{ settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<section
+  class="info-list section-{{ section.id }}-padding"
+  id="info-list-{{ section.id }}"
+>
+  <div class="info-list__image--wrapper">
+    {%- liquid
+      assign image = ''
+
+      if settings.data_type == 'block'
+        assign image = settings.image
+      elsif settings.data_type == 'meta'
+        assign image = product.metafields.custom.look_inside_main_image_
+      endif
+    -%}
+
+    {%- if image != '' -%}
+      <div class="info-list__image--box">
+        <img
+          src="{{ image | image_url: width: 800 }}"
+          alt="{{ image.alt | default: "hand with pill" }}"
+          width=""
+          height=""
+          loading="lazy"
+          class="lazy"
+          data-src="{{ image | image_url: width: 1800 }}"
+        >
+      </div>
+    {%- endif -%}
+  </div>
+  
+  <div class="info-list__wrapper">
+    {% if settings.title != blank %}
+      <h2 class="info-list__title heading-h2">
+        {{ settings.title }}
+      </h2>
+    {% endif %}
+
+    <ul class="info-list__items">
+      {%- if settings.data_type == 'block' -%}
+        {% for block in section.blocks %}
+          {%- case block.type -%}
+            {%- when 'info_item' -%}
+              {%- assign bs = block.settings -%}
+
+              <li class="info-list__item">
+                <div class="info-list__item--text">
+                  {% if bs.title != blank %}
+                    <h3 class="info-list__item--title caption-c1 caption-c2-md">
+                      {{ bs.title }}
+                    </h3>
+                  {% endif %}
+
+                  {% if bs.description != blank %}
+                    <div class="info-list__item--description body-b3">
+                      {{ bs.description }}
+                    </div>
+                  {% endif %}
+                </div>
+
+                {%- if bs.image != blank -%}
+                  <div class="info-list__item--img--box">
+                    <img
+                      src="{{ bs.image | image_url: width: 200 }}"
+                      alt="{{ bs.image.alt | default: "formula" }}"
+                      width=""
+                      height=""
+                      loading="lazy"
+                      class="lazy"
+                      data-src="{{ bs.image | image_url: width: 700 }}"
+                    >
+                  </div>
+                {%- endif -%}
+              </li>
+          {%- endcase -%}
+        {% endfor %}
+      {%- elsif settings.data_type == 'meta' -%}
+        {%- for object in product.metafields.custom.look_inside.value -%}
+          <li class="info-list__item">
+              <div class="info-list__item--text">
+                {% if object.title != blank %}
+                  <h3 class="info-list__item--title caption-c1 caption-c2-md">
+                    {{ object.title }}
+                  </h3>
+                {% endif %}
+
+                {% if object.description != blank %}
+                  <div class="info-list__item--description body-b3">
+                    {{ object.description }}
+                  </div>
+                {% endif %}
+                <span class="info-list__item--state">
+                  {% render 'icons', icon: 'plus-minus' %}
+                </span>
+              </div>
+
+            {%- if object.image != blank -%}
+              <div class="info-list__item--img--box">
+                <img
+                  src="{{ object.image | image_url: width: 200 }}"
+                  alt="{{ object.image.alt | default: "formula" }}"
+                  width=""
+                  height=""
+                  loading="lazy"
+                  class="lazy"
+                  data-src="{{ object.image | image_url: width: 700 }}"
+                >
+              </div>
+            {%- endif -%}
+          </li>
+        {%- endfor -%}
+      {%- endif -%}
+    </ul>
+  </div>
+</section>
+
+<script>
+  const infoListItems = document.querySelectorAll('.info-list__item--text');
+
+  infoListItems.forEach(element => {
+    element.addEventListener("click", function (e) {
+      const parentTextElement = e.target.closest('.info-list__item--text');
+      infoListItems.forEach(item => {
+        if (item !== parentTextElement && item.classList.contains('active')) {
+          item.classList.remove('active');
+        }
+      });
+      if (parentTextElement) {
+        parentTextElement.classList.toggle('active');
+      }
+    });
+  });
+  
+</script>
+
+{% schema %}
+{
+  "name": "Info list",
+  "settings": [
+    {
+      "type": "select",
+      "id": "data_type",
+      "label": "Data type",
+      "options": [
+        {
+          "value": "block",
+          "label": "Blocks"
+        },
+        {
+          "value": "meta",
+          "label": "Metadata"
+        }
+      ],
+      "default": "meta"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Info list"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top_mobile",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom_mobile",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 80
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Info item",
+      "type": "info_item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Info item"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description",
+          "default": "<p>description</p>"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Info list",
+      "settings": {}
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,231 @@
+@import "./settings/variables";
+@import "./settings/mixins";
+
+.full--slider {
+  display: flex;
+  flex-direction: column;
+
+  @include media-breakpoint-up(xl) {
+    flex-direction: row-reverse;
+  }
+
+  &__wrapper {
+    overflow: hidden;
+
+    width: 100%;
+
+    margin-bottom: 48px;
+
+    @include media-breakpoint-up(xl) {
+      width: 56%;
+      max-width: 1090px;
+      margin-bottom: 0;
+    }
+
+    @include media-breakpoint-up(big-xl) {
+      max-width: 50%;
+    }
+  }
+
+  &__title {
+    max-width: 650px;
+  }
+
+  &__box {
+    .full--slider__slide {
+      position: relative;
+
+      height: clamp(300px, size(620px), 620px);
+
+      img {
+        width: 100%;
+        height: 100%;
+
+        object-position: center;
+        object-fit: cover;
+      }
+
+      &--title {
+        position: absolute;
+        top: 24px;
+        left: 16px;
+
+        @include media-breakpoint-up(xl) {
+          top: auto;
+          left: 88px;
+          bottom: 152px;
+        }
+      }
+
+      &--subtitle {
+        position: absolute;
+        bottom: 24px;
+        left: 16px;
+
+        max-width: 465px;
+
+        @include media-breakpoint-up(xl) {
+          left: 88px;
+          bottom: 80px;
+        }
+      }
+    }
+  }
+
+  &__side {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    padding: 0 16px;
+
+    @include media-breakpoint-up(md) {
+      padding-bottom: 80px;
+    }
+
+    @include media-breakpoint-up(xl) {
+      padding-top: 80px;
+      padding-left: 60px;
+    }
+
+    @include media-breakpoint-up(xxxl) {
+      padding-left: 204px;
+    }
+
+    @include media-breakpoint-up(big-xl) {
+      padding-left: 184px;
+    }
+  }
+
+  .swiper-navigation {
+    align-items: flex-end;
+    justify-content: space-between;
+
+    max-width: 285px;
+    width: 100%;
+    margin-top: 32px;
+
+    @include media-breakpoint-down(md) {
+      max-width: 258px;
+    }
+
+    @include media-breakpoint-up(xl) {
+      align-items: center;
+    }
+
+    .swiper-button-next {
+      position: static;
+      display: block !important;
+      margin: 0 !important;
+
+      min-width: 48px;
+      height: 48px;
+
+      margin-right: 100px !important;
+
+      background-image: url("https://cdn.shopify.com/s/files/1/0625/2150/8004/files/button-right-white.svg?v=1698417855");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 100%;
+
+      @include media-breakpoint-up(xl) {
+        margin-right: 0 !important;
+      }
+
+      &::after {
+        content: none;
+      }
+    }
+
+    .swiper-pagination {
+      position: static;
+      display: flex;
+      align-items: center;
+
+      @include media-breakpoint-down(xl) {
+        order: 3;
+      }
+
+      @include media-breakpoint-up(xl) {
+        margin: 0 40px;
+      }
+
+      .swiper-pagination-bullet {
+        position: relative;
+        min-width: 4px;
+        width: 4px;
+        height: 4px;
+        background-color: $white !important;
+        border-radius: 8px;
+        opacity: 1 !important;
+
+        &::before {
+          content: "";
+          display: block;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 4px;
+          bottom: 0;
+          background-color: $white !important;
+          border-radius: 8px;
+          z-index: 2;
+        }
+
+        &.swiper-pagination-bullet-active {
+          width: 74px;
+          display: block;
+          background-color: #7272725c !important;
+          transition: $duration-default;
+
+          @include media-breakpoint-down(md) {
+            width: 50px;
+          }
+
+          &::before {
+            animation-name: line;
+          }
+        }
+      }
+    }
+
+    .swiper-button-prev {
+      position: static;
+      display: block !important;
+
+      min-width: 48px;
+      height: 48px;
+
+      margin: 0 !important;
+      margin-right: 40px !important;
+
+      background-image: url("https://cdn.shopify.com/s/files/1/0625/2150/8004/files/button-left-white.svg?v=1698417855");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 100%;
+
+      @include media-breakpoint-up(xl) {
+        margin-right: 0 !important;
+      }
+
+      &::after {
+        content: none;
+      }
+    }
+  }
+
+  * {
+    color: inherit;
+    fill: inherit;
+  }
+}
+
+@keyframes line {
+  from {
+    width: 4px;
+  }
+
+  to {
+    width: 100%;
+  }
+}

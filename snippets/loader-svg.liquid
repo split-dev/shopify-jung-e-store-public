@@ -1,0 +1,71 @@
+<div
+  class="loader-svg"
+  style="
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999999999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #7fb069;
+    transition: 1s;
+  "
+>
+  <img
+    style="width: clamp(100px, 11vw, 200px)"
+    src="https://cdn.shopify.com/s/files/1/0625/2150/8004/files/ezgif.com-resize.gif?v=1701884688"
+    alt="loader"
+    loading="eager"
+    width=""
+    height=""
+  >
+</div>
+
+<script>
+  const colors = ['#7FB069', '#F6AE2D', '#F95123'];
+  const loader = document.querySelector('.loader-svg');
+  let currentColorIndex = 0;
+  let intervalId;
+
+  function changeColor() {
+    loader.style.backgroundColor = colors[currentColorIndex];
+    currentColorIndex = (currentColorIndex + 1) % colors.length;
+    if (document.readyState === 'complete') {
+      if (currentColorIndex == 0) {
+        clearInterval(intervalId);
+        setTimeout(() => {
+          loader.style.opacity = 0;
+          loader.style.pointerEvents = 'none';
+          document.body.classList.remove('preloader-svg');
+        }, 500);
+      }
+    }
+  }
+
+  intervalId = setInterval(changeColor, 500);
+
+
+  let loaded = false;
+  const hideLoaderTimeout = setTimeout(function () {
+      if (!loaded) {
+          loader.style.opacity = 0;
+          loader.style.pointerEvents = 'none';
+          document.body.classList.remove('preloader-svg');
+      }
+  }, 1000);
+  
+  window.onload = function () {
+      loaded = true;
+      clearTimeout(hideLoaderTimeout);
+      if (currentColorIndex == 0) {
+          clearInterval(intervalId);
+          loader.style.opacity = 0;
+          loader.style.pointerEvents = 'none';
+          document.body.classList.remove('preloader-svg');
+      }
+  };
+
+</script>

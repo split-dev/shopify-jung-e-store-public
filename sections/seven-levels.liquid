@@ -1,0 +1,246 @@
+{{ 'seven-levels.out.css' | asset_url | stylesheet_tag }}
+{% liquid  
+  assign background_color = section.settings.background_color
+%} 
+
+{%- style -%}
+  #seven-levels--{{ section.id }} {
+    background-color: {{ background_color }};
+  }
+
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top_mobile }}px;
+    padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+  }
+
+  @media screen and (min-width: 768px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<section
+  class="seven-levels section-{{ section.id }}-padding"
+  id="seven-levels--{{ section.id }}"
+>
+    <div class="container container--medium">
+        {% if section.settings.title != blank %}
+            <h2 class="seven-levels__title heading-h2">
+            {{ section.settings.title }}
+            </h2>
+        {% endif %}
+        <div class="seven-levels__wrapper">
+            <ul class="seven-levels__list">
+                {% for block in section.blocks %}
+                    {%- assign bs = block.settings -%}
+                    <li class="seven-levels__item">
+                        <div class="seven-levels__item-heading" role="button" tabindex="0">
+                            <div class="seven-levels__item-signs">
+                            <h3 class="seven-levels__item-title caption-c1">
+                                {%- if bs.heading != blank -%}
+                                {{ bs.heading }}
+                                {%- endif -%}
+                            </h3>
+                            </div>
+
+                            <span class="seven-levels__item-state">
+                            {% render 'icons', icon: 'plus-minus' %}
+                            </span>
+                        </div>
+                        <div class="seven-levels__item-description body-b3">
+                            {% if bs.description != blank %}
+                            {{ bs.description }}
+                            {% endif %}
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+            <div class="seven-levels__icons-block">
+                <div class="seven-levels__icons-circle">
+                    {% render 'icons', icon: 'jung-icon' %}
+                    {% for block in section.blocks %}
+                        {% liquid 
+                            assign class = 'item-' | append: forloop.index0
+                            assign highlight = 'highlight-' | append: forloop.index0
+                            assign color = block.settings.color
+                        %}
+                        <style>
+                          .svg-icon--{{ block.id }} {
+                            background-color: {{ color }};
+                          }
+                        </style>
+                        <div class="svg-icon {{ class }} svg-icon--{{ block.id }} disabled">
+                          {% render 'icons', icon: block.settings.icon %} 
+                        </div>
+                        {% render 'icons', icon: 'icon-highlight', class: highlight, color: color %} 
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+  const accordeonHeadingEls = document.querySelectorAll('.seven-levels__item-heading');
+  const accordeonEls = document.querySelectorAll('.seven-levels__item');
+  const highlight = document.querySelectorAll('.highlight');
+  const iconColor = document.querySelectorAll('.svg-icon');
+
+    function showHighlight(index){
+        highlight.forEach((item, idx) => {
+            index === idx ? item.classList.remove('disabled') : item.classList.add('disabled')
+        });
+        iconColor.forEach((item, idx) => {
+            index === idx ? item.classList.remove('disabled') : item.classList.add('disabled')
+        });
+    };
+
+    function closeHighlight(){
+        highlight.forEach((item) => {
+            item.classList.add('disabled');
+        });
+        iconColor.forEach((item) => {
+            item.classList.add('disabled');
+        });
+    };
+    
+    accordeonHeadingEls.forEach((heading, headingIdx) => {
+    heading.addEventListener('click', () => {
+        showHighlight(headingIdx);
+        accordeonEls.forEach((desc, descIdx) => {
+            if(descIdx !== headingIdx){
+                desc.classList.remove('active');
+            } else {
+                if (desc.classList.contains('active')) {
+                    desc.classList.remove('active');
+                    closeHighlight();
+                } else {
+                    desc.classList.add('active');
+                }
+            }
+        });
+    });
+});
+</script>
+
+{% schema %}
+    {
+      "name": "Seven levels",
+      "max_blocks": 6,
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+            "type": "color_background",
+            "id": "background_color",
+            "label": "Background color",
+            "default": "#f5f5f5"
+        },
+        {
+          "type": "range",
+          "id": "padding_top_mobile",
+          "min": 0,
+          "max": 100,
+          "step": 5,
+          "unit": "px",
+          "label": "t:sections.all.padding.padding_top_mobile",
+          "default": 80
+        },
+        {
+          "type": "range",
+          "id": "padding_bottom_mobile",
+          "min": 0,
+          "max": 100,
+          "step": 5,
+          "unit": "px",
+          "label": "t:sections.all.padding.padding_bottom_mobile",
+          "default": 80
+        },
+        {
+          "type": "range",
+          "id": "padding_top",
+          "min": 0,
+          "max": 100,
+          "step": 5,
+          "unit": "px",
+          "label": "t:sections.all.padding.padding_top",
+          "default": 80
+        },
+        {
+          "type": "range",
+          "id": "padding_bottom",
+          "min": 0,
+          "max": 100,
+          "step": 5,
+          "unit": "px",
+          "label": "t:sections.all.padding.padding_bottom",
+          "default": 80
+        }
+      ],
+      "blocks": [
+        {
+          "name": "FAQ",
+          "type": "faq",
+          "settings": [
+            {
+              "type": "text",
+              "id": "heading",
+              "label": "Heading"
+            },
+            {
+              "type": "richtext",
+              "id": "description",
+              "label": "Description"
+            },
+            {
+                "type": "color",
+                "id": "color",
+                "label": "Color"
+            },
+            {
+              "type": "select",
+              "id": "icon",
+              "label": "Icon",
+              "options": [
+                        {
+                            "value": "food-icon",
+                            "label": "Food"
+                        },
+                        {
+                            "value": "clocks-icon",
+                            "label": "Clocks"
+                        },
+                        {
+                            "value": "glucose-icon",
+                            "label": "Glucose"
+                        },
+                        {
+                            "value": "muscle-icon",
+                            "label": "Muscle"
+                        },
+                        {
+                            "value": "sleep-icon",
+                            "label": "Sleep"
+                        },
+                        {
+                            "value": "skin-icon",
+                            "label": "Skin"
+                        }
+                    ]
+                }
+            ]
+        }
+      ],
+      "presets": [
+        {
+          "name": "Seven levels"
+        }
+      ]
+    }
+{% endschema %}
+    

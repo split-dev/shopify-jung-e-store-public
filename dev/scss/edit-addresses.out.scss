@@ -1,0 +1,187 @@
+@import "./settings/variables";
+@import "./settings/mixins";
+
+.addresses { 
+    padding: 108px 0 0;
+    @include media-breakpoint-down(xl){
+        padding: 48px 0 0;
+    }
+    .addresses__add-address {
+        display: none;
+    }
+
+    .account__page--container {
+     
+        .addresses__edit-form {
+            max-width: 864px;
+            display: block;
+        }
+
+        .fields {
+            display: flex;
+            gap: 32px;
+            @include media-breakpoint-down(md){
+              flex-direction: column;
+              gap: 0;
+            }
+            .addresses__select {
+                width: calc(50% - 16px);
+                margin-top: 32px;
+                @include media-breakpoint-down(md){
+                    width: 100%;
+                }
+
+                label {
+                    font-size: 12px;
+                }
+            }
+           
+        }
+    
+        .field {
+                margin: 32px 0 0 0;
+                flex-wrap: wrap;
+                width: calc(50% - 16px);
+                @include media-breakpoint-down(md){
+                    width: 100%;
+                }
+                input {
+                    border-radius: 0;
+                    border-bottom: 1px solid #3D3D3D;
+                    background-color: transparent;
+                    padding: 20px 20px 12px 0;
+                    height: 58px;
+                    &:focus,
+                    &:not(:placeholder-shown),
+                    &:-webkit-autofill {
+                        border-bottom: 1px solid $white-900;
+                        -webkit-box-shadow: 0 0 0px 1000px $white inset;
+                    }
+        
+                    &::placeholder {
+                        color: transparent;
+                    }
+                }
+        
+                &::after {
+                    border-radius: 0;
+                    border: none;
+                }
+        
+                label {
+                    left: 0;
+                    top: 21px;
+                    font-size: 16px;
+                    color: $white-800;
+                }
+        
+                .delete-text {
+                    position: absolute;
+                    cursor: pointer;
+                    top: 25px;
+                    right: 0;
+                    display: none;
+                }
+
+            
+        }
+
+         input:focus,
+         input:not(:placeholder-shown),
+         input:-webkit-autofill {
+            & ~ .field__label {
+                top: 0;
+                font-size: 12px;
+            }
+    
+            & ~ .delete-text {
+                display: block;
+            }
+        }
+
+        .select {
+          
+
+            border-bottom: 1px solid $white-800 !important;
+            select {
+                padding: 0;
+                &:required:invalid {
+                    color: $white-800;
+                }
+    
+                option[value=""][disabled] {
+                    display: none;
+                    color: $white-800;
+                }
+    
+                option {
+                    color: black;
+                }
+            }
+            &:after {
+              box-shadow: none;
+            }
+        }
+
+        .select-arrow {
+            position: absolute;
+            top: 16px;
+            right: 1px;
+        }
+
+        .field input:focus,
+        .field input:not(:placeholder-shown),
+        .field input:-webkit-autofill {
+        
+                & ~ label {
+                    left: 0;
+                    top: 0;
+                    font-size: 12px;
+                }
+        
+                & ~ .delete-text {
+                    display: block;
+                }
+        }
+
+    }
+
+    .account__btn-update,
+    .account__btn-cancel {
+        color: $white-900 !important;
+    }
+
+    .account__account-checkbox {
+        padding: 64px 0;
+        @include media-breakpoint-down(xl){
+            padding: 32px 0;
+        }
+        svg {
+            width: 24px;
+            height: 24px;
+            top: 4px;
+            position: relative;
+            pointer-events: none;
+        }
+        .chk-color {
+            fill: white;
+        }
+
+        input {
+            display: none;
+        }
+
+        label {
+            color: black;
+            span {
+                margin-left: 10px;
+            }
+        }
+
+        input[type="checkbox"]:checked ~ label svg {
+            .chk-color {
+                fill: black;
+            }
+        }
+    }
+}

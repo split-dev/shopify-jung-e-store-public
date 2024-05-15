@@ -1,0 +1,35 @@
+@import "./settings/variables";
+@import "./settings/mixins";
+
+.text-only {
+    padding: 80px 0;
+
+    @include media-breakpoint-down(lg){
+        padding: 120px 0;
+    }
+
+    // .text-only__content
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    // .text-only__header
+
+    &__header {
+        margin-bottom: 32px;
+    }
+
+    // .text-only__richtext
+
+    &__richtext {
+        max-width: 648px;
+        color: $white-900;
+        & > * {
+            margin: 0;
+        }
+    }
+}
+

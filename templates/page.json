@@ -1,0 +1,29 @@
+{
+  "sections": {
+    "banner_image_769GGJ": {
+      "type": "banner-image",
+      "settings": {
+        "subscription_page": false,
+        "header": "Privacy Policy",
+        "description": "",
+        "button_label": "Shop all",
+        "button_link": "",
+        "image": "shopify:\/\/shop_images\/ashwin-vaswani-ViXb3PXSC-8-unsplash.jpg",
+        "image_mobile": "shopify:\/\/shop_images\/ashwin-vaswani-ViXb3PXSC-8-unsplash.jpg",
+        "opacity": 0,
+        "container": "container",
+        "text_align": "left",
+        "banner_height": "banner-large"
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "banner_image_769GGJ",
+    "main"
+  ]
+}

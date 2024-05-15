@@ -1,0 +1,295 @@
+@import "./settings/variables";
+@import "./settings/mixins";
+
+.contact {
+    height: 100%;
+    .container {
+        height: 100%;
+    }
+
+    // .contact__wrapper 
+
+    &__wrapper {
+        height: 100%;
+    }
+    
+    // .contact__content
+
+    &__content {
+        display: flex;
+        position: relative;
+        justify-content: flex-end;
+        height: 100%;
+        overflow: hidden;
+        @include media-breakpoint-down(md) {
+          flex-direction: column;
+        }
+
+        .section-gradient-mob {
+            display: none;
+            position: absolute;
+            top: 260px;
+            right: 0;
+            left: 0;
+            width: 100%;
+            @include media-breakpoint-down(md) {
+               display: block;
+            }
+        }
+    }
+
+    // .contact__form
+
+    &__form {
+      width: 100%;
+    }
+
+    // .contact__title
+
+    &__title {
+        margin-bottom: 40px;
+        @include media-breakpoint-down(md) {
+            margin-bottom: 32px;
+        }
+    }
+    
+    // .contact__fields
+
+    &__fields {
+
+    }
+
+    // .contact__field-error
+
+    &__field-error {
+    }
+
+    // .contact__button
+
+    &__button {
+        margin-top: 24px;
+    }
+
+    // .contact__media
+
+    &__media {
+        height: 100%;
+        min-height: 887px;
+        z-index: 2;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        display: flex;
+        justify-content: flex-end;
+        video {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        @include media-breakpoint-down(md) {
+            position: unset;
+            min-height: unset;
+        }
+    }
+
+    // .contact__media-content
+
+    &__media-content {
+        width: 49.1%;
+
+        img {
+            height: 100%;
+            width: 100%;
+            max-width: 100%;
+            object-fit: cover;
+        }
+
+        svg {
+            height: 100%;
+        }
+
+        @include media-breakpoint-down(big-xl) {
+            width: 43.4%;
+        }
+
+        @include media-breakpoint-down(md) {
+            width: 100%;
+            aspect-ratio: 375/302;
+            overflow: hidden;
+        }
+    }
+
+    // .contact__form-content
+
+    &__form-content {
+        padding-top: 120px;
+        margin-bottom: 37px;
+        height: 100%;
+        position: relative;
+        @include media-breakpoint-up(big-xl) {
+            max-width: 51.2%;
+        }
+
+        @include media-breakpoint-down(big-xl) {
+            padding-top: 140px;
+            max-width: 58.5%;
+            margin-bottom: 64px;
+        }
+
+        @include media-breakpoint-down(xxxl){
+            max-width: 57%;
+        }
+
+        @include media-breakpoint-down(md) {
+            max-width: 100%;
+            padding-top: 88px;
+            margin-bottom: 48px;
+        }
+
+        .field__input {
+            border-radius: 0;
+            border-bottom: 1px solid #3D3D3D;
+            background-color: transparent;
+            &:focus,
+            &:not(:placeholder-shown),
+            &:-webkit-autofill {
+                border-bottom: 1px solid $white-900;
+            }
+        }   
+
+        #ContactForm {
+            max-width: 416px;
+            z-index: 5;
+            @include media-breakpoint-down(lg) {
+                max-width: 316px;
+            }
+
+            @include media-breakpoint-down(md) {
+                max-width: 100%;
+            }
+        }
+
+        .section-gradient {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            height: 100%;
+            transform: rotate(180deg);
+            @include media-breakpoint-down(md) {
+               display: none;
+            }
+        }
+   }
+
+    .field {
+        position: relative;
+        margin-bottom: 16px;
+        .field__input {
+            padding: 0 20px 12px 0;
+            margin-top: 20px;
+            height: 38px;
+            padding-right: 30px;
+
+            &::placeholder {
+                color: transparent;
+            }
+        }
+
+        .field__label {
+            left: 0;
+            top: 22px;
+            color: $white-800;
+            font-size: 16px;
+        }
+
+        .delete-text {
+            position: absolute;
+            cursor: pointer;
+            top: 25px;
+            right: 0;
+            display: none;
+        }
+
+        textarea.field__input {
+            min-height: 38px;
+            height: fit-content;
+            resize: auto;
+            height: 0;
+            padding-right: 30px;
+            overflow: hidden;
+        }
+        select {
+            border-bottom: 1px solid $white-800 !important;
+            &:required:invalid {
+                color: $white-800;
+            }
+
+            option[value=""][disabled] {
+                display: none;
+                color: $white-800;
+            }
+
+            option {
+                color: black;
+            }
+        }
+
+        .select-arrow {
+            position: absolute;
+            top: 25px;
+            right: 1px;
+        }
+    }
+
+    .field__input:focus,
+    .field__input:not(:placeholder-shown),
+    .field__input:-webkit-autofill {
+        & ~ .field__label {
+            top: 0;
+            font-size: 12px;
+        }
+
+        & ~ .delete-text {
+            display: block;
+        }
+    }
+
+    // .contact__social-media
+
+    &__social-media {
+        margin-top: 40px;
+        position: relative;
+        z-index: 4;
+        @include media-breakpoint-down(md) {
+            margin-top: 8px;
+        }
+        .contact__social-title {
+            margin-bottom: 12px;
+            color: $white-900;
+        }
+
+        ul {
+            display: flex;
+            gap: 16px
+        }
+    }
+
+    .form__message {
+        padding: 20px;
+        background-color: $white;
+        border-radius: 20px;
+    }
+    
+}
+
+.template-contact {
+    .section-header .header__heading-logo-wrapper svg path {
+        @include media-breakpoint-down(big-xl) {
+            fill: $white-900;
+        } 
+    }
+}

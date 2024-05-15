@@ -1,0 +1,142 @@
+@import "./settings/variables";
+@import "./settings/mixins";
+
+.point--list {
+  &__title {
+    margin-bottom: 32px;
+  }
+
+  &__points {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+
+    .point--list__item {
+      position: relative;
+
+      padding-top: clamp(8px, size(24px), 24px);
+      padding-bottom: clamp(16px, size(24px), 24px);
+
+      border-bottom: 1px solid $white-900;
+
+      &:not(:last-child) {
+        margin-bottom: 16px;
+      }
+
+      &--link {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2;
+
+        width: 100%;
+        height: 100%;
+
+        opacity: 0;
+      }
+
+      &--head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 8px;
+      }
+
+      &--icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        min-width: 32px;
+        width: 32px;
+        height: 32px;
+
+        margin-left: 16px;
+
+        // border-radius: 32px;
+        // border: 1px solid;
+
+        svg {
+          min-width: 32px;
+          height: 32px;
+          // min-width: 16px;
+          // height: 16px;
+        }
+      }
+
+      &--description--box {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-width: calc(100% - 40px);
+        .point--list__item--icon {
+          margin-left: 16px;
+        }
+      }
+
+      &--description {
+        display: flex;
+        margin: 0;
+
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1.4;
+
+        color: $white-800;
+
+        @include media-breakpoint-up(xl) {
+          line-height: 1.6;
+
+          .point--list__item--icon {
+            display: flex !important;
+          }
+        }
+
+        &--number {
+          margin-right: 8px;
+        }
+      }
+    }
+  }
+
+  &__button--box {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__button {
+    margin: 0 auto;
+    margin-top: 24px;
+    padding: 14px;
+
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: 2.88px;
+    text-transform: uppercase;
+
+    @include media-breakpoint-up(xl) {
+      margin-top: 32px;
+    }
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  * {
+    color: inherit;
+    border-color: inherit;
+  }
+
+  li {
+    list-style-type: none;
+  }
+}
+
+.xl-mr-100px {
+  @include media-breakpoint-up(xl) {
+    margin-right: 100px;
+  }
+}

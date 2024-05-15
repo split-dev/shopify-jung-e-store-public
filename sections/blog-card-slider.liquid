@@ -1,0 +1,319 @@
+<link
+  rel="stylesheet"
+  href="{{ 'blog-card-slider.out.css' | asset_url }}"
+>
+<noscript>
+  {{- 'blog-card-slider.out.css' | asset_url | stylesheet_tag -}}
+</noscript>
+
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top_mb }}px;
+    padding-bottom: {{ section.settings.padding_bottom_mb }}px;
+  }
+
+  @media screen and (min-width: 768px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+  
+{%- endstyle -%}
+
+<div class="section-{{ section.id }} section-{{ section.id }}-padding blog-card">
+
+  <picture class="blog-card__bg">
+    {% if section.settings.img_mob != blank %}
+      <source media="(max-width: 767px)" srcset="{{ section.settings.img_mob | img_url: '350x'}}" />
+    {% endif %}
+    <img alt="{{section.settings.img.alt}}" class="lazy" src="{{ section.settings.img | img_url: '2000x'}}" />
+  </picture>
+
+  <div class="container container--small">
+    <div class="blog-card__box d-flex flex-column flex-md-row">
+      <div class="blog-card__info">
+        <div class="swiper swiper-no-swiping blog-card__info-slider">
+          <div class="swiper-wrapper">
+            {%- for block in section.blocks -%}
+              <div class="swiper-slide d-flex flex-column">
+                <div class="blog-card__text">
+                  <h2 class="heading-h2 font-haffer font-weight-400">{{block.settings.article.title}}</h2>
+                </div>
+                <div class="blog-card__desc body-b2 font-weight-400">
+                  <div class="blog-card__text-anim">
+                    {{block.settings.article.excerpt_or_content}}
+                  </div>
+                </div>
+                <div class="blog-card__url text-18px-16px font-haffer font-weight-400">
+                  <a href="{{block.settings.article.url}}">Read more</a>
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+        <div class="blog-card__slider-control">
+          <div class="swiper-navigation d-flex">
+              <div class="swiper-button-prev">
+                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none">
+                  <path d="M22.7853 14.6972L22.0824 14L12 24L22.0824 34L22.7853 33.3028L13.9029 24.4929H36V23.507H13.903L22.7853 14.6972Z" fill="white"/>
+                  <rect x="0.5" y="0.5" width="47" height="47" rx="23.5" stroke="white"/>
+                  </svg>
+              </div>
+              <div class="swiper-button-next">
+                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M25.2147 14.6972L25.9176 14L36 24L25.9176 34L25.2147 33.3028L34.0971 24.4929H12V23.507H34.097L25.2147 14.6972Z" fill="white"/>
+                  <rect x="0.5" y="0.5" width="47" height="47" rx="23.5" stroke="white"/>
+                  </svg>
+              </div>
+          </div>
+          <div class="swiper-pagination"> </div>
+        </div>
+      </div>
+      <div class="blog-card__wrapper">
+        <div class="blog-card__image">
+          <div class="swiper swiper-no-swiping blog-card__image-slider blog-card__image-slider--one">
+            <div class="swiper-wrapper">
+              {%- for block in section.blocks -%}
+                <div class="swiper-slide">
+                  {{
+                    block.settings.article.image 
+                    | image_url: width: 750
+                    | image_tag:
+                        width: imageWidth,
+                        height: imageHeight,
+                        sizes: '100vw',
+                        widths: '375, 550, 750',
+                        alt: block.settings.article.image.alt,
+                        class: ' '
+                  }}
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+          <div class="swiper swiper-no-swiping swiper-no-swiping blog-card__image-slider blog-card__image-slider--two">
+            <div class="swiper-wrapper">
+              {%- for block in section.blocks -%}
+                <div class="swiper-slide">
+                  {{
+                    block.settings.article.image 
+                    | image_url: width: 750
+                    | image_tag:
+                        width: imageWidth,
+                        height: imageHeight,
+                        sizes: '100vw',
+                        widths: '375, 550, 750',
+                        alt: block.settings.article.image.alt,
+                        class: ' '
+                  }}
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+          <div class="swiper swiper-no-swiping blog-card__image-slider blog-card__image-slider--three">
+            <div class="swiper-wrapper">
+              {%- for block in section.blocks -%}
+                <div class="swiper-slide">
+                  {{
+                    block.settings.article.image 
+                    | image_url: width: 750
+                    | image_tag:
+                        width: imageWidth,
+                        height: imageHeight,
+                        sizes: '100vw',
+                        widths: '375, 550, 750',
+                        alt: block.settings.article.image.alt,
+                        class: ' '
+                  }}
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+{% if section.blocks.size > 0 %}
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      function initSlider() {
+        var swiperImageOne = new Swiper('.section-{{ section.id }} .blog-card__image-slider--one', {
+          slidesPerView: 1,
+          centeredSlides: false,
+          spaceBetween: 0,
+          grabCursor: true,
+          initialSlide: 0,
+          speed: 600,
+          loop: true,
+          pagination: {
+            el: '.section-{{ section.id }} .swiper-pagination',
+            clickable: false,
+          }
+        });
+        var swiperImageTwo = new Swiper('.section-{{ section.id }} .blog-card__image-slider--two', {
+          slidesPerView: 1,
+          centeredSlides: false,
+          spaceBetween: 0,
+          grabCursor: true,
+          initialSlide: 1,
+          speed: 600,
+          loop: true,
+        });
+        var swiperImageThree= new Swiper('.section-{{ section.id }} .blog-card__image-slider--three', {
+          slidesPerView: 1,
+          centeredSlides: false,
+          spaceBetween: 0,
+          grabCursor: true,
+          initialSlide: 2,
+          speed: 600,
+          loop: true,
+        });
+
+
+        var swiperGeneral =  new Swiper('.section-{{ section.id }} .blog-card__info-slider', {
+          loop: true,
+          spaceBetween: 0,
+          rewind: true,
+          initialSlide: 0,
+          speed: 600,
+          effect: 'fade',
+          fadeEffect: {
+            crossFade: true
+          },
+        });
+
+        var prevButton = document.querySelector('.section-{{ section.id }} .swiper-button-prev');
+        var nextButton = document.querySelector('.section-{{ section.id }} .swiper-button-next');
+
+        
+        var intervalId;
+
+        prevButton.addEventListener('click', function() {
+          swiperImageOne.slidePrev();
+          swiperImageTwo.slidePrev();
+          swiperImageThree.slidePrev();
+          swiperGeneral.slidePrev();
+          clearInterval(intervalId);
+          intervalId = setInterval(autoplayFunction, 3000);
+        });
+
+        nextButton.addEventListener('click', function() {
+          swiperImageOne.slideNext();
+          swiperImageTwo.slideNext();
+          swiperImageThree.slideNext();
+          swiperGeneral.slideNext();
+          clearInterval(intervalId);
+          intervalId = setInterval(autoplayFunction, 3000);
+        });
+
+        function autoplayFunction() {
+          swiperImageOne.slideNext();
+          swiperImageTwo.slideNext();
+          swiperImageThree.slideNext();
+          swiperGeneral.slideNext();
+        }
+
+        
+        intervalId = setInterval(autoplayFunction, 3000);
+        
+      }
+      if (Shopify.designMode) {
+        initSlider();
+        document.addEventListener('shopify:section:load', function (e) {
+          initSlider();
+        });
+      } else {
+        initSlider();
+      }
+    }); 
+  </script>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Blog card slider",
+  "max_blocks": 12,
+  "settings": [
+    {
+      "type": "header",
+      "content": "General settings"
+    },
+    {
+      "type": "image_picker",
+      "id": "img",
+      "label": "Select image"
+    },
+    {
+      "type": "image_picker",
+      "id": "img_mob",
+      "label": "Select image mobile"
+    },
+    {
+      "type": "header",
+      "content": "Section space"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding top desktop",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding bottom desktop",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mb",
+      "min": 0,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding top mobile",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mb",
+      "min": 0,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding bottom mobile",
+      "default": 80
+    }
+  ],
+  "blocks": [
+    {
+      "type": "Slide",
+      "name": "Slide",
+      "settings": [
+        {
+          "type": "article",
+          "id": "article",
+          "label": "Select article"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Blog card slider"
+    }
+  ]
+}
+{% endschema %}

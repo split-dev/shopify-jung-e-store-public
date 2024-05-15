@@ -1,0 +1,101 @@
+<link rel="stylesheet" href="{{ 'subscription-info.out.css' | asset_url }}">
+<noscript>
+  {{- 'subscription-info.out.css' | asset_url | stylesheet_tag -}}
+</noscript>
+
+
+{% liquid 
+  assign image = section.settings.image
+  assign background_color = section.settings.background_color
+%}
+
+{% style %} 
+  .subscription-info--{{ section.id }}{
+      background-color: {{ background_color }};
+  }
+{% endstyle %} 
+
+<section class="subscription-info subscription-info--{{ section.id }}"> 
+  <div class="subscription-info__media-wrapper">
+    <div class="subscription-info__media">
+      <div  class="subscription-info__img-box">
+        {%- if image != blank -%}
+          {{
+            image
+            | image_url: width: 2000
+            | image_tag:
+              width: imageWidth,
+              height: imageHeight,
+              class: 'lazy',
+              sizes: '100vw',
+              widths: '375, 550, 750, 1100',
+              loading: 'lazy',
+              alt: 'image'
+          }}
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+  <div class="subscription-info__wrapper">
+    <div class="container">
+      <div class="subscription-info__content-block">
+            {% for block in section.blocks %}
+              {% liquid 
+                assign title = block.settings.title
+                assign richtext = block.settings.richtext
+              %}
+              {% if title %}
+                <h2 class="subscription-info__title heading-h2 desktop">{{ title }}</h2>
+              {%- endif -%}
+              {% if richtext %}
+                <div class="subscription-info__richtext body-b2 desktop">{{ richtext }}</div>
+              {% endif %}
+            {% endfor %}
+      </div>
+    </div>
+   </div>
+</section>
+
+{% schema %}
+{
+  "name": "Subscription info",
+  "class": "subscription-info-section",
+  "limit": 1,
+  "settings": [
+    {
+      "type": "color_background",
+      "id": "background_color",
+      "label": "Background color"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "info",
+      "name": "Info",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "richtext",
+          "label": "Description"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Subscription info (Image with text)"
+    }
+  ]
+}
+{% endschema %}

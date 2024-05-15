@@ -1,0 +1,13 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-login",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/katie-gerrard-JsyUn7bpOyw-unsplash_1.jpg"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

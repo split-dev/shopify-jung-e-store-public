@@ -1,0 +1,47 @@
+{
+  "sections": {
+    "form": {
+      "type": "contact-form",
+      "blocks": {
+        "d39173fc-ffda-482d-8815-c67b59c9f31f": {
+          "type": "subject",
+          "settings": {
+            "subject_item": "subject1"
+          }
+        },
+        "9cfa29ba-6c29-46aa-b02a-d4fa58dfb8ed": {
+          "type": "subject",
+          "settings": {
+            "subject_item": "subject2"
+          }
+        },
+        "f5d4e3b7-0a31-44cd-8541-f479dd0329f3": {
+          "type": "subject",
+          "settings": {
+            "subject_item": "subject3"
+          }
+        },
+        "1d64c0b8-7816-4fe7-adab-ba1e8c82ebfa": {
+          "type": "subject",
+          "settings": {
+            "subject_item": "subject4"
+          }
+        }
+      },
+      "block_order": [
+        "d39173fc-ffda-482d-8815-c67b59c9f31f",
+        "9cfa29ba-6c29-46aa-b02a-d4fa58dfb8ed",
+        "f5d4e3b7-0a31-44cd-8541-f479dd0329f3",
+        "1d64c0b8-7816-4fe7-adab-ba1e8c82ebfa"
+      ],
+      "settings": {
+        "heading": "Curiosity is rewarded",
+        "video": "shopify:\/\/files\/videos\/-caad-4e42-8206-9214a45a9860_1.mp4",
+        "background_color": "#C0A6E1"
+      }
+    }
+  },
+  "order": [
+    "form"
+  ]
+}

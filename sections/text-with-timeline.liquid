@@ -1,0 +1,142 @@
+{{ 'text-with-timeline.out.css' | asset_url | stylesheet_tag }}
+
+{% liquid
+    assign image = section.settings.image 
+    assign image_mob = section.settings.image_mob
+    assign header = section.settings.header
+    assign richtext = section.settings.richtext
+    assign background_color = section.settings.background_color
+%}
+
+{%- style -%}
+    .text-with-timeline--{{ section.id }} {
+      padding-top: {{ section.settings.padding_top_mb }}px;
+      padding-bottom: {{ section.settings.padding_bottom_mb }}px;
+      background-color: {{ background_color }};
+    }
+  
+    @media screen and (min-width: 990px) {
+      .text-with-timeline--{{ section.id }} {
+        padding-top: {{ section.settings.padding_top }}px;
+        padding-bottom: {{ section.settings.padding_bottom }}px;
+      }
+    }
+{%- endstyle -%}
+
+<div class="text-with-timeline text-with-timeline--{{ section.id }}">
+    <div class="container">
+        <div class="text-with-timeline__wrapper">
+            <div class="text-with-timeline__content">
+                <div class="text-with-timeline__block">
+                    {% if header != blank %}
+                        <h2 class="text-with-timeline__header heading-h2 heading-h2-md">
+                            {{ header }}
+                        </h2>
+                    {% endif %}
+                    {% if richtext != blank %}
+                        <div class="text-with-timeline__richtext body-b2 body-b2-md">
+                            {{ richtext }}
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="text-with-timeline__image">
+                {% if image != blank %} 
+                    {{ image }}
+                {% endif %}
+            </div>
+            <div class="text-with-timeline__image_mob">
+                {% if image_mob != blank %} 
+                    {{ image_mob }}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% schema %}
+  {
+    "name": "Text with timeline",
+    "settings": [
+        {
+            "type": "color_background",
+            "id": "background_color",
+            "label": "Background color"
+        },
+        {
+            "type": "html",
+            "id": "image",
+            "label": "Svg"
+        },
+        {
+            "type": "html",
+            "id": "image_mob",
+            "label": "Mobile svg"
+        },
+        {
+            "type": "header",
+            "content": "Text"
+        },
+        {
+            "type": "text",
+            "id": "header",
+            "label": "Title",
+            "default": "Letter from our founder"
+        },
+        {
+            "type": "richtext",
+            "id": "richtext",
+            "label": "Richtext",
+            "default": "<p>Seventy-five percent of US healthcare spending, or about $37 trillion annually, goes to treating preventable chronic diseases. Chronic diseases that are driven by aging. What if, instead, we zeroed in on cellular aging and halted the decline? Welcome to longevity science - the next frontier in preventive health. At Jung, we're not just envisioning this future; we're creating it.</p>"
+        },
+        {
+            "type": "header",
+            "content": "t:sections.all.padding.section_padding_heading"
+        },
+        {
+            "type": "range",
+            "id": "padding_top",
+            "min": 0,
+            "max": 160,
+            "step": 4,
+            "unit": "px",
+            "label": "Padding top desktop",
+            "default": 80
+        },
+        {
+            "type": "range",
+            "id": "padding_bottom",
+            "min": 0,
+            "max": 160,
+            "step": 4,
+            "unit": "px",
+            "label": "Padding bottom desktop",
+            "default": 148
+        },
+        {
+            "type": "range",
+            "id": "padding_top_mb",
+            "min": 0,
+            "max": 120,
+            "step": 4,
+            "unit": "px",
+            "label": "Padding top mobile",
+            "default": 80
+        },
+        {
+            "type": "range",
+            "id": "padding_bottom_mb",
+            "min": 0,
+            "max": 120,
+            "step": 4,
+            "unit": "px",
+            "label": "Padding bottom mobile",
+            "default": 80
+        }
+    ],
+    "presets": [
+      {
+        "name": "Text with timeline"
+      }
+    ]
+  }
+{% endschema %}

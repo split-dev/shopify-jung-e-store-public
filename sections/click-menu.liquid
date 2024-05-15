@@ -1,0 +1,245 @@
+<link rel="stylesheet" href="{{ 'click-menu.out.css' | asset_url }}">
+<noscript>
+  {{- 'click-menu.out.css' | asset_url | stylesheet_tag -}}
+</noscript>
+
+
+{% liquid 
+  assign title = section.settings.title
+  assign richtext = section.settings.richtext
+  assign settings = section.settings
+  assign time = section.settings.time 
+  assign background_color = section.settings.background_color
+%}
+
+
+{% style %} 
+  #click-menu--{{ section.id }} {
+    background-color: {{ background_color }};
+  }
+  {% if section.settings.time != blank %}
+    #click-menu--{{ section.id }} .click-menu__item::after {
+      animation-duration: {{ time }}ms;
+    }
+  {% endif %}
+{% endstyle %}
+
+
+<section class="click-menu" id="click-menu--{{ section.id }}" data-animation-time="{{ time }}"> 
+  <div class="click-menu__wrapper" id="techspecs">
+    <div class="click-menu__mobile-content mobile">
+      <div class="container">
+        {% if title %}
+          <h2 class="click-menu__title heading-h2 heading-h2-md">{{ title }}</h2>
+        {%- endif -%}
+        {% if richtext %}
+          <div class="click-menu__richtext body-b2 body-b2-md">{{ richtext }}</div>
+        {% endif %}
+      </div>
+    </div>
+    <div class="click-menu__thumb swiper">
+          <div class="click-menu__media swiper-wrapper">
+            {% for block in section.blocks %}
+              {% assign slide = 'slide-' | append: forloop.index  %}  
+              {%- case block.type -%}
+                {%- when 'card' -%}
+                  {%- assign bs = block.settings -%}
+                  {% if bs.image != blank %}
+                    <div  class="swiper-slide click-menu__img-box relative">
+                        {%- if bs.image != blank -%}
+                          <picture>
+                            {%- if bs.image_mobile != blank -%}
+                              <source
+                                media="(max-width: 768px)"
+                                srcset="
+                                  {%- if bs.image_mobile.width >= 375 -%}{{ bs.image_mobile | image_url: width: 375 }} 375w,{%- endif -%}
+                                  {%- if bs.image_mobile.width >= 550 -%}{{ bs.image_mobile | image_url: width: 550 }} 550w,{%- endif -%}
+                                  {%- if bs.image_mobile.width >= 750 -%}{{ bs.image_mobile | image_url: width: 750 }} 750w,{%- endif -%}
+                                "
+                              >
+                            {%- endif -%}
+                            {{
+                              bs.image
+                              | image_url: width: 2000
+                              | image_tag:
+                                width: imageWidth,
+                                height: imageHeight,
+                                class: 'lazy',
+                                sizes: '100vw',
+                                widths: '375, 550, 750, 1100',
+                                loading: 'lazy',
+                                alt: slide
+                            }}
+                          </picture>
+                        {%- endif -%}
+                    </div>
+                  {% endif %}
+              {%- endcase -%}
+            {% endfor %}
+        </div>
+    </div>
+    <div class="click-menu__content">
+        <div class="container">
+          <div class="click-menu__content-block">
+            {% if title %}
+              <h2 class="click-menu__title heading-h2 desktop">{{ title }}</h2>
+            {%- endif -%}
+            {% if richtext %}
+              <div class="click-menu__richtext body-b2 desktop">{{ richtext }}</div>
+            {% endif %}
+            <div class="swiper click-menu__items">
+              <ul class="click-menu__list swiper-wrapper">
+              {% for block in section.blocks %}
+                {%- case block.type -%}
+                  {%- when 'card' -%}
+                    {%- assign bs = block.settings -%}
+                    <li class="swiper-slide click-menu__item relative {% if forloop.first %}swiper-slide-active{% endif %}" data-index="{{ forloop.index0 }}">
+                      {% if bs.title != blank %}
+                        <div tabindex="0" role="button"
+                          class="click-menu__item-title {% if forloop.first %}current{% endif %} caption-c1 caption-c1-md">
+                            {{ bs.title }}
+                        </div>
+                      {% endif %}
+                      {% if bs.description != blank %}
+                        <div class="click-menu__item-description body-b3 body-b3-md">
+                          {{ bs.description }}
+                        </div>
+                      {% endif %}
+                    </li>
+              {%- endcase -%}
+            {% endfor %}
+            <div class="click-menu__pagination-mobile">
+              <div class="click-menu__button swiper-button-prev-click-menu"> </div>
+              <div class="swiper-pagination swiper-pagination--{{ section.id }}"> </div>
+              <div class="click-menu__button swiper-button-next-click-menu"> </div>
+            </div>
+            </ul>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+</section>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+  {% if section.blocks.size > 0 %}
+      function clickMenuSlider(){
+       const swiper = new Swiper('#click-menu--{{ section.id }} .click-menu__thumb', {
+          slideToClickedSlide: true,
+          effect: 'fade',
+          {% if section.settings.time != blank %}
+          autoplay: {
+            delay: {{ section.settings.time }},
+            disableOnInteraction: false,
+          },
+          {% endif %}
+          slidesPerView: 1,
+          pagination: {
+            el: ".swiper-pagination--{{ section.id }}",
+            clickable: true,
+          },
+          navigation: {
+            nextEl: ".swiper-button-next-click-menu",
+            prevEl: ".swiper-button-prev-click-menu",
+          },
+          breakpoints: {
+            990: {
+              allowTouchMove: false,
+            }
+          },
+        }).on('slideChange', function () {
+          const items = document.querySelectorAll('.click-menu__item');
+          items.forEach((item, index) => {
+            if(index === this.activeIndex){
+              item.classList.add('swiper-slide-active');
+            }else{
+              item.classList.remove('swiper-slide-active');
+            }
+          });
+        });
+
+        const textItems = document.querySelectorAll('.click-menu__item');
+        textItems.forEach((item)=>{
+          item.addEventListener('click', ()=>{
+            swiper.slideTo(Number(item.getAttribute('data-index')));
+          })
+        })
+          
+      }; 
+    
+    if (Shopify.designMode) {
+      clickMenuSlider();
+      document.addEventListener('shopify:section:load', function (e) {
+        clickMenuSlider();
+      });
+    } else {
+      clickMenuSlider();
+    }
+  });
+  {% endif %}
+
+</script>
+{% schema %}
+{
+  "name": "Click menu",
+  "class": "click-menu-section",
+  "limit": 1,
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Jung’s total longevity system™ - how it works"
+    },
+    {
+      "type": "richtext",
+      "id": "richtext",
+      "label": "Text",
+      "default": "<p>Our lab-designed system works in synergy to drive performance and reverse damage on the deepest cellular levels. The outcome is a personalized and complete longevity protocol that helps you work smarter, not harder.</p>"
+    },
+    {
+      "type": "text",
+      "id": "time",
+      "label": "Autoplay time"
+    },
+    {
+      "type": "color_background",
+      "id": "background_color",
+      "label": "Background color"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "card",
+      "name": "Card",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_mobile",
+          "label": "Image mobile"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Click menu"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,150 @@
+<link rel="stylesheet" href="{{ 'info-block.out.css' | asset_url }}">
+<noscript>
+  {{- 'info-block.out.css' | asset_url | stylesheet_tag -}}
+</noscript>
+
+{%- assign settings = section.settings -%}
+
+{%- style -%}
+  #info--block--{{ section.id }} {
+    padding-top: {{ settings.padding_top_mobile }}px;
+    padding-bottom: {{ settings.padding_bottom_mobile }}px;
+  }
+
+  .info--block{
+    color: {{ settings.color_text }};
+    background-color: {{ settings.color_background }};
+  }
+
+  @media screen and (min-width: 768px) {
+    #info--block--{{ section.id }} {
+      padding-top: {{ settings.padding_top }}px;
+      padding-bottom: {{ settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<section
+  class="info--block info--block--{{ section.id }} container container--small"
+  id="info--block--{{ section.id }}"
+>
+  <div class="info--block__head">
+    {%- if settings.title != blank -%}
+      <h2 class="info--block__title heading-h2">
+        {{ settings.title }}
+      </h2>
+    {%- endif -%}
+
+    {%- if settings.description != blank -%}
+      <p class="info--block__description body-b2">
+        {{ settings.description }}
+      </p>
+    {%- endif -%}
+  </div>
+
+  {%- if settings.image != blank -%}
+    <div class="info--block__img--thumb">
+      <img
+        src="{{ settings.image | image_url: width: 1600 }}"
+        alt="{{ settings.image.alt }}"
+        width=""
+        height=""
+        loading="lazy"
+        class="lazy"
+        data-src="{{ settings.image | image_url: width: 1600 }}"
+      >
+    </div>
+  {%- endif -%}
+
+  {% if settings.more_info != blank %}
+    <div class="info--block__more--info body-b3">
+      {{ settings.more_info }}
+    </div>
+  {% endif %}
+</section>
+
+{% schema %}
+{
+  "name": "Info block",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "richtext",
+      "id": "more_info",
+      "label": "More info"
+    },
+    {
+      "type": "color",
+      "id": "color_background",
+      "label": "Background color",
+      "default": "#fff"
+    },
+    {
+      "type": "color",
+      "id": "color_text",
+      "label": "Text color",
+      "default": "#000"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top_mobile",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom_mobile",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 80
+    }
+  ],
+  "presets": [
+    {
+      "name": "Info block",
+      "settings": {}
+    }
+  ]
+}
+{% endschema %}

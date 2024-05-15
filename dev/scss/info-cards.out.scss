@@ -1,0 +1,118 @@
+@import "./settings/variables";
+@import "./settings/mixins";
+
+.info--cards {
+  &__wrapper {
+    @include media-breakpoint-up(big-xl) {
+      padding-left: 300px;
+      padding-right: 300px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 20px;
+
+    @include media-breakpoint-up(xl) {
+      text-align: center;
+    }
+  }
+
+  &__subheading {
+    margin-bottom: 40px;
+    max-width: 500px;
+    @include media-breakpoint-up(xl) {
+      max-width: 700px;
+      text-align: center;
+      margin: 0 auto 50px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+
+    @include media-breakpoint-up(xl) {
+      flex-wrap: nowrap;
+      justify-content: center;
+    }
+
+    .info--cards__item {
+      display: flex;
+      flex-direction: column;
+
+      width: 100%;
+
+      border: 1px solid $white-900;
+      border-radius: 40px;
+      overflow: hidden;
+
+      @include media-breakpoint-up(lg) {
+        width: calc((100% / 3) - 24px);
+      }
+
+      @include media-breakpoint-up(xl) {
+        width: 424px;
+      }
+
+      &:not(:last-child) {
+        margin-bottom: 32px;
+
+        @include media-breakpoint-up(lg) {
+          margin-bottom: 0;
+          margin-right: 24px;
+        }
+      }
+
+      &--heading {
+        display: inline-block;
+        width: 100%;
+        padding: 12px;
+
+        text-align: center;
+      }
+
+      &--img--box {
+        height: 275px;
+        img {
+          width: 100%;
+          height: 100%;
+          transform: scale(1.3);
+          padding-top: 35px;
+          object-position: center;
+          object-fit: cover;
+        }
+      }
+
+      &--info {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+
+        padding: 24px;
+
+        @include media-breakpoint-up(xxl) {
+          padding: 30px;
+          padding-top: 24px;
+        }
+
+        .info--cards__item--title {
+          margin-bottom: 8px;
+        }
+
+        .info--cards__item--description {
+          margin: 0;
+          margin-bottom: 24px;
+        }
+
+        .info--cards__item--link {
+          width: 100%;
+          margin-top: auto;
+        }
+      }
+    }
+  } 
+  .info--cards__link {
+      text-decoration: none;
+      color: black;
+  }
+}

@@ -1,0 +1,153 @@
+{
+  "sections": {
+    "77547870-fbcd-400e-90d2-4ef871eb8d08": {
+      "type": "blog-card-slider",
+      "blocks": {
+        "a72d189b-dd7c-411b-b90b-ee67043c9121": {
+          "type": "Slide",
+          "settings": {
+            "article": "news\/skin-aging-and-longevity-why-healthy-skin-is-a-mirror-of-your-health"
+          }
+        },
+        "f87fac6a-7ae0-401e-b08e-1b349d1c24ee": {
+          "type": "Slide",
+          "settings": {
+            "article": "news\/the-12-hallmarks-of-aging-what-to-look-for-why-they-matter"
+          }
+        },
+        "9146553e-65f8-4043-adea-07655832c0d7": {
+          "type": "Slide",
+          "settings": {
+            "article": "news\/fibroblasts-the-unsung-heroes-of-skin-anti-aging"
+          }
+        },
+        "b5e5f6b0-5e0b-41d3-8c29-1b9ed95d8f18": {
+          "type": "Slide",
+          "settings": {
+            "article": "news\/the-truth-about-collagen-supplements"
+          }
+        },
+        "slide_gfmPRE": {
+          "type": "Slide",
+          "settings": {
+            "article": "news\/topical-creams-for-anti-aging-and-why-they-dont-work-a-longevity-medicine-perspective"
+          }
+        }
+      },
+      "block_order": [
+        "a72d189b-dd7c-411b-b90b-ee67043c9121",
+        "f87fac6a-7ae0-401e-b08e-1b349d1c24ee",
+        "9146553e-65f8-4043-adea-07655832c0d7",
+        "b5e5f6b0-5e0b-41d3-8c29-1b9ed95d8f18",
+        "slide_gfmPRE"
+      ],
+      "settings": {
+        "img": "shopify:\/\/shop_images\/pdp-hero-img_13873e5e-1c94-4b96-94ad-2657ffc67f63.jpg",
+        "img_mob": "shopify:\/\/shop_images\/mobile-slider.png",
+        "padding_top": 174,
+        "padding_bottom": 94,
+        "padding_top_mb": 76,
+        "padding_bottom_mb": 36
+      }
+    },
+    "5fbc6a96-a31b-4c69-881a-99115e75430d": {
+      "type": "trending-articles",
+      "settings": {
+        "header": "Trending"
+      }
+    },
+    "3f181e3e-e725-4e7c-836e-7a8e8a8d43ef": {
+      "type": "article-section",
+      "blocks": {
+        "a1b4686a-e7ce-4aeb-855e-56dde8480cd6": {
+          "type": "Article",
+          "settings": {
+            "article": "news\/the-truth-about-collagen-supplements"
+          }
+        },
+        "897d2c05-2f8a-4177-9c0e-2ee46e299ffe": {
+          "type": "Article",
+          "settings": {
+            "article": "news\/the-12-hallmarks-of-aging-what-to-look-for-why-they-matter"
+          }
+        }
+      },
+      "block_order": [
+        "a1b4686a-e7ce-4aeb-855e-56dde8480cd6",
+        "897d2c05-2f8a-4177-9c0e-2ee46e299ffe"
+      ],
+      "settings": {
+        "border_top": true,
+        "border_bottom": false
+      }
+    },
+    "ef938ff9-abd7-4f20-b4be-43e4f8f34dbf": {
+      "type": "marquee",
+      "settings": {
+        "text": "<p>you, like new<\/p>",
+        "speed": "30"
+      }
+    },
+    "59086154-80ca-4738-aeab-87d4a9497248": {
+      "type": "full-bg-text",
+      "blocks": {
+        "4b8aa493-b395-45f2-8c4c-540ff3bbf269": {
+          "type": "icon",
+          "settings": {
+            "svg_icon": "shopify:\/\/shop_images\/Group_2.svg",
+            "svg_size_desktop": 385,
+            "svg_size_mobile": 100,
+            "svg_size_mobile_large": 228,
+            "heading_icon": ""
+          }
+        },
+        "72a9e21b-ecb6-4383-a6cc-45e7c1183696": {
+          "type": "heading",
+          "settings": {
+            "heading": "Get the latest from Jung+"
+          }
+        },
+        "a6e19057-a155-401c-82db-9c64b33e23b0": {
+          "type": "email_form",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "4b8aa493-b395-45f2-8c4c-540ff3bbf269",
+        "72a9e21b-ecb6-4383-a6cc-45e7c1183696",
+        "a6e19057-a155-401c-82db-9c64b33e23b0"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "bg_img": "shopify:\/\/shop_images\/DTS_The_Internet_Fanette_Guilloud_5236_1.png",
+        "bg_image_mob": "shopify:\/\/shop_images\/DTS_The_Internet_Fanette_Guilloud_5236_1_1.jpg",
+        "padding_top": 132,
+        "padding_bottom": 132,
+        "padding_top_mb": 92,
+        "padding_bottom_mb": 92
+      }
+    },
+    "main": {
+      "type": "main-blog",
+      "settings": {
+        "blog": "news",
+        "header": "All journal entries",
+        "layout": "grid",
+        "show_image": true,
+        "show_read_more": true,
+        "image_height": "adapt",
+        "show_date": false,
+        "show_author": false
+      }
+    }
+  },
+  "order": [
+    "77547870-fbcd-400e-90d2-4ef871eb8d08",
+    "5fbc6a96-a31b-4c69-881a-99115e75430d",
+    "3f181e3e-e725-4e7c-836e-7a8e8a8d43ef",
+    "ef938ff9-abd7-4f20-b4be-43e4f8f34dbf",
+    "59086154-80ca-4738-aeab-87d4a9497248",
+    "main"
+  ]
+}

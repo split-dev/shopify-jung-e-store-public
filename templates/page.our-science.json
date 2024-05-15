@@ -1,0 +1,664 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "ab50e88b-d77b-477c-ab3e-4b6f66c0ef9a": {
+      "type": "banner-image",
+      "settings": {
+        "subscription_page": false,
+        "header": "THE WORLD’S FIRST PRECISION-TARGETED LONGEVITY PROGRAM",
+        "description": "",
+        "button_label": "Shop all",
+        "button_link": "",
+        "image": "shopify:\/\/shop_images\/li-yang-banner_1.jpg",
+        "image_mobile": "shopify:\/\/shop_images\/Pic.jpg",
+        "opacity": 0,
+        "container": "container",
+        "text_align": "left",
+        "banner_height": "banner-large"
+      }
+    },
+    "abc7b66b-c619-4e3a-89f4-2b8eaf0117a4": {
+      "type": "section-how-to",
+      "blocks": {
+        "a1d2fb31-3a8d-4078-8c6c-b1a56aeca7b6": {
+          "type": "header",
+          "settings": {
+            "title": "Anti-aging is getting old."
+          }
+        },
+        "319a6e3e-2b06-47b9-b063-45cdb7f72af8": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "<p>There’s no difference between ‘internal’ and ‘external’ aging, as far as your physiology is concerned, it all answers to the same process. Traditional anti-aging approaches have focused on masking the signs of aging through superficial procedures or cosmetic interventions that focus on the surface level, without tackling the root cause.<\/p>"
+          }
+        },
+        "7a9584b6-796b-4683-89e5-80527e3cd6b2": {
+          "type": "svg",
+          "settings": {
+            "svg_code": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" width=\"72\" height=\"158\" fill=\"none\"><path stroke=\"#fff\" d=\"M36 .5v69M53.522 91.283V88.5m4.522 3.896 1.695-1.67m-.565 6.122H62m-43.522-5.565V88.5m-4.522 3.896-2.26-1.67m1.13 6.122H10m6.217 1.113 11.87 20.591v10.018l-6.783 23.93h6.783L36 131.352h.565l7.348 21.148h6.783l-6.783-23.93v-10.018l11.87-20.591-4.522-3.34-10.74 16.696h-9.043L20.74 94.622l-4.522 3.339Z\"><\/path><circle cx=\"36\" cy=\"102.5\" r=\"6\" stroke=\"#fff\"><\/circle><\/svg>"
+          }
+        },
+        "9237ceb8-d048-48d9-99f6-d8251164c358": {
+          "type": "header",
+          "settings": {
+            "title": "Longevity is you, like new. From the inside, out."
+          }
+        },
+        "6e9a313f-cd23-485e-bf83-7400ff4236d8": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "<p>Longevity, on the other hand, goes beyond surface-level treatments by targeting aging at its core, on a biological level, within your cells, tissues, and entire body. By understanding the complex mechanisms behind aging and addressing the factors that contribute to it, we can promote overall health, enhance natural beauty, and optimize performance in a more holistic and effective manner.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "a1d2fb31-3a8d-4078-8c6c-b1a56aeca7b6",
+        "319a6e3e-2b06-47b9-b063-45cdb7f72af8",
+        "7a9584b6-796b-4683-89e5-80527e3cd6b2",
+        "9237ceb8-d048-48d9-99f6-d8251164c358",
+        "6e9a313f-cd23-485e-bf83-7400ff4236d8"
+      ],
+      "settings": {
+        "background_color": "#000"
+      }
+    },
+    "4b4c5b9b-f7f8-48d1-95b4-f95ff1026ce1": {
+      "type": "video-with-earth",
+      "disabled": true,
+      "settings": {
+        "header": "Your numerical age ≠ biological age. Good thing it's flexible.",
+        "text": "To truly gauge your age, look beyond Earthly years. Instead, delve into your body's organs, tissues, and cells – your 'biological age.' It's a superior indicator, reflecting health influenced by the 12 aging drivers, predicting mortality risk better. Importantly, it's malleable, potentially allowing reversal. By focusing on your body's systems, you can control the aging process and unlock longer, healthier life.",
+        "video_1": "shopify:\/\/files\/videos\/fe2f9484-abfb-4f1e-a943-c1bf01f2d603.mp4"
+      }
+    },
+    "03e5d6ef-9ed9-4464-bb38-75326b3f4c63": {
+      "type": "our-science-image-with-text",
+      "blocks": {
+        "11bd0fcd-c26c-442e-a4a4-cca510755cbc": {
+          "type": "header",
+          "settings": {
+            "header": "Aging: a patchwork of deterioration.",
+            "heading_size": "heading-h2 heading-h2-md"
+          }
+        },
+        "03064d3d-8f80-4fd3-afc1-5fcb9233cc43": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "<p>It's believed that aging is not a single process, but a combination of 12 mechanisms that causes your body to deteriorate, become frail, and susceptible to chronic disease. We call these ‘The Hallmarks of Aging’, and they are the foundation of longevity medicine.  <\/p>"
+          }
+        },
+        "1a214793-72ad-4a3c-b138-4493f5b3ccd3": {
+          "type": "position",
+          "settings": {
+            "position": "Jordan Baechle MD, Chief Science Officer"
+          }
+        }
+      },
+      "block_order": [
+        "11bd0fcd-c26c-442e-a4a4-cca510755cbc",
+        "03064d3d-8f80-4fd3-afc1-5fcb9233cc43",
+        "1a214793-72ad-4a3c-b138-4493f5b3ccd3"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/12_Hallmarks_1_1.png",
+        "show_modal": false,
+        "image_position": "left",
+        "color_background": "#f5f5f5",
+        "padding_top_mobile": 80,
+        "padding_bottom_mobile": 80,
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "91a739a6-4350-4a3a-8a55-c90cd43ba530": {
+      "type": "hallmarks",
+      "blocks": {
+        "edbfaa22-3246-4cc5-83c8-bbd696b111cc": {
+          "type": "item",
+          "settings": {
+            "number_1": "01",
+            "title_1": "Genomic instability",
+            "subtitle_1": "DNA damage from environmental factors or errors in replication.",
+            "number_2": "02",
+            "title_2": "Telomere attrition",
+            "subtitle_2": "Shortening of chromosome end-caps with each cell division.",
+            "number_3": "03",
+            "title_3": "Epigenetic alterations",
+            "subtitle_3": "Changes in gene expression due to DNA and histone modifications.",
+            "number_4": "04",
+            "title_4": "Deregulated nutrient sensing",
+            "subtitle_4": "Changes in ability to sense and respond to nutrients, leading to metabolic dysfunction.",
+            "number_5": "05",
+            "title_5": "Mitochondrial dysfunction",
+            "subtitle_5": "Decline in mitochondria function and number, leading to decreased energy production and increased oxidative stress.",
+            "number_6": "06",
+            "title_6": "Stem cell exhaustion",
+            "subtitle_6": "Decline in stem cell function and number, leading to decreased tissue repair and regeneration."
+          }
+        },
+        "2953ad12-7879-4a7c-b200-e5950703e707": {
+          "type": "item",
+          "settings": {
+            "number_1": "07",
+            "title_1": "Cellular senescence",
+            "subtitle_1": "Old, defunct 'Zombie' cells that build up, and cause trouble.",
+            "number_2": "08",
+            "title_2": "Inflammation",
+            "subtitle_2": "Chronic-low grade inflammation (-inflammaging') in tissues and organs",
+            "number_3": "09",
+            "title_3": "Loss of proteostasis",
+            "subtitle_3": "Decline in proper protein folding and degradation.",
+            "number_4": "10",
+            "title_4": "Altered intercellular communication",
+            "subtitle_4": "Changes in cell signaling pathways that lead to inflammation and tissue dysfunction.",
+            "number_5": "11",
+            "title_5": "Immune dysfunction",
+            "subtitle_5": "Changes in immune function and composition that lead to chronic inflammation and increased susceptibility to infection.",
+            "number_6": "12",
+            "title_6": "Metabolic dysregulation",
+            "subtitle_6": "Changes in energy processing and utilization that lead to metabolic dysfunction and disease."
+          }
+        }
+      },
+      "block_order": [
+        "edbfaa22-3246-4cc5-83c8-bbd696b111cc",
+        "2953ad12-7879-4a7c-b200-e5950703e707"
+      ],
+      "settings": {
+        "title": "Aging, unpacked: the 12 hallmarks "
+      }
+    },
+    "218aa864-8df4-45d4-9873-15f8396bdb1b": {
+      "type": "marquee",
+      "settings": {
+        "text": "<p>Learn more about the 12 hallmarks of aging<a href=\"\/blogs\/news\" title=\"News\"> here<\/a><\/p>",
+        "speed": "140"
+      }
+    },
+    "46cbe468-7481-443f-9b1d-535aa0905902": {
+      "type": "our-science-image-with-text",
+      "blocks": {
+        "4c06be5b-702b-413d-a965-9d0d748325d8": {
+          "type": "header",
+          "settings": {
+            "header": "Longevity medicine: how it works",
+            "heading_size": "heading-h2 heading-h2-md"
+          }
+        },
+        "9c6791e0-44a6-4be8-b7cf-2a13a60e5a86": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "<p>Each of the 12 hallmarks of aging can be addressed through novel therapeutics, longevity molecules, and specific lifestyle practices. It's thought that by tackling these drivers collectively and strategically, it's possible to target, slow - and perhaps someday stop biological aging altogether.<\/p>"
+          }
+        },
+        "c70c5061-3a0a-4ac3-a65d-9542e155534b": {
+          "type": "position",
+          "settings": {
+            "position": "Simon Sakhai, CEO"
+          }
+        }
+      },
+      "block_order": [
+        "4c06be5b-702b-413d-a965-9d0d748325d8",
+        "9c6791e0-44a6-4be8-b7cf-2a13a60e5a86",
+        "c70c5061-3a0a-4ac3-a65d-9542e155534b"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/image_133.png",
+        "show_modal": true,
+        "image_position": "right",
+        "color_background": "#f5f5f5",
+        "padding_top_mobile": 80,
+        "padding_bottom_mobile": 64,
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "74e60250-1c43-44fa-90a0-225d259b350e": {
+      "type": "longevity-system",
+      "blocks": {
+        "3b5f741f-3176-4bce-9481-e2dd25892477": {
+          "type": "card",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/Icon.png",
+            "header": "Novel Longevity Molecules",
+            "subtitle": "Compounds that have been shown to address aging hallmarks or activate longevity pathways."
+          }
+        },
+        "7a447aaf-a0e0-4fea-9557-08a8d580e043": {
+          "type": "card",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/Icon_1.png",
+            "header": "Longevity Lifestyle Practices ",
+            "subtitle": "Targeted lifestyle habits that ‘activate’ our internal biological anti-aging mechanisms."
+          }
+        },
+        "f80ae159-c127-4033-a24a-edf3a35c9ffe": {
+          "type": "card",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/Icon_2.png",
+            "header": "Biological Age & Biomarker Testing",
+            "subtitle": "Continuous tracking of biological age, pace of aging and key longevity biomarkers."
+          }
+        }
+      },
+      "block_order": [
+        "3b5f741f-3176-4bce-9481-e2dd25892477",
+        "7a447aaf-a0e0-4fea-9557-08a8d580e043",
+        "f80ae159-c127-4033-a24a-edf3a35c9ffe"
+      ],
+      "settings": {
+        "background_color": "#F5F5F5",
+        "title": "Introducing: Jung's Total Longevity System™",
+        "subtitle": "<p>The first precision engineered longevity lifestyle program to defy aging, increase healthy lifespan, and achieve alpha health. By leveraging the core aspects of professional longevity care, we've reimagined the longevity clinic experience, making it affordable, effective, and effortless. <\/p>",
+        "padding_top": 80,
+        "padding_bottom": 80,
+        "padding_top_mb": 80,
+        "padding_bottom_mb": 80
+      }
+    },
+    "17c31865-ea5f-4f66-8d66-94b6b6ddea64": {
+      "type": "text-only",
+      "blocks": {
+        "e4055795-494d-41fb-8cf1-52e544eaa7b6": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "<p>Outdated anti-aging approaches, topical creams, or surgical fixes don’t impact longevity. Aging is a multifaceted process. To slow it down, true longevity requires a 'portfolio approach', requiring a lot of work, a lot of planning, and a lot of guidance.<br\/><\/p>"
+          }
+        },
+        "2aee1447-fe68-4dcf-a6ef-3bd827f87fff": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "<p>But being a hardcore 'biohacker' isn't always the best route either. Taking every supplement you learn about, or trying every lifestyle hack you see on instagram isn't very sustainable, enjoyable, or even healthy. <\/p>"
+          }
+        },
+        "0792e3a0-347e-43fc-99d5-0166a2421359": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "<p>Jung’s Total Longevity System™ solves all this.  <\/p>"
+          }
+        },
+        "4b388f14-4112-43cd-b32e-6618dad0bd1f": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "<p>We’ve built our products around pre-selected evidence-based lifestyle practices, so you can build your peak protocol around your unique preferences and goals. Each is formulated with leading longevity compounds, synergistically designed to make lifestyle changes easier, more effective, and more enjoyable. <\/p>"
+          }
+        },
+        "9e50b112-badd-4bb4-bb1e-ae32718596b9": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "<p>No more guesswork. Just build your Jung+ kit, follow the instructions,<br\/>and be confident that you’re leveraging the collective intelligence of longevity<br\/>medicine. <\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "e4055795-494d-41fb-8cf1-52e544eaa7b6",
+        "2aee1447-fe68-4dcf-a6ef-3bd827f87fff",
+        "0792e3a0-347e-43fc-99d5-0166a2421359",
+        "4b388f14-4112-43cd-b32e-6618dad0bd1f",
+        "9e50b112-badd-4bb4-bb1e-ae32718596b9"
+      ],
+      "disabled": true,
+      "custom_css": [
+
+      ],
+      "settings": {
+        "title": "A powerful, self guided system that tailors your human optimization journey.",
+        "background_color": "#f5f5f5"
+      }
+    },
+    "4b1b3a14-b4b3-4849-8a53-5831578bbcd8": {
+      "type": "our-science-image-with-text",
+      "blocks": {
+        "7a3c75fc-b17e-440b-a9a1-8e5bd18001a7": {
+          "type": "header",
+          "settings": {
+            "header": "A powerful, self guided system that tailors your human optimization journey.",
+            "heading_size": "heading-h2 heading-h2-md"
+          }
+        },
+        "9e422843-1e15-4158-b407-b824694f09fc": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "<p>Outdated anti-aging approaches, topical creams, or surgical fixes don’t impact longevity. Aging is a multifaceted process, as complex as biology itself. True longevity requires a portfolio approach, requiring a lot of knowledge and guidance.<\/p>"
+          }
+        },
+        "richtext_Kf4BR3": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "<p>But being a dedicated 'biohacker' isn't always the best route either. Taking every supplement you learn about, trying every lifestyle hack you see on instagram, and treating yourself as a test subject isn't very sustainable, enjoyable, or even healthy. <\/p>"
+          }
+        },
+        "9f72a5d7-1c1c-4814-aac9-a1c6cfb0133d": {
+          "type": "position",
+          "settings": {
+            "position": "Enter: Jung’s Total Longevity System™"
+          }
+        },
+        "richtext_TjaYVn": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "<p>Founded in Oxford, we do the homework for you. Just build your Jung+ kit, follow the lifestyle guidance, and be confident that you’re doing the latest and greatest in longevity science. <\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "7a3c75fc-b17e-440b-a9a1-8e5bd18001a7",
+        "9e422843-1e15-4158-b407-b824694f09fc",
+        "richtext_Kf4BR3",
+        "9f72a5d7-1c1c-4814-aac9-a1c6cfb0133d",
+        "richtext_TjaYVn"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Illustration.png",
+        "show_modal": false,
+        "image_position": "left",
+        "color_background": "#f5f5f5",
+        "padding_top_mobile": 64,
+        "padding_bottom_mobile": 80,
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "4c5d24bb-97ca-42c4-b23e-363c5a0a520c": {
+      "type": "video-with-earth",
+      "settings": {
+        "header": "Complete protocols, tracking the latest science.",
+        "text": "We’ve built our products around pre-selected, evidence-based lifestyle practices, so you can focus your efforts on your unique preferences and goals. Each is formulated with leading longevity compounds, synergistically designed to make those lifestyle goals easier, more effective, and more enjoyable.",
+        "video_1": "shopify:\/\/files\/videos\/fe2f9484-abfb-4f1e-a943-c1bf01f2d603.mp4"
+      }
+    },
+    "3c66b988-77d6-436c-a51c-ee65671d50f9": {
+      "type": "seven-levels",
+      "blocks": {
+        "2acf8bce-7d0d-4665-8de2-c703ed4489bf": {
+          "type": "faq",
+          "settings": {
+            "heading": "CALORIC RESTRICTION",
+            "description": "<p>Calorie restriction (CR), a key focus in geroscience, involves reducing calorie intake without malnutrition, showing promise in extending lifespan and healthspan. This approach triggers a range of biological mechanisms known for their longevity-promoting effects, such as autophagy, reduced insulin-like growth factor 1 (IGF-1) signaling, and enhanced mitochondrial efficiency. These processes contribute to decreased oxidative stress and improved metabolic health, which are key in delaying the onset of age-related diseases.The landmark CALERIE trial at Columbia University demonstrated in humans that CR lowers metabolic resting rate and oxidative damage, reinforcing its potential in promoting healthspan and lifespan. <\/p>",
+            "color": "#7fb069",
+            "icon": "food-icon"
+          }
+        },
+        "d51eeb52-944b-48d6-abac-215a3f55092e": {
+          "type": "faq",
+          "settings": {
+            "heading": "intermittent fasting",
+            "description": "<p>Intermittent fasting (IF), a dietary regimen cycling between fasting and eating periods, is gaining serious attention in longevity research. IF is believed to promote healthspan and lifespan by activating similar biological pathways as calorie restriction, like autophagy, enhanced stress resistance, and reduced inflammation. These processes contribute to improved metabolic health and reduced risk of age-related diseases. Studies have shown that IF can positively affect biomarkers associated with aging, such as blood glucose levels and insulin sensitivity. While research is ongoing, early findings suggest that IF's impact on cellular and molecular mechanisms could mirror the longevity benefits seen in calorie restriction, offering a feasible alternative for those seeking healthspan extension without continuous calorie reduction.<\/p>",
+            "color": "#f6ae2d",
+            "icon": "clocks-icon"
+          }
+        },
+        "9b6486b1-3eeb-4ab3-9dd3-6a27ca74ab81": {
+          "type": "faq",
+          "settings": {
+            "heading": "BLOOD Glucose regulation",
+            "description": "<p>Maintaining healthy blood sugar levels is pivotal for longevity, given the unprecedented level of sugar and carbohydrates in modern diets. Healthy blood sugar combats insulin resistance, chronic inflammation, and supports hormonal health, crucial for systemic well-being. It also maintains mitochondrial function and minimizes harmful by products that damage cells and causes wrinkles. Importantly, stable glucose levels influence transcriptional pathways and activate longevity genes, such as hTERT and FOXO proteins, which protect DNA integrity and enhance metabolic flexibility.<\/p>",
+            "color": "#f95123",
+            "icon": "glucose-icon"
+          }
+        },
+        "9c8c6ff1-972a-4a01-88dd-8b2299de9363": {
+          "type": "faq",
+          "settings": {
+            "heading": "EXERCISE & BODY COMPOSITION",
+            "description": "<p>Muscle has been described as the \"organ of longevity,\" highlighting its crucial role in promoting a healthier, longer life. People in Blue Zones, regions known for their high rates of centenarians, exemplify this principle; they remain physically active into late life, embodying the adage, \"You don't stop moving because you get old; you get old because you stop moving.\" Maintaining a balance of lean muscle mass through regular physical activity is strongly associated with increased survival in older adults. Conversely, extremes in fat mass, particularly in men, can elevate mortality risks. Exercise, essential in managing body composition, not only boosts muscle mass but also reduces the risks of bone weakening, falls, and fractures. Hence, the synergy of sustained muscle activity and healthy body composition is pivotal for longevity, reducing risks linked to chronic diseases and enhancing overall life expectancy​​​​.<\/p>",
+            "color": "#f6ae2d",
+            "icon": "muscle-icon"
+          }
+        },
+        "ddcf884b-460e-4579-bc75-aa14ee493d4b": {
+          "type": "faq",
+          "settings": {
+            "heading": "SLEEP OPTIMIZATION",
+            "description": "<p>Sleep is nature’s longevity miracle: some of the most important biological rejuvenation mechanisms – like cellular repair, muscle growth, protein synthesis - happen during sleep. Sleep is the common denominator of brain health, hormone health, mental health, heart health, metabolic health, and immune health. In fact, it’s been found that the health risks associated with poor sleep are comparable to smoking. But not all sleep is created equal, and while it may be tempting to focus on sleep length, it’s sleep quality that can make the biggest difference. Sadly, as you age, your circadian rhythm dysregulates, life gets in the way, and your body has an increasingly difficult time getting quality sleep and its myriad of benefits.<\/p>",
+            "color": "#c0a6e1",
+            "icon": "sleep-icon"
+          }
+        },
+        "19ee2395-8c5b-48fb-8681-2d767f531321": {
+          "type": "faq",
+          "settings": {
+            "heading": "SKIN REJUVENATION",
+            "description": "<p>Skin is your largest organ - it's literally holding you together. But keeping skin young and healthy is not just for show - it's a real health concern. Skin plays a critical role in protection, sensation, and temperature regulation, and is the body’s largest buildup of senescent cells. These ‘zombie cells’ leave the skin, cause damage, and accelerates aging throughout the rest of the body. Sadly, most skincare is cosmetic, failing to address the deeper mechanisms of skin aging. Longevity Science heralds a new era for this organ, as it maps out the unique process of dermal aging and its complex relationship with the body's health.<\/p>",
+            "color": "#7fb069",
+            "icon": "skin-icon"
+          }
+        }
+      },
+      "block_order": [
+        "2acf8bce-7d0d-4665-8de2-c703ed4489bf",
+        "d51eeb52-944b-48d6-abac-215a3f55092e",
+        "9b6486b1-3eeb-4ab3-9dd3-6a27ca74ab81",
+        "9c8c6ff1-972a-4a01-88dd-8b2299de9363",
+        "ddcf884b-460e-4579-bc75-aa14ee493d4b",
+        "19ee2395-8c5b-48fb-8681-2d767f531321"
+      ],
+      "settings": {
+        "title": "Designed to support and amplify the most crucial evidence-based longevity goals.",
+        "background_color": "#f5f5f5",
+        "padding_top_mobile": 80,
+        "padding_bottom_mobile": 80,
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "14948e80-ef9e-4189-9aff-911273e93f52": {
+      "type": "experts",
+      "blocks": {
+        "e7c91c1a-0994-4260-a5c5-deec0e89fc12": {
+          "type": "member",
+          "settings": {
+            "photo": "shopify:\/\/shop_images\/image_84.jpg",
+            "richtext": "<p>Only 20 percent of our longevity is genetically determined. The rest is what we do, how we live our lives and increasingly the molecules that we take. It's not the loss of our DNA that causes aging, it's the problems in reading the information, the epigenetic noise.<br\/><\/p>",
+            "name": "-Dr. David Sinclair",
+            "position": "Harvard Medical School"
+          }
+        },
+        "f4c1797a-ccc9-4f9c-9bfb-76339173f5e0": {
+          "type": "member",
+          "settings": {
+            "photo": "shopify:\/\/shop_images\/image_85.jpg",
+            "richtext": "<p>People used to see aging as a rusting nail - there's nothing you can do about it. But we now know that there are processes that are driving aging, and that those processes can be meddled with.<br\/><br\/><\/p>",
+            "name": "-Judith Campisi",
+            "position": "Buck Institute for Research on Aging"
+          }
+        },
+        "749699e3-24cd-4fc2-ab13-826921594c83": {
+          "type": "member",
+          "settings": {
+            "photo": "shopify:\/\/shop_images\/image_86.jpg",
+            "richtext": "<p>Ageing is, simply and clearly, the accumulation of damage in the body. That's all that ageing is. Our body is a machine. A very complicated machine, but nonetheless a machine, and it can be subjected to maintenance and repair in the same way as a simple machine, like a car<\/p>",
+            "name": "-Aubrey De Grey",
+            "position": "LEV Foundation"
+          }
+        }
+      },
+      "block_order": [
+        "e7c91c1a-0994-4260-a5c5-deec0e89fc12",
+        "f4c1797a-ccc9-4f9c-9bfb-76339173f5e0",
+        "749699e3-24cd-4fc2-ab13-826921594c83"
+      ],
+      "settings": {
+        "title": "What the experts say",
+        "background_color": "#C0A6E1"
+      }
+    },
+    "e02d5fe4-8827-45a1-9425-f4a3f6e0cbd8": {
+      "type": "full-bg-text",
+      "blocks": {
+        "template--17180347105444__e02d5fe4-8827-45a1-9425-f4a3f6e0cbd8-icon-1": {
+          "type": "icon",
+          "settings": {
+            "svg_icon": "shopify:\/\/shop_images\/Symbol_1.svg",
+            "svg_size_desktop": 115,
+            "svg_size_mobile": 65,
+            "heading_icon": "MISSION"
+          }
+        },
+        "template--17180347105444__e02d5fe4-8827-45a1-9425-f4a3f6e0cbd8-heading-1": {
+          "type": "heading",
+          "settings": {
+            "heading": "Longevity for the billions, not just billionaires."
+          }
+        },
+        "template--17180347105444__e02d5fe4-8827-45a1-9425-f4a3f6e0cbd8-text-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Jung is the first-of-its-kind health and human performance company dedicated to bringing tomorrow, today. Though longevity science has been in motion for a while, only a select few have reaped the benefits. But not anymore. We’re on a mission to lead this monumental turning point in human history, by making these ground-breaking longevity interventions easy and accessible to everyone. <\/p>"
+          }
+        },
+        "c73ec6a5-9b1c-406f-98b9-3a1b70d013be": {
+          "type": "button",
+          "settings": {
+            "button_label": "About Us",
+            "button_link": "shopify:\/\/collections",
+            "button_style_secondary": true,
+            "button_label_2": "",
+            "button_link_2": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--17180347105444__e02d5fe4-8827-45a1-9425-f4a3f6e0cbd8-icon-1",
+        "template--17180347105444__e02d5fe4-8827-45a1-9425-f4a3f6e0cbd8-heading-1",
+        "template--17180347105444__e02d5fe4-8827-45a1-9425-f4a3f6e0cbd8-text-1",
+        "c73ec6a5-9b1c-406f-98b9-3a1b70d013be"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "bg_img": "shopify:\/\/shop_images\/image_68_3f585367-f11a-4325-bb0e-c701b544f800.jpg",
+        "bg_image_mob": "shopify:\/\/shop_images\/image_69.jpg",
+        "padding_top": 124,
+        "padding_bottom": 140,
+        "padding_top_mb": 64,
+        "padding_bottom_mb": 80
+      }
+    },
+    "89cd14fb-a3de-4bdb-849a-ab1bb2051d1a": {
+      "type": "text-section",
+      "blocks": {
+        "ddc29a50-97fa-4efc-8bc3-99bb2f1f2899": {
+          "type": "body_text",
+          "settings": {
+            "text": "At Jung+, we're on a crusade to liberate human longevity, translating the latest scientific advancements in aging research into products and technologies that can slow aging and extend healthy lifespan."
+          }
+        },
+        "38af52ed-1856-4af8-8574-1215a8056460": {
+          "type": "text_item",
+          "settings": {
+            "text_item": "+ Clinical formulations at therapeutic doses"
+          }
+        },
+        "1727d77a-7b56-42f8-b430-31c19dcdea8e": {
+          "type": "text_item",
+          "settings": {
+            "text_item": "+ Based on real science, backed by 100’s of studies"
+          }
+        },
+        "089acc00-3ba1-4e71-9158-2be36e88bbd1": {
+          "type": "text_item",
+          "settings": {
+            "text_item": "+ Highest quality, high-performing, pure ingredients"
+          }
+        },
+        "8c13d21a-7c5b-47be-acd8-6c738da74956": {
+          "type": "text_item",
+          "settings": {
+            "text_item": "+ Safe for long-term use"
+          }
+        },
+        "46994ccd-6e25-4a97-b942-5546ba2a7a8c": {
+          "type": "mob_button",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "ddc29a50-97fa-4efc-8bc3-99bb2f1f2899",
+        "38af52ed-1856-4af8-8574-1215a8056460",
+        "1727d77a-7b56-42f8-b430-31c19dcdea8e",
+        "089acc00-3ba1-4e71-9158-2be36e88bbd1",
+        "8c13d21a-7c5b-47be-acd8-6c738da74956",
+        "46994ccd-6e25-4a97-b942-5546ba2a7a8c"
+      ],
+      "settings": {
+        "title": "Founded in Oxford - we’ve done our homework",
+        "titlehtml": "<p>Founded in Oxford - <\/p><p>we’ve done our <\/p><p>homework<\/p>",
+        "richtext": "",
+        "button_label": "about us",
+        "button_link": "shopify:\/\/pages\/about",
+        "background_color": "#000"
+      }
+    },
+    "1301734a-fbd8-488d-b41f-1358552ccffa": {
+      "type": "full-bg-text",
+      "blocks": {
+        "template--17193999728804__1301734a-fbd8-488d-b41f-1358552ccffa-icon-1": {
+          "type": "icon",
+          "settings": {
+            "svg_icon": "shopify:\/\/shop_images\/Group_2.svg",
+            "svg_size_desktop": 100,
+            "svg_size_desktop_large": 394,
+            "svg_size_mobile": 100,
+            "heading_icon": ""
+          }
+        },
+        "template--17193999728804__1301734a-fbd8-488d-b41f-1358552ccffa-heading-1": {
+          "type": "heading",
+          "settings": {
+            "heading": "Learn about Longevity"
+          }
+        },
+        "template--17193999728804__1301734a-fbd8-488d-b41f-1358552ccffa-button-1": {
+          "type": "button",
+          "settings": {
+            "button_label": "Browse the Library",
+            "button_link": "shopify:\/\/collections",
+            "button_style_secondary": true,
+            "button_label_2": "",
+            "button_link_2": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--17193999728804__1301734a-fbd8-488d-b41f-1358552ccffa-icon-1",
+        "template--17193999728804__1301734a-fbd8-488d-b41f-1358552ccffa-heading-1",
+        "template--17193999728804__1301734a-fbd8-488d-b41f-1358552ccffa-button-1"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "bg_img": "shopify:\/\/shop_images\/ashwin-vaswani-ViXb3PXSC-8-unsplash_1.jpg",
+        "bg_image_mob": "shopify:\/\/shop_images\/ashwin-vaswani-ViXb3PXSC-8-unsplash_1_1.jpg",
+        "padding_top": 80,
+        "padding_bottom": 148,
+        "padding_top_mb": 80,
+        "padding_bottom_mb": 80
+      }
+    }
+  },
+  "order": [
+    "main",
+    "ab50e88b-d77b-477c-ab3e-4b6f66c0ef9a",
+    "abc7b66b-c619-4e3a-89f4-2b8eaf0117a4",
+    "4b4c5b9b-f7f8-48d1-95b4-f95ff1026ce1",
+    "03e5d6ef-9ed9-4464-bb38-75326b3f4c63",
+    "91a739a6-4350-4a3a-8a55-c90cd43ba530",
+    "218aa864-8df4-45d4-9873-15f8396bdb1b",
+    "46cbe468-7481-443f-9b1d-535aa0905902",
+    "74e60250-1c43-44fa-90a0-225d259b350e",
+    "17c31865-ea5f-4f66-8d66-94b6b6ddea64",
+    "4b1b3a14-b4b3-4849-8a53-5831578bbcd8",
+    "4c5d24bb-97ca-42c4-b23e-363c5a0a520c",
+    "3c66b988-77d6-436c-a51c-ee65671d50f9",
+    "14948e80-ef9e-4189-9aff-911273e93f52",
+    "e02d5fe4-8827-45a1-9425-f4a3f6e0cbd8",
+    "89cd14fb-a3de-4bdb-849a-ab1bb2051d1a",
+    "1301734a-fbd8-488d-b41f-1358552ccffa"
+  ]
+}

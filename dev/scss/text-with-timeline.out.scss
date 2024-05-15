@@ -1,0 +1,88 @@
+@import "./settings/variables";
+@import "./settings/mixins";
+
+.text-with-timeline {
+
+    .container {
+        padding: 0 164px;
+
+        @include media-breakpoint-down(xxl){
+            padding: 0 20px;
+        }
+
+        @include media-breakpoint-down(lg){
+            padding: 0 40px;
+        }
+
+        @include media-breakpoint-down(md){
+            padding: 0 16px;
+        }
+    }
+
+    // .text-with-timeline__wrapper
+
+    &__wrapper {
+
+    }
+
+    // .text-with-timeline__image
+
+    &__image {
+        display: flex;
+        justify-content: center;
+        svg {
+            max-width: 100%;
+        }
+        // .text-with-timeline__image_mob
+
+        &_mob {
+            display: none;
+            justify-content: center;
+            svg {
+                max-width: 100%;
+            }
+        }
+
+        @include media-breakpoint-down(lg){
+            display: none;
+            &_mob {
+                display: flex;
+            }
+    
+        }
+    }
+
+    // .text-with-timeline__content
+
+    &__content {
+        @include media-breakpoint-down(lg){
+            margin-bottom: 40px;
+        }
+    }
+
+    // .text-with-timeline__block
+
+    &__block {
+        max-width: 872px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    // .text-with-timeline__header
+
+    &__header {
+        color: $white;
+        margin-bottom: 16px;
+    }
+
+    // .text-with-timeline__richtext
+
+    &__richtext {
+        color: $white;
+
+        & > * {
+            margin: 0;
+        }
+    }
+}
+

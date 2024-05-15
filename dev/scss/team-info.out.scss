@@ -1,0 +1,156 @@
+@import "./settings/variables";
+@import "./settings/mixins";
+
+.team-info {
+    padding: 80px 0;
+    .container {
+        padding: 0 240px;
+        @include media-breakpoint-down(big-xl) {
+            padding: 0 145px;
+        }
+
+        @include media-breakpoint-down(xxxl) {
+            padding: 0;
+        }
+
+        @include media-breakpoint-down(lg) {
+            padding: 0 40px;
+        }
+
+        @include media-breakpoint-down(md) {
+            padding: 0 16px;
+        }
+    }
+
+    // .team-info__title
+
+    &__title {
+        text-align: center;
+        margin-bottom: 40px;
+        color: $white-900;
+    }
+
+    // .team-info__wrapper
+
+    &__wrapper {
+        gap: 40px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    // .team-info__member
+
+    &__member {
+        display: flex;
+        &.first {
+            padding: 0 60px 0 40px;
+            gap: 66px;
+        }
+
+        &.second {
+            flex-direction: row-reverse;
+            padding: 0 76px 0 60px;
+            gap: 30px;
+        }
+
+        &.member--1 {
+            .team-info__member-image {
+                padding: 0 85px;
+            }
+        }
+
+        @include media-breakpoint-down(lg) {
+            flex-direction: column;
+
+            &.first {
+                padding: 0;
+                gap: 32px;
+            }
+
+            &.second {
+                flex-direction: column;
+                padding: 0;
+                gap: 32px;
+            }
+
+            &.member--1 {
+                .team-info__member-image {
+                    padding: 0 50px;
+                }
+            }
+        }
+
+        @include media-breakpoint-down(md) {
+            &.member--1 {
+                .team-info__member-image {
+                    padding: 0 20px;
+                }
+            }
+        }
+    }
+
+    // .team-info__member-image
+
+    &__member-image {
+        width: 100%;
+        padding: 0 45px;
+
+        @include media-breakpoint-down(lg){
+            padding: 0;
+        }
+
+        img {
+            width: 100%;
+        }
+    }
+
+    // .team-info__content
+
+    &__content {
+        max-width: 648px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        @include media-breakpoint-down(xxl) {
+            max-width: 548px;
+        }
+
+        @include media-breakpoint-down(xl) {
+            max-width: 448px;
+        }
+
+        @include media-breakpoint-down(lg) {
+            max-width: 100%;
+        }
+    }
+    
+    // .team-info__member-info
+
+    &__member-info {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    // .team-info__name
+
+    &__name {
+       color: $white-900;
+    }
+
+    // .team-info__position
+
+    &__position {
+        color: $white-600;
+    }
+
+    // .team-info__richtext
+
+    &__richtext {
+        color: $white-900;
+        & > * {
+            margin: 0;
+        }
+    }
+}

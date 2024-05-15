@@ -1,0 +1,170 @@
+{{ 'hallmarks.out.css' | asset_url | stylesheet_tag }}
+
+{% liquid 
+    assign title = section.settings.title
+%} 
+
+<div class="hallmarks hallmarks--{{ section.id }}">
+    <div class="container">
+      {% if title != blank %}
+        <div class="hallmarks__title heading-h2 heading-h2-md">
+            {{ title }}
+        </div>
+      {% endif %}
+        <div class="hallmarks__wrapper">
+              {%- for block in section.blocks -%}
+                <div class="hallmarks__blocks">
+                {% for i in (1..6) %}
+                  {% liquid 
+                      assign number_selector = 'number_' | append: forloop.index 
+                      assign number = block.settings[number_selector]
+                      assign title_selector = 'title_' | append: forloop.index 
+                      assign title = block.settings[title_selector]
+                      assign subtitle_selector = 'subtitle_' | append: forloop.index 
+                      assign subtitle = block.settings[subtitle_selector]
+                  %} 
+                  <div class="hallmarks__item">
+                      {% if number != blank %}
+                        <div class="hallmarks__item-number caption-c2 caption-c2-md">
+                          {{ number }}
+                        </div> 
+                      {% endif %} 
+
+                      <div>
+                        {% if title != blank %}
+                          <div class="hallmarks__item-title caption-c1 caption-c1-md">
+                            {{ title }}
+                          </div>
+                        {% endif %}
+                        {% if subtitle != blank %}
+                          <div class="hallmarks__item-subtitle body-b2 body-b2-md">
+                            {{ subtitle }}
+                          </div>
+                        {% endif %}
+                      </div> 
+                  </div>
+                {% endfor %}
+                </div>
+              {%- endfor -%}
+        </div>
+    </div>
+</div>
+  
+</div>
+{% schema %}
+  {
+    "name": "Hallmarks",
+    "max_blocks": 2,
+    "blocks": [
+      {
+        "type": "item",
+        "name": "Item",
+        "settings": [
+          {
+            "type": "text",
+            "id": "number_1",
+            "label": "Number"
+          },
+          {
+            "type": "text",
+            "id": "title_1",
+            "label": "Title"
+          },
+          {
+            "type": "text",
+            "id": "subtitle_1",
+            "label": "Subtitle"
+          },
+          {
+            "type": "text",
+            "id": "number_2",
+            "label": "Number"
+          },
+          {
+            "type": "text",
+            "id": "title_2",
+            "label": "Title"
+          },
+          {
+            "type": "text",
+            "id": "subtitle_2",
+            "label": "Subtitle"
+          },
+          {
+            "type": "text",
+            "id": "number_3",
+            "label": "Number"
+          },
+          {
+            "type": "text",
+            "id": "title_3",
+            "label": "Title"
+          },
+          {
+            "type": "text",
+            "id": "subtitle_3",
+            "label": "Subtitle"
+          },
+          {
+            "type": "text",
+            "id": "number_4",
+            "label": "Number"
+          },
+          {
+            "type": "text",
+            "id": "title_4",
+            "label": "Title"
+          },
+          {
+            "type": "text",
+            "id": "subtitle_4",
+            "label": "Subtitle"
+          },
+          {
+            "type": "text",
+            "id": "number_5",
+            "label": "Number"
+          },
+          {
+            "type": "text",
+            "id": "title_5",
+            "label": "Title"
+          },
+          {
+            "type": "text",
+            "id": "subtitle_5",
+            "label": "Subtitle"
+          },
+          {
+            "type": "text",
+            "id": "number_6",
+            "label": "Number"
+          },
+          {
+            "type": "text",
+            "id": "title_6",
+            "label": "Title"
+          },
+          {
+            "type": "text",
+            "id": "subtitle_6",
+            "label": "Subtitle"
+          }
+        ]
+      }
+    ],
+    "settings": [
+        {
+            "type": "text",
+            "id": "title",
+            "default": "Aging, unpacked: the 12 hallmarks ",
+            "label": "Title"
+        }
+    ],
+    "presets": [
+      {
+        "name": "Hallmarks"
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,139 @@
+{{ 'text-section.out.css' | asset_url | stylesheet_tag }}
+
+{% liquid 
+    assign title = section.settings.title
+    assign titlehtml = section.settings.titlehtml
+    assign richtext = section.settings.richtext
+    assign button_label = section.settings.button_label
+    assign button_link = section.settings.button_link
+    assign background_color = section.settings.background_color
+%} 
+
+{% style %} 
+    .text-section--{{ section.id }} {
+        background-color: {{ background_color }};
+    }
+{% endstyle %}
+
+<div class="text-section text-section--{{ section.id }}">
+    <div class="container">
+        <div class="text-section__wrapper">
+            <div class="text-section__content">
+                <div class="text-section__content-block">
+                    {% if titlehtml != blank %}
+                        <h2 class="text-section__title heading-h2 heading-h2-md">{{ titlehtml }}</h2>
+                    {% elsif title != blank %}
+                        <h2 class="text-section__title heading-h2 heading-h2-md">{{ title }}</h2>
+                    {% endif %}
+                    {% if richtext != blank %}
+                        <div class="text-section__richtext body-b2 body-b2-md">{{ richtext }}</div>
+                    {% endif %}
+                    {% if button_label != blank and button_link != blank  %}
+                        <a href={{ button_link }} class="text-section__desk-button btn btn--large btn--subtle font-haffer font-weight-500">{{ button_label }}</a>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="text-section__body-text">
+         
+                    {%- for block in section.blocks -%}
+                        {% liquid 
+                            assign text = block.settings.text
+                            assign text_item = block.settings.text_item
+                        %} 
+                            {% case block.type %} 
+                                {% when "body_text" %}
+                                    {% if text != blank %}
+                                        <div class="text-section__text body-b2 body-b2-md">{{ text }}</div>
+                                    {% endif %}
+                                {% when "text_item" %}
+                                    {% if text_item != blank %}
+                                        <div class="text-section__text-item body-b2 body-b2-md">{{ text_item }}</div>
+                                    {% endif %}
+                                {% when "mob_button" %}
+                                    {% if button_label != blank and button_link != blank  %}
+                                        <a href={{ button_link }} class="text-section__mob-button btn btn--large btn--subtle font-haffer font-weight-500">{{ button_label }}</a>
+                                    {% endif %}
+                            {% endcase %} 
+                    {%- endfor -%}
+                
+            </div>
+        </div>
+    </div>
+</div>
+  
+
+</div>
+{% schema %}
+  {
+    "name": "Text section",
+    "blocks": [
+        {
+            "type": "body_text",
+            "name": "Body text",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "text",
+                    "label": "Text"
+                }
+            ]
+        },
+        {
+            "type": "text_item",
+            "name": "Text item",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "text_item",
+                    "label": "Text item"
+                }
+            ]
+        },
+        {
+            "type": "mob_button",
+            "name": "Mobile button"
+        }
+    ],
+    "settings": [
+        {
+            "type": "text",
+            "id": "title",
+            "default": "Founded in Oxford - we’ve done our homework",
+            "label": "Title"
+        },
+        {
+            "type": "richtext",
+            "id": "titlehtml",
+            "default": "<p>Founded in Oxford - </p><p>we’ve done our </p><p>homework</p>",
+            "label": "Html Title"
+        },
+        {
+            "type": "richtext",
+            "id": "richtext",
+            "default": "<p>With everything from breaking science to actionable advice and strategies, our library is your oracle for knowledge to optimize health, and performance and give you more control over your health span. </p>",
+            "label": "Text"
+        },
+        {
+            "type": "text",
+            "id": "button_label",
+            "default": "Browse the Library",
+            "label": "Button text"
+        },
+        {
+            "type": "url",
+            "id": "button_link",
+            "label": "Button link"
+        },
+        {
+            "type": "color_background",
+            "id": "background_color",
+            "label": "Background color"
+        }
+    ],
+    "presets": [
+      {
+        "name": "Text section"
+      }
+    ]
+  }
+{% endschema %}

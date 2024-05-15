@@ -1,0 +1,136 @@
+{{ 'couple-videos.out.css' | asset_url | stylesheet_tag }}
+
+{% liquid 
+    assign overflow_text = section.settings.overflow_text
+    assign video_url_1 = section.settings.video_1.sources[1].url
+    assign video_url_1_mob = section.settings.video_1_mob.sources[1].url
+    assign poster_1 = section.settings.video_1.preview_image.src
+    assign image_1 = section.settings.image_1
+    assign text_1 = section.settings.text_1
+    assign video_url_2 = section.settings.video_2.sources[1].url
+    assign video_url_2_mob = section.settings.video_2_mob.sources[1].url
+    assign poster_2 = section.settings.video_2.preview_image.src
+    assign image_2 = section.settings.image_2
+    assign text_2 = section.settings.text_2
+ 
+%}
+
+<div class="couple-videos couple-videos--{{ section.id }}">
+  <div class="couple-videos__media">
+    {% if overflow_text != blank %}
+        <div class="couple-videos__overflow-text">
+            <div class="heading-h3 heading-h3-md">{{ overflow_text }}</div>
+        </div>
+    {% endif %}
+    <div class="couple-videos__content">
+        {% render 'icons', icon: 'section-gradient-black' %}
+        {% render 'icons', icon: 'section-gradient-black-mob' %}
+        {% if text_1 != blank %}
+            <div class="couple-videos__text caption-c1 caption-c1-md">{{ text_1 }}</div>
+        {% endif %}
+        {% if video_url_1 != blank %}
+            <img class="couple-videos__placeholder lazy" loading="lazy" src="{{ image_1 | img_url: 'x1000' }}" data-src="{{ image_1 | img_url: '1000x' }}" alt="{{ image_1.alt }}">
+            <video class="couple-videos__video" width="100%" height="100%" muted autoplay playsinline loop poster="{{ poster_1 | img_url: 'x1000' }}" preload="none">
+                <source media="(max-width: 989.98px)" src="{{ video_url_1_mob }}" type="video/mp4">
+                <source src="{{ video_url_1 }}" type="video/mp4">
+            </video>
+        {% else %}
+            {{ 'lifestyle-2' | placeholder_svg_tag: 'placeholder-svg' }}
+        {% endif %}
+    </div>
+    <div class="couple-videos__content">
+        {% if text_2 != blank %}
+            <div class="couple-videos__text caption-c1 caption-c1-md">{{ text_2 }}</div>
+        {% endif %}
+       {% if video_url_2 != blank %}
+            <img class="couple-videos__placeholder lazy" loading="lazy" src="{{ image_2 | img_url: 'x1000' }}" data-src="{{ image_2 | img_url: '1000x' }}" alt="{{ image_2.alt }}">
+            <video class="couple-videos__video" width="100%" height="100%" muted autoplay playsinline loop poster="{{ poster_2 | img_url: 'x1000' }}" preload="none">
+                <source media="(max-width: 989.98px)" src="{{ video_url_2_mob }}" type="video/mp4">
+                <source src="{{ video_url_2 }}" type="video/mp4">
+            </video>
+        {% else %}
+            {{ 'lifestyle-2' | placeholder_svg_tag: 'placeholder-svg' }}
+        {% endif %}
+    </div>
+  </div>
+</div>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const videoPlaceholders = document.querySelectorAll('.couple-videos__placeholder');
+        videoPlaceholders.forEach((placeholder) => {
+            let video = placeholder.nextElementSibling;
+            video.addEventListener('canplaythrough', () => {
+                video.style.zIndex = '3';
+            });
+        });
+    });
+</script>
+
+{% schema %}
+  {
+    "name": "Couple videos",
+    "settings": [
+        {
+            "type": "text",
+            "id": "overflow_text",
+            "label": "Overflow text",
+            "default": "The world’s first at-home longevity clinic; for everyone."
+        },
+        {
+            "type": "header",
+            "content": "First block"
+        },
+        {
+            "type": "video",
+            "id": "video_1",
+            "label": "A Shopify-hosted video"
+        },
+        {
+            "type": "video",
+            "id": "video_1_mob",
+            "label": "A Shopify-hosted video (mobile)",
+            "info": "Use  75/76 aspect ratio"
+        },
+        {
+            "type": "image_picker",
+            "id": "image_1",
+            "label": "Background image"
+        },
+        {
+            "type": "text",
+            "id": "text_1",
+            "label": "Text"
+        },
+        {
+            "type": "header",
+            "content": "Second block"
+        },
+        {
+            "type": "video",
+            "id": "video_2",
+            "label": "A Shopify-hosted video"
+        },
+        {
+            "type": "video",
+            "id": "video_2_mob",
+            "label": "A Shopify-hosted video (mobile)",
+            "info": "Use 75/76 aspect ratio"
+        },
+        {
+            "type": "image_picker",
+            "id": "image_2",
+            "label": "Background image"
+        },
+        {
+            "type": "text",
+            "id": "text_2",
+            "label": "Text"
+        }
+    ],
+    "presets": [
+      {
+        "name": "Couple videos"
+      }
+    ]
+  }
+{% endschema %}

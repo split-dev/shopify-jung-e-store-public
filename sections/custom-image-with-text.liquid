@@ -1,0 +1,300 @@
+<link rel="stylesheet" href="{{ 'custom-media-with-text.out.css' | asset_url }}">
+<noscript>
+  {{- 'custom-media-with-text.out.css' | asset_url | stylesheet_tag -}}
+</noscript>
+
+{%- assign settings = section.settings -%}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ settings.padding_top_mobile }}px;
+    padding-bottom: {{ settings.padding_bottom_mobile }}px;
+  }
+
+  .custom-media-text{
+    color: {{ settings.text_color }};
+    background-color: {{ settings.color_background }};
+  }
+
+  @media screen and (min-width: 768px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ settings.padding_top }}px;
+      padding-bottom: {{ settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+{% if product.metafields.custom.show_chart_section_ %}
+  <section
+    class="custom-media-text section-{{ section.id }}-padding"
+  >
+    <div
+      class="
+        custom-media-text__wrapper
+        {% if settings.position == 'regular' %}
+          regular
+          {% elsif settings.position == 'reverse' %}
+          reverse
+        {% endif %}
+        container conteiner--small
+      "
+    >
+      <div
+        class="custom-media-text__text"
+      >
+        {% for block in section.blocks %}
+          {% liquid 
+            assign bs = block.settings 
+            assign product_metafield = product.metafields.custom.image_with_diagram.value
+            assign headline_metafield = product_metafield.headline
+            assign description_metafield = product_metafield.description
+            assign button_link_metafield = product_metafield.button_link
+            assign button_text_metafield = product_metafield.button_text
+            assign image_metafield = product_metafield.image
+    
+            assign title = bs.title   
+            if headline_metafield != blank
+              assign title = headline_metafield
+            endif
+    
+            assign description = bs.description   
+            if description_metafield != blank
+              assign description = description_metafield | metafield_tag
+            endif
+    
+            assign text = bs.text
+            if button_text_metafield != blank
+              assign text = button_text_metafield
+            endif
+
+            assign url = bs.url
+            if button_link_metafield != blank
+              assign url = button_link_metafield
+            endif
+          %}
+
+          {%- case block.type -%}
+            {%- when 'text' -%}
+              {%- if title != blank -%}
+                <h2 class="custom-media-text__title heading-h2">
+                  {{ title }}
+                </h2>
+              {%- endif -%}
+
+              {%- if description != blank -%}
+                <div class="custom-media-text__description body-b3">
+                  {{ description }}
+                </div>
+              {%- endif -%}
+
+            {%- when 'button' -%}
+              {% if text != blank %}
+                <a href="{{ url }}" class="custom-media-text__button btn btn--large btn--subtle font-weight-500">
+                  {{ text }}
+                </a>
+              {% endif %}
+          {%- endcase -%}
+        {% endfor %}
+      </div>
+
+      {% for block in section.blocks %}
+        {%- case block.type -%}
+          {%- when 'media' -%}
+            {%- liquid
+              assign bs = block.settings 
+              assign product_metafield = product.metafields.custom.image_with_diagram.value
+              assign image_metafield = product_metafield.image
+              assign image = bs.image  
+              if image_metafield != blank
+                assign image = image_metafield
+              endif
+            -%}
+ 
+            {% if bs.select == 'image' %}
+              {% if image != blank %}
+                <div class="custom-media-text__media--box">
+                  <img
+                    src="{{ image | image_url: width: 1500 }}"
+                    alt="{{ image.alt }}"
+                    width=""
+                    height=""
+                    loading="lazy"
+                    class="lazy"
+                    data-src="{{ image | image_url: width: 2000 }}"
+                  >
+                </div>
+              {% endif %}
+            {%- elsif bs.select == 'video' -%}
+              {% if bs.video != blank %}
+                <div class="custom-media-text__media--box">
+                  <video
+                    class="media-and-text__video lazy"
+                    width="100%"
+                    height="100%"
+                    poster="{{ bs.image | image_url: width: 1200 }}"
+                    preload="metadata"
+                    autoplay
+                    playsinline
+                    loop
+                    mute
+                  >
+                    {% for source in bs.video.sources %}
+                      <source src="{{ source.url }}" type="{{ source.mime_type }}">
+                    {% endfor %}
+                  </video>
+                </div>
+              {% endif %}
+            {% endif %}
+        {%- endcase -%}
+      {% endfor %}
+    </div>
+  </section>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Custom media and text",
+  "settings": [
+    {
+      "type": "select",
+      "id": "position",
+      "label": "Media position",
+      "options": [
+        {
+          "value": "reverse",
+          "label": "Left"
+        },
+        {
+          "value": "regular",
+          "label": "Right"
+        }
+      ],
+      "default": "regular"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#fff"
+    },
+    {
+      "type": "color",
+      "id": "color_background",
+      "label": "background color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top_mobile",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom_mobile",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 15
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Media",
+      "type": "media",
+      "settings": [
+        {
+          "type": "select",
+          "id": "select",
+          "label": "Media type",
+          "options": [
+            {
+              "value": "video",
+              "label": "Video"
+            },
+            {
+              "value": "image",
+              "label": "Image"
+            }
+          ],
+          "default": "image"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "video",
+          "id": "video",
+          "label": "Video"
+        }
+      ]
+    },
+    {
+      "name": "Text",
+      "type": "text",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description"
+        }
+      ]
+    },
+    {
+      "name": "Button",
+      "type": "button",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Button text"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "button url"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom media and text",
+      "settings": {}
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,64 @@
+@import "./settings/variables";
+@import "./settings/mixins";
+
+.text--image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background-color: $white-400;
+
+  &__heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    max-width: 764px;
+    margin-bottom: 32px;
+    padding: 16px;
+
+    text-align: center;
+
+    @include media-breakpoint-up(xl) {
+      margin-bottom: 16px;
+      padding: 0;
+    }
+  }
+
+  &__title {
+    margin-bottom: 16px;
+  }
+
+  &__description {
+    * {
+      margin: 0;
+
+      font-size: inherit;
+      font-weight: inherit;
+      line-height: inherit;
+    }
+  }
+
+  &__content {
+    
+    img {
+      width: 100%;
+      height: 100%;
+
+      object-position: center;
+      object-fit: contain;
+    }
+
+    .mobile--img {
+      @include media-breakpoint-up(xl) {
+        display: none;
+      }
+    }
+
+    .desctop--img {
+      @include media-breakpoint-down(xl) {
+        display: none;
+      }
+    }
+  }
+}

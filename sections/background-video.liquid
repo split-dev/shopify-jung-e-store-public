@@ -1,0 +1,177 @@
+<link rel="stylesheet" href="{{ 'background-video.out.css' | asset_url }}">
+<noscript>
+  {{- 'background-video.out.css' | asset_url | stylesheet_tag -}}
+</noscript>
+
+{%- assign settings = section.settings -%}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ settings.padding_top_mobile }}px;
+    padding-bottom: {{ settings.padding_bottom_mobile }}px;
+  }
+
+  .background--video{
+    color: {{ settings.text_color }};
+  }
+
+  @media screen and (min-width: 768px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ settings.padding_top }}px;
+      padding-bottom: {{ settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<section
+  class="
+    background--video
+    section-{{ section.id }}-padding
+    container container--small
+    {% if settings.full_width %}
+      full-width
+    {% endif %}
+  "
+  id="background--video--{{ section.id }}"
+>
+  {%- liquid
+    assign video = ''
+    assign description = ''
+    assign sign = ''
+
+    if settings.data_type == 'block'
+      assign video = settings.video
+      assign description = settings.description
+      assign sign = settings.sign
+    elsif settings.data_type == 'meta'
+      assign video = product.metafields.custom.background_video.value
+      assign description = product.metafields.custom.background_video_sections_description.value.description
+      assign sign = product.metafields.custom.background_video_sections_description.value.sign
+    endif
+  -%}
+
+  <video
+    class="background--video__video lazy"
+    autoplay
+    loop
+    mute
+    playsinline
+  >
+    {% for source in video.sources %}
+      <source src="{{ source.url }}" type="{{ source.mime_type }}">
+    {% endfor %}
+  </video>
+
+  <div
+    class="      background--video__wrapper"
+  >
+    {%- if description != blank -%}
+      <p class="background--video__description heading-h3">
+        {{ description }}
+      </p>
+    {%- endif -%}
+
+    {% if sign != blank %}
+      <p class="background--video__sign body-b2">
+        {{ sign }}
+      </p>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Video background",
+  "settings": [
+    {
+      "type": "select",
+      "id": "data_type",
+      "label": "Data type",
+      "options": [
+        {
+          "value": "block",
+          "label": "Blocks"
+        },
+        {
+          "value": "meta",
+          "label": "Metadata"
+        }
+      ],
+      "default": "meta"
+    },
+    {
+      "type": "checkbox",
+      "id": "full_width",
+      "label": "Large display full width",
+      "default": false
+    },
+    {
+      "type": "video",
+      "id": "video",
+      "label": "Video"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description"
+    },
+    {
+      "type": "textarea",
+      "id": "sign",
+      "label": "Sign"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#fff"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top_mobile",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom_mobile",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 0
+    }
+  ],
+  "presets": [
+    {
+      "name": "Video background",
+      "settings": {}
+    }
+  ]
+}
+{% endschema %}

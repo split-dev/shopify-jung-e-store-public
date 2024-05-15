@@ -1,0 +1,188 @@
+{
+  "sections": {
+    "banner_image_GqK3cf": {
+      "type": "banner-image",
+      "settings": {
+        "subscription_page": true,
+        "header": "WHY SUBSCRIBE?",
+        "description": "<p>Our products are engineered to work together, over the long term. Receive exclusive benefits when you subscribe and bundle. <\/p>",
+        "button_label": "Shop all",
+        "button_link": "shopify:\/\/collections\/all-products",
+        "image": "shopify:\/\/shop_images\/DTS_Caldo_Daniel_Faro_3945_1.jpg",
+        "image_mobile": "shopify:\/\/shop_images\/DTS_Caldo_Daniel_Faro_3945_1_1.jpg",
+        "opacity": 0,
+        "container": "container",
+        "text_align": "center",
+        "banner_height": "banner-small"
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "marquee_kyDw96": {
+      "type": "marquee",
+      "settings": {
+        "text": "<p>15% off when you bundle<\/p>",
+        "speed": "90"
+      }
+    },
+    "subscription_info_LmtehL": {
+      "type": "subscription-info",
+      "blocks": {
+        "info_DYzEzN": {
+          "type": "info",
+          "settings": {
+            "title": "How it works",
+            "richtext": "<p>By signing up to our monthly rolling subscription service, you agree to automatic renewal every 30 days. We will send you a shipment with a 30 day supply of your chosen products, and your subscription will automatically continue to renew every month, unless you choose to cancel. You may choose to cancel at any time after the initial minimal term. Subscription price may be subject to change.<\/p><p>You agree that your account will be subject to this automatic renewal feature, unless you cancel your subscription a minimum of 3 days before your upcoming renewal commencement date.<\/p><p>Following the initial minimum term, if you wish to cancel your subscription, you can do so by emailing info@jung.com at least 48 hours before your next order renewal.<\/p><p>You agree that we may terminate or suspend your subscription for any reason at any time, for reasons at our sole discretion.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "info_DYzEzN"
+      ],
+      "settings": {
+        "background_color": "#F9F9F9",
+        "image": "shopify:\/\/shop_images\/DTS_First_Date_Marlen_Stahlhuth_4793_1.jpg"
+      }
+    },
+    "personal_kit_LwJPhY": {
+      "type": "personal-kit",
+      "blocks": {
+        "one_time_purchase_jbFgwP": {
+          "type": "one_time_purchase",
+          "settings": {
+            "title": "One-Time Purchase",
+            "image": "shopify:\/\/shop_images\/Pouch_illustration.png",
+            "richtext": "<p>Receive a cute pouch - each pouch represents a one month supply<\/p>"
+          }
+        },
+        "subscribe_QgAniL": {
+          "type": "subscribe",
+          "settings": {
+            "title": "Subscribe, bundle, and enjoy the works",
+            "image": "shopify:\/\/shop_images\/Vessel_illustration.png",
+            "richtext": "<p>Receive a free gift canister with your first month, 100% metal refillable and recyclable for you & for the planet<\/p>",
+            "item_list": "<p>+ Get targeted lifestyle coaching and scientific guidance, delivered regularly to your inbox<\/p><p>+ Get 10% off subscriptions, cancel anytime<\/p><p>+ Constantly updated formula that track the latest scientific advancements, so you don’t have to<\/p><p>+ Save 15% off when you bundle (combine Longevity Foundation with at least one boosters)<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "one_time_purchase_jbFgwP",
+        "subscribe_QgAniL"
+      ],
+      "settings": {
+        "header": "Your personal longevity kit, engineered for life",
+        "section_description": "<p>More than just a supplement, each product is a complete protocol and lifestyle program, synergistically formulated to work best together, and with ongoing use. <\/p>",
+        "background_color": "#F9F9F9"
+      }
+    },
+    "accordion_MtY6bz": {
+      "type": "accordion",
+      "blocks": {
+        "faq_pHXq4R": {
+          "type": "faq",
+          "settings": {
+            "heading": "CAN I CANCEL MY JUNG+ SUBSCRIPTION?",
+            "subheading": "",
+            "description": "<p>Yes, you can cancel your subscription at any time. We strive to provide flexibility for our customers, so you have complete control over your subscription settings. To cancel, simply log in to your account on our website and adjust your subscription preferences. If you need assistance, our customer support team is always available to help at hello@foreverjung.co<\/p>",
+            "icon": "none"
+          }
+        },
+        "faq_bYbXyx": {
+          "type": "faq",
+          "settings": {
+            "heading": "HOW DO JUNG'S KITS WORK?",
+            "subheading": "",
+            "description": "<p>Our kits are designed to provide a comprehensive longevity solution by bundling multiple products. When you bundle two or more products, including the Longevity Foundation as one of the items, you automatically create a kit. This not only offers a more holistic approach to longevity but also comes with a financial benefit: you receive a 15% discount on recurring subscriptions for these bundled products, as well as targeted coaching straight to your inbox. It's our way of rewarding you for committing to a complete longevity lifestyle.<\/p>",
+            "icon": "none"
+          }
+        },
+        "faq_N4MW4N": {
+          "type": "faq",
+          "settings": {
+            "heading": "ARE THERE BENEFITS TO SUBSCRIBING TO A PRODUCT OR KIT INSTEAD OF INDIVIDUAL PURCHASES?",
+            "subheading": "",
+            "description": "<p>Absolutely! Subscribing to a product kit provides both health and financial benefits. Health-wise, our kits are curated to synergistically combine different products for a more comprehensive approach to longevity. Financially, when you subscribe to a kit, you enjoy a 15% discount on recurring orders. This makes it not only a convenient choice but also a cost-effective one for maintaining your longevity regimen. With all subscriptions, you receive a refillable metal canister for your chosen products, to help keep things more organized and sustainable for the longe term.<\/p>",
+            "icon": "none"
+          }
+        }
+      },
+      "block_order": [
+        "faq_pHXq4R",
+        "faq_bYbXyx",
+        "faq_N4MW4N"
+      ],
+      "settings": {
+        "data_type": "block",
+        "metafield_select": "why_its_different",
+        "title": "FAQ’s",
+        "show_image_block": true,
+        "container": "custom",
+        "border_type": "bottom",
+        "color_background": "#ffffff",
+        "color_text": "#000000",
+        "padding_top_mobile": 35,
+        "padding_bottom_mobile": 80,
+        "padding_top": 45,
+        "padding_bottom": 80
+      }
+    },
+    "full_bg_text_cEff9n": {
+      "type": "full-bg-text",
+      "blocks": {
+        "icon_hAkkKE": {
+          "type": "icon",
+          "settings": {
+            "svg_icon": "shopify:\/\/shop_images\/logo.svg",
+            "svg_size_desktop": 355,
+            "svg_size_mobile": 100,
+            "svg_size_mobile_large": 250,
+            "heading_icon": ""
+          }
+        },
+        "heading_APTGxX": {
+          "type": "heading",
+          "settings": {
+            "heading": "DISCOVER THE LONGEVITY REVOLUTION"
+          }
+        },
+        "button_PFN4pQ": {
+          "type": "button",
+          "settings": {
+            "button_label": "Our Science",
+            "button_link": "shopify:\/\/pages\/our-science",
+            "button_style_secondary": true,
+            "button_label_2": "",
+            "button_link_2": ""
+          }
+        }
+      },
+      "block_order": [
+        "icon_hAkkKE",
+        "heading_APTGxX",
+        "button_PFN4pQ"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "bg_img": "shopify:\/\/shop_images\/DTS_Solo_Birthday_David_Powers_3810_1_1.jpg",
+        "bg_image_mob": "shopify:\/\/shop_images\/DTS_Solo_Birthday_David_Powers_3810_1_1_1_bf408f60-f033-489b-baf7-a197dcf466a4.jpg",
+        "padding_top": 92,
+        "padding_bottom": 132,
+        "padding_top_mb": 80,
+        "padding_bottom_mb": 80
+      }
+    }
+  },
+  "order": [
+    "banner_image_GqK3cf",
+    "main",
+    "marquee_kyDw96",
+    "subscription_info_LmtehL",
+    "personal_kit_LwJPhY",
+    "accordion_MtY6bz",
+    "full_bg_text_cEff9n"
+  ]
+}

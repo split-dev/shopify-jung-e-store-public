@@ -1,0 +1,496 @@
+{{ 'faq.out.css' | asset_url | stylesheet_tag }}
+
+<div class="faq-section">
+  <div class="container">
+    <div class="faq-section__wrapper">
+      <div class="faq-section__navigation">
+        <div class="faq-section__navigation-items">
+          {% for block in section.blocks %}
+            <div class="faq-section__nav-item">
+              {% liquid
+                    assign title = block.settings.title
+                    assign faq_item = 'item' | append: forloop.index 
+                %}
+              {% if title != blank %}
+                <a
+                  href="#"
+                  onclick="scrollToSection('{{ faq_item }}')"
+                  data-item="{{ faq_item }}"
+                  class="faq-section__nav-title cta1-l cta1-l-md">
+                  {{ title }}
+                </a>
+              {% endif %}
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="faq-section__content">
+        {% for block in section.blocks %}
+          {% assign faq_item = 'item' | append: forloop.index %}
+          <div id="{{faq_item}}" class="faq-section__item">
+            {% liquid
+                assign title = block.settings.title 
+                assign subtitle = block.settings.subtitle 
+                assign richtext = block.settings.richtext 
+            %}
+            {% if title != blank %}
+              <div class="faq-section__title heading-h3 heading-h3">
+                {{ title }}
+              </div>
+            {% endif %}
+            {% for i in (1..30) %}
+              <div class="faq-section__block-content">
+                {% liquid 
+                    assign subtitle_selector = "subtitle_" | append: forloop.index 
+                    assign subtitle = block.settings[subtitle_selector]
+                    assign richtext_selector = "richtext_" | append: forloop.index 
+                    assign richtext = block.settings[richtext_selector]
+                %}
+                {% if subtitle != blank %}
+                  <div class="faq-section__subtitle caption-c2 caption-c2-md">
+                    {{ subtitle }}
+                  </div>
+                {% endif %}
+                {% if richtext != blank %}
+                  <div class="faq-section__richtext body-b2 body-b2-md">
+                    {{ richtext }}
+                  </div>
+                {% endif %}
+              </div>
+            {% endfor %}
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function scrollToSection(sectionId) {
+    const targetSection = document.getElementById(sectionId);
+    const currentScroll = window.scrollY;
+    const scrollDirection = currentScroll < targetSection.offsetTop
+      ? 'down'
+      : 'up';
+    event.preventDefault();
+    window.scrollTo({
+      top: targetSection.offsetTop - 100,
+      behavior: 'smooth'
+    });
+  }
+
+
+  const faqItems = document.querySelectorAll('.faq-section__item');
+  const navTitles = document.querySelectorAll('.faq-section__nav-title');
+
+  function isElementInViewport(el) {
+    const rect = el.getBoundingClientRect();
+    const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+    const elementTop = rect.top;
+
+    return elementTop < windowHeight * 0.5;
+  }
+
+  function changeActiveLink(link) {
+    navTitles.forEach((link_item) => {
+      if (link.id === link_item.getAttribute('data-item')) {
+        link_item.classList.add('active');
+      } else {
+        link_item.classList.remove('active');
+      };
+    });
+  };
+
+  function checkScroll() {
+    faqItems.forEach((section) => {
+      if (isElementInViewport(section)) {
+        changeActiveLink(section);
+      };
+    });
+  }
+
+  checkScroll();
+  window.addEventListener('scroll', checkScroll);
+</script>
+
+{% schema %}
+  {
+    "name": "FAQ section",
+    "settings": [],
+    "blocks": [
+      {
+        "type": "faq_item",
+        "name": "FAQ item",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "default": "About First Person",
+            "label": "Title"
+          },
+          {
+            "type": "header",
+            "content": "Block item 1"
+          },
+          {
+            "type": "text",
+            "id": "subtitle_1",
+            "label": "Subtitle"
+          },
+          {
+            "type": "richtext",
+            "id": "richtext_1",
+            "label": "Text"
+          }, {
+            "type": "header",
+            "content": "Block item 2"
+          }, {
+            "type": "text",
+            "id": "subtitle_2",
+            "label": "Subtitle"
+          }, {
+            "type": "richtext",
+            "id": "richtext_2",
+            "label": "Text"
+          }, {
+            "type": "header",
+            "content": "Block item 3"
+          }, {
+            "type": "text",
+            "id": "subtitle_3",
+            "label": "Subtitle"
+          }, {
+            "type": "richtext",
+            "id": "richtext_3",
+            "label": "Text"
+          }, {
+            "type": "header",
+            "content": "Block item 4"
+          }, {
+            "type": "text",
+            "id": "subtitle_4",
+            "label": "Subtitle"
+          }, {
+            "type": "richtext",
+            "id": "richtext_4",
+            "label": "Text"
+          }, {
+            "type": "header",
+            "content": "Block item 5"
+          }, {
+            "type": "text",
+            "id": "subtitle_5",
+            "label": "Subtitle"
+          }, {
+            "type": "richtext",
+            "id": "richtext_5",
+            "label": "Text"
+          }, {
+            "type": "header",
+            "content": "Block item 6"
+          }, {
+            "type": "text",
+            "id": "subtitle_6",
+            "label": "Subtitle"
+          }, {
+            "type": "richtext",
+            "id": "richtext_6",
+            "label": "Text"
+          }, {
+            "type": "header",
+            "content": "Block item 7"
+          }, {
+            "type": "text",
+            "id": "subtitle_7",
+            "label": "Subtitle"
+          }, {
+            "type": "richtext",
+            "id": "richtext_7",
+            "label": "Text"
+          },
+          {
+            "type": "header",
+            "content": "Block item 8"
+          }, {
+            "type": "text",
+            "id": "subtitle_8",
+            "label": "Subtitle"
+          }, {
+            "type": "richtext",
+            "id": "richtext_8",
+            "label": "Text"
+          },
+          {
+            "type": "header",
+            "content": "Block item 9"
+          }, {
+            "type": "text",
+            "id": "subtitle_9",
+            "label": "Subtitle"
+          }, {
+            "type": "richtext",
+            "id": "richtext_9",
+            "label": "Text"
+          },
+          {
+            "type": "header",
+            "content": "Block item 10"
+          }, {
+            "type": "text",
+            "id": "subtitle_10",
+            "label": "Subtitle"
+          }, {
+            "type": "richtext",
+            "id": "richtext_10",
+            "label": "Text"
+          },
+          {
+            "type": "header",
+            "content": "Block item 11"
+          }, {
+            "type": "text",
+            "id": "subtitle_11",
+            "label": "Subtitle"
+          }, {
+            "type": "richtext",
+            "id": "richtext_11",
+            "label": "Text"
+          },
+          {
+            "type": "header",
+            "content": "Block item 12"
+          }, {
+            "type": "text",
+            "id": "subtitle_12",
+            "label": "Subtitle"
+          }, {
+            "type": "richtext",
+            "id": "richtext_12",
+            "label": "Text"
+          },
+          {
+            "type": "header",
+            "content": "Block item 13"
+          }, {
+            "type": "text",
+            "id": "subtitle_13",
+            "label": "Subtitle"
+          }, {
+            "type": "richtext",
+            "id": "richtext_13",
+            "label": "Text"
+          },
+          {
+            "type": "header",
+            "content": "Block item 14"
+          }, {
+            "type": "text",
+            "id": "subtitle_14",
+            "label": "Subtitle"
+          }, {
+            "type": "richtext",
+            "id": "richtext_14",
+            "label": "Text"
+          },
+          {
+            "type": "header",
+            "content": "Block item 15"
+          }, {
+            "type": "text",
+            "id": "subtitle_15",
+            "label": "Subtitle"
+          }, {
+            "type": "richtext",
+            "id": "richtext_15",
+            "label": "Text"
+          },
+          {
+            "type": "header",
+            "content": "Block item 16"
+          }, {
+            "type": "text",
+            "id": "subtitle_16",
+            "label": "Subtitle"
+          }, {
+            "type": "richtext",
+            "id": "richtext_16",
+            "label": "Text"
+          },
+          {
+            "type": "header",
+            "content": "Block item 17"
+          }, {
+            "type": "text",
+            "id": "subtitle_17",
+            "label": "Subtitle"
+          }, {
+            "type": "richtext",
+            "id": "richtext_17",
+            "label": "Text"
+          },
+          {
+            "type": "header",
+            "content": "Block item 18"
+          }, {
+            "type": "text",
+            "id": "subtitle_18",
+            "label": "Subtitle"
+          }, {
+            "type": "richtext",
+            "id": "richtext_18",
+            "label": "Text"
+          },
+          {
+            "type": "header",
+            "content": "Block item 19"
+          }, {
+            "type": "text",
+            "id": "subtitle_19",
+            "label": "Subtitle"
+          }, {
+            "type": "richtext",
+            "id": "richtext_19",
+            "label": "Text"
+          },
+          {
+            "type": "header",
+            "content": "Block item 20"
+          }, {
+            "type": "text",
+            "id": "subtitle_20",
+            "label": "Subtitle"
+          }, {
+            "type": "richtext",
+            "id": "richtext_20",
+            "label": "Text"
+          },
+          {
+            "type": "header",
+            "content": "Block item 21"
+          }, {
+            "type": "text",
+            "id": "subtitle_21",
+            "label": "Subtitle"
+          }, {
+            "type": "richtext",
+            "id": "richtext_21",
+            "label": "Text"
+          },
+          {
+            "type": "header",
+            "content": "Block item 22"
+          }, {
+            "type": "text",
+            "id": "subtitle_22",
+            "label": "Subtitle"
+          }, {
+            "type": "richtext",
+            "id": "richtext_22",
+            "label": "Text"
+          },
+          {
+            "type": "header",
+            "content": "Block item 23"
+          }, {
+            "type": "text",
+            "id": "subtitle_23",
+            "label": "Subtitle"
+          }, {
+            "type": "richtext",
+            "id": "richtext_23",
+            "label": "Text"
+          },
+          {
+            "type": "header",
+            "content": "Block item 24"
+          }, {
+            "type": "text",
+            "id": "subtitle_24",
+            "label": "Subtitle"
+          }, {
+            "type": "richtext",
+            "id": "richtext_24",
+            "label": "Text"
+          },
+          {
+            "type": "header",
+            "content": "Block item 25"
+          }, {
+            "type": "text",
+            "id": "subtitle_25",
+            "label": "Subtitle"
+          }, {
+            "type": "richtext",
+            "id": "richtext_25",
+            "label": "Text"
+          },
+          {
+            "type": "header",
+            "content": "Block item 26"
+          }, {
+            "type": "text",
+            "id": "subtitle_26",
+            "label": "Subtitle"
+          }, {
+            "type": "richtext",
+            "id": "richtext_26",
+            "label": "Text"
+          },
+          {
+            "type": "header",
+            "content": "Block item 27"
+          }, {
+            "type": "text",
+            "id": "subtitle_27",
+            "label": "Subtitle"
+          }, {
+            "type": "richtext",
+            "id": "richtext_27",
+            "label": "Text"
+          },
+          {
+            "type": "header",
+            "content": "Block item 28"
+          }, {
+            "type": "text",
+            "id": "subtitle_28",
+            "label": "Subtitle"
+          }, {
+            "type": "richtext",
+            "id": "richtext_28",
+            "label": "Text"
+          },
+          {
+            "type": "header",
+            "content": "Block item 29"
+          }, {
+            "type": "text",
+            "id": "subtitle_29",
+            "label": "Subtitle"
+          }, {
+            "type": "richtext",
+            "id": "richtext_29",
+            "label": "Text"
+          },
+          {
+            "type": "header",
+            "content": "Block item 30"
+          }, {
+            "type": "text",
+            "id": "subtitle_30",
+            "label": "Subtitle"
+          }, {
+            "type": "richtext",
+            "id": "richtext_30",
+            "label": "Text"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "FAQ section"
+      }
+    ]
+  }
+{% endschema %}

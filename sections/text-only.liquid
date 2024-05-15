@@ -1,0 +1,91 @@
+{{ 'only-text.out.css' | asset_url | stylesheet_tag }}
+
+{% liquid 
+    assign title = section.settings.title
+    assign background_color = section.settings.background_color
+%} 
+
+{% style %} 
+    .text-only--{{ section.id }} {
+        background-color: {{ background_color }};
+    }
+{% endstyle %}
+
+<div class="text-only text-only--{{ section.id }}">
+    <div class="container">
+        {% if title!= blank %}
+            <h2 class="text-only__header heading-h2 heading-h2-md">
+                {{ title }}
+            </h2>
+        {% endif %}
+        <div class="text-only__content">
+            {% for block in section.blocks %}
+                {% case block.type %}  
+                    {% when 'richtext' %}
+                        {% assign richtext = block.settings.richtext %} 
+                        {% if richtext != blank %}
+                            <div class="text-only__richtext body-b2 body-b2-md">
+                                {{ richtext }}
+                            </div>
+                        {% endif %}
+                    {% when 'subtitle' %} 
+                        {% assign subtitle = block.settings.subtitle %} 
+                        <div class="text-only__subtitle heading-h3 heading-h3-md">
+                            {{ subtitle }}
+                        </div>
+                {% endcase %}
+
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Text only",
+    "settings": [
+        {
+            "type": "text",
+            "id": "title",
+            "default": "We love growing older, but it’s time to stop aging.",
+            "label": "Title"
+        },
+        {
+            "type": "color_background",
+            "id": "background_color",
+            "label": "Background color"
+        }
+    ],
+    "blocks": [
+        {
+            "type": "richtext",
+            "name": "Richtext",
+            "settings": [
+                {
+                    "type": "richtext",
+                    "id": "richtext",
+                    "default": "<p>Getting older is a privilege to be celebrated, but there is no such thing as ‘aging gracefully’. Biological aging wreaks havoc over time. Aging incapacitates your body. It makes you susceptible to disease, and it compromises your ability to live a healthy, active, enjoyable life. Put simply, your biological age is the single most accurate measure of your physical health - and it's your duty to safeguard it.</p>",
+                    "label": "Text"
+                }
+            ]
+        },
+        {
+            "type": "subtitle",
+            "name": "Subtitle",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "subtitle",
+                    "default": "<p>Getting older is a privilege to be celebrated, but there is no such thing as ‘aging gracefully’. Biological aging wreaks havoc over time. Aging incapacitates your body. It makes you susceptible to disease, and it compromises your ability to live a healthy, active, enjoyable life. Put simply, your biological age is the single most accurate measure of your physical health - and it's your duty to safeguard it.</p>",
+                    "label": "Text"
+                }
+            ]
+        }
+    ],
+    "presets": [
+      {
+        "name": "Text only"
+      }
+    ]
+  }
+{% endschema %}

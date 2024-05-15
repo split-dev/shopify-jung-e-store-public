@@ -1,0 +1,20 @@
+{{ 'section-main-page.css' | asset_url | stylesheet_tag }}
+{{ 'terms-and-conditions.out.css' | asset_url | stylesheet_tag }}
+
+<div class="terms-and-conditions section-{{ section.id }}-padding">
+  <div class="container"> 
+    <div class="terms-and-conditions__content rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+      {{ page.content }}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.main-page.name",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+  ]
+}
+{% endschema %}

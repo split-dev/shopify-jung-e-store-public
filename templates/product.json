@@ -1,0 +1,964 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {
+          }
+        },
+        "cf1aa845-16ac-434c-ae6b-a624345f7960": {
+          "type": "features",
+          "settings": {
+          }
+        },
+        "65f790ee-9db6-495f-ab65-a6cfc482ab98": {
+          "type": "recharge-widget",
+          "settings": {
+          }
+        },
+        "5dea91b4-81b7-4213-bea5-68d97bc46854": {
+          "type": "variant_picker",
+          "disabled": true,
+          "settings": {
+            "picker_type": "button"
+          }
+        },
+        "2727ee47-2759-4843-bdfd-382ca9679df0": {
+          "type": "quantity_and_buy_btn",
+          "settings": {
+          }
+        },
+        "016a4d6d-95ed-4d65-94e2-fa12fd51f3ed": {
+          "type": "pop-up-waiting-list",
+          "disabled": true,
+          "settings": {
+            "richtext": "<p>Dear customer, our products are currently available for order exclusively on our waiting list. We appreciate your interest and look forward to fulfilling your orders as soon as possible. <a href=\"#\" title=\"#\">Join the waitlist.<\/a><\/p>"
+          }
+        },
+        "f49590c0-7389-4ae9-832f-9920a01d05ff": {
+          "type": "subscription_details",
+          "settings": {
+          }
+        },
+        "944bd86c-3a8e-4ef5-90f2-50a687e33e71": {
+          "type": "nutritional_info",
+          "settings": {
+          }
+        },
+        "c017a319-c6a4-4a7c-a734-4fdcca8bcdb7": {
+          "type": "why_subscribe",
+          "settings": {
+          }
+        },
+        "why_subscribe_pop_up_TY4ban": {
+          "type": "why_subscribe_pop_up",
+          "settings": {
+            "title": "Subscribe, Bundle, and Enjoy the Works",
+            "richtext": "<p>Each product in Jung's Total Longevity System™ has been engineered for long term, synergistic effects. Which is why all subscriptions get:<\/p><p>+ a free refillable gift canister with your first month, 100% metal and recyclable for you & for the planet<\/p><p>+ targeted lifestyle coaching and scientific guidance, delivered regularly to your inbox<\/p><p>+ 10% off products, cancel anytime<\/p><p>+ benefit from constantly updated formula that track the latest scientific advancements, so you don’t have to<\/p><p>But that's not all. Bundle Longevity Essentials with at least one booster, and get: <\/p><p>+ 15% off your bundled subscription<\/p><p>+ the benefit of synergistic effects between formulas<\/p>",
+            "image": "shopify:\/\/shop_images\/Pouch_illustration_13493e32-0644-4d6b-8f5f-3067c07f63bb.png"
+          }
+        }
+      },
+      "block_order": [
+        "title",
+        "description",
+        "cf1aa845-16ac-434c-ae6b-a624345f7960",
+        "65f790ee-9db6-495f-ab65-a6cfc482ab98",
+        "5dea91b4-81b7-4213-bea5-68d97bc46854",
+        "2727ee47-2759-4843-bdfd-382ca9679df0",
+        "016a4d6d-95ed-4d65-94e2-fa12fd51f3ed",
+        "f49590c0-7389-4ae9-832f-9920a01d05ff",
+        "944bd86c-3a8e-4ef5-90f2-50a687e33e71",
+        "c017a319-c6a4-4a7c-a734-4fdcca8bcdb7",
+        "why_subscribe_pop_up_TY4ban"
+      ],
+      "settings": {
+        "section_background_image": false,
+        "hero_type": "custom",
+        "background_image": "shopify:\/\/shop_images\/pdp-hero-img_1.jpg",
+        "enable_sticky_info": true,
+        "media_size": "large",
+        "constrain_to_viewport": false,
+        "media_fit": "contain",
+        "gallery_layout": "thumbnail_slider",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "mobile_thumbnails": "hide",
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "33416563-3ed6-477b-a8ef-81b368d25068": {
+      "type": "product-sticky-string",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "ba846dcc-3c8f-4608-88a6-5e7ab88d1e60": {
+      "type": "order-images-list",
+      "blocks": {
+        "a6789559-39b4-43d0-a413-2381314d78ee": {
+          "type": "heading",
+          "settings": {
+            "title": "Fast, without the crash",
+            "description": "<p>Our baseline, flagship product, the Longevity Essentials formula targets all 12 aging pathways, dosed, administered, and released at the correct time according to the body’s circadian rhythm.<\/p>"
+          }
+        },
+        "edaf02ab-6d11-4b38-b2b0-5493227b363f": {
+          "type": "image",
+          "settings": {
+            "image_mobile": "shopify:\/\/shop_images\/Sleep_repair_mobile.png",
+            "image_desctop": "shopify:\/\/shop_images\/Sleep_Repair.svg"
+          }
+        }
+      },
+      "block_order": [
+        "a6789559-39b4-43d0-a413-2381314d78ee",
+        "edaf02ab-6d11-4b38-b2b0-5493227b363f"
+      ],
+      "settings": {
+        "padding_top_mobile": 80,
+        "padding_bottom_mobile": 80,
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "8c916f37-c5c4-4f7b-8709-b39799e61227": {
+      "type": "accordion",
+      "blocks": {
+        "51569761-cf1b-46cf-b052-2c984cff64b7": {
+          "type": "faq",
+          "settings": {
+            "heading": "Fasting and caloric restriction",
+            "subheading": "for whole body health",
+            "description": "<p>Fasting pushes our body to use fat, and its derivatives, called ketones, instead of glucose as a primary energy source. This metabolic state, known as ketosis, aids in weight loss, reverses the symptoms of metabolic syndrome, lowers the amount of insulin needed by people with type II diabetes, reduces inflammation, improves epigenetic profiles, changes the microbiome, improves lipid profiles, supports the treatment of cancer, and may even lengthen life (12). <\/p>",
+            "icon": "stomach"
+          }
+        },
+        "37ab628b-9ac3-44b3-badd-73a0d9a99245": {
+          "type": "faq",
+          "settings": {
+            "heading": "charge cellular rejuvenation",
+            "subheading": "hormesis",
+            "description": "<p>Fasting pushes our body to use fat, and its derivatives, called ketones, instead of glucose as a primary energy source. This metabolic state, known as ketosis, aids in weight loss, reverses the symptoms of metabolic syndrome, lowers the amount of insulin needed by people with type II diabetes, reduces inflammation, improves epigenetic profiles, changes the microbiome, improves lipid profiles, supports the treatment of cancer, and may even lengthen life (12). <\/p>",
+            "icon": "bacterium"
+          }
+        },
+        "c0049769-79fa-4d9b-b21e-638208c39c87": {
+          "type": "faq",
+          "settings": {
+            "heading": "Stay full, cheat hunger naturally",
+            "subheading": "and without breaking a fast",
+            "description": "<p>Fasting pushes our body to use fat, and its derivatives, called ketones, instead of glucose as a primary energy source. This metabolic state, known as ketosis, aids in weight loss, reverses the symptoms of metabolic syndrome, lowers the amount of insulin needed by people with type II diabetes, reduces inflammation, improves epigenetic profiles, changes the microbiome, improves lipid profiles, supports the treatment of cancer, and may even lengthen life (12). <\/p>",
+            "icon": "food"
+          }
+        },
+        "fa5fe2af-7574-4813-8421-72cbfa2b9104": {
+          "type": "faq",
+          "settings": {
+            "heading": "Replenish vital micronutrients",
+            "subheading": "depleted during fasting",
+            "description": "<p>Fasting pushes our body to use fat, and its derivatives, called ketones, instead of glucose as a primary energy source. This metabolic state, known as ketosis, aids in weight loss, reverses the symptoms of metabolic syndrome, lowers the amount of insulin needed by people with type II diabetes, reduces inflammation, improves epigenetic profiles, changes the microbiome, improves lipid profiles, supports the treatment of cancer, and may even lengthen life (12). <\/p>",
+            "icon": "apple"
+          }
+        },
+        "8182a1f6-9220-4651-8854-2b051f539c72": {
+          "type": "faq",
+          "settings": {
+            "heading": "Maintain peak hydration",
+            "subheading": "for optimal health",
+            "description": "<p>Fasting pushes our body to use fat, and its derivatives, called ketones, instead of glucose as a primary energy source. This metabolic state, known as ketosis, aids in weight loss, reverses the symptoms of metabolic syndrome, lowers the amount of insulin needed by people with type II diabetes, reduces inflammation, improves epigenetic profiles, changes the microbiome, improves lipid profiles, supports the treatment of cancer, and may even lengthen life (12). <\/p>",
+            "icon": "blob"
+          }
+        },
+        "01389c92-b792-4226-87f2-5288c6050d50": {
+          "type": "faq",
+          "settings": {
+            "heading": "Pure, ketone-based fuel",
+            "subheading": "to keep you going strong",
+            "description": "<p>Fasting pushes our body to use fat, and its derivatives, called ketones, instead of glucose as a primary energy source. This metabolic state, known as ketosis, aids in weight loss, reverses the symptoms of metabolic syndrome, lowers the amount of insulin needed by people with type II diabetes, reduces inflammation, improves epigenetic profiles, changes the microbiome, improves lipid profiles, supports the treatment of cancer, and may even lengthen life (12). <\/p>",
+            "icon": "man"
+          }
+        },
+        "a49335f0-23c1-4c68-b3aa-4a6b23e90610": {
+          "type": "faq",
+          "settings": {
+            "heading": "Protects muscle from atrophy",
+            "subheading": "especially during physical exertion",
+            "description": "<p>Fasting pushes our body to use fat, and its derivatives, called ketones, instead of glucose as a primary energy source. This metabolic state, known as ketosis, aids in weight loss, reverses the symptoms of metabolic syndrome, lowers the amount of insulin needed by people with type II diabetes, reduces inflammation, improves epigenetic profiles, changes the microbiome, improves lipid profiles, supports the treatment of cancer, and may even lengthen life (12). <\/p>",
+            "icon": "muscule"
+          }
+        },
+        "5ca147e9-e4f4-4290-b071-0db108bfd46d": {
+          "type": "faq",
+          "settings": {
+            "heading": "Eases transition to eating",
+            "subheading": "especially during physical exertion",
+            "description": "<p>Fasting pushes our body to use fat, and its derivatives, called ketones, instead of glucose as a primary energy source. This metabolic state, known as ketosis, aids in weight loss, reverses the symptoms of metabolic syndrome, lowers the amount of insulin needed by people with type II diabetes, reduces inflammation, improves epigenetic profiles, changes the microbiome, improves lipid profiles, supports the treatment of cancer, and may even lengthen life (12). <\/p>",
+            "icon": "meal"
+          }
+        }
+      },
+      "block_order": [
+        "51569761-cf1b-46cf-b052-2c984cff64b7",
+        "37ab628b-9ac3-44b3-badd-73a0d9a99245",
+        "c0049769-79fa-4d9b-b21e-638208c39c87",
+        "fa5fe2af-7574-4813-8421-72cbfa2b9104",
+        "8182a1f6-9220-4651-8854-2b051f539c72",
+        "01389c92-b792-4226-87f2-5288c6050d50",
+        "a49335f0-23c1-4c68-b3aa-4a6b23e90610",
+        "5ca147e9-e4f4-4290-b071-0db108bfd46d"
+      ],
+      "settings": {
+        "data_type": "meta",
+        "metafield_select": "why_its_different",
+        "title": "Why it’s different",
+        "show_image_block": true,
+        "container": "custom",
+        "border_type": "full",
+        "color_background": "#ffffff",
+        "color_text": "#000000",
+        "padding_top_mobile": 80,
+        "padding_bottom_mobile": 80,
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "703ad297-1811-41d7-965e-fdf512796160": {
+      "type": "custom-image-with-text",
+      "blocks": {
+        "3738d714-ca47-48a8-81c0-6a33f21759cd": {
+          "type": "media",
+          "settings": {
+            "select": "image",
+            "image": "shopify:\/\/shop_images\/Diagram_sleep.png"
+          }
+        },
+        "e8408f72-4772-477b-ab14-3f365f97be9d": {
+          "type": "text",
+          "settings": {
+            "title": "How does sleep impact the aging process?",
+            "description": ""
+          }
+        },
+        "f510d978-af09-40b3-846c-578594fafd21": {
+          "type": "button",
+          "settings": {
+            "text": "Learn more",
+            "url": "#"
+          }
+        }
+      },
+      "block_order": [
+        "3738d714-ca47-48a8-81c0-6a33f21759cd",
+        "e8408f72-4772-477b-ab14-3f365f97be9d",
+        "f510d978-af09-40b3-846c-578594fafd21"
+      ],
+      "settings": {
+        "position": "regular",
+        "text_color": "#ffffff",
+        "color_background": "#000000",
+        "padding_top_mobile": 80,
+        "padding_bottom_mobile": 80,
+        "padding_top": 15,
+        "padding_bottom": 15
+      }
+    },
+    "3b1eaf14-59d8-4278-bf43-4613f8c8d3df": {
+      "type": "marquee",
+      "settings": {
+        "text": "<p>you, like new<\/p>",
+        "speed": "50"
+      }
+    },
+    "dfd9fa94-9cf5-46fb-bffb-b39fd3a0f1a2": {
+      "type": "info-list",
+      "blocks": {
+        "f65b112a-9287-46a9-97de-3edd68fe1411": {
+          "type": "info_item",
+          "settings": {
+            "title": "Glucomannan",
+            "description": "<p>It is a type of dietary fiber that is often produced from the konjac plant's root. It can help you feel fuller for longer and lose weight since it can absorb 50 times its weight in water in your stomach. Additionally, it may slow the absorption of sugar and cholesterol in the gut, assisting in managing blood sugar levels in people with diabetes and lowering cholesterol.<\/p>",
+            "image": "shopify:\/\/shop_images\/formula.svg"
+          }
+        },
+        "19020fca-26ba-4bf2-b1e4-c445db0abb2f": {
+          "type": "info_item",
+          "settings": {
+            "title": "Sodium and potassium",
+            "description": "<p>Potassium and sodium are mineral electrolytes that help reduce tiredness and muscle cramps while fast. They replace electrolytes lost during intermittent fasting necessary for the correct function of your muscles and nervous system (11).<\/p>",
+            "image": "shopify:\/\/shop_images\/formula2.svg"
+          }
+        },
+        "2f150d69-1b03-4201-9b50-47d519d2acc4": {
+          "type": "info_item",
+          "settings": {
+            "title": "Beta-hydroxybutyrate",
+            "description": "<p>Beta-hydroxybutyrate (BHB) is a ketone body. Ketone bodies are metabolites of fatty acids and are the energy source while you fast. Supplementing ketones is a reliable method of rapidly increasing blood ketone levels and promoting a state of ketosis without breaking the fast. BHB provides energy when not enough carbohydrates or sugars have been eaten (23).<\/p>",
+            "image": "shopify:\/\/shop_images\/formula3.svg"
+          }
+        },
+        "998f357d-7001-45bd-9254-a768f27d94e1": {
+          "type": "info_item",
+          "settings": {
+            "title": "Creatine",
+            "description": "<p>Creatine maintains a continuous energy supply to your muscles by keeping energy production up. You can get creatine by consuming milk, red meat, and seafood. But to get the same amount of creatine as you get in one dose of Fasting tonic you would need to drink 30 liters\/7.9 gallons of milk.<\/p>",
+            "image": "shopify:\/\/shop_images\/formula4.svg"
+          }
+        }
+      },
+      "block_order": [
+        "f65b112a-9287-46a9-97de-3edd68fe1411",
+        "19020fca-26ba-4bf2-b1e4-c445db0abb2f",
+        "2f150d69-1b03-4201-9b50-47d519d2acc4",
+        "998f357d-7001-45bd-9254-a768f27d94e1"
+      ],
+      "settings": {
+        "data_type": "meta",
+        "title": "Look inside",
+        "image": "shopify:\/\/shop_images\/hand-with-pill.webp",
+        "padding_top_mobile": 80,
+        "padding_bottom_mobile": 50,
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "a41d3afa-7f0d-45c9-9d21-427359dc5020": {
+      "type": "media-and-text",
+      "blocks": {
+        "1350f6c4-bba6-4430-960f-6444aab9bb6f": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/pils-image.jpg"
+          }
+        },
+        "a8c05ae0-8861-485c-8a02-799e4aa522d8": {
+          "type": "text",
+          "settings": {
+            "title": "How to use",
+            "description": "",
+            "description_mobile": "",
+            "warning": ""
+          }
+        }
+      },
+      "block_order": [
+        "1350f6c4-bba6-4430-960f-6444aab9bb6f",
+        "a8c05ae0-8861-485c-8a02-799e4aa522d8"
+      ],
+      "settings": {
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "e5f2eff8-c6f0-4ce2-8ebd-6584d1dbbc76": {
+      "type": "background-video",
+      "settings": {
+        "data_type": "meta",
+        "full_width": true,
+        "video": "shopify:\/\/files\/videos\/microscope.mp4",
+        "description": "It's human nature for people to want to reward themselves after doing very hard work, such as exercise or fasting for a long period of time, so there is a danger of indulging in unhealthy dietary habits on non-fasting days",
+        "sign": "Dr. Frank Hu, chair of the department of nutrition at the Harvard T.H. Chan School of Public Health. ",
+        "text_color": "#ffffff",
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "b25570f0-dc46-4b8a-b5e8-716599c99823": {
+      "type": "point-list",
+      "blocks": {
+        "09ae2c5f-51e8-40ff-a57b-3b0d8201f725": {
+          "type": "point",
+          "settings": {
+            "title": "Effects of intermittent fasting on disease processes and general health",
+            "description": "Intermittent fasting (IF)  means regularly going through extended periods (e.g., 16–48 hours) without eating or consuming very little energy, followed by regular meals. In experimental models of a wide range of age-related disorders, including diabetes, cardiovascular disease, cancers, and neurological conditions such as Alzheimer's disease, Parkinson's disease, and stroke, IF positively affects health in laboratory rats and mice. IF can also counteract disease processes and improve functional outcomes. Studies on fasting in normal and overweight humans have shown that it effectively reduces body weight and enhances a number of health indicators, such as insulin resistance and cardiovascular disease risk factors (9, 24).",
+            "icon": "arrow-right",
+            "url": ""
+          }
+        },
+        "559006b4-ba4d-4f4f-8a8f-0243333cf298": {
+          "type": "point",
+          "settings": {
+            "title": "Effects of Caloric Restriction on the Hallmarks of Aging",
+            "description": "By enhancing cell survival, reducing cell proliferation, and inducing stem cell quiescence and autophagy, caloric restriction increases lifespan and preserves the stem cell reserve for urgent needs (25-27).",
+            "icon": "arrow-right",
+            "url": ""
+          }
+        },
+        "58f2cde8-9b7c-4beb-bc5f-3bbe0e772fc8": {
+          "type": "point",
+          "settings": {
+            "title": "The electrolyte levels during fasting",
+            "description": "Typically, our body excretes potassium and sodium through urine when we fast for extended durations. Any fast that lasts longer than 12 hours may result in those electrolytes deficit (11).",
+            "icon": "arrow-right",
+            "url": ""
+          }
+        },
+        "a916c379-bdc5-4795-998a-3ee112ea7970": {
+          "type": "point",
+          "settings": {
+            "title": "Different dietary fibers remodel gut microbiota and charge up anti-obesity effects",
+            "description": "Dietary fiber is well known as a food component that promotes good health through changes in the composition and function of the gut microflora. Different types of dietary fiber can differentially affect those bacteria and change how glucose and lipid metabolism is regulated (28).",
+            "icon": "arrow-right",
+            "url": ""
+          }
+        },
+        "f3285354-960d-4938-8b40-1645bf23260b": {
+          "type": "point",
+          "settings": {
+            "title": "Beta-hydroxybutyrate (BHB) as an anti-aging substance",
+            "description": "BHB is a signaling molecule that modulates lipolysis, oxidative stress, and neuroprotection. It serves as an energy substrate for maintaining metabolic homeostasis. It delays many age-related disorders by acting as an epigenetic regulator of histone methylation, acetylation, and beta-hydroxybutyrylation. Additionally, research suggests that exogenous supplementation or endogenous BHB administration successfully induces an ametabolic state of nutritional ketosis (13, 23).",
+            "icon": "arrow-right",
+            "url": ""
+          }
+        },
+        "150d557a-93f8-4238-bb60-b40b624252ed": {
+          "type": "point",
+          "settings": {
+            "title": "Creatine as an energy source and muscle loss prevention agent during fasting",
+            "description": "Energy restriction, a weight loss strategy some athletes use, may decrease anaerobic capacity and body protein. During temporary caloric restriction, creatine supplements increase muscle creatine (17, 29).",
+            "icon": "arrow-right",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "09ae2c5f-51e8-40ff-a57b-3b0d8201f725",
+        "559006b4-ba4d-4f4f-8a8f-0243333cf298",
+        "58f2cde8-9b7c-4beb-bc5f-3bbe0e772fc8",
+        "a916c379-bdc5-4795-998a-3ee112ea7970",
+        "f3285354-960d-4938-8b40-1645bf23260b",
+        "150d557a-93f8-4238-bb60-b40b624252ed"
+      ],
+      "settings": {
+        "data_type": "meta",
+        "metafield_select": "scientific_studiеs",
+        "title": "Scientific studiеs",
+        "show_more_button": true,
+        "button_text": "Show more",
+        "list_type": "ul",
+        "icon_position": "heading",
+        "text_color": "#000000",
+        "background_color": "#ffffff",
+        "shorter": false,
+        "padding_top_mobile": 80,
+        "padding_bottom_mobile": 80,
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "b897d913-5b8e-4322-b322-6fa1565d7e16": {
+      "type": "full-width-slider",
+      "blocks": {
+        "7bb3bd9e-d9a8-4138-a730-74a0c0fc0301": {
+          "type": "slide",
+          "settings": {
+            "title": "Sustainability",
+            "subtitle": "We want to minimise our environmental impact as much as possible.",
+            "image": "shopify:\/\/shop_images\/plant.webp"
+          }
+        },
+        "d2c3ab8b-5303-422d-bc45-ab444217c32d": {
+          "type": "slide",
+          "settings": {
+            "title": "Sustainability",
+            "subtitle": "We want to minimise our environmental impact as much as possible.",
+            "image": "shopify:\/\/shop_images\/accordeon-img2.jpg"
+          }
+        },
+        "244e51f3-2530-4b57-837f-adb7f0a43fff": {
+          "type": "slide",
+          "settings": {
+            "title": "Sustainability",
+            "subtitle": "We want to minimise our environmental impact as much as possible.",
+            "image": "shopify:\/\/shop_images\/accordeon-img1.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "7bb3bd9e-d9a8-4138-a730-74a0c0fc0301",
+        "d2c3ab8b-5303-422d-bc45-ab444217c32d",
+        "244e51f3-2530-4b57-837f-adb7f0a43fff"
+      ],
+      "settings": {
+        "data_type": "meta",
+        "title": "Let’s talk about our standards",
+        "time": 3500,
+        "color_text": "#ffffff",
+        "color_background": "#000000",
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 80,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "8efe998e-868d-4128-8657-427bbf147c80": {
+      "type": "info-cards",
+      "blocks": {
+        "2d2b7f5a-6788-4601-9dd8-a8e8a7561c5b": {
+          "type": "card",
+          "settings": {
+            "heading": "CIRCADIAN RE-BALANCING",
+            "heading_color": "#000000",
+            "heading_background": "#c0a6e1",
+            "title": "Advanced Sleep Repair ",
+            "description": "Our Fasting Tonic™ doesn't stop at curbing hunger; it goes a step further by replenishing essential micronutrients and electrolytes",
+            "button_text": "Learn More",
+            "button_url": "#"
+          }
+        },
+        "fe1d8212-f61e-4bef-96c7-acc96cb84bff": {
+          "type": "card",
+          "settings": {
+            "heading": "essentials",
+            "heading_color": "#ffffff",
+            "heading_background": "#000000",
+            "title": "Longevity Essentials",
+            "description": "Our baseline, flagship product, the Longevity Essentials formula targets all 12 underlying causes of aging, on the smallest, subcellular",
+            "button_text": "Learn More",
+            "button_url": ""
+          }
+        },
+        "789fb258-95d0-45cc-8526-40a4e531cb85": {
+          "type": "card",
+          "settings": {
+            "heading": "Nutrition",
+            "heading_color": "#000000",
+            "heading_background": "#7fb069",
+            "title": "Glucose Blocker",
+            "description": "Our Fasting Tonic™ doesn't stop at curbing hunger; it goes a step further by replenishing essential micronutrients and electrolytes that",
+            "button_text": "Learn More",
+            "button_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "2d2b7f5a-6788-4601-9dd8-a8e8a7561c5b",
+        "fe1d8212-f61e-4bef-96c7-acc96cb84bff",
+        "789fb258-95d0-45cc-8526-40a4e531cb85"
+      ],
+      "settings": {
+        "title": "Add to your bundle and save",
+        "subheading": "Products are engineered to work in synergy - get 15% off your monthly longevity kit when you combine Longevity Foundation with any booster.",
+        "padding_top_mobile": 80,
+        "padding_bottom_mobile": 80,
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "personal_kit_A76Uyk": {
+      "type": "personal-kit",
+      "blocks": {
+        "one_time_purchase_jbFgwP": {
+          "type": "one_time_purchase",
+          "settings": {
+            "title": "One-Time Purchase",
+            "image": "shopify:\/\/shop_images\/Pouch_illustration.png",
+            "richtext": "<p>Receive a cute pouch - each pouch represents a one month supply<\/p>"
+          }
+        },
+        "subscribe_QgAniL": {
+          "type": "subscribe",
+          "settings": {
+            "title": "Subscribe, bundle, and enjoy the works",
+            "image": "shopify:\/\/shop_images\/Vessel_illustration.png",
+            "richtext": "<p>Receive a free gift canister with your first month, 100% metal refillable and recyclable for you & for the planet<\/p>",
+            "item_list": "<p>+ Get targeted lifestyle coaching and scientific guidance, delivered regularly to your inbox<\/p><p>+ Get 10% off subscriptions, cancel anytime<\/p><p>+ Constantly updated formula that track the latest scientific advancements, so you don’t have to<\/p><p>+ Save 15% off when you bundle (combine Longevity Foundation with at least one boosters)<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "one_time_purchase_jbFgwP",
+        "subscribe_QgAniL"
+      ],
+      "settings": {
+        "header": "Your personal longevity kit, engineered for life",
+        "section_description": "<p>More than just a supplement, each product is a complete protocol and lifestyle program, synergistically formulated to work best together, and with ongoing use. <\/p>",
+        "background_color": "#F9F9F9"
+      }
+    },
+    "a35f75df-0209-4b6b-bca1-851437d0a858": {
+      "type": "accordion",
+      "blocks": {
+        "ab59022d-7a43-4bd2-b2c0-e428daae3bb6": {
+          "type": "faq",
+          "settings": {
+            "heading": "I plan a prolonged fast (multiple days). Can I use Fasting tonic?",
+            "subheading": "",
+            "description": "<p>Bloating, flatulence, soft stools, or diarrhea can be the side effects of any dietary fiber, such as glucomannan which could lead to nutrient loss over a period of time. But those effects are uncommon. If you experience any worrying effect, please conslt your doctor.<\/p>",
+            "icon": "none"
+          }
+        },
+        "43e92580-ef00-4650-a4af-b5b26b238548": {
+          "type": "faq",
+          "settings": {
+            "heading": "How many doses of Fasting tonic a day I could take?",
+            "subheading": "",
+            "description": "<p>Bloating, flatulence, soft stools, or diarrhea can be the side effects of any dietary fiber, such as glucomannan which could lead to nutrient loss over a period of time. But those effects are uncommon. If you experience any worrying effect, please conslt your doctor.<\/p>",
+            "icon": "none"
+          }
+        },
+        "f8a9268a-4187-4483-b4e8-da80021ab923": {
+          "type": "faq",
+          "settings": {
+            "heading": "I do not like the taste - what can I add to it to make it better without breaking my fast?",
+            "subheading": "",
+            "description": "<p>Bloating, flatulence, soft stools, or diarrhea can be the side effects of any dietary fiber, such as glucomannan which could lead to nutrient loss over a period of time. But those effects are uncommon. If you experience any worrying effect, please conslt your doctor.<\/p>",
+            "icon": "none"
+          }
+        },
+        "469c8edd-6261-4b60-8e21-4b7cc4da441b": {
+          "type": "faq",
+          "settings": {
+            "heading": "Can Fasting tonic cause bloating?",
+            "subheading": "",
+            "description": "<p>Bloating, flatulence, soft stools, or diarrhea can be the side effects of any dietary fiber, such as glucomannan which could lead to nutrient loss over a period of time. But those effects are uncommon. If you experience any worrying effect, please conslt your doctor.<\/p>",
+            "icon": "none"
+          }
+        },
+        "b9872891-c6ec-49da-8b23-e809b3c52b1c": {
+          "type": "faq",
+          "settings": {
+            "heading": "Can I overdose on electrolytes while taking Fasting tonic?",
+            "subheading": "",
+            "description": "<p>Bloating, flatulence, soft stools, or diarrhea can be the side effects of any dietary fiber, such as glucomannan which could lead to nutrient loss over a period of time. But those effects are uncommon. If you experience any worrying effect, please conslt your doctor.<\/p>",
+            "icon": "none"
+          }
+        }
+      },
+      "block_order": [
+        "ab59022d-7a43-4bd2-b2c0-e428daae3bb6",
+        "43e92580-ef00-4650-a4af-b5b26b238548",
+        "f8a9268a-4187-4483-b4e8-da80021ab923",
+        "469c8edd-6261-4b60-8e21-4b7cc4da441b",
+        "b9872891-c6ec-49da-8b23-e809b3c52b1c"
+      ],
+      "settings": {
+        "data_type": "meta",
+        "metafield_select": "faq",
+        "title": "FAQ’s",
+        "show_image_block": false,
+        "container": "standart",
+        "border_type": "bottom",
+        "color_background": "#000000",
+        "color_text": "#ffffff",
+        "padding_top_mobile": 80,
+        "padding_bottom_mobile": 80,
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "f598a0ef-8727-4c4d-bffa-40d8d59cb1ff": {
+      "type": "feedback-product-section",
+      "blocks": {
+        "1abb77fd-d073-44be-9a92-46f3cefd85e3": {
+          "type": "Slide",
+          "settings": {
+            "title_slide": "WOW I’m in love with Jung ♡",
+            "body_slide": "<p>This set is great and it makes me feel soft and relaxed on certain days when I want to just unwind from work or other physical activities. It has a great smell to it and the aftermath of using the body cream as an additional product to moisturize makes everything just like icing on the cake. I’m usually not a “bar” type person because it runs out so fast, but the fact that you get two cleansing bars makes the price worthwhile.<\/p>",
+            "author_slide": "Jacky",
+            "date_slide": "September 5th, 2022",
+            "img": "shopify:\/\/shop_images\/img-1-slide.png",
+            "color": "#c0a6e1"
+          }
+        },
+        "8c07cc25-f4e8-4c46-8a7a-d08cb275e7b6": {
+          "type": "Slide",
+          "settings": {
+            "title_slide": "Yaaass",
+            "body_slide": "<p>This set is great and it makes me feel soft and relaxed on certain days when I want to just unwind from work or other physical activities. It has a great smell to it and the aftermath of using the body cream as an additional product to moisturize makes everything just like icing on the cake. I’m usually not a “bar” type person because it runs out so fast, but the fact that you get two cleansing bars makes the price worthwhile.<\/p>",
+            "author_slide": "Lily",
+            "date_slide": "September 5th, 2022",
+            "img": "shopify:\/\/shop_images\/img-2-slide.png",
+            "color": "#f95123"
+          }
+        },
+        "989ff265-af8f-4b1b-a99e-1444ad3145f4": {
+          "type": "Slide",
+          "settings": {
+            "title_slide": "Love love love",
+            "body_slide": "<p>This set is great and it makes me feel soft and relaxed on certain days when I want to just unwind from work or other physical activities. It has a great smell to it and the aftermath of using the body cream as an additional product to moisturize makes everything just like icing on the cake. I’m usually not a “bar” type person because it runs out so fast, but the fact that you get two cleansing bars makes the price worthwhile.<\/p>",
+            "author_slide": "Emily",
+            "date_slide": "September 5th, 2022",
+            "img": "shopify:\/\/shop_images\/img-3-slide.png",
+            "color": "#7fb069"
+          }
+        }
+      },
+      "block_order": [
+        "1abb77fd-d073-44be-9a92-46f3cefd85e3",
+        "8c07cc25-f4e8-4c46-8a7a-d08cb275e7b6",
+        "989ff265-af8f-4b1b-a99e-1444ad3145f4"
+      ],
+      "disabled": true,
+      "settings": {
+        "title": "Superhuman, nоw and forever",
+        "time": "3500",
+        "padding_top": 80,
+        "padding_bottom": 80,
+        "padding_top_mb": 80,
+        "padding_bottom_mb": 80
+      }
+    },
+    "07d7374d-0c79-43f7-bb30-0c48cd7160e9": {
+      "type": "point-list",
+      "blocks": {
+        "53abb3be-20bb-40e1-b367-5920b3e991e4": {
+          "type": "point",
+          "settings": {
+            "title": "",
+            "description": "Gu L, Fu R, Hong J, Ni H, Yu K, Lou H. Effects of Intermittent Fasting in Human Compared to a Non-intervention Diet and Caloric Restriction: A Meta-Analysis of Randomized Controlled Trials. Front Nutr. 2022;9:871682",
+            "icon": "arrow-right",
+            "url": ""
+          }
+        },
+        "888fe452-7646-4e7b-80df-1a8f39079e2a": {
+          "type": "point",
+          "settings": {
+            "title": "",
+            "description": "Fontana L, Meyer TE, Klein S, Holloszy JO. Long-term calorie restriction is highly effective in reducing the risk for atherosclerosis in humans. Proc Natl Acad Sci U S A. 2004;101(17):6659-63.",
+            "icon": "arrow-right",
+            "url": ""
+          }
+        },
+        "be2088a5-c24e-442c-810a-cd3c393442db": {
+          "type": "point",
+          "settings": {
+            "title": "",
+            "description": "Attinà A, Leggeri C, Paroni R, Pivari F, Dei Cas M, Mingione A, et al. Fasting: How to guide. Nutrients. 2021;13(5):1570.",
+            "icon": "arrow-right",
+            "url": ""
+          }
+        },
+        "fd802126-c2a0-4d09-b5eb-5d61c11884bf": {
+          "type": "point",
+          "settings": {
+            "title": "",
+            "description": "Waziry R, Ryan CP, Corcoran DL, Huffman KM, Kobor MS, Kothari M, et al. Effect of long-term caloric restriction on DNA methylation measures of biological aging in healthy adults from the CALERIE trial. Nature Aging. 2023;3(3):248-57.",
+            "icon": "arrow-right",
+            "url": ""
+          }
+        },
+        "e9610374-16b1-4928-a3a2-fb716a29ca32": {
+          "type": "point",
+          "settings": {
+            "title": "",
+            "description": "Calabrese EJ, Dhawan G, Kapoor R, Iavicoli I, Calabrese V. What is hormesis and its relevance to healthy aging and longevity? Biogerontology. 2015;16(6):693-707.",
+            "icon": "arrow-right",
+            "url": ""
+          }
+        },
+        "a315d9ec-1515-498c-ba1b-008a2ef9e286": {
+          "type": "point",
+          "settings": {
+            "title": "",
+            "description": "Gu L, Fu R, Hong J, Ni H, Yu K, Lou H. Effects of Intermittent Fasting in Human Compared to a Non-intervention Diet and Caloric Restriction: A Meta-Analysis of Randomized Controlled Trials. Front Nutr. 2022;9:871682.",
+            "icon": "arrow-right",
+            "url": ""
+          }
+        },
+        "ca63b868-b6a1-42d5-9fa5-d2e19ae0057a": {
+          "type": "point",
+          "settings": {
+            "title": "",
+            "description": "Gu L, Fu R, Hong J, Ni H, Yu K, Lou H. Effects of Intermittent Fasting in Human Compared to a Non-intervention Diet and Caloric Restriction: A Meta-Analysis of Randomized Controlled Trials. Front Nutr. 2022;9:871682.",
+            "icon": "arrow-right",
+            "url": ""
+          }
+        },
+        "5ab0cdf7-f491-4419-bbd3-06bed7c7a838": {
+          "type": "point",
+          "settings": {
+            "title": "",
+            "description": "Gu L, Fu R, Hong J, Ni H, Yu K, Lou H. Effects of Intermittent Fasting in Human Compared to a Non-intervention Diet and Caloric Restriction: A Meta-Analysis of Randomized Controlled Trials. Front Nutr. 2022;9:871682.",
+            "icon": "arrow-right",
+            "url": ""
+          }
+        },
+        "b65e475f-1d65-48a8-bbcd-469b7cc33739": {
+          "type": "point",
+          "settings": {
+            "title": "",
+            "description": "Gu L, Fu R, Hong J, Ni H, Yu K, Lou H. Effects of Intermittent Fasting in Human Compared to a Non-intervention Diet and Caloric Restriction: A Meta-Analysis of Randomized Controlled Trials. Front Nutr. 2022;9:871682.",
+            "icon": "arrow-right",
+            "url": ""
+          }
+        },
+        "4ed546d4-86df-469c-8002-a2e1e2defbaa": {
+          "type": "point",
+          "settings": {
+            "title": "",
+            "description": "Gu L, Fu R, Hong J, Ni H, Yu K, Lou H. Effects of Intermittent Fasting in Human Compared to a Non-intervention Diet and Caloric Restriction: A Meta-Analysis of Randomized Controlled Trials. Front Nutr. 2022;9:871682.",
+            "icon": "arrow-right",
+            "url": ""
+          }
+        },
+        "1c8db86c-54b9-4c13-b464-17ba28af22f4": {
+          "type": "point",
+          "settings": {
+            "title": "",
+            "description": "Gu L, Fu R, Hong J, Ni H, Yu K, Lou H. Effects of Intermittent Fasting in Human Compared to a Non-intervention Diet and Caloric Restriction: A Meta-Analysis of Randomized Controlled Trials. Front Nutr. 2022;9:871682.",
+            "icon": "arrow-right",
+            "url": ""
+          }
+        },
+        "5bae2745-8c4e-4f27-8181-83a4bfed634c": {
+          "type": "point",
+          "settings": {
+            "title": "",
+            "description": "Gu L, Fu R, Hong J, Ni H, Yu K, Lou H. Effects of Intermittent Fasting in Human Compared to a Non-intervention Diet and Caloric Restriction: A Meta-Analysis of Randomized Controlled Trials. Front Nutr. 2022;9:871682.",
+            "icon": "arrow-right",
+            "url": ""
+          }
+        },
+        "298bbfd7-659a-41ba-ac9c-bec349a7ea5b": {
+          "type": "point",
+          "settings": {
+            "title": "",
+            "description": "Gu L, Fu R, Hong J, Ni H, Yu K, Lou H. Effects of Intermittent Fasting in Human Compared to a Non-intervention Diet and Caloric Restriction: A Meta-Analysis of Randomized Controlled Trials. Front Nutr. 2022;9:871682.",
+            "icon": "arrow-right",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "53abb3be-20bb-40e1-b367-5920b3e991e4",
+        "888fe452-7646-4e7b-80df-1a8f39079e2a",
+        "be2088a5-c24e-442c-810a-cd3c393442db",
+        "fd802126-c2a0-4d09-b5eb-5d61c11884bf",
+        "e9610374-16b1-4928-a3a2-fb716a29ca32",
+        "a315d9ec-1515-498c-ba1b-008a2ef9e286",
+        "ca63b868-b6a1-42d5-9fa5-d2e19ae0057a",
+        "5ab0cdf7-f491-4419-bbd3-06bed7c7a838",
+        "b65e475f-1d65-48a8-bbcd-469b7cc33739",
+        "4ed546d4-86df-469c-8002-a2e1e2defbaa",
+        "1c8db86c-54b9-4c13-b464-17ba28af22f4",
+        "5bae2745-8c4e-4f27-8181-83a4bfed634c",
+        "298bbfd7-659a-41ba-ac9c-bec349a7ea5b"
+      ],
+      "settings": {
+        "data_type": "meta",
+        "metafield_select": "references",
+        "title": "References",
+        "show_more_button": true,
+        "button_text": "Show more",
+        "list_type": "ol",
+        "icon_position": "description",
+        "text_color": "#000000",
+        "background_color": "#ffffff",
+        "shorter": false,
+        "padding_top_mobile": 80,
+        "padding_bottom_mobile": 80,
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "custom_liquid_qHC7Re": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<script type=\"text\/javascript\">\n  window.addEventListener(\"load\", function() {\n    var _learnq = window._learnq || [];\n    document.getElementById(\"ProductSubmitButton-template--17170194399396__main\").addEventListener('click',function (){\n      _learnq.push(['track', 'Added to Cart', item]);\n    });\n  })\n<\/script>",
+        "color_scheme": "",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "99e1bcc1-5f72-4fb8-a9c9-4506531d2fa0": {
+      "type": "full-bg-text",
+      "blocks": {
+        "template--17156717609124__99e1bcc1-5f72-4fb8-a9c9-4506531d2fa0-icon-1": {
+          "type": "icon",
+          "settings": {
+            "svg_icon": "shopify:\/\/shop_images\/Logo_1.svg",
+            "svg_size_desktop": 380,
+            "svg_size_mobile": 100,
+            "svg_size_mobile_large": 255,
+            "heading_icon": ""
+          }
+        },
+        "template--17156717609124__99e1bcc1-5f72-4fb8-a9c9-4506531d2fa0-heading-1": {
+          "type": "heading",
+          "settings": {
+            "heading": "Making aging a choice."
+          }
+        },
+        "template--17156717609124__99e1bcc1-5f72-4fb8-a9c9-4506531d2fa0-button-1": {
+          "type": "button",
+          "settings": {
+            "button_label": "Our Science",
+            "button_link": "shopify:\/\/pages\/our-science",
+            "button_style_secondary": true,
+            "button_label_2": "",
+            "button_link_2": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--17156717609124__99e1bcc1-5f72-4fb8-a9c9-4506531d2fa0-icon-1",
+        "template--17156717609124__99e1bcc1-5f72-4fb8-a9c9-4506531d2fa0-heading-1",
+        "template--17156717609124__99e1bcc1-5f72-4fb8-a9c9-4506531d2fa0-button-1"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "bg_img": "shopify:\/\/shop_images\/ashwin-vaswani-ViXb3PXSC-8-unsplash_1.jpg",
+        "bg_image_mob": "shopify:\/\/shop_images\/ashwin-vaswani-ViXb3PXSC-8-unsplash_1_1.jpg",
+        "padding_top": 80,
+        "padding_bottom": 148,
+        "padding_top_mb": 80,
+        "padding_bottom_mb": 80
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "disabled": true,
+      "settings": {
+        "heading": "You may also like",
+        "heading_size": "h2",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "color_scheme": "background-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 28
+      }
+    }
+  },
+  "order": [
+    "main",
+    "33416563-3ed6-477b-a8ef-81b368d25068",
+    "ba846dcc-3c8f-4608-88a6-5e7ab88d1e60",
+    "8c916f37-c5c4-4f7b-8709-b39799e61227",
+    "703ad297-1811-41d7-965e-fdf512796160",
+    "3b1eaf14-59d8-4278-bf43-4613f8c8d3df",
+    "dfd9fa94-9cf5-46fb-bffb-b39fd3a0f1a2",
+    "a41d3afa-7f0d-45c9-9d21-427359dc5020",
+    "e5f2eff8-c6f0-4ce2-8ebd-6584d1dbbc76",
+    "b25570f0-dc46-4b8a-b5e8-716599c99823",
+    "b897d913-5b8e-4322-b322-6fa1565d7e16",
+    "8efe998e-868d-4128-8657-427bbf147c80",
+    "personal_kit_A76Uyk",
+    "a35f75df-0209-4b6b-bca1-851437d0a858",
+    "f598a0ef-8727-4c4d-bffa-40d8d59cb1ff",
+    "07d7374d-0c79-43f7-bb30-0c48cd7160e9",
+    "custom_liquid_qHC7Re",
+    "99e1bcc1-5f72-4fb8-a9c9-4506531d2fa0",
+    "related-products"
+  ]
+}

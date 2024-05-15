@@ -1,0 +1,74 @@
+{{ 'video-with-earth.out.css' | asset_url | stylesheet_tag }}
+
+{% liquid 
+    assign text = section.settings.text
+    assign header = section.settings.header
+    assign video_url_1 = section.settings.video_1.sources[1].url
+    assign poster_1 = section.settings.video_1.preview_image.src
+    assign image_1 = section.settings.image_1
+%}
+
+<div class="video-with-earth video-with-earth--{{ section.id }}">
+    <div class="container">
+        <div class="video-with-earth__content">
+            {% if header != blank %}
+                <h2 class="video-with-earth__header heading-h2 heading-h2-md">
+                    {{ header }}
+                </h2>
+            {% endif %}
+            {% if text != blank %}
+                <div class="video-with-earth__text body-b2 body-b2-md">
+                    {{ text }}
+                </div>
+            {% endif %}
+        </div>
+    </div>
+    <div class="video-with-earth__video">
+        <div class="container">
+            {% if video_url_1 != blank %}
+            <video style="object-fit: cover;" class="lazy" width="100%" height="100%" muted autoplay playsinline loop poster="{{ poster_1 | img_url: 'x1000' }}">
+                <source src="{{ video_url_1 }}" type="video/mp4">
+            </video>
+            {% elsif image_1 != blank %} 
+                <img class="lazy" loading="lazy" src="{{ image_1 | img_url: 'x1000' }}" data-src="{{ image_1 | img_url: '1000x' }}" alt="{{ image_1.alt }}">
+            {% else %}
+                {{ 'lifestyle-2' | placeholder_svg_tag: 'placeholder-svg' }}
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% schema %}
+  {
+    "name": "Videos with earth",
+    "settings": [
+        {
+            "type": "text",
+            "id": "header",
+            "label": "Title",
+            "default": "Your numerical age ≠ biological age. Good thing it's flexible."
+        },
+        {
+            "type": "text",
+            "id": "text",
+            "label": "Text",
+            "default": "To truly gauge your age, look beyond Earthly years. Instead, delve into your body's organs, tissues, and cells – your 'biological age.' It's a superior indicator, reflecting health influenced by the 12 aging drivers, predicting mortality risk better. Importantly, it's malleable, potentially allowing reversal. By focusing on your body's systems, you can control the aging process and unlock longer, healthier life."
+        },
+        {
+            "type": "video",
+            "id": "video_1",
+            "label": "A Shopify-hosted video"
+        },
+        {
+            "type": "image_picker",
+            "id": "image_1",
+            "label": "Background image"
+        }
+    ],
+       
+    "presets": [
+      {
+        "name": "Videos with earth"
+      }
+    ]
+  }
+{% endschema %}

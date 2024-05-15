@@ -1,0 +1,69 @@
+@import "./settings/variables";
+@import "./settings/mixins";
+
+.info--block {
+  @include media-breakpoint-up(xl) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  &__head {
+    max-width: 536px;
+
+    .info--block__title {
+      margin-bottom: 24px;
+    }
+
+    .info--block__description {
+      margin: 0;
+    }
+  }
+
+  &__img--thumb {
+    max-width: 855px;
+    margin: 48px 0;
+
+    @include media-breakpoint-up(xl) {
+      order: 3;
+
+      width: 855px;
+      margin: 0 auto;
+      margin-top: 115px;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+
+      object-fit: contain;
+      object-position: center;
+    }
+  }
+
+  &__more--info {
+    max-width: 560px;
+
+    @include media-breakpoint-up(big-xl) {
+      max-width: 625px;
+    }
+
+    li:not(:last-child) {
+      margin-bottom: 16px;
+    }
+
+    * {
+      font-size: inherit;
+      line-height: inherit;
+      font-weight: inherit;
+    }
+  }
+
+  li {
+    list-style-type: none;
+  }
+
+  * {
+    color: inherit;
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "name": "t:sections.footer.name",
+  "type": "footer",
+  "sections": {
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "9cc8cc2a-426b-462d-972e-836c6aa0161f": {
+          "type": "link_list",
+          "settings": {
+            "heading": "About Us",
+            "menu": "footer-menu"
+          }
+        },
+        "4299330e-27e7-4c40-9fd8-38c4aee78356": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Support",
+            "menu": "support"
+          }
+        },
+        "395807ad-0bc3-46bd-bf5e-b352b19d79dd": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Shop",
+            "menu": "shop"
+          }
+        },
+        "967721ed-09fa-4721-850d-9b9dc5ef6701": {
+          "type": "social",
+          "settings": {
+            "heading": "Socials"
+          }
+        }
+      },
+      "block_order": [
+        "9cc8cc2a-426b-462d-972e-836c6aa0161f",
+        "4299330e-27e7-4c40-9fd8-38c4aee78356",
+        "395807ad-0bc3-46bd-bf5e-b352b19d79dd",
+        "967721ed-09fa-4721-850d-9b9dc5ef6701"
+      ],
+      "settings": {
+        "color_scheme": "accent-1",
+        "newsletter_enable": true,
+        "newsletter_heading": "Join the longevity revolution",
+        "svg_footer": "shopify:\/\/shop_images\/Symbol.svg",
+        "svg_label": "<p>Founded in Oxford, we're on a crusade to liberate healthy longevity: for the billions, not just the billionaires.<\/p>",
+        "footer_logo": "shopify:\/\/shop_images\/logo.svg",
+        "footer_logo_link": "",
+        "enable_follow_on_shop": false,
+        "enable_country_selector": true,
+        "enable_language_selector": true,
+        "payment_enable": true,
+        "show_policy": false,
+        "padding_top": 80,
+        "padding_bottom": 32,
+        "padding_top_mb": 64,
+        "padding_bottom_mb": 64
+      }
+    }
+  },
+  "order": [
+    "footer"
+  ]
+}

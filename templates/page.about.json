@@ -1,0 +1,505 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "58bf1969-0ed4-47c5-b28c-2f450dd176f5": {
+      "type": "banner-image",
+      "settings": {
+        "subscription_page": false,
+        "header": "FOUNDED IN OXFORD, WE’RE ON A CRUSADE TO LIBERATE HUMAN LONGEVITY",
+        "description": "",
+        "button_label": "Shop all",
+        "button_link": "",
+        "image": "shopify:\/\/shop_images\/pexels-angela-roma-7480283_1-min.png",
+        "image_mobile": "shopify:\/\/shop_images\/Pic_1.jpg",
+        "opacity": 0,
+        "container": "container",
+        "text_align": "left",
+        "banner_height": "banner-large"
+      }
+    },
+    "ad4cb486-96da-4bd7-bccb-0709a742dc06": {
+      "type": "text-only",
+      "blocks": {
+        "cc791df1-685f-4d39-9a83-c76624bd4e71": {
+          "type": "subtitle",
+          "settings": {
+            "subtitle": "Translating the latest scientific advancements in aging research into products and technologies that can decelerate aging and extend healthy lifespan."
+          }
+        }
+      },
+      "block_order": [
+        "cc791df1-685f-4d39-9a83-c76624bd4e71"
+      ],
+      "settings": {
+        "title": "",
+        "background_color": ""
+      }
+    },
+    "a90e93ce-147b-418a-b29c-1c3afa42f8d2": {
+      "type": "videos-with-text",
+      "settings": {
+        "overflow_header": "The future of health is prevention.",
+        "overflow_text": "16% of US GDP (or $3.7 trillion a year) is spent managing age-related chronic diseases - that are often preventable. What if, instead, we zeroed in on aging itself, halted the decline, and avoided chronic disease altogether? Welcome to longevity science - the next frontier in health. At Jung+, we're not just imagining this future; we're creating it.",
+        "video_1": "shopify:\/\/files\/videos\/about-video2-compressed.mp4",
+        "video_2": "shopify:\/\/files\/videos\/about-video-compressed_a4ee20c9-0914-4a78-a2d4-e72fff10bc95.mp4"
+      }
+    },
+    "7f0233ff-70e1-4977-bed8-e962c7ef5794": {
+      "type": "text-with-earth",
+      "settings": {
+        "header": "The future of preventative health is longevity.",
+        "subtitle": "And its here, today.",
+        "text": "Imagine a world where we don't just live longer, but live better. A world where we don't just survive but thrive. We all want this, and traditional medicine promised this. But instead, we age. We deteriorate and grow frail, and eventually, we develop chronic diseases. We chase these diseases individually, spending decades in poor health, without realizing they have a common underlying trigger: aging itself.",
+        "video_1": "shopify:\/\/files\/videos\/Earth_1 (online-video-cutter.com).mp4",
+        "video_2": "shopify:\/\/files\/videos\/7217009789975445004planet_mobile_cropped (3).mp4"
+      }
+    },
+    "1d725dc7-a8a8-4f49-8de9-48f4c2f3ce39": {
+      "type": "text-with-illustration",
+      "settings": {
+        "title": "We love growing older, but it’s time to stop aging.",
+        "richtext": "<p>Getting older is a privilege to be celebrated, but aging is not always 'graceful'. In truth, biological aging wreaks havoc on our health. It makes us susceptible to chronic disease, and compromises our ability to live an active life. Maintaining biological health into old age can unlock immense possibility for every individual, and society as a whole. <\/p>",
+        "richtext_2": "<p>Aging is inevitable - there is no cure for aging (yet), but how you age is very much up to you. Scientists are mapping how aging works, and how to target, slow and reverse it. Its time for a paradigm shift in thinking - to have agency over the aging process, and to make aging a choice. <\/p>",
+        "background_color": "#000",
+        "video": "shopify:\/\/files\/videos\/de66cae9-1662-4ef9-85e6-7aab98337f63.mp4",
+        "video_mobile": "shopify:\/\/files\/videos\/-e8e0-46a0-8e9c-6746042abcf6 (online-video-cutter.com).mp4"
+      }
+    },
+    "b81f162d-bc05-4fcc-aa18-801c1b0c2d7f": {
+      "type": "full-bg-text",
+      "blocks": {
+        "template--17180347105444__b81f162d-bc05-4fcc-aa18-801c1b0c2d7f-icon-1": {
+          "type": "icon",
+          "settings": {
+            "svg_icon": "shopify:\/\/shop_images\/Group_2.svg",
+            "svg_size_desktop": 345,
+            "svg_size_desktop_large": 675,
+            "svg_size_mobile": 100,
+            "svg_size_mobile_large": 254,
+            "heading_icon": ""
+          }
+        },
+        "template--17180347105444__b81f162d-bc05-4fcc-aa18-801c1b0c2d7f-heading-1": {
+          "type": "heading",
+          "settings": {
+            "heading": ""
+          }
+        },
+        "template--17180347105444__b81f162d-bc05-4fcc-aa18-801c1b0c2d7f-text-1": {
+          "type": "text",
+          "settings": {
+            "text": "<ul><li>BIOTECH, MEET HEALTH<\/li><li>BIOTECH, MEET BEAUTY<\/li><li>BIOTECH, MEET NUTRITION<\/li><li>BIOTECH, MEET PERFORMANCE <\/li><li>BIOTECH, MEET YOU, LIKE NEW <\/li><\/ul>"
+          }
+        }
+      },
+      "block_order": [
+        "template--17180347105444__b81f162d-bc05-4fcc-aa18-801c1b0c2d7f-icon-1",
+        "template--17180347105444__b81f162d-bc05-4fcc-aa18-801c1b0c2d7f-heading-1",
+        "template--17180347105444__b81f162d-bc05-4fcc-aa18-801c1b0c2d7f-text-1"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "bg_img": "shopify:\/\/shop_images\/DTS_First_Date_Marlen_Stahlhuth_4786_1.jpg",
+        "bg_image_mob": "shopify:\/\/shop_images\/DTS_First_Date_Marlen_Stahlhuth_4786_1_1.jpg",
+        "padding_top": 128,
+        "padding_bottom": 136,
+        "padding_top_mb": 120,
+        "padding_bottom_mb": 120
+      }
+    },
+    "abfafe67-b8a4-45e7-8e10-c6cdfad05076": {
+      "type": "image-with-info",
+      "blocks": {
+        "dfa34848-0805-4e30-90ec-44140dd08021": {
+          "type": "header",
+          "settings": {
+            "header": "Letter from our founder",
+            "heading_size": "heading-h2 heading-h2-md"
+          }
+        },
+        "0a86bd57-d67e-4a6f-8eb9-2369ab787237": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "<p>My journey in longevity began at the University of Oxford, where I joined and later led the Oxford Society of Ageing and Longevity. Over the years, I collaborated with leading experts, delving into groundbreaking discoveries that were reshaping our understanding of aging and the potential for extended, healthy lives.<\/p>"
+          }
+        },
+        "17a223a5-eadc-417a-84ac-bb9908d064da": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "<p>Sadly, I found much of the public was still in the dark, remaining unaware of the quiet revolution unraveling aging. And for those who did recognize its potential and were seeking solutions, I found woefully few, trusted, accessible, and holistic tools that represent the best of what science knows. <\/p>"
+          }
+        },
+        "39655e49-cfe2-4381-b487-db891871c547": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "<p>To bridge this gap, we created Jung+. <\/p>"
+          }
+        },
+        "05a00fc3-f84a-4d39-9707-0b7e61b2380e": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "<p>Our mission is clear: make top-tier longevity care accessible for all, not just billionaires. Inspired by elite longevity clinicians, we've created a powerful, personalized, self-guided system that pairs the most promising longevity molecules with evidence-based lifestyle interventions: a program which, done correctly, will genuinely impact your life and health.<\/p>"
+          }
+        },
+        "c5e9db0a-10cd-463c-9fac-70a2a331d490": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "<p>Carl Jung once said, \"Life begins at 40; up until then, you're just doing research\", teaching us that life's purpose is to fully discover oneself. I genuinely believe the world would be a better place if we all had the time, space, and health, to do so. <\/p>"
+          }
+        },
+        "6d2c8ee9-470c-4176-9d01-8f1ed978bef8": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "<p>Thank you for joining us on this journey. We're deeply grateful for your trust as we venture boldly into the future.<\/p>"
+          }
+        },
+        "072b67a3-1b1b-4cf7-ba98-b2da213d33e4": {
+          "type": "header",
+          "settings": {
+            "header": "“LONGEVITY FOR THE BILLIONS, NOT JUST THE BILLIONAIRES”",
+            "heading_size": "heading-h3 heading-h3-md"
+          }
+        },
+        "d1fea40c-59da-458f-bf0a-31152fc0edad": {
+          "type": "position",
+          "settings": {
+            "position": "- Simon Sakhai, Founder of JUNG"
+          }
+        }
+      },
+      "block_order": [
+        "dfa34848-0805-4e30-90ec-44140dd08021",
+        "0a86bd57-d67e-4a6f-8eb9-2369ab787237",
+        "17a223a5-eadc-417a-84ac-bb9908d064da",
+        "39655e49-cfe2-4381-b487-db891871c547",
+        "05a00fc3-f84a-4d39-9707-0b7e61b2380e",
+        "c5e9db0a-10cd-463c-9fac-70a2a331d490",
+        "6d2c8ee9-470c-4176-9d01-8f1ed978bef8",
+        "072b67a3-1b1b-4cf7-ba98-b2da213d33e4",
+        "d1fea40c-59da-458f-bf0a-31152fc0edad"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Simon_illustration.png",
+        "sticker": "shopify:\/\/shop_images\/Circle_Sticker_3x3_d0957485-d8a1-41aa-a820-09da5a93647c.png",
+        "padding_top": 80,
+        "padding_bottom": 80,
+        "padding_top_mb": 80,
+        "padding_bottom_mb": 80
+      }
+    },
+    "b6ffebc2-5138-49bd-87bc-c58923fe1f8b": {
+      "type": "text-with-timeline",
+      "settings": {
+        "background_color": "#000",
+        "image": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" width=\"1431\" height=\"323\" viewbox=\"0 0 1431 323\" fill=\"none\"><circle cx=\"512.5\" cy=\"161.5\" r=\"161.5\" fill=\"url(#a)\"><\/circle><circle cx=\"1088.5\" cy=\"161.5\" r=\"161.5\" fill=\"url(#b)\"><\/circle><circle cx=\"1269.5\" cy=\"161.5\" r=\"161.5\" fill=\"url(#c)\"><\/circle><path stroke=\"#fff\" d=\"M40 161h1360M985 161v13M40 160v14M1219 161v13M1342 161v13M1400 161v13M40 161s84.199-82 472.5-82S985 161 985 161\"><\/path><path fill=\"#fff\" d=\"M491.42 188.776c-.648.666-1.872 1.152-3.078 1.458v-1.836c1.116-.234 2.43-.99 3.402-1.998h1.8V199h-2.124v-10.224Zm11.662-2.52c3.168 0 4.986 2.394 4.986 5.778 0 4.284-2.07 7.11-5.292 7.11-2.394 0-4.068-1.332-4.302-3.438h2.016c.18 1.008 1.098 1.674 2.286 1.674 2.106 0 3.06-1.962 3.222-4.212-.666 1.062-1.854 1.602-3.168 1.602-2.52 0-4.338-1.818-4.338-4.266 0-2.466 1.926-4.248 4.59-4.248Zm-2.538 4.284c-.018 1.494 1.062 2.538 2.574 2.538 1.512 0 2.592-1.062 2.592-2.556s-1.08-2.502-2.592-2.502-2.574 1.008-2.574 2.52Zm16.365 8.604c-2.628 0-4.41-1.638-4.572-3.906h1.998c.18 1.278 1.134 2.088 2.574 2.088s2.484-1.044 2.484-2.52c0-1.512-1.026-2.574-2.484-2.574-1.08 0-1.908.504-2.34 1.296h-1.944l1.062-7.128h6.876v1.818h-5.292l-.558 3.492c.594-.648 1.53-1.098 2.682-1.098 2.376 0 4.104 1.728 4.104 4.194 0 2.574-1.854 4.338-4.59 4.338Zm13.862 0c-3.006 0-4.986-2.466-4.986-6.444 0-3.996 1.98-6.444 4.986-6.444 3.042 0 5.022 2.448 5.022 6.444 0 3.978-1.98 6.444-5.022 6.444Zm-2.862-6.444c0 2.988 1.044 4.626 2.862 4.626 1.836 0 2.898-1.638 2.898-4.626 0-2.988-1.062-4.626-2.898-4.626-1.818 0-2.862 1.638-2.862 4.626ZM1078.7 199v-1.656l4.68-4.086c1.35-1.188 2.04-2.106 2.04-3.096 0-1.278-.92-2.088-2.22-2.088-1.56 0-2.46 1.098-2.34 2.862h-2.1c-.15-2.7 1.72-4.68 4.44-4.68 2.52 0 4.32 1.584 4.32 3.906 0 1.62-.97 3.006-2.95 4.518l-2.84 2.502h5.83V199h-8.86Zm18.31.144c-3 0-4.98-2.466-4.98-6.444 0-3.996 1.98-6.444 4.98-6.444 3.04 0 5.02 2.448 5.02 6.444 0 3.978-1.98 6.444-5.02 6.444Zm-2.86-6.444c0 2.988 1.04 4.626 2.86 4.626 1.84 0 2.9-1.638 2.9-4.626 0-2.988-1.06-4.626-2.9-4.626-1.82 0-2.86 1.638-2.86 4.626Zm14.95-3.924c-.65.666-1.87 1.152-3.08 1.458v-1.836c1.12-.234 2.43-.99 3.4-1.998h1.8V199h-2.12v-10.224Zm8.12 10.224c.37-3.366 2.35-7.416 5.25-10.782h-6.78V186.4h9v1.818c-3.06 3.708-5.13 7.758-5.37 10.782h-2.1ZM1254.7 199v-1.656l4.68-4.086c1.35-1.188 2.04-2.106 2.04-3.096 0-1.278-.92-2.088-2.22-2.088-1.56 0-2.46 1.098-2.34 2.862h-2.1c-.15-2.7 1.72-4.68 4.44-4.68 2.52 0 4.32 1.584 4.32 3.906 0 1.62-.97 3.006-2.95 4.518l-2.84 2.502h5.83V199h-8.86Zm18.31.144c-3 0-4.98-2.466-4.98-6.444 0-3.996 1.98-6.444 4.98-6.444 3.04 0 5.02 2.448 5.02 6.444 0 3.978-1.98 6.444-5.02 6.444Zm-2.86-6.444c0 2.988 1.04 4.626 2.86 4.626 1.84 0 2.9-1.638 2.9-4.626 0-2.988-1.06-4.626-2.9-4.626-1.82 0-2.86 1.638-2.86 4.626Zm12.23 6.3v-1.656l4.68-4.086c1.35-1.188 2.04-2.106 2.04-3.096 0-1.278-.92-2.088-2.22-2.088-1.56 0-2.46 1.098-2.34 2.862h-2.1c-.15-2.7 1.72-4.68 4.44-4.68 2.52 0 4.32 1.584 4.32 3.906 0 1.62-.97 3.006-2.95 4.518l-2.84 2.502h5.83V199h-8.86Zm18.31.144c-3 0-4.98-2.466-4.98-6.444 0-3.996 1.98-6.444 4.98-6.444 3.04 0 5.02 2.448 5.02 6.444 0 3.978-1.98 6.444-5.02 6.444Zm-2.86-6.444c0 2.988 1.04 4.626 2.86 4.626 1.84 0 2.9-1.638 2.9-4.626 0-2.988-1.06-4.626-2.9-4.626-1.82 0-2.86 1.638-2.86 4.626ZM1369.2 195.382c-.23-3.474 3.37-3.186 3.37-5.58 0-1.08-.86-1.89-2.07-1.89-1.4 0-2.29 1.026-2.18 2.466h-1.85c-.11-2.502 1.53-4.122 4.03-4.122 2.39 0 4.07 1.44 4.07 3.564 0 3.24-3.6 2.952-3.49 5.562h-1.88Zm-.27 2.52c0-.702.53-1.206 1.21-1.206.7 0 1.22.504 1.22 1.206 0 .684-.52 1.206-1.22 1.206a1.19 1.19 0 0 1-1.21-1.206Z\"><\/path><path stroke=\"#fff\" d=\"M985 161s30-64 117-64 117 64 117 64M1219 161s10.5-55 61.5-55 61.5 55 61.5 55M1342 161s4.95-40 29-40 29 40 29 40\"><\/path><defs><radialgradient id=\"a\" cx=\"0\" cy=\"0\" r=\"1\" gradienttransform=\"rotate(90 175.5 337) scale(161.5)\" gradientunits=\"userSpaceOnUse\"><stop stop-color=\"#C0A6E1\" stop-opacity=\".43\"><\/stop><stop offset=\"1\" stop-opacity=\"0\"><\/stop><\/radialgradient><radialgradient id=\"b\" cx=\"0\" cy=\"0\" r=\"1\" gradienttransform=\"rotate(90 463.5 625) scale(161.5)\" gradientunits=\"userSpaceOnUse\"><stop stop-color=\"#F6AE2D\" stop-opacity=\".4\"><\/stop><stop offset=\"1\" stop-opacity=\"0\"><\/stop><\/radialgradient><radialgradient id=\"c\" cx=\"0\" cy=\"0\" r=\"1\" gradienttransform=\"rotate(90 554 715.5) scale(161.5)\" gradientunits=\"userSpaceOnUse\"><stop stop-color=\"#F35A31\" stop-opacity=\".46\"><\/stop><stop offset=\"1\" stop-opacity=\"0\"><\/stop><\/radialgradient><\/defs><\/svg>",
+        "image_mob": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" width=\"343\" height=\"740\" viewbox=\"0 0 343 740\" fill=\"none\">\n<circle cx=\"81.995\" cy=\"254.995\" r=\"81.995\" fill=\"url(#a-m)\" transform=\"rotate(90 81.995 254.995)\"><\/circle>\n<circle cx=\"81.995\" cy=\"567.995\" r=\"81.995\" fill=\"url(#b-m)\" transform=\"rotate(90 81.995 567.995)\"><\/circle>\n<circle cx=\"81.995\" cy=\"657.995\" r=\"81.995\" fill=\"url(#c-m)\" transform=\"rotate(90 81.995 657.995)\"><\/circle>\n<path stroke=\"#fff\" stroke-width=\"1.096\" d=\"M82.25 1v717.847M82.25 508.147h-6.6M75.65 1h6.6v.762M82.25 626.951h-6.6M82.25 689.399h-6.6M82.25 718.847h-6.6\"><\/path>\n<path stroke=\"#fff\" stroke-width=\"1.096\" d=\"M82 1s233 45.173 233 253.5S82 508 82 508\"><\/path>\n<path fill=\"#fff\" d=\"M29.715 251.533c-.474.486-1.368.841-2.248 1.064v-1.341c.815-.17 1.774-.723 2.484-1.459h1.315V259h-1.551v-7.467Zm8.518-1.841c2.314 0 3.641 1.748 3.641 4.22 0 3.129-1.512 5.193-3.865 5.193-1.748 0-2.971-.973-3.142-2.511h1.473c.131.736.801 1.223 1.67 1.223 1.537 0 2.234-1.433 2.352-3.077-.486.776-1.354 1.17-2.313 1.17-1.84 0-3.169-1.327-3.169-3.115 0-1.802 1.407-3.103 3.353-3.103Zm-1.854 3.129c-.013 1.091.776 1.854 1.88 1.854 1.104 0 1.893-.776 1.893-1.867s-.789-1.828-1.893-1.828-1.88.737-1.88 1.841Zm11.953 6.284c-1.92 0-3.221-1.196-3.34-2.853h1.46c.13.934.828 1.525 1.88 1.525 1.051 0 1.814-.762 1.814-1.84 0-1.105-.75-1.88-1.815-1.88-.788 0-1.393.368-1.709.946h-1.42l.776-5.206H51v1.328h-3.865l-.407 2.55c.433-.473 1.117-.801 1.958-.801 1.736 0 2.998 1.262 2.998 3.063 0 1.88-1.354 3.168-3.352 3.168Zm10.124 0c-2.195 0-3.641-1.801-3.641-4.706 0-2.919 1.446-4.707 3.641-4.707 2.222 0 3.668 1.788 3.668 4.707 0 2.905-1.446 4.706-3.668 4.706Zm-2.09-4.706c0 2.182.762 3.378 2.09 3.378 1.341 0 2.117-1.196 2.117-3.378 0-2.183-.776-3.379-2.117-3.379-1.328 0-2.09 1.196-2.09 3.379ZM28.277 572v-1.21l3.419-2.984c.986-.868 1.485-1.538 1.485-2.261 0-.934-.67-1.525-1.617-1.525-1.144 0-1.801.802-1.709 2.09h-1.538c-.105-1.972 1.262-3.418 3.247-3.418 1.84 0 3.155 1.157 3.155 2.853 0 1.183-.71 2.195-2.156 3.3l-2.077 1.827h4.26V572h-6.469Zm13.373.105c-2.195 0-3.642-1.801-3.642-4.706 0-2.919 1.447-4.707 3.642-4.707 2.222 0 3.668 1.788 3.668 4.707 0 2.905-1.446 4.706-3.668 4.706Zm-2.09-4.706c0 2.182.762 3.378 2.09 3.378 1.341 0 2.117-1.196 2.117-3.378 0-2.183-.776-3.379-2.117-3.379-1.328 0-2.09 1.196-2.09 3.379Zm10.92-2.866c-.474.486-1.368.841-2.248 1.064v-1.341c.815-.17 1.774-.723 2.484-1.459h1.315V572H50.48v-7.467ZM56.408 572c.276-2.458 1.722-5.417 3.839-7.875H55.29v-1.328h6.574v1.328c-2.235 2.708-3.747 5.666-3.918 7.875h-1.538ZM26.634 663v-1.21l3.418-2.984c.986-.868 1.486-1.538 1.486-2.261 0-.934-.67-1.525-1.617-1.525-1.144 0-1.802.802-1.71 2.09h-1.538c-.105-1.972 1.262-3.418 3.248-3.418 1.84 0 3.155 1.157 3.155 2.853 0 1.183-.71 2.195-2.156 3.3l-2.078 1.827h4.26V663h-6.468Zm13.373.105c-2.196 0-3.642-1.801-3.642-4.706 0-2.919 1.446-4.707 3.642-4.707 2.221 0 3.668 1.788 3.668 4.707 0 2.905-1.447 4.706-3.668 4.706Zm-2.09-4.706c0 2.182.762 3.378 2.09 3.378 1.34 0 2.116-1.196 2.116-3.378 0-2.183-.775-3.379-2.116-3.379-1.328 0-2.09 1.196-2.09 3.379ZM46.85 663v-1.21l3.418-2.984c.986-.868 1.486-1.538 1.486-2.261 0-.934-.67-1.525-1.617-1.525-1.144 0-1.801.802-1.71 2.09H46.89c-.105-1.972 1.263-3.418 3.248-3.418 1.84 0 3.155 1.157 3.155 2.853 0 1.183-.71 2.195-2.156 3.3l-2.077 1.827h4.26V663h-6.47Zm13.373.105c-2.196 0-3.642-1.801-3.642-4.706 0-2.919 1.446-4.707 3.642-4.707 2.222 0 3.668 1.788 3.668 4.707 0 2.905-1.447 4.706-3.668 4.706Zm-2.09-4.706c0 2.182.762 3.378 2.09 3.378 1.34 0 2.116-1.196 2.116-3.378 0-2.183-.775-3.379-2.116-3.379-1.328 0-2.09 1.196-2.09 3.379ZM39.417 705.357c-.17-2.537 2.459-2.327 2.459-4.075 0-.789-.631-1.381-1.512-1.381-1.026 0-1.67.75-1.59 1.802h-1.355c-.079-1.828 1.117-3.011 2.945-3.011 1.748 0 2.971 1.052 2.971 2.603 0 2.366-2.63 2.156-2.55 4.062h-1.368Zm-.197 1.841c0-.513.381-.881.881-.881.513 0 .894.368.894.881 0 .5-.381.881-.894.881-.5 0-.88-.381-.88-.881Z\"><\/path>\n<path stroke=\"#fff\" stroke-width=\"1.096\" d=\"M82 508s192 15.256 192 59.5S82 627 82 627M82 627s133 5.293 133 31-133 31-133 31M82 689s50 2.476 50 14.5c0 12.024-50 14.5-50 14.5\"><\/path><defs>\n<radialgradient id=\"a-m\" cx=\"0\" cy=\"0\" r=\"1\" gradienttransform=\"rotate(90 -86.5 168.495) scale(81.995)\" gradientunits=\"userSpaceOnUse\">\n<stop stop-color=\"#C0A6E1\" stop-opacity=\".43\"><\/stop><stop offset=\"1\" stop-opacity=\"0\"><\/stop><\/radialgradient>\n<radialgradient id=\"b-m\" cx=\"0\" cy=\"0\" r=\"1\" gradienttransform=\"rotate(90 -243 324.995) scale(81.995)\" gradientunits=\"userSpaceOnUse\">\n<stop stop-color=\"#F6AE2D\" stop-opacity=\".4\"><\/stop><stop offset=\"1\" stop-opacity=\"0\"><\/stop><\/radialgradient>\n<radialgradient id=\"c-m\" cx=\"0\" cy=\"0\" r=\"1\" gradienttransform=\"rotate(90 -288 369.995) scale(81.995)\" gradientunits=\"userSpaceOnUse\">\n<stop stop-color=\"#F35A31\" stop-opacity=\".46\"><\/stop><stop offset=\"1\" stop-opacity=\"0\"><\/stop><\/radialgradient><\/defs>\n<\/svg>",
+        "header": "A commitment to the cutting edge.",
+        "richtext": "<p>Science advances rapidly. In 1950, medical knowledge doubled in 50 years. By 2020, it took only 73 days. With longevity science, we learn new things daily. So how does one keep up? <\/p><p>.<\/p><p>At Jung+, we pre-select timeless longevity goals based on the strongest clinical evidence. The protocols we offer for each are relentlessly researched and continually updated. Our global network of scientists and our flexible supply chain allows us to adjust fast, offering you the latest scientific advancements, always. <\/p>",
+        "padding_top": 80,
+        "padding_bottom": 0,
+        "padding_top_mb": 80,
+        "padding_bottom_mb": 80
+      }
+    },
+    "797365b2-6d5c-4411-8584-27b7d7e479e9": {
+      "type": "text-with-image-collage",
+      "blocks": {
+        "e117942f-0e67-4252-9ce8-953fa251844a": {
+          "type": "header",
+          "settings": {
+            "header": "Making scientific discoveries accessible to all"
+          }
+        },
+        "47c96207-b420-4903-8643-d490bd436504": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "<p>There's a 17-year gap between scientific discoveries and their availability to consumers, which can be frustrating. But if you care about your health, there’s a good reason: you are not a lab rat. <\/p>"
+          }
+        },
+        "23257443-e0a3-4bea-9e38-5eaa63d70453": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "<p>In the same way that a chef and a farmer both work towards making great food but have different expertise, the same is true for scientists and doctors when it comes to human health. Longevity scientists are not trained to treat human patients (even Dr. David Sinclair - is not a medical doctor!), and while medical doctors study for 10+ years to work with patients, their work focuses on disease management instead of prevention, creating a significant gap.  <\/p>"
+          }
+        },
+        "e328b9ff-97a7-47f6-a45e-44f5b381536f": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "<p>We bridge this divide by leveraging translational medicine: an emerging specialization that helps to apply cutting-edge research to present-day clinical healthcare. Our board includes clinicians and practitioner-doctors who are also trained longevity scientists leading in translational medicine, preventative health, and longevity medicine, allowing us to bring evidence-based discoveries to everyone, safely and effectively. <\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "e117942f-0e67-4252-9ce8-953fa251844a",
+        "47c96207-b420-4903-8643-d490bd436504",
+        "23257443-e0a3-4bea-9e38-5eaa63d70453",
+        "e328b9ff-97a7-47f6-a45e-44f5b381536f"
+      ],
+      "settings": {
+        "background_color": "#000",
+        "image": "shopify:\/\/shop_images\/Image_5.png",
+        "video_1": "shopify:\/\/files\/videos\/image-with-text-2-compressed.mp4",
+        "video_2": "shopify:\/\/files\/videos\/image-with-text-compressed.mp4",
+        "padding_top": 80,
+        "padding_bottom": 80,
+        "padding_top_mb": 10,
+        "padding_bottom_mb": 80
+      }
+    },
+    "3573e08e-c28f-4c68-94a1-cce9614c2705": {
+      "type": "team-info",
+      "blocks": {
+        "5cada249-85e6-474c-94d9-7ca423affffc": {
+          "type": "member",
+          "disabled": true,
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Person.png",
+            "name": "Jordan Baechle, MD, PhD",
+            "position": "Physician-scientist | Postdoctoral Fellow | Buck Institute of Aging",
+            "richtext_1": "<p>Jordan is a physician, scientist, and inventor focused on translating advances in geroscience from the lab to the clinic. After experiencing first-hand the disconnect between scientific discovery and patient care, he pursued a Masters in Translational Medicine at the University of California Berkeley and the University of California San Francisco, to engage in formal training across the various disciplines (bioengineering, regulatory affairs, intellectual property, venture funding, etc.) necessary to expedite the translation of discovery and innovation to clinical implementation.<\/p>",
+            "richtext_2": "<p>In his postdoctoral training, he continues to build upon and leverage his medical, research, and translational training toward developing multi-omic aging biomarkers and high-fidelity aging disease models using human organic models all for high-throughput therapeutic discovery and evaluation. <\/p><p><br\/><em>- Ultimately, I hope to bridge the gap between what we can do to ameliorate age-related decline in health and what we are doing <\/em>- Jordan Baechle<\/p>"
+          }
+        },
+        "269f2cf2-c1f0-4188-bbbf-c762d24a53ea": {
+          "type": "member",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Man_3.png",
+            "name": "Dr. Michael Sagner, MD",
+            "position": "FRSM, FRCP, FESPM | Director, European Society of Preventive Medicine",
+            "richtext_1": "<p>Dr. Sagner is a world leading human performance specialist, sports and preventive medicine, and was the medical director at Europe’s first University medical center section for preventive medicine and lifestyle medicine. Dr Sagner is a member of the European Union Platform for Action on Diet, Physical Activity and Health and a partner of the European Innovation Partnership on Active and Healthy Aging.<br\/><br\/>Dr. Sagner, a clinician, has led endocrinology and cardiometabolic interventions like GLP1 agonists in Europe. As editor-in-chief of Progress in Preventive Medicine, he champions P4 medicine—predictive, preventive, personalized, participatory—and systems biology-based prevention.<\/p>",
+            "richtext_2": "<p>Combining systems biology and consumer-driven healthcare, he advocates for a shift from reactive to P4 medicine, making disease care more cost-effective and personalized. As a public health expert, he initiates global projects, collaborating with entities like WHF, the World Obesity Federation, and the WHO. He bridges clinical practice and public health for more patient-centric care and preventive interventions, promoting a 'cell to community' approach.<\/p>"
+          }
+        },
+        "8f48d1af-2625-4037-a017-cee26ca5e74f": {
+          "type": "member",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Man_4.png",
+            "name": "Francois-Xavier Pellay, PhD",
+            "position": "Professor | Scientist | Longevity Molecule Hunter | Founder, Bimini Biotech",
+            "richtext_1": "<p>Francois-Xavier Pellay, PhD, known as the 'Longevity Molecule Hunter', is a world leading scientist and entrepreneur in the longevity industry. Pellay is a multidisciplinary scientist with a background which includes a Master's degree in Biochemistry, a Master's degree in Organic Chemistry, a Ph.D. in Bioinformatics and years of expertise in Microbiology, Molecular Biology, Cellular Biology and Biology of Aging.<\/p>",
+            "richtext_2": "<p>Pellay spent 11 years in skin rejuvenation cosmetics research, heading aging and longevity research at NAOS group and leading the longevity group at Medils for 7 years. His work led to the discovery of longevity molecules now used in cosmetics and explored for neurodegenerative diseases. In the last 3 years, Pellay founded breakthrough longevity companies, including Cell Culture Lab for skin rejuvenation, and Bimini Biotech and Santogenesis focused on discovering longevity drugs for age-related diseases.<\/p>"
+          }
+        },
+        "84c552ea-646e-42b1-8436-76d635e89c23": {
+          "type": "member",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Man_5.png",
+            "name": "Avi Roy, PhD",
+            "position": "Biomedical Scientist | Inventor | University of Oxford | Founder, UDA",
+            "richtext_1": "<p>Dr. Avi Roy is an accomplished biomedical scientist, mentor, and entrepreneur with a deep-rooted passion for advancing the field of longevity. His academic journey culminated in a PhD from the University of Oxford. With over 15 years of dedicated research and development in the longevity sector, Dr. Roy has established himself as a a leading figure in this dynamic and ever-evolving field. As a mentor and investor in health-tech startups, he continues to inspire and guide the next generation of scientists and entrepreneurs. <\/p>",
+            "richtext_2": "<p>Beyond his academic achievements, Dr. Roy has served as a Visiting Researcher at the Centre for Advancing Sustainable Medical Innovations, both at the University of Oxford and University College London. He has held roles as President of the Biogerontology Research Foundation (BGRF) and as the Chief Technology Officer at BioViva USA Inc. Dr. Roy's commitment to disseminating knowledge in his field led him to found the Big Data Science in Medicine Conference and The Longevity Reporter. He is also recognized for his varied writings in The Conversation and The Guardian. <\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "5cada249-85e6-474c-94d9-7ca423affffc",
+        "269f2cf2-c1f0-4188-bbbf-c762d24a53ea",
+        "8f48d1af-2625-4037-a017-cee26ca5e74f",
+        "84c552ea-646e-42b1-8436-76d635e89c23"
+      ],
+      "settings": {
+        "title": "Scientific Advisors"
+      }
+    },
+    "7c93f146-ecad-4cae-a157-3f5425edc678": {
+      "type": "our-team",
+      "blocks": {
+        "9189ef00-7ba8-431a-b4d8-fc0012460738": {
+          "type": "member",
+          "settings": {
+            "photo": "shopify:\/\/shop_images\/image_83.jpg",
+            "name": "Simon Sakhai",
+            "position": "Oxford MBA | Founder"
+          }
+        },
+        "501adb3a-fa3a-4c63-94b7-b43fc1f2a66f": {
+          "type": "member",
+          "settings": {
+            "photo": "shopify:\/\/shop_images\/IMG_4565.jpg",
+            "name": "Nicole Barnett",
+            "position": "VP Scientific Afffairs"
+          }
+        },
+        "01b659d2-0aef-417f-9d77-f8e52fc4ef31": {
+          "type": "member",
+          "settings": {
+            "photo": "shopify:\/\/shop_images\/image_82.jpg",
+            "name": "Agnieszka Szmitkowska",
+            "position": "Research Scientist"
+          }
+        },
+        "316887a9-5555-4882-9972-6179254101f7": {
+          "type": "member",
+          "settings": {
+            "photo": "shopify:\/\/shop_images\/Screenshot_2024-01-17_at_5.00.23_PM.png",
+            "name": "Corby Simpson",
+            "position": "Head of Technology"
+          }
+        },
+        "2375caf6-e231-42ea-8a39-753ed25f8992": {
+          "type": "member",
+          "settings": {
+            "photo": "shopify:\/\/shop_images\/Screenshot_2024-01-17_at_4.56.13_PM.png",
+            "name": "Aby Rios",
+            "position": "Head of Education"
+          }
+        },
+        "0399b794-0623-49ac-8f47-fd3d95468581": {
+          "type": "member",
+          "settings": {
+            "photo": "shopify:\/\/shop_images\/Screenshot_2024-01-20_at_6.37.38_PM.png",
+            "name": "Alexey Strygin",
+            "position": "Research Director"
+          }
+        },
+        "b1915750-fb5e-462d-af5f-59997ef799e9": {
+          "type": "member",
+          "settings": {
+            "photo": "shopify:\/\/shop_images\/IMG_1031_1.jpg",
+            "name": "Alina Zhaivoron",
+            "position": "Art Director"
+          }
+        },
+        "29fbf63d-c3ae-4ff1-afa9-5356deffc74a": {
+          "type": "member",
+          "settings": {
+            "photo": "shopify:\/\/shop_images\/Screenshot_2024-01-16_at_7.23.56_PM.png",
+            "name": "Laura McMahon",
+            "position": "Head of Community"
+          }
+        },
+        "2cef9d7b-a19c-4553-b9d9-419cb757ffee": {
+          "type": "member",
+          "settings": {
+            "photo": "shopify:\/\/shop_images\/image_128.jpg",
+            "name": "Chico",
+            "position": "Bark Manager"
+          }
+        },
+        "fe9d5995-c637-4a41-91f2-57dfd6bd16ab": {
+          "type": "member",
+          "settings": {
+            "photo": "shopify:\/\/shop_images\/image_129.jpg",
+            "name": "Dash",
+            "position": "Bachelor of treats"
+          }
+        },
+        "4c4036c3-d36a-4c61-9e2e-1a6710918785": {
+          "type": "member",
+          "settings": {
+            "photo": "shopify:\/\/shop_images\/Screenshot_2024-01-16_at_7.09.54_PM.png",
+            "name": "Lily",
+            "position": "Pawject Manager"
+          }
+        }
+      },
+      "block_order": [
+        "9189ef00-7ba8-431a-b4d8-fc0012460738",
+        "501adb3a-fa3a-4c63-94b7-b43fc1f2a66f",
+        "01b659d2-0aef-417f-9d77-f8e52fc4ef31",
+        "316887a9-5555-4882-9972-6179254101f7",
+        "2375caf6-e231-42ea-8a39-753ed25f8992",
+        "0399b794-0623-49ac-8f47-fd3d95468581",
+        "b1915750-fb5e-462d-af5f-59997ef799e9",
+        "29fbf63d-c3ae-4ff1-afa9-5356deffc74a",
+        "2cef9d7b-a19c-4553-b9d9-419cb757ffee",
+        "fe9d5995-c637-4a41-91f2-57dfd6bd16ab",
+        "4c4036c3-d36a-4c61-9e2e-1a6710918785"
+      ],
+      "settings": {
+        "title": "Dedicating our time to bringing tomorrow, today"
+      }
+    },
+    "e02d5fe4-8827-45a1-9425-f4a3f6e0cbd8": {
+      "type": "full-bg-text",
+      "blocks": {
+        "template--17180347105444__e02d5fe4-8827-45a1-9425-f4a3f6e0cbd8-icon-1": {
+          "type": "icon",
+          "settings": {
+            "svg_icon": "shopify:\/\/shop_images\/Symbol_1.svg",
+            "svg_size_desktop": 115,
+            "svg_size_mobile": 65,
+            "heading_icon": "MISSION"
+          }
+        },
+        "template--17180347105444__e02d5fe4-8827-45a1-9425-f4a3f6e0cbd8-heading-1": {
+          "type": "heading",
+          "settings": {
+            "heading": "Longevity for the billions, not just billionaires."
+          }
+        },
+        "template--17180347105444__e02d5fe4-8827-45a1-9425-f4a3f6e0cbd8-text-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Our mission is clear: make top-tier longevity care accessible for all. Inspired by elite longevity clinics, our self-guided system helps you create the perfect longevity regimen, tailored to you. By leveraging best-in-class longevity molecules and adopting our evidence-based longevity goals, you can trust our system to genuinely impact your life and health.<br\/><br\/><\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--17180347105444__e02d5fe4-8827-45a1-9425-f4a3f6e0cbd8-icon-1",
+        "template--17180347105444__e02d5fe4-8827-45a1-9425-f4a3f6e0cbd8-heading-1",
+        "template--17180347105444__e02d5fe4-8827-45a1-9425-f4a3f6e0cbd8-text-1"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "bg_img": "shopify:\/\/shop_images\/image_68_3f585367-f11a-4325-bb0e-c701b544f800.jpg",
+        "bg_image_mob": "shopify:\/\/shop_images\/image_69.jpg",
+        "padding_top": 124,
+        "padding_bottom": 140,
+        "padding_top_mb": 64,
+        "padding_bottom_mb": 80
+      }
+    },
+    "87039966-852f-4ff9-bd74-d1c1e0ab112c": {
+      "type": "learn",
+      "blocks": {
+        "0a85eaa4-a3a8-4175-ac60-e832d1a1c903": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Cardboard_Product_Box_Mockup_Side_View_2.png",
+            "card_url": "shopify:\/\/collections\/all-products"
+          }
+        },
+        "55ddc320-d96f-42c9-9bdb-213db64b0b74": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Cardboard_Product_Box_Mockup_Side_View_1_1.png",
+            "card_url": "shopify:\/\/collections\/all-products"
+          }
+        }
+      },
+      "block_order": [
+        "0a85eaa4-a3a8-4175-ac60-e832d1a1c903",
+        "55ddc320-d96f-42c9-9bdb-213db64b0b74"
+      ],
+      "settings": {
+        "title": "Start Building Your Longevity Kit, Today",
+        "richtext": "",
+        "button_label": "Shop now",
+        "button_link": "shopify:\/\/collections",
+        "background_color": "#000"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "58bf1969-0ed4-47c5-b28c-2f450dd176f5",
+    "ad4cb486-96da-4bd7-bccb-0709a742dc06",
+    "a90e93ce-147b-418a-b29c-1c3afa42f8d2",
+    "7f0233ff-70e1-4977-bed8-e962c7ef5794",
+    "1d725dc7-a8a8-4f49-8de9-48f4c2f3ce39",
+    "b81f162d-bc05-4fcc-aa18-801c1b0c2d7f",
+    "abfafe67-b8a4-45e7-8e10-c6cdfad05076",
+    "b6ffebc2-5138-49bd-87bc-c58923fe1f8b",
+    "797365b2-6d5c-4411-8584-27b7d7e479e9",
+    "3573e08e-c28f-4c68-94a1-cce9614c2705",
+    "7c93f146-ecad-4cae-a157-3f5425edc678",
+    "e02d5fe4-8827-45a1-9425-f4a3f6e0cbd8",
+    "87039966-852f-4ff9-bd74-d1c1e0ab112c"
+  ]
+}

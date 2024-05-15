@@ -1,0 +1,459 @@
+<link rel="stylesheet" href="{{ 'accordion.out.css' | asset_url }}">
+<noscript>
+  {{- 'accordion.out.css' | asset_url | stylesheet_tag -}}
+</noscript>
+
+{%- assign settings = section.settings -%}
+
+{%- style -%}
+  .custom--accordion.section-{{ section.id }}{
+    border-color: {{ settings.color_text }};
+    color: {{ settings.color_text }};
+    background-color: {{ settings.color_background }};
+  }
+
+  #custom--accordion--{{ section.id }} {
+    padding-top: {{ settings.padding_top_mobile }}px;
+    padding-bottom: {{ settings.padding_bottom_mobile }}px;
+  }
+
+  @media screen and (min-width: 768px) {
+    #custom--accordion--{{ section.id }} {
+      padding-top: {{ settings.padding_top }}px;
+      padding-bottom: {{ settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+{%- liquid
+  assign metafield = product.metafields.custom.why_its_different.value
+
+  assign metafield = ''
+
+  if settings.metafield_select == 'why_its_different'
+    assign metafield = product.metafields.custom.why_its_different.value
+  elsif settings.metafield_select == 'faq'
+    assign metafield = product.metafields.custom.faq.value
+  endif
+-%}
+
+<section
+  class="
+    custom--accordion
+    {% if settings.container == 'custom' %}
+      container--accordion
+    {% else %}
+      container--faq
+    {% endif %}
+    section-{{ section.id }}
+  "
+  id="custom--accordion--{{ section.id }}"
+>
+  {% if settings.title != blank %}
+    <h2
+      class="
+        custom--accordion__title heading-h2
+        {% if settings.container == 'custom' %}
+          px-16
+        {% endif %}
+      "
+    >
+      {{ settings.title }}
+    </h2>
+  {% endif %}
+
+  <div class="custom--accordion__wrapper">
+    <ul
+      class="
+        custom--accordion__list
+        {% if settings.border_type == 'full' %}
+          accordion--border
+        {% endif %}
+      "
+    >
+      {% if settings.data_type == 'block' %}
+        {% for block in section.blocks %}
+          {%- case block.type -%}
+            {%- when 'faq' -%}
+              {%- assign bs = block.settings -%}
+              <li class="custom--accordion__item">
+                <div class="custom--accordion__item--heading" role="button" tabindex="0">
+                  {% if bs.icon != 'none' %}
+                    <span class="custom--accordion__item--icon">
+                      {%- render 'accordion-icons', icon: bs.icon -%}
+                    </span>
+                  {% endif %}
+                  <div class="custom--accordion__item--signs">
+                    {%- if bs.heading != blank -%}
+                      <h3
+                        class="
+                          custom--accordion__item--title
+                          {% if settings.container == 'custom' %}
+                            caption-c1
+                            {% else %}
+                            caption-c2
+                          {% endif %}
+                        "
+                      >
+                        {{ bs.heading }}
+                      </h3>
+                    {%- endif -%}
+                    {%- if bs.subheading != blank -%}
+                      <p class="custom--accordion__item--subtitle caption-mini">
+                        {{ bs.subheading }}
+                      </p>
+                    {%- endif -%}
+                  </div>
+
+                  <span class="custom--accordion__item--state ">
+                    {% render 'icons', icon: 'plus-minus' %}
+                  </span>
+                </div>
+                <div
+                  class="
+                    custom--accordion__item--description
+                    {% if settings.container == 'custom' %}
+                      body-b3
+                    {% else %}
+                      body-b2
+                    {% endif %}
+                  "
+                >
+                  {% if bs.description != blank %}
+                    {{ bs.description }}
+                  {% endif %}
+                </div>
+              </li>
+          {%- endcase -%}
+        {% endfor %}
+      {% elsif settings.data_type == 'meta' %}
+        {% for object in metafield %}
+          <li class="custom--accordion__item">
+            <div class="custom--accordion__item--heading" role="button" tabindex="0">
+              {% if object.icon_svg != 'none' and object.icon_svg != blank %}
+                
+                <span class="custom--accordion__item--icon">
+                  {{
+                    object.icon_svg 
+                    | image_url: width: 1780
+                    | image_tag:
+                        width: imageWidth,
+                        height: imageHeight,
+                        sizes: '100vw',
+                        widths: '50, 70 ,100',
+                        alt: object.icon_svg.alt,
+                        class: 'lazy',
+                        loading: 'lazy'
+                  }}         
+                </span>
+              {% endif %}
+
+              <div class="custom--accordion__item--signs">
+                {%- if object.title != blank -%}
+                  <h3
+                    class="
+                      custom--accordion__item--title
+                      {% if settings.container == 'custom' %}
+                        caption-c1
+                        {% else %}
+                        caption-c2
+                      {% endif %}
+                    "
+                  >
+                    {{ object.title }}
+                  </h3>
+                {%- endif -%}
+                {%- if object.subtitle != blank -%}
+                  <p class="custom--accordion__item--subtitle caption-mini">
+                    {{ object.subtitle }}
+                  </p>
+                {%- endif -%}
+              </div>
+
+              <span class="custom--accordion__item--state">
+                {% render 'icons', icon: 'plus-minus' %}
+              </span>
+            </div>
+            <div
+              class="
+                custom--accordion__item--description
+                {% if settings.container == 'custom' %}
+                  body-b3
+                {% else %}
+                  body-b2
+                {% endif %}
+              "
+            >
+              {% if object.rich_text != blank %}
+                <p>
+                  {{ object.rich_text | metafield_tag }}
+                </p>
+              {% elsif object.description != blank %}
+                  <p>{{ object.description  | metafield_tag }}</p>
+              {% endif %}
+            </div>
+          </li>
+        {% endfor %}
+      {% endif %}
+    </ul>
+    
+      {% if settings.show_image_block and product.metafields.custom.why_its_different_image != blank %}
+        <ul class="custom--accordion__image--list">
+            <li
+                class="custom--accordion__image--box"
+            >
+              <img
+                src="{{ product.metafields.custom.why_its_different_image | image_url: width: 500 }}"
+                alt="{{ product.metafields.custom.why_its_different_image.alt }}"
+                loading="lazy"
+                data-src="{{ product.metafields.custom.why_its_different_image | image_url: width: 1000 }}"
+                class="lazy metafield"
+              >
+            </li>
+        </ul>
+      {% endif %}
+    </div>
+</section>
+
+<script>
+  const accordeonHeadingEls{{ section.index0 }} = document.querySelectorAll('.section-{{ section.id }} .custom--accordion__item--heading');
+  const accordeonDescriptionEls{{ section.index0 }} = document.querySelectorAll('.section-{{ section.id }} .custom--accordion__item--description');
+  const accordeonImageEls{{ section.index0 }} = document.querySelectorAll('.section-{{ section.id }} .custom--accordion__image--box');
+
+  [...accordeonHeadingEls{{ section.index0 }}].forEach((heading, headingIdx) => {
+    heading.addEventListener('click', () => {
+      heading.classList.toggle('is-open');
+
+      [...accordeonHeadingEls{{ section.index0 }}].forEach((head, headIdx) => {
+        if(headIdx != headingIdx){
+          head.classList.remove('is-open');
+        }
+      });
+
+      [...accordeonDescriptionEls{{ section.index0 }}].forEach((desc, descIdx) => {
+        descIdx !== headingIdx
+          ? desc.classList.remove('description-hide')
+          : desc.classList.toggle('description-hide');
+      });
+
+      //[...accordeonImageEls{{ section.index0 }}].length !== 0 && [...accordeonImageEls{{ section.index0 }}].forEach((image, imageIdx) => {
+      //  imageIdx !== headingIdx
+      //    ? image.classList.add('image-hidden')
+      //    : image.classList.remove('image-hidden');
+      //});
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Accordion",
+  "settings": [
+    {
+      "type": "select",
+      "id": "data_type",
+      "label": "Data type",
+      "options": [
+        {
+          "value": "block",
+          "label": "Blocks"
+        },
+        {
+          "value": "meta",
+          "label": "Metadata"
+        }
+      ],
+      "default": "meta"
+    },
+    {
+      "type": "select",
+      "id": "metafield_select",
+      "label": "Metafield select",
+      "options": [
+        {
+          "value": "why_its_different",
+          "label": "Why it's different"
+        },
+        {
+          "value": "faq",
+          "label": "FAQ"
+        }
+      ],
+      "default": "why_its_different"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Accordion"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_image_block",
+      "label": "Show image block",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "container",
+      "label": "Conteiner type",
+      "options": [
+        {
+          "value": "custom",
+          "label": "Custom"
+        },
+        {
+          "value": "standart",
+          "label": "Standart"
+        }
+      ],
+      "default": "custom"
+    },
+    {
+      "type": "select",
+      "id": "border_type",
+      "label": "Border type",
+      "options": [
+        {
+          "value": "bottom",
+          "label": "Bottom"
+        },
+        {
+          "value": "full",
+          "label": "Full"
+        }
+      ],
+      "default": "full"
+    },
+    {
+      "type": "color",
+      "id": "color_background",
+      "label": "Background color",
+      "default": "#fff"
+    },
+    {
+      "type": "color",
+      "id": "color_text",
+      "label": "Text color",
+      "default": "#000"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top_mobile",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom_mobile",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 80
+    }
+  ],
+  "blocks": [
+    {
+      "name": "FAQ",
+      "type": "faq",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading"
+        },
+        {
+          "type": "text",
+          "id": "subheading",
+          "label": "Subheading"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description"
+        },
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "options": [
+            {
+              "value": "stomach",
+              "label": "Stomach"
+            },
+            {
+              "value": "meal",
+              "label": "Meal"
+            },
+            {
+              "value": "muscule",
+              "label": "Muscule"
+            },
+            {
+              "value": "man",
+              "label": "Man"
+            },
+            {
+              "value": "apple",
+              "label": "Apple"
+            },
+            {
+              "value": "food",
+              "label": "Food"
+            },
+            {
+              "value": "bacterium",
+              "label": "Bacterium"
+            },
+            {
+              "value": "blob",
+              "label": "Blob"
+            },
+            {
+              "value": "none",
+              "label": "None"
+            }
+          ],
+          "default": "none"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Accordion",
+      "settings": {}
+    }
+  ]
+}
+{% endschema %}

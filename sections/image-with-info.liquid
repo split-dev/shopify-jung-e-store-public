@@ -1,0 +1,190 @@
+{{ 'image-with-info.out.css' | asset_url | stylesheet_tag }}
+
+{% liquid
+    assign image = section.settings.image 
+    assign sticker = section.settings.sticker
+%}
+
+{%- style -%}
+    .image-with-info--{{ section.id }} {
+      padding-top: {{ section.settings.padding_top_mb }}px;
+      padding-bottom: {{ section.settings.padding_bottom_mb }}px;
+    }
+  
+    @media screen and (min-width: 768px) {
+      .image-with-info--{{ section.id }} {
+        padding-top: {{ section.settings.padding_top }}px;
+        padding-bottom: {{ section.settings.padding_bottom }}px;
+      }
+    }
+{%- endstyle -%}
+
+<div class="image-with-info image-with-info--{{ section.id }}">
+    <div class="container">
+        <div class="image-with-info__wrapper">
+            <div class="image-with-info__image">
+                {% if image != blank %} 
+                    <img class="lazy" loading="lazy" src="{{ image | img_url: 'x1000' }}" data-src="{{ image | img_url: '1000x' }}" alt="{{ image.alt }}">
+                {% else %}
+                    {{ 'lifestyle-2' | placeholder_svg_tag: 'placeholder-svg' }}
+                {% endif %}
+                {% if sticker != blank %}
+                    <div class="image-with-info__sticker">
+                        <img class="lazy" loading="lazy" src="{{ sticker | img_url: 'x300' }}" data-src="{{ sticker | img_url: '300x' }}" alt="{{ sticker.alt }}">
+                    </div>
+                {% endif %}
+            </div>
+            <div class="image-with-info__content">
+                <div class="image-with-info__block">
+                    {% for block in section.blocks %}
+                        {% liquid 
+                            assign header = block.settings.header
+                            assign heading_size = block.settings.heading_size
+                            assign richtext = block.settings.richtext
+                            assign position = block.settings.position
+                        %}
+                        {%  case block.type %}  
+                            {%  when "header" %}
+                                {% if header != blank %}
+                                    <h2 class="image-with-info__header {{ heading_size }}">
+                                        {{ header }}
+                                    </h2>
+                                {% endif %}
+                            {% when "richtext" %}
+                                {% if richtext != blank %}
+                                    <div class="image-with-info__richtext body-b2 body-b2-md">
+                                        {{ richtext }}
+                                    </div>
+                                {% endif %}
+                            {% when "position" %}
+                                {% if position != blank %}
+                                    <div class="image-with-info__position caption-c2 caption-c2-md">
+                                        {{ position }}
+                                    </div>
+                                {% endif %}
+                        {% endcase %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% schema %}
+  {
+    "name": "Image with info",
+    "settings": [
+        {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+        },
+        {
+            "type": "image_picker",
+            "id": "sticker",
+            "label": "Sticker"
+        },
+        {
+            "type": "header",
+            "content": "t:sections.all.padding.section_padding_heading"
+        },
+        {
+            "type": "range",
+            "id": "padding_top",
+            "min": 0,
+            "max": 160,
+            "step": 4,
+            "unit": "px",
+            "label": "Padding top desktop",
+            "default": 80
+        },
+        {
+            "type": "range",
+            "id": "padding_bottom",
+            "min": 0,
+            "max": 160,
+            "step": 4,
+            "unit": "px",
+            "label": "Padding bottom desktop",
+            "default": 148
+        },
+        {
+            "type": "range",
+            "id": "padding_top_mb",
+            "min": 0,
+            "max": 120,
+            "step": 4,
+            "unit": "px",
+            "label": "Padding top mobile",
+            "default": 80
+        },
+        {
+            "type": "range",
+            "id": "padding_bottom_mb",
+            "min": 0,
+            "max": 120,
+            "step": 4,
+            "unit": "px",
+            "label": "Padding bottom mobile",
+            "default": 80
+        }
+    ],
+    "blocks": [
+        {
+            "name": "Header",
+            "type": "header",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "header",
+                    "label": "Title",
+                    "default": "Letter from our founder"
+                },
+                {
+                    "type": "select",
+                    "id": "heading_size",
+                    "label": "Heading size",
+                    "options": [
+                        {
+                            "value": "heading-h2 heading-h2-md",
+                            "label": "H2"
+                        },
+                        {
+                            "value": "heading-h3 heading-h3-md",
+                            "label": "H3"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Richtext",
+            "type": "richtext",
+            "settings": [
+                {
+                    "type": "richtext",
+                    "id": "richtext",
+                    "label": "Richtext",
+                    "default": "<p>Seventy-five percent of US healthcare spending, or about $37 trillion annually, goes to treating preventable chronic diseases. Chronic diseases that are driven by aging. What if, instead, we zeroed in on cellular aging and halted the decline? Welcome to longevity science - the next frontier in preventive health. At Jung, we're not just envisioning this future; we're creating it.</p>"
+                }
+            ]
+        },
+        {
+            "name": "Position",
+            "type": "position",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "position",
+                    "label": "Position",
+                    "default": "- Simon Sakhai, Founder of JUNG"
+                }
+            ]
+        }
+    ],
+    "presets": [
+      {
+        "name": "Image with info"
+      }
+    ]
+  }
+{% endschema %}

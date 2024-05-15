@@ -1,0 +1,121 @@
+{{ 'learn.out.css' | asset_url | stylesheet_tag }}
+
+{% liquid 
+    assign title = section.settings.title
+    assign richtext = section.settings.richtext
+    assign button_label = section.settings.button_label
+    assign button_link = section.settings.button_link
+    assign background_color = section.settings.background_color
+%} 
+
+{% style %} 
+    .learn--{{ section.id }},
+    .learn--{{ section.id }} .learn__content, 
+    .learn--{{ section.id }} .learn__content::before {
+        background-color: {{ background_color }};
+    }
+{% endstyle %}
+
+<div class="learn learn--{{ section.id }}">
+    <div class="container container--medium">
+        <div class="learn__wrapper">
+            <div class="learn__content">
+                <div class="learn__content-block">
+                    {% if title != blank %}
+                        <h2 class="learn__title heading-h2 heading-h2-md">{{ title }}</h2>
+                    {% endif %}
+                    {% if richtext != blank %}
+                        <div class="learn__richtext body-b2 body-b2-md">{{ richtext }}</div>
+                    {% endif %}
+                    {% if button_label != blank and button_link != blank  %}
+                        <a href={{ button_link }} class="btn btn--large btn--subtle font-haffer font-weight-500">{{ button_label }}</a>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="learn__images swiper--{{ section.id }}">
+                <div class="learn__image-item swiper-wrapper">
+                    {%- for block in section.blocks -%}
+                        {% liquid
+                            assign image = block.settings.image
+                            assign card_url = block.settings.card_url
+                        %} 
+                        <div class="learn__image swiper-slide">
+                            <a href="{{ card_url }}">
+                                <img class="lazy" loading="lazy" src="{{ image | img_url: '1000x' }}" data-src="{{ image | img_url: '500x' }}" alt="card-{{ forloop.index }}">
+                            </a>
+                        </div>
+                    {%- endfor -%}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const learnSwiper = new Swiper(".swiper--{{ section.id }}", {
+            spaceBetween: 0,
+            slidesPerView: "auto"
+        });
+    });
+</script>
+
+{% schema %}
+  {
+    "name": "Learn",
+    "max_blocks": 3,
+    "blocks": [
+      {
+        "type": "image_card",
+        "name": "Image card",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image card"
+          },
+          {
+            "type": "url",
+            "id": "card_url",
+            "label": "Card url"
+          }
+        ]
+      }
+    ],
+    "settings": [
+        {
+            "type": "text",
+            "id": "title",
+            "default": "Start Building Your Personal Longevity Kit, Today",
+            "label": "Title"
+        },
+        {
+            "type": "richtext",
+            "id": "richtext",
+            "default": "<p>With everything from breaking science to actionable advice and strategies, our library is your oracle for knowledge to optimize health, and performance and give you more control over your health span. </p>",
+            "label": "Text"
+        },
+        {
+            "type": "text",
+            "id": "button_label",
+            "default": "Browse the Library",
+            "label": "Button text"
+        },
+        {
+            "type": "url",
+            "id": "button_link",
+            "label": "Button link"
+        },
+        {
+            "type": "color_background",
+            "id": "background_color",
+            "label": "Background color"
+        }
+    ],
+    "presets": [
+      {
+        "name": "Learn"
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,149 @@
+@import './settings/variables';
+@import './settings/mixins';
+@import "./settings/helpers";
+
+@include animateBluredShowText($white, 'textWithCards-show');
+
+.text-with-cards {
+    padding: 98px 0;
+    overflow-x: hidden;
+
+    @include media-breakpoint-down(lg) {
+        padding: 80px 0;
+    }
+
+    // .text-with-cards__content
+
+    &__content {
+        max-width: 424px;
+
+        @include media-breakpoint-down(xxl) {
+            min-width: 424px;
+        }
+        @include media-breakpoint-down(xl) {
+            min-width: 324px;
+        }
+    }
+
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+
+        @include media-breakpoint-down(big-xl) {
+            gap: 98px;
+        }
+
+        @include media-breakpoint-down(xxxl) {
+            gap: 248px;
+        }
+
+        @include media-breakpoint-down(xxl) {
+            gap: 200px;
+        }
+
+        @include media-breakpoint-down(xl) {
+            gap: 98px;
+        }
+
+        @include media-breakpoint-down(lg) {
+            flex-direction: column;
+            gap: 32px;
+        }
+    }
+
+    // .text-with-cards__title
+
+    &__title {
+        color: $white;
+        margin-bottom: 16px;
+        @include setAnimationBluredHideText('textWithCards-show');
+        
+        @include media-breakpoint-down(lg) {
+            margin-bottom: 8px;
+        }
+    }
+
+    // .text-with-cards__richtext
+
+    &__richtext {
+        color: $white;
+        margin-bottom: 32px;
+
+        & > * {
+            margin: 0;
+            @include setAnimationBluredHideText('textWithCards-show');
+        }
+    }
+
+    // .text-with-cards__image-item
+
+    &__image-item {
+        display: flex;
+        height: 424px;
+        gap: 33px;
+        align-items: center;
+        img {
+            width: 100%;
+            max-width: 292px;
+            object-fit: cover;
+        }
+
+        @include media-breakpoint-down(sm) {
+            height: 270px;
+            gap: 8px;
+        }
+    }
+
+    &__image {
+        aspect-ratio: 292/424;
+        position: relative;
+
+        transform: translateX(30px);
+        opacity: 0;
+
+        transition: all ease-out 500ms;
+    }
+
+    &__overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background-color: transparent;
+    }
+
+    &__image--1 {
+        height: 100%;
+        transition-delay: 100ms;
+    }
+
+    &__image--2 {
+        height: 85%;
+        transition-delay: 200ms;
+        .text-with-cards__overlay {
+            background-color: rgba(0, 0, 0, 0.35);
+        }
+    }
+
+    &__image--3 {
+        height: 72%;
+        transition-delay: 300ms;
+        .text-with-cards__overlay {
+            background-color: rgba(0, 0, 0, 0.35);
+        }
+    }
+}
+
+
+.intersecting {
+    .text-with-cards__title,
+    .text-with-cards__richtext > * {
+        @include setAnimationBluredShowText('textWithCards-show');
+    }
+
+    .text-with-cards__image {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}

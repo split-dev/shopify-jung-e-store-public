@@ -1,0 +1,143 @@
+{{ 'hero-banner.out.css' | asset_url | stylesheet_tag }}
+
+{% liquid 
+  assign video_url = section.settings.video.sources[1].url
+  assign poster = section.settings.video.preview_image.src
+  assign image = section.settings.image
+  assign background_color = section.settings.background_color 
+%}
+
+{% style %} 
+  .hero-banner--{{ section.id }}{
+    background-color: {{ background_color }};
+  }
+{% endstyle %}
+
+<div class="hero-banner hero-banner--{{ section.id }}">
+  <div class="hero-banner__media">
+    <div class="hero-banner__empty">
+    </div>
+    <div class="hero-banner__content">
+      {% render "icons", icon: "section-gradient-orange" %}
+      {% render "icons", icon: "section-gradient-orange-mob" %}
+      <div class="hero-banner__media-background">
+        <div class="hero-banner__media-overlay"> </div>
+        {% if video_url != blank %}
+          <video style="object-fit: cover;" id="hero-video--{{ section.id }}" class="lazy" width="100%" height="100%" muted autoplay loop playsinline poster="{{ poster | img_url: 'x1000' }}" preload="none">
+            <source src="{{ video_url }}" type="video/mp4">
+          </video>
+        {% elsif image != blank %} 
+            <img class="lazy" loading="lazy" src="{{ image | img_url: 'x1000' }}" data-src="{{ image | img_url: '1000x' }}" alt="{{ image.alt }}">
+        {% else %}
+            {{ 'lifestyle-2' | placeholder_svg_tag: 'placeholder-svg' }}
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  <div class="hero-banner__blocks">
+    <div class="container">
+      {%- for block in section.blocks -%}
+          {% liquid 
+            assign title = block.settings.title
+            assign title_mob = block.settings.title_mob
+            assign richtext = block.settings.richtext
+            assign button_label = block.settings.button_label
+            assign button_link = block.settings.button_link
+          %} 
+          <div class="hero-banner__content-block">
+            {% if title != blank %}
+                <div class="hero-banner__title heading-h1 heading-h1-md">
+                  <h1>{{ title }}</h1>
+                </div>
+            {% endif %}
+            {% if title_mob != blank %}
+                <div class="hero-banner__title hero-banner__title--mobile heading-h1 heading-h1-md">
+                  <h1>{{ title_mob }}</h1>
+                </div>
+            {% endif %}
+            {% if richtext != blank %}
+                <div class="hero-banner__richtext body-b1 body-b1-md">{{ richtext }}</div>
+            {% endif %}
+            {% if button_label != blank and button_link != blank  %}
+            <div class="hero-banner__btn">
+              <a href={{ button_link }} class="btn btn--large btn--filled font-haffer font-weight-500">{{ button_label }}</a>
+            </div>
+            {% endif %}
+          </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var video = document.getElementById('hero-video--{{ section.id }}');
+    video.preload = 'auto';
+    video.load();
+  });
+</script>
+
+{% schema %}
+  {
+    "name": "Hero banner",
+    "blocks": [
+      {
+        "type": "content",
+        "name": "Content",
+        "settings": [
+          {
+            "type": "richtext",
+            "id": "title",
+            "default": "<h1>Why age, if you don’t have to</h1>",
+            "label": "Title"
+          },
+          {
+            "type": "richtext",
+            "id": "title_mob",
+            "default": "<h1>Why age, if you don’t have to</h1>",
+            "label": "Title mobile"
+          },
+          {
+            "type": "richtext",
+            "id": "richtext",
+            "default": "<p>Experience Jung’s Total Longevity System™. </p>",
+            "label": "Text"
+          },
+          {
+            "type": "text",
+            "id": "button_label",
+            "default": "Stop The Clock Now",
+            "label": "Button text"
+          },
+          {
+            "type": "url",
+            "id": "button_link",
+            "label": "Button link"
+          }
+        ]
+      }
+    ],
+    "settings": [
+      {
+        "type": "video",
+        "id": "video",
+        "label": "A Shopify-hosted video"
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Background image"
+      },
+      {
+        "type": "color_background",
+        "id": "background_color",
+        "label": "Background color"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Hero banner"
+      }
+    ]
+  }
+{% endschema %}

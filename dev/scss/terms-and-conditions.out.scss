@@ -1,0 +1,96 @@
+@import "./settings/variables";
+@import "./settings/mixins";
+
+.terms-and-conditions {
+    padding: 64px 0 119px;
+
+    @include media-breakpoint-down(md){
+        padding: 40px 0 80px;
+    }
+
+    // .terms-and-conditions__content
+
+    &__content {
+        max-width: 1024px;
+        margin: 0 auto;
+        @include media-breakpoint-down(big-xl){
+            max-width: 872px;
+        }
+        h3 {
+            font-size: clamp(18px, size(24px), 24px);
+            line-height: 1.2;
+            letter-spacing: 0.02em;
+            color: $white-900;
+        }
+
+        h4 {
+            font-size: clamp(18px, size(24px), 24px);
+            line-height: 1.2;
+            letter-spacing: 0.02em;
+            color: $white-900;
+            margin-bottom: -16px;
+            @include media-breakpoint-down(md){
+                margin-bottom: -8px;
+            }
+        }
+
+        h6 {
+            font-family: $font-body;
+            line-height: 1.4;
+            letter-spacing: 0;
+            font-size: clamp(14px, size(16px), 16px);
+            color: $white-900;
+            margin: 16px 0;
+        }
+
+        p {
+            line-height: 1.4;
+            letter-spacing: 0;
+            font-size: clamp(14px, size(16px), 16px);
+            color: $white-900;
+            margin: 32px 0;
+
+            @include media-breakpoint-down(md){
+                margin: 24px 0;
+            }
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin-bottom: 24px;
+            li {
+                padding: 8px 0 8px 24px;
+                position: relative;
+                line-height: 1.6;
+                letter-spacing: 0;
+                font-size: clamp(14px, size(16px), 16px);
+                color: $white-900;
+
+                &::after {
+                    content: " ";
+                    display: block;
+                    width: 6px;
+                    height: 6px;
+                    background-color: $coral-500;
+                    border-radius: 50%;
+                    position: absolute;
+                    left: 5px;
+                    top: 17px;
+                }
+            }
+        }
+
+        ol {
+            list-style-position: outside;
+            li {
+                color: $white-900;
+                margin-bottom: 16px;
+                padding-left: 8px;
+            }
+        }
+    }
+}
+
+
+

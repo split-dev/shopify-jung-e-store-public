@@ -1,0 +1,529 @@
+{{ 'product-slide.out.css' | asset_url | stylesheet_tag }}
+
+{% liquid
+  assign logo = ''
+  assign logo_alt = ''
+%}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top_mb }}px;
+    padding-bottom: {{ section.settings.padding_bottom_mb }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="product-slide" id="vertical-slider-section">
+  <div class="product-slide__header">
+    <ul>
+      <li data-step="1" class="caption-c2 caption-c2-md active">Step 1 - {{ section.settings.step1text }}</li>
+      <li data-step="2" class="caption-c2 caption-c2-md">Step 2 - {{ section.settings.step2text }}</li>
+      <li data-step="3" class="caption-c2 caption-c2-md">Step 3 - {{ section.settings.step3text }}</li>
+    </ul>
+  </div>
+  <div class="container">
+    <div class="product-slide__wrapper">
+      <div class="product-slide__image">
+        {%- for block in section.blocks -%}
+          {% liquid
+            assign product = block.settings.product
+            assign logo = block.settings.logo | img_url: 'x200'
+            assign logo_alt = block.settings.logo.alt
+          %}
+
+          {% assign image = '' %}
+          {% assign image_on_hover = '' %}
+
+          {% for item in product.metafields.custom.preview_images.value %}
+            {% if forloop.first %}
+              {% assign image = item | img_url: 'x1500' %}
+            {% endif %}
+            {% if forloop.index == 2 %}
+              {% assign image_on_hover = item | img_url: 'x1500' %}
+            {% endif %}
+          {% endfor %}
+
+          {% if forloop.first %}
+            <div class="product-slide__images">
+              <div class="product-slide__first-image">
+                <img
+                  id="slider-first-product-image"
+                  class="lazy"
+                  loading="lazy"
+                  src="{{ image }}"
+                  data-src="{{ image }}"
+                  alt="{{ image.alt }}"
+                  width=""
+                  height=""
+                >
+              </div>
+              <div class="product-slide__second-image">
+                <img
+                  id="slider-second-product-image"
+                  class="lazy"
+                  loading="lazy"
+                  src="{{ image_on_hover }}"
+                  data-src="{{ image_on_hover }}"
+                  alt="{{ image_on_hover.alt }}"
+                  width=""
+                  height=""
+                >
+              </div>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+
+      <div
+        class="circle-gradient"
+        id="circle-gradient"
+        style="fill: linear-gradient(271deg, #FFF -44.94%, rgba(255, 255, 255, 0.00) 63.88%);"
+      >
+        <img id="slider-logo" src="{{ logo }}" alt="{{ logo_alt }}" width="" height="">
+
+        {% if color == 'dark' %}
+          {% assign svg_color = '#000' %}
+        {% else %}
+          {% assign svg_color = '#fff' %}
+        {% endif %}
+        {% assign svg_id = section.id | append: color %}
+
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="234"
+          height="100%"
+          fill="none"
+          viewBox="0 0 234 647"
+          preserveAspectRatio="none"
+        >
+          <defs>
+            <linearGradient
+              id="{{svg_id}}"
+              x1="-158.392"
+              x2="218.857"
+              y1="521.088"
+              y2="522.959"
+              gradientTransform="scale(.68421 .68393)"
+              gradientUnits="userSpaceOnUse">
+              <stop class="arch-stop-color" offset="0" style="stop-color:{{svg_color}};stop-opacity:1" />
+              <stop class="arch-stop-color" offset="1" style="stop-color:{{svg_color}};stop-opacity:0" />
+            </linearGradient>
+          </defs><path d="M0 323.46C0 144.82 88.402 0 129.754 0c204.23 0 19.992 144.82 19.992 323.46 0 178.645 202.27 327.36-19.992 323.466C88.402 646.926 0 502.106 0 323.46Zm0 0" style="stroke:none;fill-rule:nonzero;fill:url(#{{svg_id}})" />
+        </svg>
+      </div>
+
+      <div class="product-slide__product">
+        {%- for block in section.blocks -%}
+          {%- liquid
+            assign product = block.settings.product
+            assign product_form_id = 'quick-add-' | append: section.id | append: product.id
+
+            assign selling_plan_id = product.selling_plan_groups[0].selling_plans[0].id
+
+            assign current_variant = product.selected_or_first_available_variant | default: product.variants.first
+            assign current_selling_plan_allocation = current_variant.selected_selling_plan_allocation
+
+            if current_selling_plan_allocation == null and current_variant.requires_selling_plan
+              assign current_selling_plan_allocation = current_variant.selling_plan_allocations | first
+            endif
+
+            assign offer = current_selling_plan_allocation | default: current_variant
+            assign offerPrice = offer.selling_plan_allocations[0].price
+          -%}
+
+          {% assign image = '' %}
+          {% assign image_on_hover = '' %}
+
+          {% for item in product.metafields.custom.preview_images.value %}
+            {% if forloop.first %}
+              {% assign image = item | img_url: 'x1500' %}
+            {% endif %}
+            {% if forloop.index == 2 %}
+              {% assign image_on_hover = item | img_url: 'x1500' %}
+            {% endif %}
+          {% endfor %}
+
+          <div
+            class="product-step-container"
+            data-background="{{ block.settings.background_color }}"
+            data-first-product-image="{{ image }}"
+            data-second-product-image="{{ image_on_hover }}"
+            data-scale-image="{{ block.settings.scale_product_image }}"
+            data-logo-src="{{ block.settings.logo | img_url: 'x200' }}"
+            data-arch-color="{{ block.settings.arch_color }}"
+            data-active-step="{{ block.settings.step }}"
+          >
+            <div class="mobile-slider-logo__thumb">
+              <img
+                class="mobile-slider-logo"
+                src="{{ block.settings.logo | img_url: 'x200' }}"
+                alt="{{ logo_alt }}"
+                width=""
+                height=""
+              >
+            </div>
+
+            <div class="product-slide__mobile-top">
+              <div class="product-slide__mobile-arch">
+                {%- if forloop.first -%}
+                  {% render 'icons-halo', icon: 'dark' %}
+                {%- else -%}
+                  {% render 'icons-halo', icon: 'light' %}
+                {%- endif -%}
+              </div>
+            </div>
+
+            {% assign image = '' %}
+
+            {% for item in product.metafields.custom.preview_images.value %}
+              {% if forloop.first %}
+                {% assign image = item | img_url: 'x1500' %}
+              {% endif %}
+            {% endfor %}
+
+            <div class="product-slide__slide-wrapper">
+              <div class="product-slide__image-mob">
+                <a class="product-slide__link" href="{{ product.url }}">
+                  <div class="product-slide__images-mob">
+                    <div class="product-slide__first-image-mob">
+                      <img
+                        id="slider-first-product-image"
+                        class="lazy"
+                        loading="lazy"
+                        src="{{ image }}"
+                        data-src="{{ image }}"
+                        alt="{{ image.alt | default: product.title }}"
+                        width=""
+                        height=""
+                      >
+                    </div>
+                  </div>
+                  <strong class="caption-c1 caption-c1-md">{{ block.settings.image_caption }}</strong>
+                </a>
+              </div>
+              <div class="product-slide__info">
+                <h4 class="heading-h1 heading-h1-md">
+                  {{ block.settings.heading }}
+                </h4>
+                <hr>
+                <div class="product-slide__info__description">
+                  <a href="{{ product.url }}" class="heading-h3 heading-h3-md">
+                    {{- block.settings.description_heading -}}
+                  </a>
+                  {% if product.metafields.custom.description_mini_ != blank %}
+                    <div class="body-b3 body-b3-md">
+                      {{ product.metafields.custom.description_mini_ | metafield_tag }}
+                    </div>
+                  {% else %}
+                    <p class="body-b3 body-b3-md">{{ block.settings.description }}</p>
+                  {% endif %}
+                </div>
+                {% if block.settings.show_buttons %}
+                  <div class="product-slide__info__links">
+                    <product-form data-section-id="{{ section.id }}">
+                      {%- form 'product',
+                        product,
+                        id: product_form_id,
+                        class: 'form',
+                        novalidate: 'novalidate',
+                        data-type: 'add-to-cart-form'
+                      -%}
+                        <input
+                          type="hidden"
+                          name="id"
+                          value="{{ product.selected_or_first_available_variant.id }}"
+                          class="product-variant-id"
+                          disabled
+                        >
+                        <input
+                          type="hidden"
+                          name="selling_plan"
+                          value="{{ selling_plan_id }}"
+                        >
+
+                        {% if settings.coming_soon_buttons %}
+                          <div class="btn btn--large font-haffer font-weight-500 coming_soon_buttons">
+                            {{ settings.coming_soon_buttons_text }}
+                          </div>
+                        {% else %}
+                          <button
+                            id="{{ product_form_id }}-submit"
+                            type="submit"
+                            name="add"
+                            class="quick-add__submit btn btn--small btn--filled font-haffer font-weight-500"
+                            aria-haspopup="dialog"
+                            aria-labelledby="{{ product_form_id }}-submit title-{{ section.id }}-{{ product.id }}"
+                            aria-live="polite"
+                            data-sold-out-message="true"
+                            {% if product.selected_or_first_available_variant.available == false %}
+                              disabled
+                            {% endif %}
+                          >
+                            <span>
+                              {%- if product.selected_or_first_available_variant.available -%}
+                                add to regimen - {{ offerPrice | money_without_trailing_zeros }}
+                              {%- else -%}
+                                {{ 'products.product.sold_out' | t }}
+                              {%- endif -%}
+                            </span>
+                            <span class="sold-out-message hidden">
+                              {{ 'products.product.sold_out' | t }}
+                            </span>
+                            <div class="loading-overlay__spinner hidden">
+                              <svg
+                                aria-hidden="true"
+                                focusable="false"
+                                class="spinner"
+                                viewBox="0 0 66 66"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
+                              </svg>
+                            </div>
+                          </button>
+                        {% endif %}
+                      {%- endform -%}
+                    </product-form>
+
+                    <a href="{{ product.url }}" class="btn btn--small btn--subtle font-haffer font-weight-500"
+                      >Learn more</a
+                    >
+                  </div>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+
+          <script type="text/javascript">
+            var _learnq = _learnq || [];
+            document.getElementById('{{ product_form_id }}-submit').addEventListener('click', function () {
+              _learnq.push(['track', 'Added to Cart', item]);
+            });
+          </script>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const changeSlide = (targetElement) => {
+    //Сhange section background
+    document.getElementById('vertical-slider-section').style.backgroundColor =
+      targetElement.getAttribute('data-background');
+
+    //Change product picture size
+    const sliderProductPictures = document.querySelectorAll('.product-slide__image img');
+    if (targetElement.getAttribute('data-scale-image') === 'true')
+      sliderProductPictures.forEach((picture) => {
+        picture.classList.add('without-scale');
+      });
+    else {
+      sliderProductPictures.forEach((picture) => {
+        picture.classList.remove('without-scale');
+      });
+    }
+
+    //Change product image
+    document.getElementById('slider-first-product-image').src = targetElement.getAttribute('data-first-product-image');
+    document.getElementById('slider-second-product-image').src =
+      targetElement.getAttribute('data-second-product-image');
+
+    //Change section logo
+    document.getElementById('slider-logo').src = targetElement.getAttribute('data-logo-src');
+
+    //Change arch color
+    document.querySelectorAll('.arch-stop-color').forEach((arch) => {
+      arch.style.stopColor = targetElement.getAttribute('data-arch-color');
+    });
+
+    // Arch animation
+    document.getElementById('circle-gradient').classList.remove('active');
+    setTimeout(function () {
+      document.getElementById('circle-gradient').classList.add('active');
+    }, 300);
+
+    // Set active step
+    let activeStep = `[data-step="${targetElement.getAttribute('data-active-step')}"]`;
+    document.querySelectorAll('.product-slide__header ul li').forEach((step) => {
+      step.classList.remove('active');
+    });
+    document.querySelector(activeStep).classList.add('active');
+  };
+
+  const options = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.5,
+  };
+
+  const callbackFunction = (entries) => {
+    entries.forEach((entry) => {
+      const targetElement = entry.target;
+      const percentageVisible = (entry.intersectionRect.height / targetElement.offsetHeight) * 100;
+      if (percentageVisible > 50) {
+        targetElement.classList.add('inViewport');
+        changeSlide(targetElement);
+      } else {
+        targetElement.classList.remove('inViewport');
+      }
+    });
+  };
+  const observerSliderSections = new IntersectionObserver(callbackFunction, options);
+  const shopifySections = document.querySelectorAll('.product-step-container');
+  shopifySections.forEach((section) => {
+    observerSliderSections.observe(section);
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Alternate Vertical Scroll",
+  "tag": "section",
+  "class": "section section-vertical-carousel",
+  "blocks": [
+    {
+      "type": "product_slide",
+      "name": "Product Carousel Slide",
+      "settings": [
+        {
+          "type": "color",
+          "id": "background_color",
+          "label": "Background color",
+          "default": "#7FB069"
+        },
+        {
+          "type": "color",
+          "id": "arch_color",
+          "label": "Arch color",
+          "default": "#fff"
+        },
+        {
+          "type": "image_picker",
+          "id": "logo",
+          "label": "Logo"
+        },
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product"
+        },
+        {
+          "type": "number",
+          "id": "step",
+          "label": "Step",
+          "default": 1
+        },
+        {
+          "type": "text",
+          "id": "image_caption",
+          "default": "Make fasting easier, and more effective",
+          "label": "Slide image caprion"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "default": "FASTING & CALORIC RESTRICTION",
+          "label": "Slide heading"
+        },
+        {
+          "type": "text",
+          "id": "description_heading",
+          "default": "Fasting Tonic™",
+          "label": "Slide description heading"
+        },
+        {
+          "type": "text",
+          "id": "description",
+          "default": "Our Fasting Tonic™ doesn't stop at curbing hunger; it goes a step further by replenishing essential micronutrients and electrolytes that get depleted during a fast, helping retain additional hydration and avoid fatigue. ",
+          "label": "Slide description"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_buttons",
+          "label": "Show buttons",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "scale_product_image",
+          "label": "Scale product image",
+          "default": false
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mb",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top mobile",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mb",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding bottom mobile",
+      "default": 16
+    },
+    {
+      "type": "text",
+      "id": "step1text",
+      "default": "Master formula",
+      "label": "Step 1 Text"
+    },
+    {
+      "type": "text",
+      "id": "step2text",
+      "default": "Longevity boosters",
+      "label": "Step 2 Text"
+    },
+    {
+      "type": "text",
+      "id": "step3text",
+      "default": "Test & track",
+      "label": "Step 3 Text"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Alternate Vertical Scroll",
+      "blocks": []
+    }
+  ]
+}
+{% endschema %}

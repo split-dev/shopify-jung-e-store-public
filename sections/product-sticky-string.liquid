@@ -1,0 +1,68 @@
+{%- style -%}
+  .sticky-string {
+    position: sticky;
+    top: calc(100% - 82px);
+    z-index: 9;
+  }
+{%- endstyle -%}
+
+<div class="pdp_string">
+  <div class="pdp_string--container">
+    <span class="pdp_string--title heading-h3">
+      {{ product.title }}
+    </span>
+
+    <div class="pdp_string--buttons">
+      {% comment %}
+        <button class="pdp_string--button__subscribe btn btn--large btn--subtle font-haffer font-weight-500">
+          {% render 'icons', icon: 'alarm' %}
+          Subscribe - $50
+        </button>
+      {% endcomment %}
+
+      {%- liquid
+        assign defaultPrice = product.price | money_without_trailing_zeros
+        assign customSubscribeText = 'Subscribe - ' | append: defaultPrice
+        assign customAddText = 'Add to cart - ' | append: defaultPrice
+        assign subscribePlanId = product.selling_plan_groups[0].selling_plans[0].id
+      -%}
+
+      <span class="pdp_string--button__subscribe font-weight-500">
+        {%-
+          render 'buy-buttons',
+          block: block,
+          product: product,
+          product_form_id: 'product-form-{{ section.id }}1',
+          section_id: section.id,
+          show_pickup_availability: true,
+          custom-text: customSubscribeText,
+          subscribe: subscribePlanId
+        -%}
+      </span>
+
+      {%-
+        render 'buy-buttons',
+        block: block,
+        product: product,
+        product_form_id: 'product-form-{{ section.id }}',
+        section_id: section.id,
+        show_pickup_availability: true,
+        custom-text: customAddText
+      -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Sticky string",
+  "class": "sticky-string",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Sticky string",
+      "settings": {}
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,180 @@
+<link rel="stylesheet" href="{{ 'text-with-image.out.css' | asset_url }}">
+<noscript>
+  {{- 'text-with-image.out.css' | asset_url | stylesheet_tag -}}
+</noscript>
+
+{%- liquid
+  assign settings = section.settings
+-%}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ settings.padding_top_mobile }}px;
+    padding-bottom: {{ settings.padding_bottom_mobile }}px;
+  }
+
+  @media screen and (min-width: 768px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ settings.padding_top }}px;
+      padding-bottom: {{ settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<section
+  class="text--image section-{{ section.id }}-padding"
+  id="text--image--{{ section.id }}"
+>
+  {% for block in section.blocks %}
+    {% liquid 
+        assign product_metafield = product.metafields.custom.image_with_text_diagram_section_.value
+        assign headline = product_metafield.headline
+        assign subheadline = product_metafield.subheadline | metafield_tag
+        assign image = product_metafield.image
+        assign image_mobile = product_metafield.image_mobile
+
+        assign bs = block.settings 
+        assign title = bs.title   
+        if headline != blank
+          assign title = headline
+        endif
+
+        assign description = bs.description   
+        if subheadline != blank
+          assign description = subheadline 
+        endif
+
+        assign image_desctop = bs.image_desctop  
+        if image_mobile != blank
+          assign image_desctop = image_mobile
+        endif
+
+        assign image_mobile = bs.image_mobile 
+        if image != blank
+          assign image_mobile = image
+        endif 
+    %}
+   
+    {%- case block.type -%}
+      {%- when 'heading' -%}
+        <div class="text--image__heading">
+          {% if title != blank %}
+            <h2 class="text--image__title heading-h2">{{ title }}</h2>
+          {% endif %}
+
+          {% if description != blank %}
+            <div class="text--image__description body-b2">{{ description }}</div>
+          {% endif %}
+        </div>
+      {%- when 'image' -%}
+        {%- assign bs = block.settings -%}
+        <div class="text--image__content">
+          <img
+            class="mobile--img"
+            src="{{ image_mobile | image_url: width: 1690 }}"
+            alt="{{ image_mobile.alt }}"
+            width=""
+            height=""
+            loading="lazy"
+          >
+
+          <img
+            class="desctop--img"
+            src="{{ image_desctop | image_url: width: 2880 }}"
+            alt="{{ image_desctop.alt }}"
+            width=""
+            height=""
+            loading="lazy"
+          >
+        </div>
+    {%- endcase -%}
+  {% endfor %}
+</section>
+
+{% schema %}
+{
+  "name": "Text with image",
+  "settings": [
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top_mobile",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom_mobile",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 80
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Heading",
+      "type": "heading",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description"
+        }
+      ]
+    },
+    {
+      "name": "Image",
+      "type": "image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image_mobile",
+          "label": "Mobile image"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_desctop",
+          "label": "Desctop image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Text with image",
+      "settings": {}
+    }
+  ]
+}
+{% endschema %}

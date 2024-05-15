@@ -1,0 +1,248 @@
+<link
+  rel="stylesheet"
+  href="{{ 'feedback-section.out.css' | asset_url }}"
+>
+<noscript>
+  {{- 'feedback-section.out.css' | asset_url | stylesheet_tag -}}
+</noscript>
+
+{%- style -%}
+  {% if section.settings.time != blank %}
+    .section-{{ section.id }}-padding.feedback-product .swiper-pagination-bullet-active::before {
+      animation-duration: {{section.settings.time | plus: 300}}ms;
+    }
+  {% endif %}
+
+  .section-{{ section.id }}-padding.feedback-product {
+    background-color: {{section.blocks[0].settings.color}};
+  }
+
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top_mb }}px;
+    padding-bottom: {{ section.settings.padding_bottom_mb }}px;
+  }
+
+  @media screen and (min-width: 768px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="section-{{ section.id }} section-{{ section.id }}-padding feedback-product">
+  <div class="container">
+    <div class="feedback-product__box">
+      {% if section.settings.title != blank %}
+        <div class="feedback-product__title text-center">
+          <h2 class="text-48px-32px font-haffer font-weight-400">{{ section.settings.title }}</h2>
+        </div>
+      {% endif %}
+      {% if section.blocks.size > 0 %}
+        <div class="swiper feedback-product__slider">
+          <div class="swiper-wrapper">
+            {% for block in section.blocks %}
+              <div class="swiper-slide feedback-product__slide" data-color="{{block.settings.color}}">
+                <div class="feedback-product__slide-box flex-column-reverse flex-md-row d-flex">
+                  <div class="feedback-product__info d-flex flex-column align-items-center">
+                    {% if block.settings.title_slide != blank %}
+                      <div class="feedback-product__title-slide">
+                        <h3 class="text-32px-24px font-haffer font-weight-400">{{ block.settings.title_slide }}</h3>
+                      </div>
+                    {% endif %}
+                    {% if block.settings.body_slide != blank %}
+                      <div class="feedback-product__body-slide text-16px-14px font-weight-400">
+                        {{ block.settings.body_slide }}
+                      </div>
+                    {% endif %}
+                    <div class="feedback-product__bottom-slide d-flex justify-content-between align-items-center {% unless block.settings.body_slide != blank %} feedback-product__without-body-text {% endunless %}">
+                      <span class="feedback-product__author-slide text-18px font-haffer font-weight-500">
+                        {{ block.settings.author_slide }}
+                      </span>
+                      <span class="feedback-product__date-slide text-16px-14px">
+                        {{ block.settings.date_slide }}
+                      </span>
+                    </div>
+                  </div>
+                  <div class="feedback-product__img">
+                    <img
+                      class="lazy"
+                      loading="lazy"
+                      src="{{ block.settings.img | img_url: '100x' }}"
+                      data-src="{{ block.settings.img | img_url: '450x' }}"
+                      alt="{{ block.settings.img.alt }}"
+                    >
+                  </div>
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+          <div class="swiper-navigation d-flex">
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-next"></div>
+          </div>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+{% if section.blocks.size > 0 %}
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+    function initSlider() {
+      new Swiper('.section-{{ section.id }} .feedback-product__slider', {
+        spaceBetween: 10,
+        slidesPerView: 1,
+        loop: true,
+        autoHeight: true,
+        effect: 'fade',
+        fadeEffect: {
+          crossFade: true
+        },
+        {% if section.settings.time != blank %}
+          autoplay: {
+            delay: {{ section.settings.time }},
+            disableOnInteraction: false,
+          },
+        {% endif %}
+        navigation: {
+          nextEl: '.section-{{ section.id }} .swiper-button-next',
+          prevEl: '.section-{{ section.id }} .swiper-button-prev',
+        },
+        pagination: {
+          el: '.section-{{ section.id }} .swiper-pagination',
+          clickable: true,
+        }
+      }).on('slideChange', function () {
+        var color = document.querySelectorAll('.section-{{ section.id }} .swiper-slide')[this.activeIndex].getAttribute('data-color');
+        var feedbackProduct = document.querySelector('.section-{{ section.id }}.feedback-product');
+        feedbackProduct.style.backgroundColor = color;
+      });
+
+
+    }
+    if (Shopify.designMode) {
+      initSlider();
+      document.addEventListener('shopify:section:load', function (e) {
+        initSlider();
+      });
+    } else {
+      initSlider();
+    }
+    });
+  </script>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Feedback slider",
+  "max_blocks": 12,
+  "settings": [
+    {
+      "type": "header",
+      "content": "General settings"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title text"
+    },
+    {
+      "type": "text",
+      "id": "time",
+      "label": "Autoplay time"
+    },
+    {
+      "type": "header",
+      "content": "Section space"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 160,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding top desktop",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 160,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding bottom desktop",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mb",
+      "min": 0,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding top mobile",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mb",
+      "min": 0,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding bottom mobile",
+      "default": 80
+    }
+  ],
+  "blocks": [
+    {
+      "type": "Slide",
+      "name": "Slide",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title_slide",
+          "default": "Welcome to our store",
+          "label": "Title slide"
+        },
+        {
+          "type": "richtext",
+          "id": "body_slide",
+          "label": "Body text"
+        },
+        {
+          "type": "text",
+          "id": "author_slide",
+          "label": "Author text"
+        },
+        {
+          "type": "text",
+          "id": "date_slide",
+          "label": "Date text",
+          "default": "September 5th, 2022"
+        },
+        {
+          "type": "image_picker",
+          "id": "img",
+          "label": "Select image"
+        },
+        {
+          "type": "color",
+          "id": "color",
+          "label": "Select color"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Feedback slider"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,265 @@
+<link rel="stylesheet" href="{{ 'full-width-slider.out.css' | asset_url }}">
+<noscript>
+  {{- 'full-width-slider.out.css' | asset_url | stylesheet_tag -}}
+</noscript>
+
+{%- assign settings = section.settings -%}
+{%- assign metafield = product.metafields.custom.first_slider.value -%}
+
+{%- style -%}
+  .section-{{ section.id }} {
+    padding-top: {{ settings.padding_top_mobile }}px;
+    padding-bottom: {{ settings.padding_bottom_mobile }}px;
+  }
+
+  .full--slider{
+    color: {{ settings.color_text }};
+    fill: {{ settings.color_text }};
+    background-color: {{ settings.color_background }};
+  }
+
+  .section-{{ section.id }} .swiper-pagination-bullet-active::before {
+      animation-duration: {{ section.settings.time | plus: 300 }}ms;
+    }
+
+  @media screen and (min-width: 768px) {
+    .section-{{ section.id }} {
+      padding-top: {{ settings.padding_top }}px;
+      padding-bottom: {{ settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<section
+  class="full--slider section-{{ section.id }}"
+  id="full--slider--{{ section.id }}"
+>
+  <div class="full--slider__wrapper">
+    <div class="swiper full--slider__box">
+      <div class="swiper-wrapper">
+        {%- if settings.data_type == 'block' and section.blocks.size > 0 -%}
+          {% for block in section.blocks %}
+            {%- assign bs = block.settings -%}
+            <div class="swiper-slide full--slider__slide">
+              <img
+                src="{{ bs.image | image_url: width: 200 }}"
+                alt="{{ bs.image.alt }}"
+                width=""
+                height=""
+                loading="lazy"
+                class="lazy"
+                data-src="{{ bs.image | image_url: width: 1600 }}"
+              >
+              {% if bs.title != blank %}
+                <span class="full--slider__slide--title heading-h3">
+                  {{ bs.title }}
+                </span>
+              {% endif %}
+
+              {% if bs.subtitle != blank %}
+                <span class="full--slider__slide--subtitle body-b1">
+                  {{ bs.subtitle }}
+                </span>
+              {% endif %}
+            </div>
+          {% endfor %}
+        {%- elsif settings.data_type == 'meta' -%}
+          {% for object in metafield %}
+            <div class="swiper-slide full--slider__slide">
+              <img
+                src="{{ object.image | image_url: width: 200 }}"
+                alt="{{ object.image.alt }}"
+                width=""
+                height=""
+                loading="lazy"
+                class="lazy"
+                data-src="{{ object.image | image_url: width: 1600 }}"
+              >
+              {% if object.title != blank %}
+                <span class="full--slider__slide--title heading-h3">
+                  {{ object.title }}
+                </span>
+              {% endif %}
+
+              {% if object.subtitle != blank %}
+                <span class="full--slider__slide--subtitle body-b1">
+                  {{ object.subtitle }}
+                </span>
+              {% endif %}
+            </div>
+          {% endfor %}
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+
+  <div class="full--slider__side">
+    {% if settings.title != blank %}
+      <h2 class="full--slider__title heading-h2">
+        {{ settings.title }}
+      </h2>
+    {% endif %}
+
+    <div class="swiper-navigation d-flex">
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-next"></div>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    function initFullWidthSlider() {
+      new Swiper('.section-{{ section.id }} .full--slider__box', {
+        spaceBetween: 10,
+        slidesPerView: 1,
+        loop: true,
+        autoHeight: true,
+        effect: 'fade',
+        fadeEffect: {
+          crossFade: true
+        },
+        {% if section.settings.time != blank %}
+          autoplay: {
+            delay: {{ section.settings.time }},
+            disableOnInteraction: false,
+          },
+        {% endif %}
+        navigation: {
+          nextEl: '.section-{{ section.id }} .swiper-button-next',
+          prevEl: '.section-{{ section.id }} .swiper-button-prev',
+        },
+        pagination: {
+          el: '.section-{{ section.id }} .swiper-pagination',
+          clickable: true,
+        }
+      });
+    }
+  
+    if (Shopify.designMode) {
+      initFullWidthSlider();
+      document.addEventListener('shopify:section:load', function (e) {
+        initFullWidthSlider();
+      });
+    } else {
+      initFullWidthSlider();
+    }
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Full width slider",
+  "settings": [
+    {
+      "type": "select",
+      "id": "data_type",
+      "label": "Data type",
+      "options": [
+        {
+          "value": "block",
+          "label": "Blocks"
+        },
+        {
+          "value": "meta",
+          "label": "Metadata"
+        }
+      ],
+      "default": "meta"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "number",
+      "id": "time",
+      "label": "Autoplay time",
+      "default": 3500
+    },
+    {
+      "type": "color",
+      "id": "color_text",
+      "label": "Text color",
+      "default": "#fff"
+    },
+    {
+      "type": "color",
+      "id": "color_background",
+      "label": "Background color",
+      "default": "#000"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top_mobile",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom_mobile",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 0
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Slide",
+      "type": "slide",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "text",
+          "id": "subtitle",
+          "label": "Subtitle"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Full width slider",
+      "settings": {}
+    }
+  ]
+}
+{% endschema %}

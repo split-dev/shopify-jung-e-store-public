@@ -1,0 +1,103 @@
+{{ 'text-with-earth.out.css' | asset_url | stylesheet_tag }}
+
+{% liquid 
+    assign text = section.settings.text
+    assign header = section.settings.header
+    assign subtitle = section.settings.subtitle
+    assign video_url_1 = section.settings.video_1.sources[1].url
+    assign poster_1 = section.settings.video_1.preview_image.src
+    assign image_1 = section.settings.image_1
+    assign video_url_2 = section.settings.video_2.sources[1].url
+    assign poster_2 = section.settings.video_2.preview_image.src
+    assign image_2 = section.settings.image_2
+%}
+
+<div class="text-with-earth text-with-earth--{{ section.id }}">
+  <div class="text-with-earth__media">
+    <div class="text-with-earth__overflow-content">
+        <div class="container">
+            <div class="text-with-earth__overflow-block">
+                {% if header != blank %}
+                    <h2 class="text-with-earth__overflow-header heading-h2 heading-h2-md">
+                        {{ header }}
+                    </h2>
+                {% endif %}
+                {% if subtitle != blank %}
+                    <h3 class="text-with-earth__overflow-subtitle heading-h3 heading-h3-md">
+                        {{ subtitle }}
+                    </h3>
+                {% endif %}
+                {% if text != blank %}
+                    <div class="text-with-earth__overflow-text body-b2 body-b2-md">
+                        {{ text }}
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+     <div class="text-with-earth__content desktop">
+        {% if video_url_1 != blank %}
+            <div class="text-with-earth__content-video">
+                <video style="object-fit: cover;" class="lazy" width="100%" height="100%" muted autoplay playsinline loop poster="{{ poster_1 | img_url: 'x1000' }}">
+                    <source src="{{ video_url_1 }}" type="video/mp4">
+                </video>
+            </div>
+        {% endif %}
+    </div>
+    <div class="text-with-earth__content mobile">
+        {% if video_url_2 != blank %}
+          <video style="object-fit: cover;" class="lazy" width="100%" height="100%" muted autoplay playsinline loop poster="{{ poster_2 | img_url: 'x500' }}">
+            <source src="{{ video_url_2 }}" type="video/mp4">
+          </video>
+        {% endif %}
+    </div>
+   </div>
+</div>
+{% schema %}
+  {
+    "name": "Text with earth",
+    "settings": [
+        {
+            "type": "text",
+            "id": "header",
+            "label": "Title",
+            "default": "The future of preventative health is longevity."
+        },
+        {
+            "type": "text",
+            "id": "subtitle",
+            "label": "Subtitle",
+            "default": "And its here, today."
+        },
+        {
+            "type": "text",
+            "id": "text",
+            "label": "Text",
+            "default": "Imagine a world where we don't just live longer but live better. A world where we don't just survive but thrive. We all want this. But instead, starting in our 20’s and 30’s, we age. We deteriorate and grow frail, and eventually, we develop chronic diseases like heart disease and diabetes. We chase these diseases individually, without realizing they have a common underlying trigger: aging itself."
+        },
+        {
+            "type": "header",
+            "content": "Desktop content"
+        },
+        {
+            "type": "video",
+            "id": "video_1",
+            "label": "A Shopify-hosted video"
+        },
+        {
+            "type": "header",
+            "content": "Mobile content"
+        },
+        {
+            "type": "video",
+            "id": "video_2",
+            "label": "A Shopify-hosted video"
+        }
+    ],
+    "presets": [
+      {
+        "name": "Text with earth"
+      }
+    ]
+  }
+{% endschema %}

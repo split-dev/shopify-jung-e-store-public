@@ -1,0 +1,113 @@
+{{ 'team-info.out.css' | asset_url | stylesheet_tag }}
+
+{% liquid 
+    assign title = section.settings.title
+%} 
+
+<div class="team-info team-info--{{ section.id }}">
+    <div class="container">
+        <div class="team-info__title">
+            <h2 class="heading-h2 heading-h2-md">{{ title }}</h2>
+        </div>
+        <div class="team-info__wrapper">
+            {% for block in section.blocks %}
+                {% liquid 
+                    assign image = block.settings.image
+                    assign name = block.settings.name
+                    assign position = block.settings.position
+                    assign richtext_1 = block.settings.richtext_1
+                    assign richtext_2 = block.settings.richtext_2
+                %}
+                <div class="team-info__member {% cycle 'first', 'second' %} member--{{ forloop.index }}">
+                    <div class="team-info__member-image">
+                        {% if image != blank %} 
+                            <img class="lazy" loading="lazy" src="{{ image | img_url: 'x1000' }}" data-src="{{ image | img_url: '1000x' }}" alt="{{ name }}">
+                        {% else %}
+                            {{ 'lifestyle-2' | placeholder_svg_tag: 'placeholder-svg' }}
+                        {% endif %}
+                    </div>
+                    <div class="team-info__content">
+                        <div class="team-info__member-info">
+                            {% if name != blank %}
+                                <h2 class="team-info__name heading-h3 heading-h3-md">
+                                    {{ name }}
+                                </h2>
+                            {% endif %}
+                            {% if position != blank %}
+                                <div class="team-info__position caption-c2 caption-c2-md">
+                                    {{ position }}
+                                </div>
+                            {% endif %}
+                            {% if richtext_1 != blank %}
+                                <div class="team-info__richtext body-b3 body-b3-md">
+                                    {{ richtext_1 }}
+                                </div>
+                            {% endif %}
+                            {% if richtext_2 != blank %}
+                                <div class="team-info__richtext body-b3 body-b3-md">
+                                    {{ richtext_2 }}
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% schema %}
+  {
+    "name": "Team info",
+    "max_blocks": 6,
+    "blocks": [
+      {
+        "type": "member",
+        "name": "Member",
+        "settings": [
+            {
+                "type": "image_picker",
+                "id": "image",
+                "label": "Image"
+            },
+            {
+                "type": "text",
+                "id": "name",
+                "label": "Name",
+                "default": "Jordan Baechle, MD"
+            },
+            {
+                "type": "text",
+                "id": "position",
+                "label": "Position",
+                "default": "Physician-scientist | Postdoctoral Fellow | University of Oxford"
+            },
+            {
+                "type": "richtext",
+                "id": "richtext_1",
+                "label": "Richtext 1",
+                "default": "<p>Jordan is a physician, scientist, and inventor focused on translating advances in geroscience from the lab to the clinic. He received his MD from Meharry Medical College in Nashville, TN where his concurrent research at Vanderbilt University focused on metabolism, chronic stress, and social disparities in medical care.</p>"
+            },
+            {
+                "type": "richtext",
+                "id": "richtext_2",
+                "label": "Richtext 2",
+                "default": "<p>After experiencing first-hand the the disconnect between scientific discovery and patient care, he pursued a Masters in Translational Medicine at the University of California Berkeley and the University of California San Francisco, to engage in formal training across the various disciplines and expertise (bioengineering, regulatory affairs, intellectual property, venture funding, etc.) necessary to expedite the translation of discovery and innovation to clinical implementation.</p>"
+            }
+        ]
+      }
+    ],
+    "settings": [
+        {
+            "type": "text",
+            "id": "title",
+            "default": "Scientific Board",
+            "label": "Title"
+        }
+    ],
+    "presets": [
+      {
+        "name": "Team info"
+      }
+    ]
+  }
+{% endschema %}

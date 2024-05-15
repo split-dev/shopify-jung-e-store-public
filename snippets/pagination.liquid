@@ -1,0 +1,98 @@
+{% comment %}
+  Renders a set of links for paginated results. Must be used within paginate tags.
+
+  Usage:
+  {% paginate results by 2 %}
+    {% render 'pagination', paginate: paginate, anchor: '#yourID' %}
+  {% endpaginate %}
+
+  Accepts:
+  - paginate: {Object}
+  - anchor: {String} (optional) This can be added so that on page reload it takes you to wherever you've placed your anchor tag.
+{% endcomment %}
+
+{{ 'component-pagination.css' | asset_url | stylesheet_tag }}
+
+{%- if paginate.parts.size > 0 -%}
+  <div class="pagination-wrapper">
+    <nav class="pagination" role="navigation" aria-label="{{ 'general.pagination.label' | t }}">
+      <ul class="pagination__list list-unstyled" role="list">
+        {%- if paginate.previous -%}
+          <li>
+            <a
+              class="pagination__item pagination__item--next pagination__item-arrow link motion-reduce body-b2 body-b2-md"
+              aria-label="{{ 'general.pagination.previous' | t }}"
+              {% if pagination_blog %}
+                data-id="{{id}}"
+                data-href="{{ paginate.previous.url }}{{ anchor }}"
+                href="#BlogArticles"
+              {% else %}
+                href="{{ paginate.previous.url }}{{ anchor }}"
+              {% endif %}
+            >
+            {% render 'icons', icon: 'arrow_btn' %}
+            </a>
+          </li>
+        {%- endif -%}
+
+        {%- for part in paginate.parts -%}
+          <li>
+            {%- if part.is_link -%}
+              <a
+                class="pagination__item link body-b2 body-b2-md"
+                aria-label="{{ 'general.pagination.page' | t: number: part.title }}"
+                {% if pagination_blog %}
+                  data-id="{{id}}"
+                  data-href="{{ part.url }}{{ anchor }}"
+                  href="#BlogArticles"
+                {% else %}
+                  href="{{ part.url }}{{ anchor }}"
+                {% endif %}
+              >
+                {{- part.title -}}
+              </a>
+            {%- else -%}
+              {%- if part.title == paginate.current_page -%}
+                <a
+                  role="link"
+                  aria-disabled="true"
+                  class="pagination__item pagination__item--current body-b2 body-b2-md"
+                  aria-current="page"
+                  aria-label="{{ 'general.pagination.page' | t: number: part.title }}"
+                  {% if pagination_blog %}
+                    data-id="{{id}}"
+                    data-href="{{ part.url }}{{ anchor }}"
+                  {% else %}
+                    href="{{ part.url }}{{ anchor }}"
+                  {% endif %}
+                >
+                  {{- part.title -}}
+                </a>
+              {%- else -%}
+                <span class="pagination__item">{{ part.title }}</span>
+              {%- endif -%}
+            {%- endif -%}
+          </li>
+        {%- endfor -%}
+
+        {%- if paginate.next -%}
+          <li>
+            <a
+              class="pagination__item pagination__item--prev pagination__item-arrow link motion-reduce body-b2 body-b2-md"
+              aria-label="{{ 'general.pagination.next' | t }}"
+              {% if pagination_blog %}
+                data-id="{{id}}"
+                data-href="{{ paginate.next.url }}{{ anchor }}"
+                href="#BlogArticles"
+              {% else %}
+                href="{{ paginate.next.url }}{{ anchor }}"
+              {% endif %}
+            >
+              {% render 'icons', icon: 'arrow_btn' %}
+            </a>
+          </li>
+        {%- endif -%}
+      </ul>
+    </nav>
+  </div>
+{%- endif -%}

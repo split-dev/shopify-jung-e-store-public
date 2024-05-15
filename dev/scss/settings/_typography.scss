@@ -1,0 +1,315 @@
+@import "./mixins";
+
+.text-64px-32px {
+  font-size: clamp(32px, size(64px), 64px);
+}
+
+.text-48px-32px {
+  font-size: clamp(32px, size(48px), 48px);
+}
+
+.text-32px-24px {
+  font-size: clamp(24px, size(32px), 32px);
+}
+
+.text-18px-16px {
+  font-size: clamp(16px, size(18px), 18px);
+}
+
+.text-16px-14px {
+  font-size: clamp(14px, size(16px), 16px);
+}
+
+.text-18px {
+  font-size: 18px;
+}
+.text-14px {
+  font-size: 14px;
+}
+
+.text-32px-24px {
+  font-size: clamp(24px, size(32px), 32px);
+}
+
+.font-haffer {
+  font-family: $font-headings;
+}
+
+.font-inter {
+  font-family: $font-body;
+}
+
+.font-weight-300 {
+  font-weight: 300;
+}
+
+.font-weight-400 {
+  font-weight: 400;
+}
+
+.font-weight-500 {
+  font-weight: 500;
+}
+
+.font-weight-600 {
+  font-weight: 600;
+}
+
+.font-weight-700 {
+  font-weight: 700;
+}
+
+.font-weight-800 {
+  font-weight: 800;
+}
+
+.font-weight-900 {
+  font-weight: 900;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.heading-h1,
+.heading-h2,
+.heading-h3,
+.heading-h4,
+.heading-h4-it,
+.heading-h5 {
+  font-family: $font-headings;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.body-b1,
+.body-b2,
+.body-b3 {
+  font-family: $font-body;
+  font-weight: 400;
+  font-style: normal;
+}
+
+// HEADINGS
+
+.heading-h1 {
+  font-size: clamp(32px, size(64px), 64px);
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+}
+
+.heading-h2 {
+  font-size: clamp(32px, size(48px), 48px);
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+}
+
+.heading-h3 {
+  font-size: clamp(24px, size(32px), 32px);
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+}
+
+.heading-h4,
+.heading-h4-it {
+  font-size: clamp(18px, size(24px), 24px);
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+}
+
+.heading-h4-it {
+  font-style: italic;
+}
+
+.heading-h5 {
+  font-size: clamp(18px, size(20px), 20px);
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+}
+
+@include media-breakpoint-down(md) {
+  .heading-h1-md {
+    font-size: 32px;
+  }
+
+  .heading-h2-md {
+    font-size: 32px;
+  }
+
+  .heading-h3-md {
+    font-size: 24px;
+  }
+
+  .heading-h4-md {
+    font-size: 18px;
+  }
+
+  .heading-h5-md {
+    font-size: 20px;
+  }
+}
+
+// BODY
+
+.body-b1 {
+  line-height: 1.4;
+  letter-spacing: 0;
+  font-size: clamp(18px, size(20px), 20px);
+}
+
+.body-b2 {
+  line-height: 1.4;
+  letter-spacing: 0;
+  font-size: clamp(14px, size(16px), 16px);
+}
+
+.body-b3 {
+  line-height: 1.4;
+  letter-spacing: 0;
+  font-size: clamp(12px, size(14px), 14px);
+}
+
+.body-b4 {
+  line-height: 1.4;
+  letter-spacing: 0;
+  font-size: clamp(10px, size(12px), 12px);
+}
+
+@include media-breakpoint-down(md) {
+  .body-b1-md {
+    font-size: 18px;
+  }
+
+  .body-b2-md {
+    font-size: 14px;
+  }
+
+  .body-b3-md {
+    font-size: 12px;
+  }
+}
+
+// CAPTION
+
+.caption-c1 {
+  font-family: $font-body;
+  line-height: 1.4;
+  letter-spacing: 0.02em;
+  font-size: clamp(18px, size(24px), 24px);
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.caption-c2 {
+  font-family: $font-headings;
+  line-height: 1.2;
+  letter-spacing: 0.16em;
+  font-size: clamp(16px, size(18px), 18px);
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.caption-c3 {
+  font-family: $font-headings;
+  line-height: 1;
+  letter-spacing: 0.16em;
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: uppercase;
+  text-decoration: underline;
+}
+
+.caption-mini {
+  font-family: $font-headings;
+  line-height: 1;
+  letter-spacing: 0.16em;
+  font-size: clamp(10px, size(12px), 12px);
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.caption-footnote {
+  font-family: $font-body;
+  line-height: 1.4;
+  letter-spacing: 0;
+  font-size: 14px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+@include media-breakpoint-down(md) {
+  .caption-c1-md {
+    line-height: 1;
+    letter-spacing: 0.16em;
+    font-size: 18px;
+  }
+
+  .caption-c2-md {
+    line-height: 1.2;
+    letter-spacing: 0.16em;
+    font-size: 16px;
+  }
+
+  .caption-mini-md {
+    line-height: 1.2;
+    letter-spacing: 0;
+    font-size: 10px;
+  }
+
+  .caption-footnote-md {
+    line-height: 2;
+    letter-spacing: 0;
+    font-size: 10px;
+    font-weight: 500;
+  }
+}
+
+// CTA
+
+.cta1 {
+  font-family: $font-headings;
+  line-height: 1.2;
+  letter-spacing: 0.16em;
+  font-size: clamp(16px, size(18px), 18px);
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.cta1-l {
+  font-family: $font-headings;
+  line-height: 1.2;
+  letter-spacing: 0.16em;
+  font-size: clamp(16px, size(18px), 18px);
+  font-weight: 500;
+  text-transform: uppercase;
+  text-decoration: underline;
+}
+
+.cta2 {
+  font-family: $font-body;
+  line-height: 1.2;
+  letter-spacing: 0;
+  font-size: clamp(12px, size(16px), 16px);
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+@include media-breakpoint-down(md) {
+  .cta1-md {
+    font-size: 16px;
+  }
+
+  .cta1-l-md {
+    font-size: 16px;
+  }
+
+  .cta2-md {
+    font-size: 12px;
+  }
+}
+
+.rotate-180 {
+  rotate: 180deg;
+}

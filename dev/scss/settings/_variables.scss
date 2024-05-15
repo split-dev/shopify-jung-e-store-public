@@ -1,0 +1,96 @@
+// Type
+$font-headings: "Haffer", sans-serif !important;
+$font-body: "Inter", sans-serif !important;
+$header-height: 78px;
+$header-height-mobile: 48px; //до 989.98px
+
+// Grid
+$sm: 576px;
+$md: 768px;
+$lg: 990px;
+$xl: 1200px;
+$xxl: 1440px;
+$xxxl: 1728px;
+$big-xl: 1920px;
+
+// Colors
+$white: #fff;
+$black: #000;
+$silver: #727272;
+$white-bg: #f9f8f6;
+
+$white-100: #fbfbfb;
+$white-200: #fafafa;
+$white-300: #f9f9f9;
+$white-400: #f5f5f5;
+$white-500: #d0d0d0;
+$white-600: #727272;
+$white-700: #565656;
+$white-800: #3d3d3d;
+$white-900: #000;
+
+$coral-50: #feeee9;
+$coral-100: #fdc9bb;
+$coral-200: #fcaf9a;
+$coral-300: #fb8a6c;
+$coral-400: #fa744f;
+$coral-500: #f95123;
+$coral-600: #e34a20;
+$coral-700: #b13a19;
+$coral-800: #892d13;
+$coral-900: #69220f;
+
+$green-50: #f2f7f0;
+$green-100: #d7e7d1;
+$green-200: #c4dbba;
+$green-300: #a9ca9b;
+$green-400: #99c087;
+$green-500: #7fb069;
+$green-600: #74a060;
+$green-700: #5a7d4b;
+$green-800: #46613a;
+$green-900: #354a2c;
+
+$violet-50: #f9f6fc;
+$violet-100: #ebe3f6;
+$violet-200: #e2d6f1;
+$violet-300: #d5c3eb;
+$violet-400: #cdb8e7;
+$violet-500: #c0a6e1;
+$violet-600: #af97cd;
+$violet-700: #8876a0;
+$violet-800: #6a5b7c;
+$violet-900: #51465f;
+
+$sunshine-50: #fef7ea;
+$sunshine-100: #fce6be;
+$sunshine-200: #fbda9e;
+$sunshine-300: #f9c972;
+$sunshine-400: #f8be57;
+$sunshine-500: #f6ae2d;
+$sunshine-600: #e09e29;
+$sunshine-700: #af7c20;
+$sunshine-800: #876019;
+$sunshine-900: #674913;
+
+$red-50: #fce9e9;
+$red-100: #f7b9b9;
+$red-200: #f39898;
+$red-300: #ed6868;
+$red-400: #e94b4b;
+$red-500: #e41e1e;
+$red-600: #cf1b1b;
+$red-700: #a21515;
+$red-800: #7d1111;
+$red-900: #600d0d;
+
+// Transitions
+$duration-short: 100ms;
+$duration-default: 200ms;
+$duration-long: 500ms;
+
+$viewport-width: 1440px;
+
+@function size($size-in-px) {
+  @return calc($size-in-px / $viewport-width) * 100vw;
+}

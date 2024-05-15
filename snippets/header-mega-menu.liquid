@@ -1,0 +1,178 @@
+{{ 'collection-navigation.out.css' | asset_url | stylesheet_tag }}
+{% comment %}
+  Renders a megamenu for the header.
+
+  Usage:
+  {% render 'header-mega-menu' %}
+{% endcomment %}
+
+<nav class="header__inline-menu">
+  <ul class="list-menu list-menu--inline" role="list">
+    {%- for link in section.settings.menu.links -%}
+      {% assign index = forloop.index %}
+      <li>
+        {%- if link.links != blank -%}
+          <header-menu>
+            <details id="Details-HeaderMenu-{{ forloop.index }}" class="mega-menu">
+              <summary
+                id="HeaderMenu-{{ link.handle }}"
+                class="header__menu-item list-menu__item link focus-inset btn btn--small btn--subtle font-haffer font-weight-500"
+              >
+                <span
+                  {%- if link.child_active %}
+                    class="header__active-menu-item cta2"
+                  {% else %}
+                    class="cta2"
+                  {% endif %}
+                >
+                  {{- link.title | escape -}}
+                </span>
+                {% render 'icons', icon: 'plus-minus' %}
+              </summary>
+              <div
+                id="MegaMenu-Content-{{ forloop.index }}"
+                class="mega-menu__content color-{{ section.settings.menu_color_scheme }} gradient motion-reduce global-settings-popup"
+                tabindex="-1"
+              >
+                <div
+                  class="mega-menu__list list-{{ forloop.index }} container {% if link.levels == 1 %} mega-menu__list--condensed{% endif %}"
+                  role="list"
+                >
+                  {% if index == 2 %}<div class="mega-menu__links">{% endif %}
+                  {%- for childlink in link.links -%}
+                    <div>
+                      {% if childlink.url == '#' %}
+                        <h2 class="heading-h2 heading-h2-md">{{ childlink.title | escape }}</h2>
+                      {% else %}
+                        <a
+                          id="HeaderMenu-{{ link.handle }}-{{ childlink.handle }}"
+                          href="{{ childlink.url }}"
+                          class="mega-menu__link mega-menu__link--level-2 link cta1{% if childlink.current %} mega-menu__link--active{% endif %}"
+                          {% if childlink.current %}
+                            aria-current="page"
+                          {% endif %}
+                        >
+                          {{ childlink.title | escape }}
+                        </a>
+                      {% endif %}
+                      {% case section.settings.menu_type %}
+                      {% when 'standart'%} 
+                        {%- if childlink.links != blank -%}
+                          <ul class="list-unstyled" role="list">
+                            {%- for grandchildlink in childlink.links -%}
+                              {% assign icon_key = grandchildlink.title | handleize %}
+                              <li class="grandchildlink-{{ forloop.index }}">
+                                <a
+                                  id="HeaderMenu-{{ link.handle }}-{{ childlink.handle }}-{{ grandchildlink.handle }}"
+                                  href="{{ grandchildlink.url }}"
+                                  class="mega-menu__link link cta1{% if grandchildlink.current %} mega-menu__link--active{% endif %}"
+                                  {% if grandchildlink.current %}
+                                    aria-current="page"
+                                  {% endif %}
+                                >
+                                  {% render 'icons', icon: icon_key, index: icon_key %}
+                                  <span>{{ grandchildlink.title | escape }}</span>
+                                </a>
+                              </li>
+                            {%- endfor -%}
+                          </ul>
+                        {%- endif -%}
+                      {% when 'collection_menu' %} 
+                        {% if index == 1 %}
+                          <div class="collection-nav-menu mega-menu">
+                            <div class="collection-nav__blocks">
+                              {%- for block in section.blocks -%}
+                                {% case block.type %}
+                                  {% when 'item' %}
+                                    {%- liquid
+                                        assign block_title = block.settings.block_title 
+                                        assign block_index = "block-" | append: forloop.index 
+                                    -%}
+                                    <div class="collection-nav__block-menu {{ block_index }}">
+                                      <h5 class="collection-nav__block-title">{{ block_title }}</h5>
+                                      {% for i in (1..4) %}
+                                        {% liquid  
+                                            assign icon_selector =  "icon_" | append: i
+                                            assign icon = block.settings[icon_selector]
+                                            assign icon_text_selector =  "icon_text_" | append: i
+                                            assign icon_text = block.settings[icon_text_selector] 
+                                            assign icon_text_handleize = icon_text | handleize
+                                            assign anchor_link_selector =  "anchor_link_" | append: i
+                                            assign anchor_link = block.settings[anchor_link_selector] 
+                                            assign icon_key = 'key_' | append: forloop.index | append: '-menu' 
+                                        %}
+                                        {% if icon != blank and icon_text != blank %}
+                                          <a
+                                            href="{{ anchor_link }}"
+                                            class="collection-nav__item-menu"
+                                            data-nav-item="{{ icon_text_handleize }}">
+                                            {% render 'icons', icon: icon, index: icon_key %}
+                                            <div class="collection-nav__item-text">{{ icon_text }}</div>
+                                          </a>
+                                        {% endif %}
+                                      {% endfor %}
+                                    </div>
+                                {% endcase %}
+                              {%- endfor -%}
+                            </div>
+                          </div>
+                        {% endif %}
+                    {% endcase %} 
+                    </div>
+                  {%- endfor -%}
+                  {% if index == 2 %}</div>{% endif %}
+
+                  {% if index == 2 %}
+                    <div class="mega-menu__image-block">
+                      {% for block in section.blocks %}
+                        {% case block.type %}
+                          {% when 'image_block' %}
+                            {% liquid
+                              assign block_image = block.settings.block_image
+                              assign block_url = block.settings.block_url
+                              assign block_text = block.settings.block_text
+                            %}
+                            <a href="{{ block_url }}" class="mega-menu__image-link">
+                              <img
+                                class="lazy"
+                                loading="lazy"
+                                src="{{ block_image | img_url: '600x' }}"
+                                data-src="{{ block_image | img_url: '950x' }}"
+                                alt="{{ block_image.alt | default: "blur pattern" }}"
+                                width=""
+                                height=""
+                              >
+                              <div class="mega-menu__image-content heading-h4">{{ block_text }}</div>
+                            </a>
+                        {% endcase %}
+                      {% endfor %}
+                    </div>
+                  {% endif %}
+                </div>
+              </div>
+            </details>
+          </header-menu>
+        {%- else -%}
+          <a
+            id="HeaderMenu-{{ link.handle }}"
+            href="{{ link.url }}"
+            class="header__menu-item list-menu__item link link--text focus-inset btn btn--small btn--subtle font-haffer font-weight-500"
+            {% if link.current %}
+              aria-current="page"
+            {% endif %}
+          >
+            <span
+              {%- if link.current %}
+                class="header__active-menu-item cta2"
+              {% else %}
+                class="cta2"
+              {% endif %}
+            >
+              {{- link.title | escape -}}
+            </span>
+          </a>
+        {%- endif -%}
+      </li>
+    {%- endfor -%}
+  </ul>
+</nav>

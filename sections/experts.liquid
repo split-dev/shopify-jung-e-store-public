@@ -1,0 +1,116 @@
+{{ 'experts.out.css' | asset_url | stylesheet_tag }}
+
+{% liquid 
+    assign title = section.settings.title
+    assign background_color = section.settings.background_color
+%} 
+
+{%- style -%}
+    .experts--{{ section.id }} {
+        background-color: {{ background_color }};
+    }
+{%- endstyle -%}
+
+<div class="experts experts--{{ section.id }}">
+    <div class="experts__gradient-container">
+        {% render "icons", icon: "section-gradient-experts" %}
+    </div>
+    <div class="experts__content-header">
+        <div class="container">
+            <div class="experts__title">
+                {% if title != blank %}
+                    <h2 class="heading-h2 heading-h2-md">{{ title }}</h2>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="experts__wrapper">
+            <div class="experts__members">
+                {%- for block in section.blocks -%}
+                    {% liquid 
+                        assign photo = block.settings.photo
+                        assign name = block.settings.name
+                        assign richtext = block.settings.richtext
+                        assign position = block.settings.position
+                    %} 
+                    <div class="experts__member-card">
+                        <div class="experts__member-media">
+                            {% if photo != blank %}
+                                <img class="lazy" loading="lazy" src="{{ photo | img_url: '500x' }}" data-src="{{ photo | img_url: '750x' }}" alt="{{ photo.alt }}">
+                            {% else %} 
+                                {{ 'lifestyle-2' | placeholder_svg_tag: 'placeholder-svg' }}
+                            {% endif %}
+                        </div>
+                        <div class="experts__member-content">   
+                            {% if richtext != blank %}
+                                <div class="experts__member-richtext body-b2 body-b2-md">
+                                    {{ richtext }}
+                                </div>
+                            {% endif %}
+                        </div>
+
+                        <div class="experts__member-content-footer">
+                            <h2 class="experts__member-name caption-c2 caption-c2-md">{{ name }}</h2>
+                            <p class="experts__member-position body-b3 body-b3-md">{{ position }}</p>
+                        </div>
+                    </div>
+                {%- endfor -%}
+            </div>
+        </div>
+    </div>
+</div>
+  
+{% schema %}
+  {
+    "name": "Our experts",
+    "max_blocks": 3,
+    "blocks": [
+      {
+        "name": "Member",
+        "type": "member",
+        "settings": [
+            {
+                "type": "image_picker",
+                "id": "photo",
+                "label": "Photo"
+            },
+            {
+                "type": "richtext",
+                "id": "richtext",
+                "label": "Richtext"
+            },
+            {
+                "type": "text",
+                "id": "name",
+                "label": "Name"
+            },
+            {
+                "type": "text",
+                "id": "position",
+                "label": "Position"
+            }
+        ]
+      }
+    ],
+    "settings": [
+        {
+            "type": "text",
+            "id": "title",
+            "default": "What the experts say",
+            "label": "Title"
+        },
+        {
+            "type": "color_background",
+            "id": "background_color",
+            "label": "Background color"
+        }
+    ],
+    "presets": [
+      {
+        "name": "Our experts"
+      }
+    ]
+  }
+{% endschema %}

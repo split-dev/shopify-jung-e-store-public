@@ -1,0 +1,105 @@
+@import "./settings/variables";
+@import "./settings/mixins";
+
+.learn {
+    padding: 120px 0;
+    overflow: hidden;
+        @include media-breakpoint-down(lg) {
+            padding: 80px 0;
+        }
+
+    // .learn__wrapper
+
+    &__wrapper {
+        display: flex;
+        @include media-breakpoint-down(lg) {
+            flex-direction: column;
+            gap: 32px;
+        }
+    }
+
+    // .learn__content
+
+    &__content {
+        width: 537px;
+        min-width: 537px;
+        padding-right: 113px;
+        z-index: 2;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        &::before {
+            content: " ";
+            width: 304px;
+            height: 100%;
+            position: absolute;
+            display: block;
+            left: -300px;
+        }
+        @include media-breakpoint-down(xxl) {
+            width: 487px;
+            min-width: 487px;
+            padding-right: 63px;
+        }
+        @include media-breakpoint-down(xl) {
+            width: 407px;
+            min-width: 407px;
+            padding-right: 23px;
+        }
+        @include media-breakpoint-down(lg) {
+            max-width: 537px;
+            width: 100%;
+            min-width: unset;
+        }
+    }
+
+    // .learn__title
+
+    &__title {
+        color: $white;
+        margin-bottom: 32px;
+    }
+
+    // .learn__richtext
+
+    &__richtext {
+        color: $white;
+        margin-bottom: 32px;
+    }
+
+    // .learn__image-item
+
+    &__image-item {
+        display: flex;
+    }
+
+    // .learn__image
+
+    &__image {
+        max-width: 563px;
+        margin-right: 45px;
+        img {
+            max-width: 100%;
+            width: 100%;
+        }
+
+        @include media-breakpoint-down(xxl) {
+            max-width: 463px;
+        }
+
+        @include media-breakpoint-down(xl) {
+            max-width: 423px;
+        }
+
+        @include media-breakpoint-down(md) {
+           margin-right: 18px;
+        }
+
+        @include media-breakpoint-down(sm) {
+            max-width: 232px;
+        }
+    }
+}
+
+

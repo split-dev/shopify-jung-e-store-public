@@ -1,0 +1,86 @@
+{{ 'waitlist-pop-up.out.css' | asset_url | stylesheet_tag }}
+
+<div class="waitlist-pop-up pop-up-hidden">
+    <div class="container">
+        <div class="waitlist-pop-up__wrapper">
+            {% render "icons", icon: 'close_with_border', class: "waitlist-pop-up__close" %} 
+            <div class="waitlist-pop-up__content">
+                <h2 class="heading-h2 heading-h2-md">
+                    {{ settings.waitlist_popup_heading }}
+                </h2>
+                <p class="body-b1 body-b1-md">
+                    {{ settings.waitlist_popup_text }}
+                </p>
+                <div class="klaviyo-form__content">
+                    <div class="klaviyo-form-V2vFcR klaviyo-form__form" data-list-id="V2vFcR">
+                    <form
+                        id="email_signup"
+                        class="klaviyo_gdpr_embed_V2vFcR email-capture__form klaviyo-form__styling"
+                        action="//manage.kmail-lists.com/subscriptions/subscribe"
+                        data-ajax-submit="//manage.kmail-lists.com/ajax/subscriptions/subscribe"
+                        method="POST" 
+                        target="_blank" novalidate="novalidate">
+                        <div class="klaviyo-form__email">
+                            <input class="email-capture__input body-b2 body-b2-md" type="email" value="" name="email" id="k_id_email" placeholder="Email"/>
+                            <label for="k_id_email" class="sr-only email-capture__label body-b2 body-b2-md">Email</label>
+                            {% render 'icons', icon: 'delete-text' %}
+
+                            <input type="hidden" name="g" value="V2vFcR">
+                            <div class="klaviyo_messages">
+                                <div class="success_message body-b2 body-b2-md" style="display:none;"></div>
+                                <div class="error_message body-b2 body-b2-md" style="display:none;"></div>
+                            </div>
+                        </div>
+                        <button type="submit" class="klaviyo_submit_button klaviyo-form__button btn btn--large btn--filled font-haffer font-weight-500">join waitlist</button>
+                    </form>
+                    <div class="klaviyo-form__text body-b3 body-b3-md">By subscribing, you agree to receive email marketing.</div>
+                   </div>
+                </div>
+            </div>
+            <div class="waitlist-pop-up__image">
+                {%- if  settings.waitlist_popup_image -%}
+                    <picture>
+                        {%- if settings.waitlist_popup_image_mobile.width != blank -%}
+                        <source
+                            media="(max-width: 768px)"
+                            srcset="
+                            {%- if settings.waitlist_popup_image_mobile.width >= 375 -%}{{ settings.waitlist_popup_image_mobile | image_url: width: 375 }} 375w,{%- endif -%}
+                            {%- if settings.waitlist_popup_image_mobile.width >= 550 -%}{{ settings.waitlist_popup_image_mobile | image_url: width: 550 }} 550w,{%- endif -%}
+                            {%- if settings.waitlist_popup_image_mobile.width >= 750 -%}{{ settings.waitlist_popup_image_mobile | image_url: width: 750 }} 750w,{%- endif -%}
+                            "
+                        >
+                        {%- endif -%}
+                        {{
+                            settings.waitlist_popup_image
+                            | image_url: width: 750
+                            | image_tag:
+                                width: imageWidth,
+                                height: imageHeight,
+                                sizes: '100vw',
+                                widths: '375, 550, 750',
+                                alt: 'Pop up picture',
+                                class: 'lazy',
+                                loading: 'lazy'
+                        }}
+                    </picture>
+                {% else %}
+                    {{ 'lifestyle-2' | placeholder_svg_tag: 'placeholder-svg' }}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="//www.klaviyo.com/media/js/public/klaviyo_subscribe.js"></script>
+<script type="text/javascript">
+    KlaviyoSubscribe.attachToForms('#email_signup', {
+        hide_form_on_success: true,
+        extra_properties: {
+            $source: 'HomePageSignUp',
+            Brand: 'Klaviyo'
+        }
+    });
+</script>
+
+
+

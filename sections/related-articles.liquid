@@ -1,0 +1,108 @@
+{{ 'related-article.out.css' | asset_url | stylesheet_tag }}
+{{ 'component-article-card.css' | asset_url | stylesheet_tag }}
+{{ 'component-card.css' | asset_url | stylesheet_tag }}
+
+{% liquid 
+    assign header = section.settings.header
+    assign related_blog = blog.handle 
+    assign current_article_id = article.id
+
+    assign cycle_limit = 3
+    assign show_related_posts = 0
+
+
+    for article in blogs[related_blog].articles limit: 4
+        if article.id == current_article_id
+        assign cycle_limit = 4
+        endif
+        
+        unless article.id == current_article_id
+        assign show_related_posts = show_related_posts | plus: 1 
+        endunless  
+    endfor
+%}
+
+<section class="related-articles">
+    <div class="container container--small">
+        {% if header %}
+            <h2 class="related-articles__header heading-h2 heading-h2-md">{{ header }}</h2>
+        {% endif %}
+        <div class="related-articles__wrapper blog-articles">
+            {% for article in blogs[related_blog].articles limit: cycle_limit %}
+                {% unless article.id == current_article_id %}
+                    <div
+                        class="blog-articles__article article{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+                        {% if settings.animations_reveal_on_scroll %}
+                            data-cascade
+                            style="--animation-order: {{ forloop.index }};"
+                        {% endif %}
+                        >
+                            {%- render 'article-card',
+                                article: article,
+                                media_height: section.settings.image_height,
+                                media_aspect_ratio: article.image.aspect_ratio,
+                                show_image: section.settings.show_image,
+                                show_date: section.settings.show_date,
+                                show_author: section.settings.show_author,
+                                show_excerpt: true,
+                                show_read_more: section.settings.show_read_more
+                            -%}
+                    </div>
+                {% endunless %}
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+
+{% schema %}
+    {
+      "name": "Related articles",
+      "limit": 1,
+      "tag": "section",
+      "class": "section",
+      "enabled_on": {
+        "templates": ["article"]
+      },
+      "settings": [
+        {
+          "type": "text",
+          "id": "header",
+          "label": "Header",
+          "default": "All journal entries"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_image",
+          "default": true,
+          "label": "t:sections.main-blog.settings.show_image.label"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_read_more",
+          "default": true,
+          "label": "Show read more"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_date",
+          "default": true,
+          "label": "t:sections.main-blog.settings.show_date.label"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_author",
+          "default": false,
+          "label": "t:sections.main-blog.settings.show_author.label"
+        }
+      ],
+      "presets": [
+        {
+            "name": "Related articles"
+        }
+      ]
+    }
+    {% endschema %}
+    
+
+    

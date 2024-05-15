@@ -1,0 +1,182 @@
+{{ 'banner-image.out.css' | asset_url | stylesheet_tag }}
+
+{% liquid 
+    assign image = section.settings.image
+    assign image_mobile = section.settings.image_mobile
+    assign header = section.settings.header
+    assign description = section.settings.description
+    assign container = section.settings.container
+    assign opacity = section.settings.opacity
+    assign banner_height = section.settings.banner_height
+    assign text_align = section.settings.text_align
+    assign button_label = section.settings.button_label
+    assign button_link = section.settings.button_link
+    assign subscription_page = section.settings.subscription_page
+    assign align = ''
+    
+    if text_align == 'center'
+        assign align = 'justify-content: center; text-align: center;'
+    else
+        assign align = 'justify-content: center; text-align: left;'
+    endif
+%}
+
+<div class="banner-image banner-image--{{ section.id }} {{ banner_height }} {% if subscription_page %} subscription-page {% endif %}">
+    <div class="banner-image__content">
+        <div class="{{ container }}">
+              <div class="banner-image__header" style="{{ align }}">
+                {% if header != blank %}
+                    <h1 class="heading-h1 heading-h1-md">{{ header }}</h1>
+                {% endif %}
+                {% if description != blank %}
+                  <div class="banner-image__description" style="{{ align }}">
+                    {{ description }}
+                  </div>
+                {% endif %} 
+                {% if button_label != blank and button_link != blank  %}
+                    <div class="banner-image__btn" style="{{ align }}">
+                      <a href={{ button_link }} class="btn btn--large btn--filled font-haffer font-weight-500">{{ button_label }}</a>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    <div class="banner-image__media-background">
+        <div class="banner-image__media-overlay" style="opacity: 0.{{ opacity }};"> </div>
+        {% if image != blank %} 
+          <picture>
+              {%- if image_mobile != blank -%}
+                <source
+                  media="(max-width: 990px)"
+                  srcset="
+                    {%- if image_mobile.width >= 375 -%}{{ image_mobile | image_url: width: 375 }} 375w,{%- endif -%}
+                    {%- if image_mobile.width >= 550 -%}{{ image_mobile | image_url: width: 550 }} 550w,{%- endif -%}
+                    {%- if image_mobile.width >= 750 -%}{{ image_mobile | image_url: width: 750 }} 750w,{%- endif -%}
+                  "
+                >
+              {%- endif -%}
+            {{
+              image 
+              | image_url: width: 2000
+              | image_tag:
+                width: imageWidth,
+                height: imageHeight,
+                class: '',
+                sizes: '100vw',
+                widths: '375, 550, 750, 1100, 1500, 1780, 2000',
+                loading: 'lazy',
+                alt: 'Banner image'
+            }}
+          </picture>
+        {% else %}
+            {{ 'lifestyle-2' | placeholder_svg_tag: 'placeholder-svg' }}
+        {% endif %}
+    </div>
+</div>
+{% schema %}
+  {
+    "name": "Banner image",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "subscription_page",
+        "label": "Subscription page",
+        "default": false
+      },
+      {
+        "type": "text",
+        "id": "header",
+        "label": "Header",
+        "default": "FOUNDED IN OXFORD, WE’RE ON A CRUSADE TO LIBERATE HUMAN LONGEVITY"
+      },
+      {
+        "type": "richtext",
+        "id": "description",
+        "label": "Description"
+      },
+      {
+        "type": "text",
+        "id": "button_label",
+        "default": "Shop all",
+        "label": "Button text"
+      },
+      {
+        "type": "url",
+        "id": "button_link",
+        "label": "Button link"
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Background image"
+      },
+      {
+        "type": "image_picker",
+        "id": "image_mobile",
+        "label": "Background image(MOBILE)"
+      },
+      {
+        "type": "range",
+        "id": "opacity",
+        "label": "Opacity",
+        "min": 0,
+        "max": 9,
+        "step": 0.5,
+        "default": 0
+      },
+      {
+        "type": "select",
+        "id": "container",
+        "label": "Container",
+        "options": [
+            {
+                "value": "container container--medium",
+                "label": "Medium"
+            },
+            {
+                "value": "container",
+                "label": "Standart"
+            }
+        ],
+        "default": "container"
+      },
+      {
+        "type": "select",
+        "id": "text_align",
+        "label": "Text align",
+        "options": [
+            {
+                "value": "left",
+                "label": "Left"
+            },
+            {
+                "value": "center",
+                "label": "Center"
+            }
+        ],
+        "default": "left"
+      },
+      {
+        "type": "select",
+        "id": "banner_height",
+        "label": "Banner height",
+        "options": [
+            {
+                "value": "banner-large",
+                "label": "800px"
+            },
+            {
+                "value": "banner-small",
+                "label": "627px"
+            }
+        ],
+        "default": "banner-large"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Banner image"
+      }
+    ]
+  }
+{% endschema %}

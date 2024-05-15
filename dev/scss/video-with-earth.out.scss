@@ -1,0 +1,83 @@
+@import './settings/variables';
+@import './settings/mixins';
+
+.video-with-earth {
+    padding: 80px 0 30px;
+    
+    // .video-with-earth__content
+
+    &__content {
+        display: flex;
+        gap: 165px;
+        justify-content: space-between;
+        margin-bottom: 66px;
+
+        @include media-breakpoint-down(big-xl) {
+            gap: 32px;
+        }
+
+        @include media-breakpoint-down(lg) {
+            flex-direction: column;
+            gap: 24px;
+            margin-bottom: 24px;
+        }
+    }
+
+    // .video-with-earth__header
+
+    &__header {
+        max-width: 627px;
+        color: $white-900;
+        width: 100%;
+
+        @include media-breakpoint-down(lg) {
+            max-width: 608px;
+        }
+    }
+
+    // .video-with-earth__text
+
+    &__text {
+        max-width: 760px;
+        margin-top: 10px;
+        color: $white-900;
+
+        @include media-breakpoint-down(big-xl) {
+            max-width: 648px;
+        }
+
+        @include media-breakpoint-down(xl) {
+            max-width: 550px;
+        }
+
+        @include media-breakpoint-down(lg) {
+           margin-top: 0;
+        }
+    }
+
+    // .video-with-earth__video
+
+    &__video {
+        .container {
+            padding: 0 159px;
+
+            @include media-breakpoint-down(big-xl) {
+                padding: 0 63px;
+            }
+
+            @include media-breakpoint-down(xxl) {
+                padding: 0;
+            }
+        }
+
+        video {
+            @include media-breakpoint-down(md) {
+                aspect-ratio: 1.1/1;
+                object-fit: cover;
+                height: 100%;
+            }
+        }
+    }
+}
+
+

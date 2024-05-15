@@ -1,0 +1,381 @@
+@import "./settings/variables";
+@import "./settings/mixins";
+@import "./settings/helpers";
+
+@include animateBluredShowText($black, 'clickMenu-show');
+
+.click-menu {
+    .container {
+        height: 100%;
+    }
+
+    .desktop {
+        @include media-breakpoint-down(lg){
+            display: none;
+        }
+    }
+
+    .mobile {
+        display: none;
+        @include media-breakpoint-down(lg){
+            display: block;
+        }
+    }
+
+    // .click-menu__wrapper
+
+    &__wrapper {
+        position: relative;
+    }
+
+    // .click-menu__title
+
+    &__title {
+        margin-bottom: 16px;
+        @include setAnimationBluredHideText('clickMenu-show');
+    }
+
+    // .click-menu__richtext
+
+    &__richtext {
+        color: $white-900;
+        margin-bottom: 32px;
+        @include setAnimationBluredHideText('clickMenu-show');
+        & > * {
+            margin: 0;
+        }
+
+        @include media-breakpoint-down(big-xl){
+            max-width: 536px;
+            margin-bottom: 24px;
+        }
+    }
+
+    // .click-menu__thumb
+
+    &__thumb {
+        display: flex;
+        flex-direction: row-reverse;
+        position: relative;
+    }
+
+    // .click-menu__media
+
+    &__media {
+        width: 50%;
+        aspect-ratio: 960/700;
+        overflow: hidden;
+        position: relative;
+        @include media-breakpoint-down(big-xl){
+            aspect-ratio: 865/700;
+        }
+
+        @include media-breakpoint-down(xxxl){
+            aspect-ratio: 720/700;
+        }
+
+        @include media-breakpoint-down(lg){
+            aspect-ratio: 375/340;
+            width: 100%;
+            display: none;
+        }
+
+        .swiper-slide {
+            opacity: 0 !important;
+
+            &.swiper-slide-active {
+                opacity: 1 !important;
+            }
+        }
+    }
+    
+    // .click-menu__img-box
+
+    &__img-box {
+        height: 100%;
+        max-width: 100%;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+
+            transition: transform ease 2000ms;
+        }
+    }
+
+    // .click-menu__content
+
+    &__content {
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+
+        @include media-breakpoint-down(lg){
+            position: relative;
+        }
+    }
+
+    // .click-menu__content-block
+
+    &__content-block {
+        max-width: 660px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        overflow: hidden;
+
+        @include media-breakpoint-down(big-xl){
+            max-width: 648px;
+        }
+
+        @include media-breakpoint-down(xxxl){
+            max-width: 536px;
+        }
+
+        @include media-breakpoint-down(xl){
+            max-width: 436px;
+        }
+
+        @include media-breakpoint-down(lg){
+            max-width: 100%;
+            padding: 10px 0 32px;
+        }
+    }   
+    .click-menu__button {
+        min-width: 48px;
+        height: 48px;
+        position: static;
+        display: block !important;
+        margin: 0 !important;
+        background-image: url(https://cdn.shopify.com/s/files/1/0625/2150/8004/files/Icon_Button_next.svg?v=1697005859);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100%;
+    }
+
+    .click-menu__button.swiper-button-prev-click-menu {
+        transform: rotate(180deg);
+    }
+
+    .click-menu__button.swiper-button-disabled {
+        opacity: .5 !important;
+    }
+    
+    // .click-menu__list
+
+    &__list {
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        @include media-breakpoint-down(lg){
+            padding-left: 0;
+            gap: 10px;
+        }
+
+        .swiper-slide {
+            pointer-events: all;
+        }
+    }
+
+    // .click-menu__item
+
+    &__item {
+        position: relative;
+        height: fit-content;
+        &::before {
+            content: " ";
+            width: 4px;
+            height: calc(100% + 4px);
+            display: block;
+            border-radius: 4px;
+            background-color: $white-500;
+            position: absolute;
+            top: -4px;
+            left: -20px;
+        }
+        &::after {
+            content: " ";
+            width: 4px;
+            height: 0;
+            display: block;
+            border-radius: 4px;
+            background-color: $coral-500;
+            position: absolute;
+            top: -4px;
+            left: -20px;
+            transition: $duration-default;
+        }
+
+        &.swiper-slide-active .click-menu__item-description {
+            height: fit-content;
+            padding-top: 8px;
+        }
+
+        &.swiper-slide-active {
+            &::after {
+                height: calc(100% + 4px);
+                animation-name: verticalLine;
+            }
+
+            .click-menu__item-title {
+                color: $coral-500;
+            }
+        }  
+        
+        @include media-breakpoint-down(lg){
+           display: none;
+            text-align: center;
+            &.swiper-slide-active {
+                display: block;
+            }
+
+            &::before,
+            &::after {
+                display: none;
+            }
+        }
+        
+    }
+
+    // .click-menu__item-title
+
+    &__item-title {
+        color: $white-600;
+        cursor: pointer;
+        position: relative;
+        z-index: 4;
+    }
+
+    // .click-menu__item-description
+
+    &__item-description {
+        height: 0;
+        padding-top: 0;
+        overflow: hidden;
+        max-width: 608px;
+        color: $white-900;
+        & > * {
+            margin: 0;
+        }
+
+        @include media-breakpoint-down(big-xl){
+            max-width: 500px;
+        }
+
+        @include media-breakpoint-down(lg){
+            margin: 0 auto;
+        }
+    }
+
+    // .click-menu__mobile-content
+
+    &__mobile-content {
+        padding: 32px 0;
+        text-align: center;
+
+        .click-menu__title {
+            margin-bottom: 8px;
+        }
+
+        .click-menu__richtext {
+            margin: 0 auto;
+        }
+    }
+
+    // .click-menu__pagination-mobile
+
+    &__pagination-mobile {
+        display: none;
+        @include media-breakpoint-down(lg){
+            display: flex;
+            align-items: center;
+        }
+        .swiper-pagination {
+            position: unset;
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+        }
+    
+        .swiper-pagination-bullet {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            display: block;
+            background-color: $white-500;
+            margin: 0 !important;
+    
+            &.swiper-pagination-bullet-active {
+                background-color: $white-900;
+            }
+        }
+
+        .swiper-button-prev-click-menu {
+            svg {
+                transform: rotate(180deg);
+            }
+        }
+       
+    }
+    
+    // .click-menu__items
+
+    &__items {
+        width: 100%;
+        padding-left: 20px;
+        overflow: visible;
+        position: relative;
+        @include media-breakpoint-down(lg){
+            padding-left: 0;
+        }
+        &:after {
+            display: block;
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1;
+            background: linear-gradient(180deg,rgba(0,0,0,0) -200%,#f5f5f5 30%);
+
+            transition-property: top;
+            transition-timing-function: ease-in;
+            transition-duration: 0.4s;
+            transition-delay: 200ms;
+        }
+    }
+}
+
+@keyframes verticalLine {
+    from {
+      height: 0;
+    }
+    to {
+        height: calc(100% + 4px);
+    }
+  }
+
+.intersecting {
+    .click-menu__title {
+        @include setAnimationBluredShowText('clickMenu-show');
+    }
+    .click-menu__richtext {
+        @include setAnimationBluredShowText('clickMenu-show');
+    }
+    .click-menu__items {
+        &:after {
+            top: 100%;
+        }
+    }
+
+    .swiper-slide-active.click-menu__img-box img {
+        transform: scale(1.05);
+    }
+}

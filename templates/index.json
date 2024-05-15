@@ -1,0 +1,594 @@
+{
+  "sections": {
+    "69f26668-867e-40e2-96f5-8de5c0fcbec4": {
+      "type": "hero-banner",
+      "blocks": {
+        "c5952b35-45f5-4c3d-90dc-595914200a91": {
+          "type": "content",
+          "settings": {
+            "title": "<p><strong>Re-Write <\/strong><\/p><p><strong>the Rules <\/strong><\/p><p><strong>on Aging<\/strong><\/p>",
+            "title_mob": "<p><strong>Re-Write <\/strong><\/p><p><strong>the Rules <\/strong><\/p><p><strong>on Aging<\/strong><\/p><p><\/p>",
+            "richtext": "<p>Experience Jung’s Total Longevity System™<\/p>",
+            "button_label": "Build Your Kit",
+            "button_link": "shopify:\/\/collections\/all-products"
+          }
+        }
+      },
+      "block_order": [
+        "c5952b35-45f5-4c3d-90dc-595914200a91"
+      ],
+      "settings": {
+        "video": "shopify:\/\/files\/videos\/about-video-compressed_a4ee20c9-0914-4a78-a2d4-e72fff10bc95.mp4",
+        "background_color": "#F95123"
+      }
+    },
+    "6af5be2d-671c-4941-9540-ba46e67d13f8": {
+      "type": "image-with-svg",
+      "blocks": {
+        "f049b251-1f22-401e-bc3f-96cb0d782d95": {
+          "type": "content",
+          "settings": {
+            "title": "Defy aging: no longer science fiction",
+            "mobtitle": "<p>Defy aging:<\/p><p>no longer science fiction<\/p>",
+            "richtext": "<p>For the first time in history, science is revealing the root causes of  aging, uncovering tools that can pave the way for a longer, healthier life. Longevity is the most disruptive force in medicine – and it’s about to change the world. <\/p>"
+          }
+        },
+        "b0f4429b-a1cc-4226-9aff-c61447fc2099": {
+          "type": "svg",
+          "settings": {
+            "svg_code": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" width=\"412\" height=\"338\" fill=\"none\" viewbox=\"0 0 412 338\"><lineargradient id=\"Gradient1\" x1=\"0\" x2=\"0\" y1=\"0\" y2=\"3\"><stop class=\"stop1\" offset=\"30%\" style=\"stop-color: white\"><\/stop><stop class=\"stop3\" offset=\"50%\"><\/stop><stop class=\"stop3\" offset=\"100%\"><\/stop>\n<animate id=\"op\" attributename=\"y1\" dur=\"10000ms\" values=\"-5;1;-5\" repeatcount=\"indefinite\" begin=\"indefinite\"><\/animate><\/lineargradient><path fill=\"#fff\" fill-rule=\"evenodd\" d=\"M159.213 26.171c-21.724 23.577-18.721 61.976-14.503 78.228-.926-1.543-3.58-4.32-6.789-3.086-3.037 1.168.38 11.971 2.421 18.425.655 2.073 1.169 3.698 1.282 4.411.463 2.931 2.314 13.115 6.326 13.424 2.23.171 3.602 9.26 5.043 18.81 1.152 7.628 2.347 15.549 4.06 19.455 3.086 7.036 2.726 21.138 2.16 27.31-7.406 13.784-29.131 42.987-56.78 49.529-7.442 1.761-15.076 3.014-22.61 4.25-27.456 4.506-53.57 8.791-64.104 36.638C4.979 321.956 1.06 346.952.443 355.901h411.044c-.618-8.949-4.537-33.945-15.276-62.336-10.533-27.847-36.648-32.132-64.104-36.638-7.534-1.236-15.168-2.489-22.61-4.25-27.65-6.542-49.374-35.745-56.781-49.529-.565-6.172-.925-20.274 2.161-27.31 1.713-3.906 2.908-11.827 4.06-19.455 1.441-9.55 2.813-18.639 5.043-18.81 4.012-.309 5.863-10.493 6.326-13.424.113-.713.626-2.338 1.282-4.411 2.041-6.454 5.458-17.257 2.421-18.425-3.209-1.234-5.863 1.543-6.789 3.086 4.218-16.252 7.221-54.651-14.504-78.228C237.999 10.2 222.194 6.237 205.965 7.383c-16.229-1.146-32.034 2.817-46.752 18.788Z\" clip-rule=\"evenodd\" style=\"\n    fill: url(#Gradient1);\n\"><\/path><g filter=\"url(#a)\"><path fill=\"#000\" d=\"M166.026 78.909V58.517h4.516v20.392h-4.516Zm-7.938-7.939v-4.515h20.392v4.516h-20.392Z\"><\/path><\/g><g filter=\"url(#b)\"><path fill=\"#F6AE2D\" d=\"m210.91 36.702 17.789-10.271 2.275 3.939-17.79 10.27-2.274-3.938Zm2.927-10.924 3.939-2.274 10.271 17.79-3.939 2.274-10.271-17.79Z\"><\/path><\/g><g filter=\"url(#c)\"><path fill=\"#F95123\" d=\"m175.6 178.987 17.335-11.02 2.44 3.838-17.335 11.021-2.44-3.839Zm2.458-11.038 3.838-2.441 11.021 17.336-3.839 2.44-11.02-17.335Z\"><\/path><\/g><g filter=\"url(#d)\"><path fill=\"#F95123\" d=\"m156.609 277.468 19.812 5.426-1.201 4.387-19.813-5.426 1.202-4.387Zm9.825-5.601 4.387 1.202-5.426 19.812-4.387-1.201 5.426-19.813Z\"><\/path><\/g><g filter=\"url(#e)\"><path fill=\"#F95123\" d=\"m241.383 119.127 17.335-11.021 2.44 3.839-17.335 11.02-2.44-3.838Zm2.458-11.039 3.838-2.44 11.021 17.335-3.839 2.441-11.02-17.336Z\"><\/path><\/g><g filter=\"url(#f)\"><path fill=\"#F95123\" d=\"m192.784 60.983 17.282 11.104-2.459 3.827-17.282-11.104 2.459-3.827Zm11.05-2.405 3.827 2.459-11.104 17.282-3.827-2.459 11.104-17.282Z\"><\/path><\/g><g filter=\"url(#g)\"><path fill=\"#7FB069\" d=\"m148.411 241.828 18.469 8.993-1.991 4.09-18.469-8.993 1.991-4.09Zm10.691-3.688 4.089 1.991-8.993 18.468-4.089-1.991 8.993-18.468Z\"><\/path><\/g><g filter=\"url(#h)\"><path fill=\"#C0A6E1\" d=\"m111.917 293.724 18.908-8.029 1.778 4.187-18.908 8.029-1.778-4.187Zm4.235-10.486 4.187-1.777 8.029 18.907-4.187 1.778-8.029-18.908Z\"><\/path><\/g><g filter=\"url(#i)\"><path fill=\"#F95123\" d=\"m22.045 318.118 20.011 4.637-1.026 4.431-20.012-4.637 1.027-4.431Zm9.595-5.985 4.431 1.026-4.637 20.012-4.43-1.027 4.636-20.011Z\"><\/path><\/g><g filter=\"url(#j)\"><path fill=\"#000\" d=\"m176.206 30.028.432.252.252-.432-.432-.252-.252.432Zm-4.025 6.91-.432-.252-.252.433.432.251.252-.432Zm-2.885-10.935-.432-.251-.252.432.432.252.252-.433Zm2.289-3.93.252-.432-.432-.252-.252.432.432.252Zm6.91 4.025-.251.432.432.252.251-.433-.432-.251Zm4.025-6.91.252-.432-.432-.252-.252.432.432.252Zm3.93 2.29.432.251.252-.432-.432-.252-.252.432Zm-4.024 6.91-.432-.252-.252.432.432.251.252-.432Zm6.909 4.024.433.252.251-.432-.432-.252-.252.432Zm-2.289 3.93-.252.433.433.251.251-.432-.432-.252Zm-6.91-4.024.252-.432-.432-.252-.252.432.432.252Zm-4.025 6.91-.251.431.432.252.251-.432-.432-.252Zm47.55 110.896-.25.433.433.25.25-.433-.433-.25Zm-6.925-3.999.25-.433-.433-.25-.25.433.433.25Zm10.924-2.927.25-.433-.433-.25-.25.433.433.25Zm3.939 2.274.433.25.25-.433-.433-.25-.25.433Zm-3.998 6.926-.433-.25-.25.433.433.25.25-.433Zm6.925 3.998.433.25.25-.433-.433-.25-.25.433Zm-2.274 3.939-.25.433.433.25.25-.433-.433-.25Zm-6.926-3.998.25-.433-.433-.25-.25.433.433.25Zm-3.998 6.925-.25.433.433.25.25-.433-.433-.25Zm-3.939-2.274-.433-.25-.25.433.433.25.25-.433Zm3.998-6.925.433.25.25-.433-.433-.25-.25.433Zm-6.925-3.999-.433-.25-.25.433.433.25.25-.433Zm155.163 190.258-.494.075.075.495.494-.076-.075-.494Zm-1.21-7.905.495-.076-.076-.494-.494.076.075.494Zm9.114 6.695.495-.075-.076-.494-.494.075.075.494Zm.688 4.497.076.494.494-.076-.076-.494-.494.076Zm-7.904 1.209-.076-.494-.494.075.075.495.495-.076Zm1.209 7.905.075.494.495-.076-.076-.494-.494.076Zm-4.496.687-.495.076.076.494.494-.075-.075-.495Zm-1.21-7.904.495-.076-.076-.494-.494.076.075.494Zm-7.904 1.209-.495.076.076.494.494-.076-.075-.494Zm-.688-4.496-.076-.494-.494.075.076.494.494-.075Zm7.905-1.209.075.494.494-.076-.075-.494-.494.076Zm-1.21-7.905-.075-.494-.495.075.076.495.494-.076ZM268.47 297.71l-.432-.252-.252.432.432.252.252-.432Zm4.025-6.91.432.251.252-.432-.432-.251-.252.432Zm-.095 9.199-.251.432.432.252.252-.432-.433-.252Zm4.025-6.91.252-.432-.432-.252-.252.432.432.252Zm6.91 4.025-.251.432.432.252.251-.432-.432-.252Zm2.29-3.93.432.251.251-.432-.432-.252-.251.433Zm-6.91-4.025-.432-.252-.252.432.432.252.252-.432Zm4.024-6.91.433.251.251-.432-.432-.251-.252.432Zm-3.93-2.29.252-.432-.432-.251-.252.432.432.251Zm-4.025 6.91-.251.432.432.252.251-.432-.432-.252Zm-6.91-4.024.252-.433-.432-.251-.252.432.432.252Zm-2.289 3.93-.432-.252-.252.432.432.252.252-.432Zm-101.593-85.242.33-.376-.375-.33-.331.375.376.331Zm5.999 5.286-.33.376.375.33.33-.375-.375-.331Zm-9.007-1.874-.375-.33-.33.375.375.33.33-.375Zm6 5.287.375.331.331-.375-.375-.331-.331.375Zm-5.287 6-.375-.331-.331.375.376.331.33-.375Zm3.413 3.007-.331.375.375.331.331-.376-.375-.33Zm5.287-6 .33-.375-.375-.33-.331.375.376.33Zm5.999 5.287-.33.375.375.331.33-.375-.375-.331Zm3.007-3.413.375.331.331-.375-.375-.331-.331.375Zm-5.999-5.286-.375-.331-.331.375.375.331.331-.375Zm5.287-6 .375.331.33-.376-.375-.33-.33.375Zm-3.413-3.007.331-.375-.376-.331-.33.375.375.331Zm.496-171.043-4.025 6.91.864.503 4.025-6.91-.864-.503Zm-6.73-3.341 6.91 4.024.504-.864-6.91-4.025-.504.864Zm2.109-4.615-2.289 3.93.864.504 2.289-3.93-.864-.504Zm7.594 3.845-6.91-4.025-.503.864 6.91 4.025.503-.864Zm3.341-6.73-4.025 6.91.864.503 4.025-6.91-.864-.503Zm4.614 2.11-3.93-2.29-.504.864 3.931 2.29.503-.865Zm-3.844 7.593 4.024-6.91-.864-.503-4.024 6.91.864.503Zm6.729 3.341-6.91-4.025-.503.864 6.91 4.025.503-.864Zm-2.109 4.614 2.29-3.93-.865-.504-2.289 3.93.864.504Zm-7.593-3.844 6.909 4.025.504-.865-6.91-4.024-.503.864Zm-3.342 6.73 4.025-6.91-.864-.504-4.025 6.91.864.503Zm-4.614-2.11 3.931 2.29.503-.865-3.93-2.289-.504.864Zm51.982 112.32-6.925-3.998-.5.866 6.925 3.999.5-.867Zm3.316-6.742-3.999 6.926.866.5 3.999-6.926-.866-.5Zm4.622 2.091-3.939-2.274-.5.866 3.939 2.275.5-.867Zm-3.815 7.609 3.998-6.926-.866-.5-3.998 6.926.866.5Zm6.742 3.315-6.925-3.998-.5.866 6.925 3.998.5-.866Zm-2.091 4.622 2.274-3.939-.866-.5-2.274 3.939.866.5Zm-7.609-3.815 6.926 3.998.5-.866-6.926-3.998-.5.866Zm-3.315 6.742 3.998-6.925-.866-.5-3.998 6.925.866.5Zm-4.622-2.091 3.939 2.274.5-.866-3.939-2.274-.5.866Zm3.815-7.608-3.998 6.925.866.5 3.998-6.925-.866-.5Zm-6.742-3.316 6.925 3.999.5-.866-6.925-3.999-.5.866Zm2.091-4.622-2.274 3.939.866.5 2.274-3.939-.866-.5Zm153.816 194.371-1.209-7.905-.989.152 1.21 7.904.988-.151Zm7.335-1.628-7.905 1.209.151.989 7.905-1.209-.151-.989Zm1.257 4.915-.687-4.496-.989.151.688 4.496.988-.151Zm-8.323 1.779 7.905-1.209-.151-.989-7.905 1.21.151.988Zm1.628 7.335-1.209-7.905-.989.152 1.21 7.904.988-.151Zm-4.915 1.258 4.496-.688-.151-.989-4.496.688.151.989Zm-1.779-8.324 1.209 7.905.989-.151-1.209-7.905-.989.151Zm-7.335 1.628 7.905-1.209-.151-.988-7.905 1.209.151.988Zm-1.257-4.915.687 4.497.989-.152-.688-4.496-.988.151Zm8.323-1.779-7.905 1.21.152.988 7.904-1.209-.151-.989Zm-1.628-7.334 1.209 7.904.989-.151-1.209-7.905-.989.152Zm4.915-1.258-4.496.688.151.988 4.496-.688-.151-.988Zm-99.438-33.962 4.025-6.91-.864-.503-4.025 6.91.864.503Zm3.75 1.606-3.93-2.289-.504.864 3.931 2.289.503-.864Zm3.341-6.73-4.025 6.91.865.504 4.024-6.91-.864-.504Zm7.594 3.845-6.91-4.025-.503.864 6.91 4.025.503-.864Zm1.605-3.75-2.289 3.93.864.504 2.29-3.931-.865-.503Zm-6.729-3.341 6.91 4.025.503-.865-6.91-4.024-.503.864Zm3.844-7.594-4.024 6.91.864.503 4.025-6.91-.865-.503Zm-3.75-1.605 3.931 2.289.503-.864-3.93-2.29-.504.865Zm-3.341 6.729 4.025-6.91-.864-.503-4.025 6.91.864.503Zm-7.593-3.844 6.91 4.024.503-.864-6.91-4.025-.503.865Zm-1.606 3.75 2.289-3.931-.864-.503-2.289 3.93.864.504Zm6.73 3.341-6.91-4.025-.504.864 6.91 4.025.504-.864Zm-109.086-88.46 6 5.287.661-.751-6-5.287-.661.751Zm-2.301 3.368 3.007-3.413-.751-.661-3.007 3.413.751.661Zm5.955 4.581-6-5.287-.661.75 5.999 5.287.662-.75Zm-5.243 6.705 5.287-5.999-.75-.661-5.287 5.999.75.661Zm3.368 2.302-3.412-3.007-.661.75 3.412 3.007.661-.75Zm4.581-5.955-5.286 5.999.75.661 5.287-5.999-.751-.661Zm6.706 5.242-6-5.287-.661.75 6 5.287.661-.75Zm2.301-3.368-3.007 3.413.75.661 3.007-3.413-.75-.661Zm-5.955-4.581 6 5.287.661-.751-6-5.286-.661.75Zm5.242-6.706-5.286 6 .75.661 5.287-5.999-.751-.662Zm-3.368-2.301 3.413 3.007.661-.75-3.412-3.007-.662.75Zm-4.581 5.955 5.287-6-.75-.661-5.287 6 .75.661Z\"><\/path><\/g><g filter=\"url(#k)\"><path fill=\"#F6AE2D\" d=\"m62.696 276.337 15.412 13.581-3.008 3.412-15.411-13.581 3.007-3.412Zm11.286-.713 3.413 3.007-13.58 15.412-3.413-3.007 13.58-15.412Z\"><\/path><\/g><g filter=\"url(#l)\"><path fill=\"#F6AE2D\" d=\"m208.001 281.339 3.106 20.306-4.496.688-3.107-20.306 4.497-.688Zm9.114 6.696.687 4.496-20.305 3.106-.688-4.496 20.306-3.106Z\"><\/path><\/g><g filter=\"url(#m)\"><path fill=\"#C0A6E1\" d=\"m385.045 291.896-11.425 17.071-3.78-2.529 11.425-17.072 3.78 2.53Zm2.198 11.093-2.53 3.78-17.071-11.425 2.529-3.78 17.072 11.425Z\"><\/path><\/g><g filter=\"url(#n)\"><path fill=\"#7FB069\" d=\"m204.462 328.665-5.143 19.888-4.404-1.139 5.143-19.888 4.404 1.139Zm5.739 9.744-1.138 4.404-19.888-5.143 1.139-4.404 19.887 5.143Z\"><\/path><\/g><g filter=\"url(#o)\"><path fill=\"#000\" d=\"m152.562 316.157-4.307 20.085-4.447-.954 4.306-20.085 4.448.954Zm6.142 9.495-.953 4.448-20.086-4.307.954-4.447 20.085 4.306Z\"><\/path><\/g><g filter=\"url(#p)\"><path fill=\"#000\" d=\"m193.243 225.963 19.329-6.954 1.54 4.28-19.329 6.954-1.54-4.28Zm4.818-10.232 4.28-1.539 6.953 19.329-4.28 1.539-6.953-19.329Z\"><\/path><\/g><g filter=\"url(#q)\"><path fill=\"#000\" d=\"m70.092 320.519 17.962 9.966-2.207 3.977-17.962-9.966 2.207-3.977Zm10.872-3.113 3.977 2.207-9.966 17.962-3.977-2.207 9.966-17.962Z\"><\/path><\/g><g filter=\"url(#r)\"><path fill=\"#C0A6E1\" d=\"m262.024 346.854 18.251-9.427 2.088 4.041-18.251 9.427-2.088-4.041Zm3.435-10.775 4.042-2.087 9.427 18.251-4.042 2.087-9.427-18.251Z\"><\/path><\/g><g filter=\"url(#s)\"><path fill=\"#F95123\" d=\"m245.515 246.197 20.176 3.86-.855 4.468-20.176-3.861.855-4.467Zm9.357-6.351 4.467.854-3.86 20.176-4.468-.855 3.861-20.175Z\"><\/path><\/g><g filter=\"url(#t)\"><path fill=\"#C0A6E1\" d=\"m226.122 191.404 15.021 14.012-3.103 3.326-15.02-14.012 3.102-3.326Zm11.302-.393 3.326 3.103-14.012 15.021-3.326-3.103 14.012-15.021Z\"><\/path><\/g><g filter=\"url(#u)\"><path fill=\"#7FB069\" d=\"m308.036 272.571 20.414-2.285.506 4.52-20.414 2.285-.506-4.52Zm7.057-8.837 4.521-.506 2.285 20.415-4.521.506-2.285-20.415Z\"><\/path><\/g><g filter=\"url(#v)\"><path fill=\"#7FB069\" d=\"m147.003 123.561 20.414-2.285.506 4.52-20.414 2.285-.506-4.52Zm7.057-8.837 4.52-.506 2.285 20.414-4.52.506-2.285-20.414Z\"><\/path><\/g><g filter=\"url(#w)\"><path fill=\"#000\" d=\"m306.813 335.722 17.98 9.934-2.2 3.981-17.98-9.934 2.2-3.981Zm10.867-3.132 3.981 2.199-9.934 17.98-3.982-2.199 9.935-17.98Z\"><\/path><\/g><g filter=\"url(#x)\"><path fill=\"#F95123\" d=\"m329.828 305.684 20.54.259-.057 4.548-20.541-.259.058-4.548Zm8.097-7.895 4.548.057-.259 20.541-4.548-.058.259-20.54Z\"><\/path><\/g><g filter=\"url(#y)\"><path fill=\"#000\" d=\"m232.903 317.362 18.671-8.564 1.896 4.134-18.671 8.564-1.896-4.134Zm3.934-10.603 4.135-1.896 8.564 18.672-4.135 1.896-8.564-18.672Z\"><\/path><\/g><g filter=\"url(#z)\"><path fill=\"#7FB069\" d=\"m238.089 81.098 5.317-19.842 4.393 1.177-5.316 19.842-4.394-1.177Zm-5.654-9.794 1.177-4.393 19.842 5.316-1.177 4.394-19.842-5.317Z\"><\/path><\/g><g filter=\"url(#A)\"><path fill=\"#C0A6E1\" d=\"m207.421 125.757-17.79-10.271 2.274-3.939 17.79 10.271-2.274 3.939Zm-10.924 2.927-3.939-2.274 10.271-17.79 3.939 2.275-10.271 17.789Z\"><\/path><\/g><defs><filter id=\"a\" width=\"250.393\" height=\"250.393\" x=\"43.088\" y=\"-56.483\" color-interpolation-filters=\"sRGB\" filterunits=\"userSpaceOnUse\"><feflood flood-opacity=\"0\" result=\"BackgroundImageFix\"><\/feflood><fegaussianblur in=\"BackgroundImageFix\" stddeviation=\"57.5\"><\/fegaussianblur><fecomposite in2=\"SourceAlpha\" operator=\"in\" result=\"effect1_backgroundBlur_873_30106\"><\/fecomposite><feblend in=\"SourceGraphic\" in2=\"effect1_backgroundBlur_873_30106\" result=\"shape\"><\/feblend><\/filter><filter id=\"b\" width=\"250.064\" height=\"250.063\" x=\"95.91\" y=\"-91.496\" color-interpolation-filters=\"sRGB\" filterunits=\"userSpaceOnUse\"><feflood flood-opacity=\"0\" result=\"BackgroundImageFix\"><\/feflood><fegaussianblur in=\"BackgroundImageFix\" stddeviation=\"57.5\"><\/fegaussianblur><fecomposite in2=\"SourceAlpha\" operator=\"in\" result=\"effect1_backgroundBlur_873_30106\"><\/fecomposite><feblend in=\"SourceGraphic\" in2=\"effect1_backgroundBlur_873_30106\" result=\"shape\"><\/feblend><\/filter><filter id=\"c\" width=\"249.775\" height=\"249.775\" x=\"60.6\" y=\"50.508\" color-interpolation-filters=\"sRGB\" filterunits=\"userSpaceOnUse\"><feflood flood-opacity=\"0\" result=\"BackgroundImageFix\"><\/feflood><fegaussianblur in=\"BackgroundImageFix\" stddeviation=\"57.5\"><\/fegaussianblur><fecomposite in2=\"SourceAlpha\" operator=\"in\" result=\"effect1_backgroundBlur_873_30106\"><\/fecomposite><feblend in=\"SourceGraphic\" in2=\"effect1_backgroundBlur_873_30106\" result=\"shape\"><\/feblend><\/filter><filter id=\"d\" width=\"251.014\" height=\"251.013\" x=\"40.408\" y=\"156.868\" color-interpolation-filters=\"sRGB\" filterunits=\"userSpaceOnUse\"><feflood flood-opacity=\"0\" result=\"BackgroundImageFix\"><\/feflood><fegaussianblur in=\"BackgroundImageFix\" stddeviation=\"57.5\"><\/fegaussianblur><fecomposite in2=\"SourceAlpha\" operator=\"in\" result=\"effect1_backgroundBlur_873_30106\"><\/fecomposite><feblend in=\"SourceGraphic\" in2=\"effect1_backgroundBlur_873_30106\" result=\"shape\"><\/feblend><\/filter><filter id=\"e\" width=\"249.775\" height=\"249.775\" x=\"126.383\" y=\"-9.352\" color-interpolation-filters=\"sRGB\" filterunits=\"userSpaceOnUse\"><feflood flood-opacity=\"0\" result=\"BackgroundImageFix\"><\/feflood><fegaussianblur in=\"BackgroundImageFix\" stddeviation=\"57.5\"><\/fegaussianblur><fecomposite in2=\"SourceAlpha\" operator=\"in\" result=\"effect1_backgroundBlur_873_30106\"><\/fecomposite><feblend in=\"SourceGraphic\" in2=\"effect1_backgroundBlur_873_30106\" result=\"shape\"><\/feblend><\/filter><filter id=\"f\" width=\"249.74\" height=\"249.741\" x=\"75.326\" y=\"-56.422\" color-interpolation-filters=\"sRGB\" filterunits=\"userSpaceOnUse\"><feflood flood-opacity=\"0\" result=\"BackgroundImageFix\"><\/feflood><fegaussianblur in=\"BackgroundImageFix\" stddeviation=\"57.5\"><\/fegaussianblur><fecomposite in2=\"SourceAlpha\" operator=\"in\" result=\"effect1_backgroundBlur_873_30106\"><\/fecomposite><feblend in=\"SourceGraphic\" in2=\"effect1_backgroundBlur_873_30106\" result=\"shape\"><\/feblend><\/filter><filter id=\"g\" width=\"250.461\" height=\"250.459\" x=\"31.42\" y=\"123.14\" color-interpolation-filters=\"sRGB\" filterunits=\"userSpaceOnUse\"><feflood flood-opacity=\"0\" result=\"BackgroundImageFix\"><\/feflood><fegaussianblur in=\"BackgroundImageFix\" stddeviation=\"57.5\"><\/fegaussianblur><fecomposite in2=\"SourceAlpha\" operator=\"in\" result=\"effect1_backgroundBlur_873_30106\"><\/fecomposite><feblend in=\"SourceGraphic\" in2=\"effect1_backgroundBlur_873_30106\" result=\"shape\"><\/feblend><\/filter><filter id=\"h\" width=\"250.686\" height=\"250.686\" x=\"-3.082\" y=\"166.46\" color-interpolation-filters=\"sRGB\" filterunits=\"userSpaceOnUse\"><feflood flood-opacity=\"0\" result=\"BackgroundImageFix\"><\/feflood><fegaussianblur in=\"BackgroundImageFix\" stddeviation=\"57.5\"><\/fegaussianblur><fecomposite in2=\"SourceAlpha\" operator=\"in\" result=\"effect1_backgroundBlur_873_30106\"><\/fecomposite><feblend in=\"SourceGraphic\" in2=\"effect1_backgroundBlur_873_30106\" result=\"shape\"><\/feblend><\/filter><filter id=\"i\" width=\"251.039\" height=\"251.039\" x=\"-93.982\" y=\"197.132\" color-interpolation-filters=\"sRGB\" filterunits=\"userSpaceOnUse\"><feflood flood-opacity=\"0\" result=\"BackgroundImageFix\"><\/feflood><fegaussianblur in=\"BackgroundImageFix\" stddeviation=\"57.5\"><\/fegaussianblur><fecomposite in2=\"SourceAlpha\" operator=\"in\" result=\"effect1_backgroundBlur_873_30106\"><\/fecomposite><feblend in=\"SourceGraphic\" in2=\"effect1_backgroundBlur_873_30106\" result=\"shape\"><\/feblend><\/filter><filter id=\"j\" width=\"448.508\" height=\"565.476\" x=\"45.279\" y=\"-96.496\" color-interpolation-filters=\"sRGB\" filterunits=\"userSpaceOnUse\"><feflood flood-opacity=\"0\" result=\"BackgroundImageFix\"><\/feflood><fegaussianblur in=\"BackgroundImageFix\" stddeviation=\"57.5\"><\/fegaussianblur><fecomposite in2=\"SourceAlpha\" operator=\"in\" result=\"effect1_backgroundBlur_873_30106\"><\/fecomposite><feblend in=\"SourceGraphic\" in2=\"effect1_backgroundBlur_873_30106\" result=\"shape\"><\/feblend><\/filter><filter id=\"k\" width=\"248.418\" height=\"248.419\" x=\"-55.31\" y=\"160.624\" color-interpolation-filters=\"sRGB\" filterunits=\"userSpaceOnUse\"><feflood flood-opacity=\"0\" result=\"BackgroundImageFix\"><\/feflood><fegaussianblur in=\"BackgroundImageFix\" stddeviation=\"57.5\"><\/fegaussianblur><fecomposite in2=\"SourceAlpha\" operator=\"in\" result=\"effect1_backgroundBlur_873_30106\"><\/fecomposite><feblend in=\"SourceGraphic\" in2=\"effect1_backgroundBlur_873_30106\" result=\"shape\"><\/feblend><\/filter><filter id=\"l\" width=\"250.994\" height=\"250.993\" x=\"81.809\" y=\"166.339\" color-interpolation-filters=\"sRGB\" filterunits=\"userSpaceOnUse\"><feflood flood-opacity=\"0\" result=\"BackgroundImageFix\"><\/feflood><fegaussianblur in=\"BackgroundImageFix\" stddeviation=\"57.5\"><\/fegaussianblur><fecomposite in2=\"SourceAlpha\" operator=\"in\" result=\"effect1_backgroundBlur_873_30106\"><\/fecomposite><feblend in=\"SourceGraphic\" in2=\"effect1_backgroundBlur_873_30106\" result=\"shape\"><\/feblend><\/filter><filter id=\"m\" width=\"249.6\" height=\"249.601\" x=\"252.643\" y=\"174.366\" color-interpolation-filters=\"sRGB\" filterunits=\"userSpaceOnUse\"><feflood flood-opacity=\"0\" result=\"BackgroundImageFix\"><\/feflood><fegaussianblur in=\"BackgroundImageFix\" stddeviation=\"57.5\"><\/fegaussianblur><fecomposite in2=\"SourceAlpha\" operator=\"in\" result=\"effect1_backgroundBlur_873_30106\"><\/fecomposite><feblend in=\"SourceGraphic\" in2=\"effect1_backgroundBlur_873_30106\" result=\"shape\"><\/feblend><\/filter><filter id=\"n\" width=\"251.025\" height=\"251.026\" x=\"74.176\" y=\"212.526\" color-interpolation-filters=\"sRGB\" filterunits=\"userSpaceOnUse\"><feflood flood-opacity=\"0\" result=\"BackgroundImageFix\"><\/feflood><fegaussianblur in=\"BackgroundImageFix\" stddeviation=\"57.5\"><\/fegaussianblur><fecomposite in2=\"SourceAlpha\" operator=\"in\" result=\"effect1_backgroundBlur_873_30106\"><\/fecomposite><feblend in=\"SourceGraphic\" in2=\"effect1_backgroundBlur_873_30106\" result=\"shape\"><\/feblend><\/filter><filter id=\"o\" width=\"251.039\" height=\"251.039\" x=\"22.666\" y=\"200.203\" color-interpolation-filters=\"sRGB\" filterunits=\"userSpaceOnUse\"><feflood flood-opacity=\"0\" result=\"BackgroundImageFix\"><\/feflood><fegaussianblur in=\"BackgroundImageFix\" stddeviation=\"57.5\"><\/fegaussianblur><fecomposite in2=\"SourceAlpha\" operator=\"in\" result=\"effect1_backgroundBlur_873_30106\"><\/fecomposite><feblend in=\"SourceGraphic\" in2=\"effect1_backgroundBlur_873_30106\" result=\"shape\"><\/feblend><\/filter><filter id=\"p\" width=\"250.869\" height=\"250.869\" x=\"78.242\" y=\"99.192\" color-interpolation-filters=\"sRGB\" filterunits=\"userSpaceOnUse\"><feflood flood-opacity=\"0\" result=\"BackgroundImageFix\"><\/feflood><fegaussianblur in=\"BackgroundImageFix\" stddeviation=\"57.5\"><\/fegaussianblur><fecomposite in2=\"SourceAlpha\" operator=\"in\" result=\"effect1_backgroundBlur_873_30106\"><\/fecomposite><feblend in=\"SourceGraphic\" in2=\"effect1_backgroundBlur_873_30106\" result=\"shape\"><\/feblend><\/filter><filter id=\"q\" width=\"250.17\" height=\"250.169\" x=\"-47.115\" y=\"202.406\" color-interpolation-filters=\"sRGB\" filterunits=\"userSpaceOnUse\"><feflood flood-opacity=\"0\" result=\"BackgroundImageFix\"><\/feflood><fegaussianblur in=\"BackgroundImageFix\" stddeviation=\"57.5\"><\/fegaussianblur><fecomposite in2=\"SourceAlpha\" operator=\"in\" result=\"effect1_backgroundBlur_873_30106\"><\/fecomposite><feblend in=\"SourceGraphic\" in2=\"effect1_backgroundBlur_873_30106\" result=\"shape\"><\/feblend><\/filter><filter id=\"r\" width=\"250.338\" height=\"250.338\" x=\"147.025\" y=\"218.992\" color-interpolation-filters=\"sRGB\" filterunits=\"userSpaceOnUse\"><feflood flood-opacity=\"0\" result=\"BackgroundImageFix\"><\/feflood><fegaussianblur in=\"BackgroundImageFix\" stddeviation=\"57.5\"><\/fegaussianblur><fecomposite in2=\"SourceAlpha\" operator=\"in\" result=\"effect1_backgroundBlur_873_30106\"><\/fecomposite><feblend in=\"SourceGraphic\" in2=\"effect1_backgroundBlur_873_30106\" result=\"shape\"><\/feblend><\/filter><filter id=\"s\" width=\"251.031\" height=\"251.03\" x=\"129.66\" y=\"124.846\" color-interpolation-filters=\"sRGB\" filterunits=\"userSpaceOnUse\"><feflood flood-opacity=\"0\" result=\"BackgroundImageFix\"><\/feflood><fegaussianblur in=\"BackgroundImageFix\" stddeviation=\"57.5\"><\/fegaussianblur><fecomposite in2=\"SourceAlpha\" operator=\"in\" result=\"effect1_backgroundBlur_873_30106\"><\/fecomposite><feblend in=\"SourceGraphic\" in2=\"effect1_backgroundBlur_873_30106\" result=\"shape\"><\/feblend><\/filter><filter id=\"t\" width=\"248.123\" height=\"248.124\" x=\"108.02\" y=\"76.011\" color-interpolation-filters=\"sRGB\" filterunits=\"userSpaceOnUse\"><feflood flood-opacity=\"0\" result=\"BackgroundImageFix\"><\/feflood><fegaussianblur in=\"BackgroundImageFix\" stddeviation=\"57.5\"><\/fegaussianblur><fecomposite in2=\"SourceAlpha\" operator=\"in\" result=\"effect1_backgroundBlur_873_30106\"><\/fecomposite><feblend in=\"SourceGraphic\" in2=\"effect1_backgroundBlur_873_30106\" result=\"shape\"><\/feblend><\/filter><filter id=\"u\" width=\"250.922\" height=\"250.92\" x=\"193.035\" y=\"148.229\" color-interpolation-filters=\"sRGB\" filterunits=\"userSpaceOnUse\"><feflood flood-opacity=\"0\" result=\"BackgroundImageFix\"><\/feflood><fegaussianblur in=\"BackgroundImageFix\" stddeviation=\"57.5\"><\/fegaussianblur><fecomposite in2=\"SourceAlpha\" operator=\"in\" result=\"effect1_backgroundBlur_873_30106\"><\/fecomposite><feblend in=\"SourceGraphic\" in2=\"effect1_backgroundBlur_873_30106\" result=\"shape\"><\/feblend><\/filter><filter id=\"v\" width=\"250.922\" height=\"250.92\" x=\"32.002\" y=\"-.782\" color-interpolation-filters=\"sRGB\" filterunits=\"userSpaceOnUse\"><feflood flood-opacity=\"0\" result=\"BackgroundImageFix\"><\/feflood><fegaussianblur in=\"BackgroundImageFix\" stddeviation=\"57.5\"><\/fegaussianblur><fecomposite in2=\"SourceAlpha\" operator=\"in\" result=\"effect1_backgroundBlur_873_30106\"><\/fecomposite><feblend in=\"SourceGraphic\" in2=\"effect1_backgroundBlur_873_30106\" result=\"shape\"><\/feblend><\/filter><filter id=\"w\" width=\"250.18\" height=\"250.179\" x=\"189.613\" y=\"217.59\" color-interpolation-filters=\"sRGB\" filterunits=\"userSpaceOnUse\"><feflood flood-opacity=\"0\" result=\"BackgroundImageFix\"><\/feflood><fegaussianblur in=\"BackgroundImageFix\" stddeviation=\"57.5\"><\/fegaussianblur><fecomposite in2=\"SourceAlpha\" operator=\"in\" result=\"effect1_backgroundBlur_873_30106\"><\/fecomposite><feblend in=\"SourceGraphic\" in2=\"effect1_backgroundBlur_873_30106\" result=\"shape\"><\/feblend><\/filter><filter id=\"x\" width=\"250.598\" height=\"250.598\" x=\"214.77\" y=\"182.789\" color-interpolation-filters=\"sRGB\" filterunits=\"userSpaceOnUse\"><feflood flood-opacity=\"0\" result=\"BackgroundImageFix\"><\/feflood><fegaussianblur in=\"BackgroundImageFix\" stddeviation=\"57.5\"><\/fegaussianblur><fecomposite in2=\"SourceAlpha\" operator=\"in\" result=\"effect1_backgroundBlur_873_30106\"><\/fecomposite><feblend in=\"SourceGraphic\" in2=\"effect1_backgroundBlur_873_30106\" result=\"shape\"><\/feblend><\/filter><filter id=\"y\" width=\"250.568\" height=\"250.567\" x=\"117.902\" y=\"189.863\" color-interpolation-filters=\"sRGB\" filterunits=\"userSpaceOnUse\"><feflood flood-opacity=\"0\" result=\"BackgroundImageFix\"><\/feflood><fegaussianblur in=\"BackgroundImageFix\" stddeviation=\"57.5\"><\/fegaussianblur><fecomposite in2=\"SourceAlpha\" operator=\"in\" result=\"effect1_backgroundBlur_873_30106\"><\/fecomposite><feblend in=\"SourceGraphic\" in2=\"effect1_backgroundBlur_873_30106\" result=\"shape\"><\/feblend><\/filter><filter id=\"z\" width=\"251.018\" height=\"251.019\" x=\"117.436\" y=\"-53.744\" color-interpolation-filters=\"sRGB\" filterunits=\"userSpaceOnUse\"><feflood flood-opacity=\"0\" result=\"BackgroundImageFix\"><\/feflood><fegaussianblur in=\"BackgroundImageFix\" stddeviation=\"57.5\"><\/fegaussianblur><fecomposite in2=\"SourceAlpha\" operator=\"in\" result=\"effect1_backgroundBlur_873_30106\"><\/fecomposite><feblend in=\"SourceGraphic\" in2=\"effect1_backgroundBlur_873_30106\" result=\"shape\"><\/feblend><\/filter><filter id=\"A\" width=\"250.064\" height=\"250.064\" x=\"74.631\" y=\"-6.38\" color-interpolation-filters=\"sRGB\" filterunits=\"userSpaceOnUse\"><feflood flood-opacity=\"0\" result=\"BackgroundImageFix\"><\/feflood><fegaussianblur in=\"BackgroundImageFix\" stddeviation=\"57.5\"><\/fegaussianblur><fecomposite in2=\"SourceAlpha\" operator=\"in\" result=\"effect1_backgroundBlur_873_30106\"><\/fecomposite><feblend in=\"SourceGraphic\" in2=\"effect1_backgroundBlur_873_30106\" result=\"shape\"><\/feblend><\/filter><\/defs><\/svg>"
+          }
+        }
+      },
+      "block_order": [
+        "f049b251-1f22-401e-bc3f-96cb0d782d95",
+        "b0f4429b-a1cc-4226-9aff-c61447fc2099"
+      ],
+      "settings": {
+        "video": "shopify:\/\/files\/videos\/48d63ae004984b8ba3a6714fdca4e54c_1.mp4",
+        "image": "shopify:\/\/shop_images\/earth_1.jpg",
+        "video_mob": "shopify:\/\/files\/videos\/bddfbc98c9094141a80cff75a493eb84_1.mp4",
+        "image_mob": "shopify:\/\/shop_images\/earth_1_1.jpg"
+      }
+    },
+    "51173209-0324-426b-a733-49cceb68357e": {
+      "type": "marquee",
+      "settings": {
+        "text": "<p>Learn more about the 12 Causes of Aging in <a href=\"\/pages\/our-science\" title=\"Our Science\">our science<\/a><\/p>",
+        "speed": "130"
+      }
+    },
+    "89cd14fb-a3de-4bdb-849a-ab1bb2051d1a": {
+      "type": "text-section",
+      "blocks": {
+        "ddc29a50-97fa-4efc-8bc3-99bb2f1f2899": {
+          "type": "body_text",
+          "settings": {
+            "text": "At Jung+, we're on a crusade to liberate human longevity, translating the latest scientific advancements in aging research into products and technologies that can slow aging and extend healthy lifespan."
+          }
+        },
+        "38af52ed-1856-4af8-8574-1215a8056460": {
+          "type": "text_item",
+          "settings": {
+            "text_item": "+ ​B​est-in-class formulations​, ​administered at ​effective doses"
+          }
+        },
+        "1727d77a-7b56-42f8-b430-31c19dcdea8e": {
+          "type": "text_item",
+          "settings": {
+            "text_item": "+ Based on real science, ​ingredients backed by 400+ studies"
+          }
+        },
+        "089acc00-3ba1-4e71-9158-2be36e88bbd1": {
+          "type": "text_item",
+          "settings": {
+            "text_item": "+ Highest quality, high-performing, pure ingredients"
+          }
+        },
+        "8c13d21a-7c5b-47be-acd8-6c738da74956": {
+          "type": "text_item",
+          "settings": {
+            "text_item": "+ Safe for long-term use"
+          }
+        },
+        "013504f9-1a83-42dd-bdb3-557329ee326d": {
+          "type": "text_item",
+          "settings": {
+            "text_item": "​+ Pre-vetted, evidence-based lifestyle guidance"
+          }
+        },
+        "46994ccd-6e25-4a97-b942-5546ba2a7a8c": {
+          "type": "mob_button",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "ddc29a50-97fa-4efc-8bc3-99bb2f1f2899",
+        "38af52ed-1856-4af8-8574-1215a8056460",
+        "1727d77a-7b56-42f8-b430-31c19dcdea8e",
+        "089acc00-3ba1-4e71-9158-2be36e88bbd1",
+        "8c13d21a-7c5b-47be-acd8-6c738da74956",
+        "013504f9-1a83-42dd-bdb3-557329ee326d",
+        "46994ccd-6e25-4a97-b942-5546ba2a7a8c"
+      ],
+      "settings": {
+        "title": "Founded in Oxford - we’ve done our homework",
+        "titlehtml": "<p>Founded in Oxford - <\/p><p>we’ve done our <\/p><p>homework<\/p>",
+        "richtext": "",
+        "button_label": "Our Science",
+        "button_link": "shopify:\/\/pages\/our-science",
+        "background_color": "#000"
+      }
+    },
+    "5cdfc2e5-5561-4b27-8c0f-aa41516934d0": {
+      "type": "couple-videos",
+      "settings": {
+        "overflow_text": "The world’s first precision-targeted longevity program",
+        "video_1": "shopify:\/\/files\/videos\/182ef4eec488413094bc02d2b2d7bc79_2.mp4",
+        "video_1_mob": "shopify:\/\/files\/videos\/182ef4eec488413094bc02d2b2d7bc79.HD-1080p-7.2Mbps-20370149-Rev2.mp4",
+        "image_1": "shopify:\/\/shop_images\/2_1.jpg",
+        "text_1": "health",
+        "video_2": "shopify:\/\/files\/videos\/836aa8a7f3dd4c44b8fe94f7289efdc8_1.mp4",
+        "video_2_mob": "shopify:\/\/files\/videos\/836aa8a7f3dd4c44b8fe94f7289efdc8_1.mp4",
+        "image_2": "shopify:\/\/shop_images\/0_1.jpg",
+        "text_2": "bio-tech"
+      }
+    },
+    "320953d4-7830-4014-a3e9-7e50c6edd43d": {
+      "type": "click-menu",
+      "blocks": {
+        "1199ba47-52de-408e-8da6-f54c7e37afc9": {
+          "type": "card",
+          "settings": {
+            "title": "01 MASTER FORMULA",
+            "description": "<p>Your all-in-one longevity protocol targeting all 12 hallmarks of biological aging, 24 hrs a day <\/p>",
+            "image": "shopify:\/\/shop_images\/benjamin-l-jones-compressed.jpg"
+          }
+        },
+        "8ed282c9-0dc6-4563-a5ff-3f5d78c27b99": {
+          "type": "card",
+          "settings": {
+            "title": "02 PERSONALIZE & UPGRADE",
+            "description": "<p>Precision engineered boosters help support and amplify evidence-based longevity lifestyle practices<\/p>",
+            "image": "shopify:\/\/shop_images\/alexander-van-steenberge-compressed.jpg"
+          }
+        },
+        "8b9c9239-4a29-4f2f-ba8d-c12f062d6dc6": {
+          "type": "card",
+          "settings": {
+            "title": "03 TEST AND TRACK",
+            "description": "<p>Measure targeted biomarkers and reveal your true biological age to measure your progress. Coming this Fall!<\/p>",
+            "image": "shopify:\/\/shop_images\/Screenshot_2024-01-17_at_9.47.32_AM.png"
+          }
+        }
+      },
+      "block_order": [
+        "1199ba47-52de-408e-8da6-f54c7e37afc9",
+        "8ed282c9-0dc6-4563-a5ff-3f5d78c27b99",
+        "8b9c9239-4a29-4f2f-ba8d-c12f062d6dc6"
+      ],
+      "settings": {
+        "title": "Your monthly longevity kit - how it works.",
+        "richtext": "<p>Inspired by the world's elite clinics, Jung's Total Longevity System™ is a powerful, self-guided program that helps you set personalized longevity goals, and pairs them with targeted longevity molecules, coaching, and research that supports your journey and amplifies your efforts.<\/p>",
+        "time": "6000",
+        "background_color": "#F5F5F5"
+      }
+    },
+    "vertical_carousel_section_qwWdnf": {
+      "type": "vertical-carousel-section",
+      "blocks": {
+        "product_slide_6RKDE7": {
+          "type": "product_slide",
+          "settings": {
+            "background_color": "#ffffff",
+            "arch_color": "#ffffff",
+            "logo": "shopify:\/\/shop_images\/Essentials_3.svg",
+            "product": "longevity-foundation-master-longevity-protocol",
+            "step": 1,
+            "image_caption": "",
+            "heading": "LONGEVITY FOUNDATION",
+            "description_heading": "The Master Protocol",
+            "description": "Our baseline, flagship product, Longevity Foundation targets all 12 underlying causes of aging, on the smallest, subcellular level. Two, separate, AM and PM formulas create the ultimate protocol, administering the right compounds, at the right time, in the right amounts. The all-in-one formula is your first-line defense to optimize your biological age, with ingredients backed by 100+ studies.",
+            "show_buttons": true,
+            "scale_product_image": false
+          }
+        },
+        "product_slide_a9tmPr": {
+          "type": "product_slide",
+          "settings": {
+            "background_color": "#f95123",
+            "arch_color": "#ffffff",
+            "logo": "shopify:\/\/shop_images\/Gut_2.svg",
+            "product": "fasting-tonic",
+            "step": 2,
+            "image_caption": "",
+            "heading": "FASTING TONIC™",
+            "description_heading": "Precision Nutrient Matrix",
+            "description": "Fasting Tonic™ redefines fasting with a precision nutrient drink mix, making calorie restriction and fasting easier and safer. Its innovative prebiotic beadlets expand in the stomach, creating a nourishing jelly that fills you up without breaking the fast. This advanced formula replenishes vital micronutrients, feeds essential gut bacteria, alleviates fatigue, and protects against muscle loss, ensuring a more effective and comfortable fasting experience.",
+            "show_buttons": true,
+            "scale_product_image": false
+          }
+        },
+        "product_slide_hzkDYC": {
+          "type": "product_slide",
+          "settings": {
+            "background_color": "#7fb069",
+            "arch_color": "#ffffff",
+            "logo": "shopify:\/\/shop_images\/Gut_3.svg",
+            "product": "glucose-blocker",
+            "step": 2,
+            "image_caption": "",
+            "heading": "GLUCOSE BLOCKER",
+            "description_heading": "Precision Carb Control",
+            "description": "Glucose Blocker tackles a major aging accelerator: excessive sugar and carbohydrate intake. This innovative formula helps support healthier post-meal glucose levels, providing steady energy and managing harmful glucose spikes Infused with Berberine, it activates pivotal longevity pathways, mitigates glycation - a key factor in wrinkle formation, and supports metabolic health for healthy weight management, making cheat meals less guilty.",
+            "show_buttons": true,
+            "scale_product_image": false
+          }
+        },
+        "product_slide_9BUPif": {
+          "type": "product_slide",
+          "settings": {
+            "background_color": "#c0a6e1",
+            "arch_color": "#ffffff",
+            "logo": "shopify:\/\/shop_images\/Sleep_1.svg",
+            "product": "advanced-sleep-repair",
+            "step": 2,
+            "image_caption": "",
+            "heading": "ADVANCED SLEEP REPAIR",
+            "description_heading": "Intensive Recovery Protocol",
+            "description": "Advanced Sleep Repair revolutionizes rest with its unique blend of longevity science and sleep enhancement. This meticulously crafted formula offers key building blocks for essential bodily repair and age-reversal mechanisms during sleep. By improving sleep quality and fine-tuning crucial neurotransmitter levels, it helps restore circadian balance, combats accelerated aging, fosters DNA repair, and restore metabolic health, making it a groundbreaking solution to enhance healthy longevity through sleep.",
+            "show_buttons": true,
+            "scale_product_image": false
+          }
+        },
+        "product_slide_TxiTdg": {
+          "type": "product_slide",
+          "settings": {
+            "background_color": "#f6ae2d",
+            "arch_color": "#ffffff",
+            "logo": "shopify:\/\/shop_images\/Skin_2.svg",
+            "product": "cellular-skin-renewal",
+            "step": 2,
+            "image_caption": "",
+            "heading": "CELLULAR SKIN RENEWAL",
+            "description_heading": "Dermal Longevity Protocol",
+            "description": "Cellular Skin Renewal transcends the limitations of topical creams or serums, standing alone as the only skin supplement leveraging the cutting-edge oflongevity science to combat every major aspect of biological skin aging, from the inside out. It revitalizes skin at the cellular level, helps clear senescent cells, replenish NAD+ levels, reactivate collagen and hyaluronic acid production, reduce wrinkles, enhance elasticity, and even skin tone.",
+            "show_buttons": true,
+            "scale_product_image": false
+          }
+        },
+        "product_slide_wk48Xj": {
+          "type": "product_slide",
+          "disabled": true,
+          "settings": {
+            "background_color": "#d0d0d0",
+            "arch_color": "#ffffff",
+            "logo": "shopify:\/\/shop_images\/Clock_1.svg",
+            "product": "bioage-testing",
+            "step": 3,
+            "image_caption": "",
+            "heading": "TESTING & TRACKING",
+            "description_heading": "Coming Summer 24'",
+            "description": "Track your progress with our comprehensive longevity biomarker testing platform to help keep tabs on your longevity lifestyle.",
+            "show_buttons": false,
+            "scale_product_image": true
+          }
+        }
+      },
+      "block_order": [
+        "product_slide_6RKDE7",
+        "product_slide_a9tmPr",
+        "product_slide_hzkDYC",
+        "product_slide_9BUPif",
+        "product_slide_TxiTdg",
+        "product_slide_wk48Xj"
+      ],
+      "settings": {
+        "padding_top": 48,
+        "padding_bottom": 80,
+        "padding_top_mb": 32,
+        "padding_bottom_mb": 16,
+        "step1text": "Master formula",
+        "step2text": "Longevity boosters",
+        "step3text": "Test & track"
+      }
+    },
+    "b743b4c6-16d6-4487-9b2e-074518c8b974": {
+      "type": "vertical-carousel",
+      "blocks": {
+        "7ac49118-172a-4401-a80d-4bf76e3f31f2": {
+          "type": "product_step1",
+          "settings": {
+            "product": "longevity-foundation-master-longevity-protocol",
+            "image_caption": "",
+            "heading": "LONGEVITY FOUNDATION",
+            "description_heading": "The Master Protocol",
+            "description": "Our baseline, flagship product, Longevity Foundation targets all 12 underlying causes of aging, on the smallest, subcellular level. Two, separate, AM and PM formulas create the ultimate protocol, administering the right compounds, at the right time, in the right amounts. The all-in-one formula is your first-line defense to optimize your biological age, with ingredients backed by 100+ studies.",
+            "show_buttons": true
+          }
+        },
+        "5b145ee1-85be-464b-b269-9c7a218e528c": {
+          "type": "product_slide",
+          "settings": {
+            "product": "fasting-tonic",
+            "image_caption": "",
+            "heading": "FASTING TONIC™",
+            "description_heading": "Precision Nutrient Matrix",
+            "description": "Our Fasting Tonic™ doesn't stop at curbing hunger; it goes a step further by replenishing essential micronutrients and electrolytes that get depleted during a fast, helping retain additional hydration and avoid fatigue.",
+            "show_buttons": true
+          }
+        },
+        "0e673b9e-3fb2-4d7f-b3c7-d57850a34dbc": {
+          "type": "product_slide",
+          "settings": {
+            "product": "glucose-blocker",
+            "image_caption": "",
+            "heading": "GLUCOSE BLOCKER",
+            "description_heading": "Precision Carb Control",
+            "description": "Helps keep blood sugar levels healthy after a carb and sugar-rich meals, bringing you one step closer to a blue-zone style diet. Curbs the glycation process that accelerates aging and causes wrinkles. Take a serving with your meals for 'less-guilt' pasta or cake, enjoy sustained energy without the carb crash, and help reduce sugar cravings over time.",
+            "show_buttons": true
+          }
+        },
+        "271a353e-015c-4d9d-9a1c-e4d14e01d34c": {
+          "type": "product_slide",
+          "settings": {
+            "product": "advanced-sleep-repair",
+            "image_caption": "",
+            "heading": "ADVANCED SLEEP REPAIR",
+            "description_heading": "Intensive Recovery Protocol",
+            "description": "Creates the ideal biochemical environment your body needs to carry out critical age-rejuvenating processes while you sleep. Support pretty much every cognitive and physiological process.  Wake up feeling refreshed and energized. Totally non-addictive, non-sedative formula. ",
+            "show_buttons": true
+          }
+        },
+        "e3188f5d-7de1-416f-97ae-8b442a6ed2c6": {
+          "type": "product_slide",
+          "settings": {
+            "product": "cellular-skin-renewal",
+            "image_caption": "",
+            "heading": "CELLULAR SKIN RENEWAL",
+            "description_heading": "Dermal Longevity Protocol",
+            "description": "Cellular Skin Renewal transcends the limitations of topical creams or serums, standing alone as the only skin supplement leveraging the cutting-edge advancements of longevity science to combat every major aspect of biological skin aging from the inside out.",
+            "show_buttons": true
+          }
+        },
+        "eca70c2e-c504-472e-8d18-d3782fd458a0": {
+          "type": "product_step3",
+          "settings": {
+            "product": "bioage-testing",
+            "image_caption": "",
+            "heading": "TESTING & TRACKING",
+            "description_heading": "Coming Summer 24'",
+            "description": "Track your progress with our comprehensive longevity biomarker testing platform to help keep tabs on your longevity lifestyle.",
+            "show_buttons": false,
+            "disabled_links": true,
+            "reduce_image_size": true
+          }
+        }
+      },
+      "block_order": [
+        "7ac49118-172a-4401-a80d-4bf76e3f31f2",
+        "5b145ee1-85be-464b-b269-9c7a218e528c",
+        "0e673b9e-3fb2-4d7f-b3c7-d57850a34dbc",
+        "271a353e-015c-4d9d-9a1c-e4d14e01d34c",
+        "e3188f5d-7de1-416f-97ae-8b442a6ed2c6",
+        "eca70c2e-c504-472e-8d18-d3782fd458a0"
+      ],
+      "disabled": true,
+      "settings": {
+        "padding_top": 52,
+        "padding_bottom": 80,
+        "padding_top_mb": 32,
+        "padding_bottom_mb": 16,
+        "step1text": "Master formula",
+        "step2text": "Longevity boosters",
+        "step3text": "Test & track"
+      }
+    },
+    "826e0aa3-8f4f-4d7b-8964-d063ea70a8b6": {
+      "type": "full-bg-text",
+      "blocks": {
+        "template--17117870194852__826e0aa3-8f4f-4d7b-8964-d063ea70a8b6-icon-1": {
+          "type": "icon",
+          "settings": {
+            "svg_icon": "shopify:\/\/shop_images\/Symbol_1.svg",
+            "svg_size_desktop": 100,
+            "svg_size_mobile": 50,
+            "heading_icon": "MISSION"
+          }
+        },
+        "template--17117870194852__826e0aa3-8f4f-4d7b-8964-d063ea70a8b6-heading-1": {
+          "type": "heading",
+          "settings": {
+            "heading": "Longevity for the billions, not just billionaires."
+          }
+        },
+        "template--17117870194852__826e0aa3-8f4f-4d7b-8964-d063ea70a8b6-text-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Our mission is clear: make top-tier longevity care accessible for all. Inspired by elite longevity clinics, our self-guided system helps you create the perfect longevity regimen, tailored to you. By leveraging best-in-class longevity molecules and adopting our evidence-based longevity lifestyle goals, you can trust our system to genuinely impact your life and health.<\/p>"
+          }
+        },
+        "template--17117870194852__826e0aa3-8f4f-4d7b-8964-d063ea70a8b6-button-1": {
+          "type": "button",
+          "settings": {
+            "button_label": "About Us",
+            "button_link": "shopify:\/\/pages\/about",
+            "button_style_secondary": true,
+            "button_label_2": "",
+            "button_link_2": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--17117870194852__826e0aa3-8f4f-4d7b-8964-d063ea70a8b6-icon-1",
+        "template--17117870194852__826e0aa3-8f4f-4d7b-8964-d063ea70a8b6-heading-1",
+        "template--17117870194852__826e0aa3-8f4f-4d7b-8964-d063ea70a8b6-text-1",
+        "template--17117870194852__826e0aa3-8f4f-4d7b-8964-d063ea70a8b6-button-1"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "bg_img": "shopify:\/\/shop_images\/image_68-compressed.jpg",
+        "bg_image_mob": "shopify:\/\/shop_images\/image-68-mob-compressed.jpg",
+        "padding_top": 80,
+        "padding_bottom": 148,
+        "padding_top_mb": 80,
+        "padding_bottom_mb": 80
+      }
+    },
+    "f598a0ef-8727-4c4d-bffa-40d8d59cb1ff": {
+      "type": "feedback-product-section",
+      "blocks": {
+        "1abb77fd-d073-44be-9a92-46f3cefd85e3": {
+          "type": "Slide",
+          "settings": {
+            "title_slide": "We love growing older. But it’s time to reimagine aging. ",
+            "body_slide": "",
+            "author_slide": "Jacky",
+            "date_slide": "",
+            "img": "shopify:\/\/shop_images\/img-1-slide-compressed.jpg",
+            "color": "#f95123"
+          }
+        },
+        "8c07cc25-f4e8-4c46-8a7a-d08cb275e7b6": {
+          "type": "Slide",
+          "settings": {
+            "title_slide": "Yaaass",
+            "body_slide": "<p>This set is great and it makes me feel soft and relaxed on certain days when I want to just unwind from work or other physical activities. It has a great smell to it and the aftermath of using the body cream as an additional product to moisturize makes everything just like icing on the cake. I’m usually not a “bar” type person because it runs out so fast, but the fact that you get two cleansing bars makes the price worthwhile.<\/p>",
+            "author_slide": "Lily",
+            "date_slide": "September 5th, 2022",
+            "img": "shopify:\/\/shop_images\/img-2-slide-compressed.jpg",
+            "color": "#c0a6e1"
+          }
+        },
+        "989ff265-af8f-4b1b-a99e-1444ad3145f4": {
+          "type": "Slide",
+          "settings": {
+            "title_slide": "Love love love",
+            "body_slide": "<p>This set is great and it makes me feel soft and relaxed on certain days when I want to just unwind from work or other physical activities. It has a great smell to it and the aftermath of using the body cream as an additional product to moisturize makes everything just like icing on the cake. I’m usually not a “bar” type person because it runs out so fast, but the fact that you get two cleansing bars makes the price worthwhile.<\/p>",
+            "author_slide": "Emily",
+            "date_slide": "September 5th, 2022",
+            "img": "shopify:\/\/shop_images\/img-3-slide-compressed.jpg",
+            "color": "#f6ae2d"
+          }
+        }
+      },
+      "block_order": [
+        "1abb77fd-d073-44be-9a92-46f3cefd85e3",
+        "8c07cc25-f4e8-4c46-8a7a-d08cb275e7b6",
+        "989ff265-af8f-4b1b-a99e-1444ad3145f4"
+      ],
+      "disabled": true,
+      "settings": {
+        "title": "What our community has to say",
+        "time": "13500",
+        "padding_top": 80,
+        "padding_bottom": 80,
+        "padding_top_mb": 80,
+        "padding_bottom_mb": 80
+      }
+    },
+    "1e7d3298-e156-4a45-a312-6189791da31c": {
+      "type": "text-with-image-cards",
+      "blocks": {
+        "f5c5266c-f5f2-4a95-8bcb-0fdcc17ab224": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Pic_1-compressed.jpg"
+          }
+        },
+        "d1c6d3fe-a8d2-42b9-b839-70c1dfc9a47e": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Pic_2-compressed.jpg"
+          }
+        },
+        "305c1548-6b3f-4294-a312-3407eaf0c2a9": {
+          "type": "image_card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Pic_3-compressed.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "f5c5266c-f5f2-4a95-8bcb-0fdcc17ab224",
+        "d1c6d3fe-a8d2-42b9-b839-70c1dfc9a47e",
+        "305c1548-6b3f-4294-a312-3407eaf0c2a9"
+      ],
+      "settings": {
+        "title": "Learn About Longevity",
+        "richtext": "<p>With everything from breaking science to actionable advice and strategies, our library is your oracle for knowledge to optimize health, and performance and give you more control over your health span. <\/p>",
+        "button_label": "browse library",
+        "button_link": "shopify:\/\/blogs\/news",
+        "background_color": "#000"
+      }
+    },
+    "caa7943f-d839-4bd9-acd5-10a3d360451d": {
+      "type": "full-bg-text",
+      "blocks": {
+        "template--17117870194852__caa7943f-d839-4bd9-acd5-10a3d360451d-icon-1": {
+          "type": "icon",
+          "settings": {
+            "svg_icon": "shopify:\/\/shop_images\/Group_2.svg",
+            "svg_size_desktop": 380,
+            "svg_size_mobile": 100,
+            "heading_icon": ""
+          }
+        },
+        "template--17117870194852__caa7943f-d839-4bd9-acd5-10a3d360451d-heading-1": {
+          "type": "heading",
+          "settings": {
+            "heading": "Build your kit, today"
+          }
+        },
+        "template--17117870194852__caa7943f-d839-4bd9-acd5-10a3d360451d-button-1": {
+          "type": "button",
+          "settings": {
+            "button_label": "Shop now",
+            "button_link": "shopify:\/\/collections\/all-products",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--17117870194852__caa7943f-d839-4bd9-acd5-10a3d360451d-icon-1",
+        "template--17117870194852__caa7943f-d839-4bd9-acd5-10a3d360451d-heading-1",
+        "template--17117870194852__caa7943f-d839-4bd9-acd5-10a3d360451d-button-1"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "bg_img": "shopify:\/\/shop_images\/DTS_Caldo_Daniel_Faro-compressed.jpg",
+        "padding_top": 80,
+        "padding_bottom": 148,
+        "padding_top_mb": 80,
+        "padding_bottom_mb": 80
+      }
+    },
+    "custom_liquid_BaKYxF": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<script type=\"text\/javascript\">\nvar _learnq = _learnq || [];\n\tdocument.getElementById(“quick-add-template--17170194530468__vertical_carousel_section_qwWdnf8312899829924-submit”).addEventListener('click',function (){\n \t\t_learnq.push(['track', 'Added to Cart', item]);\n\t});<\/script>",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    }
+  },
+  "order": [
+    "69f26668-867e-40e2-96f5-8de5c0fcbec4",
+    "6af5be2d-671c-4941-9540-ba46e67d13f8",
+    "51173209-0324-426b-a733-49cceb68357e",
+    "89cd14fb-a3de-4bdb-849a-ab1bb2051d1a",
+    "5cdfc2e5-5561-4b27-8c0f-aa41516934d0",
+    "320953d4-7830-4014-a3e9-7e50c6edd43d",
+    "vertical_carousel_section_qwWdnf",
+    "b743b4c6-16d6-4487-9b2e-074518c8b974",
+    "826e0aa3-8f4f-4d7b-8964-d063ea70a8b6",
+    "f598a0ef-8727-4c4d-bffa-40d8d59cb1ff",
+    "1e7d3298-e156-4a45-a312-6189791da31c",
+    "caa7943f-d839-4bd9-acd5-10a3d360451d",
+    "custom_liquid_BaKYxF"
+  ]
+}

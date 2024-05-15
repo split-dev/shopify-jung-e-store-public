@@ -1,0 +1,60 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-404",
+      "blocks": {
+        "2d2b7f5a-6788-4601-9dd8-a8e8a7561c5b": {
+          "type": "card",
+          "settings": {
+            "heading": "CIRCADIAN RE-BALANCING",
+            "heading_color": "#000000",
+            "heading_background": "#c0a6e1",
+            "image": "shopify:\/\/shop_images\/231218_Sleep.360_1_1.png",
+            "title": "Advanced Sleep Repair ",
+            "description": "Our Fasting Tonic™ doesn't stop at curbing hunger; it goes a step further by replenishing essential micronutrients and electrolytes",
+            "button_text": "Learn More",
+            "button_url": "shopify:\/\/products\/advanced-sleep-repair"
+          }
+        },
+        "fe1d8212-f61e-4bef-96c7-acc96cb84bff": {
+          "type": "card",
+          "settings": {
+            "heading": "essentials",
+            "heading_color": "#ffffff",
+            "heading_background": "#000000",
+            "image": "shopify:\/\/shop_images\/231218_AM_PM.376_1.png",
+            "title": "Longevity Essentials",
+            "description": "Our baseline, flagship product, the Longevity Essentials formula targets all 12 underlying causes of aging, on the smallest, subcellular",
+            "button_text": "Learn More",
+            "button_url": "shopify:\/\/products\/longevity-foundation-master-longevity-protocol"
+          }
+        },
+        "789fb258-95d0-45cc-8526-40a4e531cb85": {
+          "type": "card",
+          "settings": {
+            "heading": "Nutrition",
+            "heading_color": "#000000",
+            "heading_background": "#7fb069",
+            "image": "shopify:\/\/shop_images\/231218_Glucose.372_1.png",
+            "title": "Glucose Blocker",
+            "description": "Our Fasting Tonic™ doesn't stop at curbing hunger; it goes a step further by replenishing essential micronutrients and electrolytes that",
+            "button_text": "Learn More",
+            "button_url": "shopify:\/\/products\/glucose-blocker"
+          }
+        }
+      },
+      "block_order": [
+        "2d2b7f5a-6788-4601-9dd8-a8e8a7561c5b",
+        "fe1d8212-f61e-4bef-96c7-acc96cb84bff",
+        "789fb258-95d0-45cc-8526-40a4e531cb85"
+      ],
+      "settings": {
+        "bg_img": "shopify:\/\/shop_images\/pexels-zakaria-boumliha-2827400_1_2.jpg",
+        "bg_image_mob": "shopify:\/\/shop_images\/pexels-zakaria-boumliha-2827400_1_1_1.jpg"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

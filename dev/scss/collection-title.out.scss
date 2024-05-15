@@ -1,0 +1,13 @@
+.collection-title {
+    margin: 96px 0 10px;
+    // .collection-title__heading
+
+    &__heading {
+        color: black;
+        text-transform: uppercase;
+    }
+
+    @media(max-width: 989.98px){
+        margin: 64px 0 16px;
+    }
+}

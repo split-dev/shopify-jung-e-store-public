@@ -1,0 +1,138 @@
+{
+  "name": "t:sections.header.name",
+  "type": "header",
+  "sections": {
+    "header": {
+      "type": "header",
+      "blocks": {
+        "cac53509-df65-4a6e-b5fb-e02abacb90f0": {
+          "type": "image_block",
+          "settings": {
+            "block_image": "shopify:\/\/shop_images\/alexander-van-steenberge-QAMhHR0JHAg-unsplash_1.png",
+            "block_url": "shopify:\/\/blogs\/news\/skin-aging-and-longevity-why-healthy-skin-is-a-mirror-of-your-health",
+            "block_text": "Skin Aging and Longevity: Why Healthy Skin Is a Mirror of Your Health"
+          }
+        },
+        "3ac8e555-8bef-499d-94ac-0056660dfbf5": {
+          "type": "image_block",
+          "settings": {
+            "block_image": "shopify:\/\/shop_images\/article-4_520x500_1ef7097b-be89-4dbd-95d4-d40a5fb23655.jpg",
+            "block_url": "shopify:\/\/blogs\/news\/fibroblasts-the-unsung-heroes-of-skin-anti-aging",
+            "block_text": "Fibroblasts: The Unsung Heroes of Skin Anti-Aging"
+          }
+        },
+        "2b19c72f-cc38-47da-b557-eacc1e0106c4": {
+          "type": "for_menu_item",
+          "settings": {
+            "menu_item_1": "",
+            "menu_item_2": "MASTER FORMULA",
+            "menu_item_3": "LONGEVITY BOOSTERS",
+            "menu_item_4": "",
+            "menu_item_5": "",
+            "menu_item_6": "",
+            "menu_item_7": "TEST & TRACK",
+            "menu_item_8": ""
+          }
+        },
+        "a64848e3-b5f7-4bf4-af73-570acb00cd4d": {
+          "type": "item",
+          "settings": {
+            "block_title": "ALL",
+            "icon_1": "all",
+            "icon_text_1": "All",
+            "anchor_link_1": "shopify:\/\/collections\/all-products",
+            "icon_2": "essentials",
+            "icon_text_2": "",
+            "anchor_link_2": "",
+            "icon_3": "essentials",
+            "icon_text_3": "",
+            "anchor_link_3": "",
+            "icon_4": "essentials",
+            "icon_text_4": "",
+            "anchor_link_4": ""
+          }
+        },
+        "1725fd2d-fa48-4d37-8b1b-a2c5e53bb334": {
+          "type": "item",
+          "settings": {
+            "block_title": "MASTER FORMULA",
+            "icon_1": "essentials",
+            "icon_text_1": "Foundation",
+            "anchor_link_1": "shopify:\/\/products\/longevity-foundation-master-longevity-protocol",
+            "icon_2": "essentials",
+            "icon_text_2": "",
+            "anchor_link_2": "",
+            "icon_3": "essentials",
+            "icon_text_3": "",
+            "anchor_link_3": "",
+            "icon_4": "essentials",
+            "icon_text_4": "",
+            "anchor_link_4": ""
+          }
+        },
+        "8e09da21-313d-42cf-a111-7fe1970e9673": {
+          "type": "item",
+          "settings": {
+            "block_title": "LONGEVITY BOOSTERS",
+            "icon_1": "fasting",
+            "icon_text_1": "Fasting",
+            "anchor_link_1": "shopify:\/\/products\/fasting-tonic",
+            "icon_2": "glucose",
+            "icon_text_2": "Glucose",
+            "anchor_link_2": "shopify:\/\/products\/glucose-blocker",
+            "icon_3": "sleep",
+            "icon_text_3": "Sleep",
+            "anchor_link_3": "shopify:\/\/products\/advanced-sleep-repair",
+            "icon_4": "skin",
+            "icon_text_4": "Skin",
+            "anchor_link_4": "shopify:\/\/products\/cellular-skin-renewal"
+          }
+        },
+        "e600635c-eff2-4677-a8c5-9472c07a8827": {
+          "type": "item",
+          "settings": {
+            "block_title": "TEST & TRACK",
+            "icon_1": "testing",
+            "icon_text_1": "Testing",
+            "anchor_link_1": "\/collections\/all-products#testing",
+            "icon_2": "all",
+            "icon_text_2": "",
+            "anchor_link_2": "",
+            "icon_3": "all",
+            "icon_text_3": "",
+            "anchor_link_3": "",
+            "icon_4": "all",
+            "icon_text_4": "",
+            "anchor_link_4": ""
+          }
+        }
+      },
+      "block_order": [
+        "cac53509-df65-4a6e-b5fb-e02abacb90f0",
+        "3ac8e555-8bef-499d-94ac-0056660dfbf5",
+        "2b19c72f-cc38-47da-b557-eacc1e0106c4",
+        "a64848e3-b5f7-4bf4-af73-570acb00cd4d",
+        "1725fd2d-fa48-4d37-8b1b-a2c5e53bb334",
+        "8e09da21-313d-42cf-a111-7fe1970e9673",
+        "e600635c-eff2-4677-a8c5-9472c07a8827"
+      ],
+      "settings": {
+        "logo_position": "middle-center",
+        "menu": "main-menu",
+        "menu_type_desktop": "mega",
+        "menu_type": "collection_menu",
+        "sticky_header_type": "on-scroll-up",
+        "show_line_separator": false,
+        "color_scheme": "background-1",
+        "menu_color_scheme": "background-1",
+        "enable_country_selector": false,
+        "enable_language_selector": false,
+        "enable_search": false,
+        "mobile_logo_position": "center"
+      }
+    }
+  },
+  "order": [
+    "header"
+  ]
+}

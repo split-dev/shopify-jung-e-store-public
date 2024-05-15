@@ -1,0 +1,666 @@
+{{ 'section-vertical-carousel.out.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top_mb }}px;
+    padding-bottom: {{ section.settings.padding_bottom_mb }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<script src="https://assets.codepen.io/16327/gsap-latest-beta.min.js?r=3.11.5"></script>
+<script src="https://assets.codepen.io/16327/ScrollTrigger.min.js"></script>
+<script src="{{ 'vertical-scroll-carousel.js' | asset_url }}" defer="defer"></script>
+
+<div class="carousel-header" data-step="1">
+  <ul>
+    <li class="active">Step 1 - {{ section.settings.step1text }}</li>
+    <li>Step 2 - {{ section.settings.step2text }}</li>
+    <li>Step 3 - {{ section.settings.step3text }}</li>
+  </ul>
+</div>
+
+{%- for block in section.blocks -%}
+  {%- liquid
+    assign product = block.settings.product
+    assign product_form_id = 'quick-add-' | append: section.id | append: product.id
+
+    assign selling_plan_id = product.selling_plan_groups[0].selling_plans[0].id
+   
+    assign current_variant = product.selected_or_first_available_variant | default: product.variants.first
+    assign current_selling_plan_allocation = current_variant.selected_selling_plan_allocation
+
+    if current_selling_plan_allocation == null and current_variant.requires_selling_plan
+      assign current_selling_plan_allocation = current_variant.selling_plan_allocations | first
+    endif
+
+    assign offer = current_selling_plan_allocation | default: current_variant
+    assign offerPrice = offer.selling_plan_allocations[0].price
+   
+  -%}
+
+  {%- if block.type == 'product_step1' -%}
+    <div class="product-step-container section-{{ section.id }}-padding" data-step-container="1">
+      <div class="product-slide">
+        <div class="page-width">
+          <div class="product-slide__image">
+            <a class="product-slide__link" href="{{ product.url }}">
+              <div class="product-slide__icon product-slide__icon--plus"></div>
+              <div class="product-slide__images">
+                <div class="product-slide__first-image">
+                  {%- liquid
+                    if product.featured_media != null
+                      assign media = product.featured_media
+                      render 'product-media', media: media, loading: false
+                    endif
+                  -%}
+                </div>
+                <div class="product-slide__second-image">
+                  {%- liquid
+                    if product.media[1] != null
+                      render 'product-media', media: product.media[1], loading: false
+                    endif
+                  -%}
+                </div>
+              </div>
+              <strong class="caption-c1 caption-c1-md">{{ block.settings.image_caption }}</strong>
+            </a>
+          </div>
+          <div class="product-slide__info">
+            <h4 class="heading-h1 heading-h1-md">
+              {{ block.settings.heading }}
+            </h4>
+            <hr>
+            <div class="product-slide__info__description">
+              <a href="{{ product.url }}" class="heading-h3 heading-h3-md">{{ block.settings.description_heading }}</a>
+              {% if product.metafields.custom.description_mini_ != blank %}
+                <div class="body-b3 body-b3-md">
+                  {{ product.metafields.custom.description_mini_ | metafield_tag }}
+                </div>
+              {% else %}
+                <p class="body-b3 body-b3-md">{{ block.settings.description }}</p>
+              {% endif %}
+            </div>
+            {% if block.settings.show_buttons %}
+              <div class="product-slide__info__links">
+                <product-form data-section-id="{{ section.id }}">
+                  {%- form 'product',
+                    product,
+                    id: product_form_id,
+                    class: 'form',
+                    novalidate: 'novalidate',
+                    data-type: 'add-to-cart-form'
+                  -%}
+                    <input
+                      type="hidden"
+                      name="id"
+                      value="{{ product.selected_or_first_available_variant.id }}"
+                      class="product-variant-id"
+                      disabled
+                    >
+                    <input
+                      type="hidden"
+                      name="selling_plan"
+                      value="{{ selling_plan_id }}"
+                    >
+
+                    {% if settings.coming_soon_buttons %}
+                      <div class="btn btn--large font-haffer font-weight-500 coming_soon_buttons">{{ settings.coming_soon_buttons_text }}</div>
+                    {% else %}
+                      <button
+                        id="{{ product_form_id }}-submit"
+                        type="submit"
+                        name="add"
+                        class="quick-add__submit btn btn--small btn--filled font-haffer font-weight-500"
+                        aria-haspopup="dialog"
+                        aria-labelledby="{{ product_form_id }}-submit title-{{ section.id }}-{{ product.id }}"
+                        aria-live="polite"
+                        data-sold-out-message="true"
+                        {% if product.selected_or_first_available_variant.available == false %}
+                          disabled
+                        {% endif %}
+                      >
+                        <span>
+                          {%- if product.selected_or_first_available_variant.available -%}
+                            add to regimen - {{ offerPrice | money_without_trailing_zeros }}
+                          {%- else -%}
+                            {{ 'products.product.sold_out' | t }}
+                          {%- endif -%}
+                        </span>
+                        <span class="sold-out-message hidden">
+                          {{ 'products.product.sold_out' | t }}
+                        </span>
+                        <div class="loading-overlay__spinner hidden">
+                          <svg
+                            aria-hidden="true"
+                            focusable="false"
+                            class="spinner"
+                            viewBox="0 0 66 66"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
+                          </svg>
+                        </div>
+                      </button>
+                    {% endif %}
+                  {%- endform -%}
+                </product-form>
+
+                <a href="{{ product.url }}" class="btn btn--small btn--subtle font-haffer font-weight-500">Learn more</a>
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+      {%- render 'circle-gradient', color: 'dark', id: section.id -%}
+    </div>
+  {% endif %}
+{% endfor %}
+
+<section class="js-vertical-scroll-carousel vertical-carousel" data-slide="1" data-step-container="2">
+  <div class="carousel-container section-{{ section.id }}-padding">
+    {% assign forloop_override = 0 %}
+    {%- for block in section.blocks -%}
+      {%- liquid
+        assign product = block.settings.product
+        assign product_form_id = 'quick-add-' | append: section.id | append: product.id
+
+        assign selling_plan_id = product.selling_plan_groups[0].selling_plans[0].id
+   
+        assign current_variant = product.selected_or_first_available_variant | default: product.variants.first
+        assign current_selling_plan_allocation = current_variant.selected_selling_plan_allocation
+
+        if current_selling_plan_allocation == null and current_variant.requires_selling_plan
+          assign current_selling_plan_allocation = current_variant.selling_plan_allocations | first
+        endif
+
+        assign offer = current_selling_plan_allocation | default: current_variant
+        assign offerPrice = offer.selling_plan_allocations[0].price
+      -%}
+
+      {%- if block.type == 'product_slide' -%}
+        {% assign forloop_override = forloop_override | plus: 1 %}
+       <div class="js-slide product-slide" data-slide-index="{{ forloop_override }}" data-marker="slide">
+          <div class="page-width">
+            <div class="product-slide__image">
+            <a class="product-slide__link" href="{{ product.url }}">
+              <div class="product-slide__icon"></div>
+              
+              <div class="product-slide__images">
+                <div class="product-slide__first-image">
+                  {%- liquid
+                    if product.featured_media != null
+                      assign media = product.featured_media
+                      render 'product-media', media: media, loading: false
+                    endif
+                  -%}
+                </div>
+                <div class="product-slide__second-image">
+                  {%- liquid
+                    if product.media[1] != null
+                      render 'product-media', media: product.media[1], loading: false
+                    endif
+                  -%}
+                </div>
+              </div>
+              <strong class="caption-c1 caption-c1-md">{{ block.settings.image_caption }}</strong>
+            </a>
+            </div>
+            <div class="product-slide__info">
+              <h4 class="heading-h1 heading-h1-md">
+                {{ block.settings.heading }}
+              </h4>
+              <hr>
+              <div class="product-slide__info__description">
+                <a href="{{ product.url }}" class="heading-h3 heading-h3-md">{{ block.settings.description_heading }}</a>
+                {% if product.metafields.custom.description_mini_ != blank %}
+                  <div class="body-b3 body-b3-md">
+                    {{ product.metafields.custom.description_mini_ | metafield_tag }}
+                  </div>
+                {% else %}
+                  <p class="body-b3 body-b3-md">{{ block.settings.description }}</p>
+                {% endif %}
+              </div>
+              {% if block.settings.show_buttons %}
+                <div class="product-slide__info__links">
+                  <product-form data-section-id="{{ section.id }}">
+                    {%- form 'product',
+                      product,
+                      id: product_form_id,
+                      class: 'form',
+                      novalidate: 'novalidate',
+                      data-type: 'add-to-cart-form'
+                    -%}
+                      <input
+                        type="hidden"
+                        name="id"
+                        value="{{ product.selected_or_first_available_variant.id }}"
+                        class="product-variant-id"
+                        disabled
+                      >
+
+                      <input
+                        type="hidden"
+                        name="selling_plan"
+                        value="{{ selling_plan_id }}"
+                      >
+                      {% if settings.coming_soon_buttons %}
+                        <div class="btn btn--large font-haffer font-weight-500 coming_soon_buttons">{{ settings.coming_soon_buttons_text }}</div>
+                      {% else %}
+                      <button
+                        id="{{ product_form_id }}-submit"
+                        type="submit"
+                        name="add"
+                        class="quick-add__submit btn btn--small btn--filled font-haffer font-weight-500"
+                        aria-haspopup="dialog"
+                        aria-labelledby="{{ product_form_id }}-submit title-{{ section.id }}-{{ product.id }}"
+                        aria-live="polite"
+                        data-sold-out-message="true"
+                        {% if product.selected_or_first_available_variant.available == false %}
+                          disabled
+                        {% endif %}
+                      >
+                        <span>
+                          {%- if product.selected_or_first_available_variant.available == true -%}
+                            add to regimen - {{ offerPrice | money_without_trailing_zeros }}
+                          {%- else -%}
+                            {{ 'products.product.sold_out' | t }}
+                          {%- endif -%}
+                        </span>
+                        <span class="sold-out-message hidden">
+                          {{ 'products.product.sold_out' | t }}
+                        </span>
+                        <div class="loading-overlay__spinner hidden">
+                          <svg
+                            aria-hidden="true"
+                            focusable="false"
+                            class="spinner"
+                            viewBox="0 0 66 66"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
+                          </svg>
+                        </div>
+                      </button>
+                      {% endif %}
+                    {%- endform -%}
+                  </product-form>
+
+                  <a href="{{ product.url }}" class="btn btn--small btn--subtle font-haffer font-weight-500"
+                    >Learn more</a
+                  >
+                </div>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      {%- endif -%}
+    {% endfor %}
+    {%- render 'circle-gradient' ,id: section.id -%}
+  </div>
+</section>
+
+{%- for block in section.blocks -%}
+  {%- liquid
+    assign product = block.settings.product
+    assign product_form_id = 'quick-add-' | append: section.id | append: product.id
+
+    assign selling_plan_id = product.selling_plan_groups[0].selling_plans[0].id
+   
+    assign current_variant = product.selected_or_first_available_variant | default: product.variants.first
+    assign current_selling_plan_allocation = current_variant.selected_selling_plan_allocation
+
+    if current_selling_plan_allocation == null and current_variant.requires_selling_plan
+      assign current_selling_plan_allocation = current_variant.selling_plan_allocations | first
+    endif
+
+    assign offer = current_selling_plan_allocation | default: current_variant
+    assign offerPrice = offer.selling_plan_allocations[0].price
+-%}
+
+  {%- if block.type == 'product_step3' -%}
+    <div
+      class="product-step-container section-{{ section.id }}-padding bg-grey {% if block.settings.reduce_image_size %}reduce-image-size{% endif %}"
+      data-step-container="3"
+      s
+    >
+      <div class="product-slide">
+        <div class="page-width">
+          <div class="product-slide__image">
+          {% unless block.settings.disabled_links %}
+            <a class="product-slide__link" href="{{ product.url }}">
+          {% endunless %}
+              <div class="product-slide__icon product-slide__icon--time"></div>
+              <div class="product-slide__images">
+                <div class="product-slide__first-image">
+                  {%- liquid
+                    if product.featured_media != null
+                      assign media = product.featured_media
+                      render 'product-media', media: media, loading: false
+                    endif
+                  -%}
+                </div>
+                <div class="product-slide__second-image">
+                  {%- liquid
+                    if product.media[1] != null
+                      render 'product-media', media: product.media[1], loading: false
+                    endif
+                  -%}
+                </div>
+              </div>
+              <strong class="caption-c1 caption-c1-md">{{ block.settings.image_caption }}</strong>
+          {% unless block.settings.disabled_links %}
+            </a>
+          {% endunless %} 
+          </div>
+          <div class="product-slide__info">
+            <h4 class="heading-h1 heading-h1-md">
+              {{ block.settings.heading }}
+            </h4>
+            <hr>
+            <div class="product-slide__info__description">
+              {% if block.settings.disabled_links %}
+                <span class="heading-h3 heading-h3-md">{{ block.settings.description_heading }}</span>
+              {% else %}
+                <a href="{{ product.url }}" class="heading-h3 heading-h3-md">{{ block.settings.description_heading }}</a>
+              {% endif %}
+              {% if product.metafields.custom.description_mini_ != blank %}
+                <div class="body-b3 body-b3-md">
+                  {{ product.metafields.custom.description_mini_ | metafield_tag }}
+                </div>
+              {% else %}
+                <p class="body-b3 body-b3-md">{{ block.settings.description }}</p>
+              {% endif %}
+            </div>
+            {% if block.settings.show_buttons %}
+              <div class="product-slide__info__links">
+                <product-form data-section-id="{{ section.id }}">
+                  {%- form 'product',
+                    product,
+                    id: product_form_id,
+                    class: 'form',
+                    novalidate: 'novalidate',
+                    data-type: 'add-to-cart-form'
+                  -%}
+                    <input
+                      type="hidden"
+                      name="id"
+                      value="{{ product.selected_or_first_available_variant.id }}"
+                      class="product-variant-id"
+                      disabled
+                    >
+
+                    <input
+                        type="hidden"
+                        name="selling_plan"
+                        value="{{ selling_plan_id }}"
+                    >
+                    {% if settings.coming_soon_buttons %}
+                      <div class="btn btn--large font-haffer font-weight-500 coming_soon_buttons">{{ settings.coming_soon_buttons_text }}</div>
+                    {% else %}
+                      <button
+                        id="{{ product_form_id }}-submit"
+                        type="submit"
+                        name="add"
+                        class="quick-add__submit btn btn--small btn--filled font-haffer font-weight-500"
+                        aria-haspopup="dialog"
+                        aria-labelledby="{{ product_form_id }}-submit title-{{ section.id }}-{{ product.id }}"
+                        aria-live="polite"
+                        data-sold-out-message="true"
+                        {% if product.selected_or_first_available_variant.available == false %}
+                          disabled
+                        {% endif %}
+                      >
+                        <span>
+                          {%- if product.selected_or_first_available_variant.available == true -%}
+                              add to regimen - {{ offerPrice | money_without_trailing_zeros }}
+                          {%- else -%}
+                            {{ 'products.product.sold_out' | t }}
+                          {%- endif -%}
+                        </span>
+                        <span class="sold-out-message hidden">
+                          {{ 'products.product.sold_out' | t }}
+                        </span>
+                        <div class="loading-overlay__spinner hidden">
+                          <svg
+                            aria-hidden="true"
+                            focusable="false"
+                            class="spinner"
+                            viewBox="0 0 66 66"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
+                          </svg>
+                        </div>
+                      </button>
+                    {% endif %}
+                  {%- endform -%}
+                </product-form>
+
+                <a href="{{ product.url }}" class="btn btn--small btn--subtle font-haffer font-weight-500">Learn more</a>
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+      {%- render 'circle-gradient', id: section.id -%}
+    </div>
+  {% endif %}
+{% endfor %}
+
+{% schema %}
+{
+  "name": "Vertical Scroll Carousel",
+  "tag": "section",
+  "class": "section section-vertical-carousel",
+  "blocks": [
+    {
+      "type": "product_slide",
+      "name": "Product Carousel Slide",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product"
+        },
+        {
+          "type": "text",
+          "id": "image_caption",
+          "default": "Make fasting easier, and more effective",
+          "label": "Slide image caprion"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "default": "FASTING & CALORIC RESTRICTION",
+          "label": "Slide heading"
+        },
+        {
+          "type": "text",
+          "id": "description_heading",
+          "default": "Fasting Tonic™",
+          "label": "Slide description heading"
+        },
+        {
+          "type": "text",
+          "id": "description",
+          "default": "Our Fasting Tonic™ doesn't stop at curbing hunger; it goes a step further by replenishing essential micronutrients and electrolytes that get depleted during a fast, helping retain additional hydration and avoid fatigue. ",
+          "label": "Slide description"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_buttons",
+          "label": "Show buttons",
+          "default": true
+        }
+      ]
+    },
+    {
+      "type": "product_step1",
+      "name": "Product Step 1",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product"
+        },
+        {
+          "type": "text",
+          "id": "image_caption",
+          "default": "Make fasting easier, and more effective",
+          "label": "Slide image caprion"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "default": "FASTING & CALORIC RESTRICTION",
+          "label": "Slide heading"
+        },
+        {
+          "type": "text",
+          "id": "description_heading",
+          "default": "Fasting Tonic™",
+          "label": "Slide description heading"
+        },
+        {
+          "type": "text",
+          "id": "description",
+          "default": "Our Fasting Tonic™ doesn't stop at curbing hunger; it goes a step further by replenishing essential micronutrients and electrolytes that get depleted during a fast, helping retain additional hydration and avoid fatigue. ",
+          "label": "Slide description"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_buttons",
+          "label": "Show buttons",
+          "default": true
+        }
+      ]
+    },
+    {
+      "type": "product_step3",
+      "name": "Product Step 3",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product"
+        },
+        {
+          "type": "text",
+          "id": "image_caption",
+          "default": "Make fasting easier, and more effective",
+          "label": "Slide image caprion"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "default": "FASTING & CALORIC RESTRICTION",
+          "label": "Slide heading"
+        },
+        {
+          "type": "text",
+          "id": "description_heading",
+          "default": "Fasting Tonic™",
+          "label": "Slide description heading"
+        },
+        {
+          "type": "text",
+          "id": "description",
+          "default": "Our Fasting Tonic™ doesn't stop at curbing hunger; it goes a step further by replenishing essential micronutrients and electrolytes that get depleted during a fast, helping retain additional hydration and avoid fatigue. ",
+          "label": "Slide description"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_buttons",
+          "label": "Show buttons",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "disabled_links",
+          "label": "Disabled links",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "reduce_image_size",
+          "label": "Reduce image size",
+          "default": true
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mb",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top mobile",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mb",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding bottom mobile",
+      "default": 16
+    },
+    {
+      "type": "text",
+      "id": "step1text",
+      "default": "Master formula",
+      "label": "Step 1 Text"
+    },
+    {
+      "type": "text",
+      "id": "step2text",
+      "default": "Longevity boosters",
+      "label": "Step 2 Text"
+    },
+    {
+      "type": "text",
+      "id": "step3text",
+      "default": "Test & track",
+      "label": "Step 3 Text"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Vertical Scroll Carousel",
+      "blocks": []
+    }
+  ]
+}
+{% endschema %}

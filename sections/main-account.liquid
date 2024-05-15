@@ -1,0 +1,579 @@
+{% comment %} {{ 'customer.css' | asset_url | stylesheet_tag }} {% endcomment %}
+<link rel="stylesheet" href="{{ 'account.out.css' | asset_url }}">
+<noscript>
+  {{- 'account.out.css' | asset_url | stylesheet_tag -}}
+</noscript>
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="customer account section-{{ section.id }}-padding ">
+  <div class="account__heading container container--medium">
+    <h1 class="customer__title heading-h2">
+      Hi, {{ customer.first_name }}
+      {% render 'icons', icon: 'smile' %}
+    </h1>
+    <a href="{{ routes.account_logout_url }}" class="account__heading--logout cta1">
+      {{ 'customer.log_out' | t }}
+    </a>
+  </div>
+
+  <div class="account__container">
+    <nav
+      class="account__nav"
+      style="background-color: #7fb069;"
+    >
+      <ul class="account__nav--list">
+        <li class="account__nav--item">
+          <a
+            class="account__nav--button body-b1 current"
+            data-color="#7fb069"
+            data-page="profile"
+            href="#profile"
+            >My Profile</a
+          >
+        </li>
+
+        <li class="account__nav--item">
+          <a
+            class="account__nav--button  body-b1"
+            data-color="#F6AE2D"
+            data-page="order"
+            href="#order"
+            >Order History</a
+          >
+        </li>
+        <li class="account__nav--item">
+          <a
+            class="account__nav--button  body-b1"
+            data-color="#F95123"
+            data-page="subscription"
+            href="#subscription"
+            >Subscription</a
+          >
+        </li>
+      </ul>
+    </nav>
+    <div
+      class="account__page--container"
+      id="profile"
+      data-page="profile"
+    >
+      <div class="account__page--profile">
+        <h3
+          class="account__page--profile__title heading-h3"
+        >
+          {{ 'customer.account.details' | t }}
+        </h3>
+
+        <span class="body-b1">
+          {{ customer.name }}
+        </span>
+        <span class="body-b1">
+          {{ customer.email }}
+        </span>
+        {%- if customer.phone != blank -%}
+          <span class="body-b1">
+            {{ customer.phone }}
+          </span>
+        {%- endif -%}
+      </div>
+
+      <div class="account__page--addresses">
+        <h3 class="account__page--addresses__title heading-h3">My addresses</h3>
+        <span class="account__page--addresses__subtitle caption-c2">Default</span>
+
+        <div class="account__page--addresses__info body-b1">
+          {{ customer.default_address | format_address }}
+        </div>
+
+        <a class="account__page--addresses__link cta1-l" href="{{ routes.account_addresses_url }}"> Edit Addresses </a>
+      </div>
+    </div>
+
+    <div
+      class="account__page--container hidden"
+      id="subscription"
+      data-page="subscription"
+    >
+      {%- assign isSubscribe = false -%}
+
+      {% for tag in customer.tags %}
+        {%- if tag == 'subscription' -%}
+          {%- assign isSubscribe = true -%}
+        {%- endif -%}
+      {% endfor %}
+
+      <h2 class="account__page--subscription__title heading-h3">Subscription</h2>
+      {% if isSubscribe == false %}
+        <span class="body-b1">You do not have any active subscriptions.</span>
+      {%- else -%}
+        <!-- Begin Recharge code -->
+          <p><a class="btn btn--large btn--filled" href="/tools/recurring/login/">Manage Subscriptions</a></p>
+        <!-- End Recharge code -->
+        <!-- <button class="btn btn--large btn--filled">Subscribernyi account</button> -->
+      {% endif %}
+
+      {% assign products = collections['you-may-also-like'].products %}
+
+      <ul class="account__page--subscription__product--list">
+        {% for product in products %}
+          <li class="account__page--subscription__product--item">
+            <div class="account__page--subscription__product--info">
+              <span class="caption-mini">
+                {{ product.metafields.custom.type | metafield_tag }}
+              </span>
+              <h3 class="account__page--subscription__product--title heading-h4-it uppercase">
+                {{ product.title }}
+              </h3>
+              <p class="account__page--subscription__product--description body-b3">
+                {{ product.description }}
+              </p>
+            </div>
+
+            <div class="account__page--subscription__product--image--thumb">
+              <img
+                src="{{ product.images[0] | image_url: width: 250 }}"
+                alt=""
+                width=""
+                height=""
+                loading="lazy"
+                class="lazy"
+                data-src="{{ product.images[0] | image_url: width: 500 }}"
+              >
+            </div>
+
+            <div class="account__page--subscription__product--additional">
+              <ul class="account__page--subscription__product--features">
+                <li class="body-b3">+ Clinical formulations, obsessively researched and improved</li>
+                <li class="body-b3">+ Based on real science, backed by 100’s of studies</li>
+              </ul>
+
+              {%- liquid
+                assign product_form_id = section.id | append: forloop.index
+                assign defaultPrice = product.price | money_without_trailing_zeros
+                assign customSubscribeText = 'Subscribe - ' | append: defaultPrice
+                assign customAddText = 'Add to cart - ' | append: defaultPrice
+                assign subscribePlanId = product.selling_plan_groups[0].selling_plans[0].id
+              -%}
+
+              {% if subscribePlanId %}
+                {%- render 'buy-buttons',
+                  block: block,
+                  product: product,
+                  product_form_id: product_form_id,
+                  section_id: section.id,
+                  show_pickup_availability: true,
+                  custom-text: customSubscribeText,
+                  subscribe: subscribePlanId
+                -%}
+                {%- else -%}
+                {%- render 'buy-buttons',
+                  block: block,
+                  product: product,
+                  product_form_id: product_form_id,
+                  section_id: section.id,
+                  show_pickup_availability: true,
+                  custom-text: customAddText,
+                -%}
+
+              {% endif %}
+
+
+              {% comment %} <span role="button" tabindex="0" class="btn btn--large btn--filled">Subscribe</span> {% endcomment %}
+            </div>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <div
+      class="account__page--container hidden"
+      id="order"
+      data-page="order"
+    >
+      <div>
+        <h2 class="heading-h3">{{ 'customer.orders.title' | t }}</h2>
+
+        {% paginate customer.orders by 10 %}
+          {%- if customer.orders.size > 0 -%}
+            <table role="table" class="order-history account__page--orders__table">
+              <caption class="visually-hidden">
+                {{ 'customer.orders.title' | t }}
+              </caption>
+              <thead role="rowgroup">
+                <tr role="row">
+                  <th class="caption-c4" id="ColumnDate" scope="col" role="columnheader">
+                    {{ 'customer.orders.date' | t }}
+                  </th>
+                  <th class="caption-c4" id="ColumnOrder" scope="col" role="columnheader">
+                    {{ 'customer.orders.order_number' | t }}
+                  </th>
+                  {% comment %} <th id="ColumnPayment" scope="col" role="columnheader">{{ 'customer.orders.payment_status' | t }}</th> {% endcomment %}
+                  <th class="caption-c4" id="ColumnFulfillment" scope="col" role="columnheader">
+                    {{ 'customer.orders.fulfillment_status' | t }}
+                  </th>
+                  <th class="caption-c4" id="ColumnTotal" scope="col" role="columnheader">
+                    {{ 'customer.orders.total' | t }}
+                  </th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody role="rowgroup">
+                {%- for order in customer.orders -%}
+                  <tr role="row">
+                    <td
+                      class="body-b3"
+                      headers="RowOrder ColumnDate"
+                      role="cell"
+                      data-label="{{ 'customer.orders.date' | t }}"
+                    >
+                      {{ order.created_at | time_tag: format: 'date' }}
+                    </td>
+                    <td
+                      class="body-b3"
+                      id="RowOrder"
+                      role="cell"
+                      headers="ColumnOrder"
+                      data-label="{{ 'customer.orders.order_number' | t }}"
+                    >
+                      {% comment %}
+                        <a
+                          href="{{ order.customer_url }}"
+                          aria-label="{{ 'customer.orders.order_number_link' | t: number: order.name }}"
+                        >
+                        </a>
+                      {% endcomment %}
+                      {{ order.id }}
+                    </td>
+                    {% comment %}
+                      <td
+                        headers="RowOrder ColumnPayment"
+                        role="cell"
+                        data-label="{{ 'customer.orders.payment_status' | t }}"
+                      >
+                        {{ order.financial_status_label }}
+                      </td>
+                    {% endcomment %}
+                    <td
+                      class="body-b3"
+                      headers="RowOrder ColumnFulfillment"
+                      role="cell"
+                      data-label="{{ 'customer.orders.fulfillment_status' | t }}"
+                    >
+                      {{ order.fulfillment_status_label }}
+                    </td>
+                    <td
+                      class="body-b3"
+                      headers="RowOrder ColumnTotal"
+                      role="cell"
+                      data-label="{{ 'customer.orders.total' | t }}"
+                    >
+                      {{ order.total_net_amount | money | replace: '.00', '' }}
+                    </td>
+                    <td>
+                      <a href="https://jung-e-store.myshopify.com/apps/pdf-vify/pdf-preview/invoice?shop_domain={{ shop.permanent_domain }}&order_id={{ order.id }}&locale=en"
+                        target="_blank"
+                        class="account__page--orders__table--invoice-link"
+                      >
+                        <span class="account__page--orders__table--invoice cta2">
+                          Invoice
+                        </span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                          <path d="M14 5.22518L13.3028 4.5L8 10.0496L2.6972 4.5L2 5.22518L8 11.5L14 5.22518Z" fill="black"/>
+                        </svg>
+                      </a>
+                    </td>
+                  </tr>
+                {%- endfor -%}
+              </tbody>
+            </table>
+          {%- else -%}
+            <p>{{ 'customer.orders.none' | t }}</p>
+          {%- endif -%}
+
+          <nav class="pagination" role="navigation" aria-label="{{ 'general.pagination.label' | t }}">
+            <ul role="list">
+              {%- if paginate.previous -%}
+                <li id="prev_button" class="pagination__button--previous">
+                  <a href="{{ paginate.previous.url }}#order" aria-label="{{ 'general.pagination.previous' | t }}">
+                    {% render 'icons', icon: 'arrow_btn' %}
+                  </a>
+                </li>
+              {%- endif -%}
+
+              {%- for part in paginate.parts -%}
+                <li>
+                  {%- if part.is_link -%}
+                    <a href="{{ part.url }}#order" aria-label="{{ 'general.pagination.page' | t: number: part.title }}" class="body-b2 paginate__button">
+                      {{- part.title -}}
+                    </a>
+                  {%- else -%}
+                    {%- if part.title == paginate.current_page -%}
+                      <span
+                        aria-current="page"
+                        aria-label="{{ 'general.pagination.page' | t: number: part.title }}"
+                        class="body-b2 paginate__button current"
+                      >
+                        {{- part.title -}}
+                      </span>
+                    {%- else -%}
+                      <span class="paginate__button body-b2">{{ part.title }}</span>
+                    {%- endif -%}
+                  {%- endif -%}
+                </li>
+              {%- endfor -%}
+
+              {%- if paginate.next -%}
+                <li id="next_button" class="pagination__button--next>
+                  <a href="{{ paginate.next.url }}#order" aria-label="{{ 'general.pagination.next' | t }}">
+                    {% render 'icons', icon: 'arrow_btn' %}
+                  </a>
+                </li>
+              {%- endif -%}
+            </ul>
+          </nav>
+        {% endpaginate %}
+      </div>
+
+      {%- assign customerOrders = customer.orders -%}
+
+      <div class="account__restock">
+        <h3 class="account__restock--title heading-h3">
+          Restock Past Purchases
+        </h3>
+
+        <div class="swiper">
+          <ul class="account__restock--list swiper-wrapper">
+            {%- assign boughtProd = '' -%}
+
+            {% for order in customerOrders %}
+              {% for product in order.line_items %}
+                {% if product.product.available == true and product.product.title != boughtProd %}
+                  {%- for tag in product.product.tags -%}
+                    {% if tag == 'Out Of Stock' %}
+                      {%- assign boughtProd = product.product.title -%}
+
+                      <li class="account__restock--item font-inter swiper-slide">
+                        <div class="account__restock--image-thumb">
+                          <img
+                            src="{{ product.image | image_url: width: 120 }}"
+                            alt=""
+                            width=""
+                            height="120"
+                            loading="lazy"
+                            data-src="{{ product.image | image_url: width: 240 }}"
+                          >
+                        </div>
+                        <span class="account__restock--text caption-c4">
+                          {{ product.title }}
+                        </span>
+
+
+                        {%- liquid
+                          assign product_form_id = 'product-form-' | append: forloop.index
+                          assign prodPrice = product.price | money_without_trailing_zeros
+                          assign customText = 'Add - ' | append: prodPrice
+                        -%}
+
+
+                        {%- render 'buy-buttons',
+                          block: block,
+                          product: product.product,
+                          product_form_id: product_form_id,
+                          section_id: section.id,
+                          show_pickup_availability:
+                          true, custom-text: customText -%}
+                      </li>
+                    {% endif %}
+                  {%- endfor -%}
+                {% endif %}
+              {% endfor %}
+            {% endfor %}
+
+            {%- for product in collections['you-may-also-like'].products -%}
+              <li class="account__restock--item font-inter swiper-slide">
+                <div class="account__restock--image-thumb">
+                  <img
+                    src="{{ product.images[0] | image_url: width: 120 }}"
+                    alt=""
+                    width=""
+                    height="120"
+                    loading="lazy"
+                    data-src="{{ product.images[0] | image_url: width: 240 }}"
+                  >
+                </div>
+                <span class="account__restock--text caption-c4">
+                  {{ product.title }}
+                </span>
+
+                {%- liquid
+                  assign product_form_id = 'productt-form-' | append: forloop.index
+                  assign prodPrice = product.price | money_without_trailing_zeros
+                  assign customText = 'Add - ' | append: prodPrice
+                -%}
+
+                {%- render 'buy-buttons', block: block, product: product, product_form_id: product_form_id, section_id: section.id, show_pickup_availability: true, custom-text: customText -%}
+              </li>
+            {%- endfor -%}
+          </ul>
+        </div>
+
+        <span
+          role="button"
+          tabindex="0"
+          class="account__restock--button swiper-button-prev">
+          {% render 'icon-arrow' %}
+        </span>
+        <span
+          role="button"
+          tabindex="0"
+          class="account__restock--button swiper-button-next">
+          {% render 'icon-arrow' %}
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  /* Script for switch page without refresh */
+  const accountPickerElems = document.querySelectorAll('.account__nav--button');
+  const accountPagesElems = document.querySelectorAll('.account__page--container');
+  const accountNavigationElem = document.querySelector('.account__nav');
+
+  [...accountPickerElems].forEach((picker) => {
+    picker.addEventListener('click', (event) => {
+      if (picker.classList.contains('current')) {
+        return;
+      }
+
+      const pickerType = event.target.dataset.page;
+      const pickerColor = event.target.dataset.color;
+
+      accountNavigationElem.style.backgroundColor = pickerColor;
+      event.target.classList.add('current');
+
+      [...accountPagesElems].forEach((page) => {
+        const pageType = page.dataset.page;
+
+        if (pickerType === pageType) {
+          page.classList.remove('hidden');
+        } else {
+          page.classList.add('hidden');
+        }
+      });
+
+      [...accountPickerElems].forEach((btn) => {
+        const btnType = btn.dataset.page;
+
+        if (btnType !== pickerType) {
+          btn.classList.remove('current');
+        }
+      });
+    });
+  });
+
+  function setCurrentPage(id) {
+    [...accountPagesElems].forEach((page) => {
+      page.id === id ? page.classList.remove('hidden') : page.classList.add('hidden');
+    });
+  }
+
+  function setCurrentPicker(id) {
+    [...accountPickerElems].forEach((picker) => {
+      if (picker.dataset.page === id) {
+        picker.classList.add('current');
+        accountNavigationElem.style.backgroundColor = picker.dataset.color;
+      } else {
+        picker.classList.remove('current');
+      }
+    });
+  }
+
+  if (window.location.hash === '#profile') {
+    setCurrentPage('profile');
+    setCurrentPicker('profile');
+  }
+  if (window.location.hash === '#order') {
+    setCurrentPage('order');
+    setCurrentPicker('order');
+  }
+  if (window.location.hash === '#subscription') {
+    setCurrentPage('subscription');
+    setCurrentPicker('subscription');
+  }
+
+  function initOrdersSlider() {
+    if(window.innerWidth >= 1024){
+      new Swiper ('.section-{{ section.id }}-padding .swiper', {
+        slidesPerView: 5,
+        navigation: {
+          nextEl: '.section-{{ section.id }}-padding .swiper-button-next',
+          prevEl: '.section-{{ section.id }}-padding .swiper-button-prev',
+        },
+      });
+    } else {
+      new Swiper ('.section-{{ section.id }}-padding .swiper', {
+        slidesPerView: 1,
+        navigation: {
+          nextEl: '.section-{{ section.id }}-padding .swiper-button-next',
+          prevEl: '.section-{{ section.id }}-padding .swiper-button-prev',
+        },
+      });
+    }
+  }
+
+  if (Shopify.designMode) {
+    initOrdersSlider();
+    document.addEventListener('shopify:section:load', function (e) {
+      initOrdersSlider();
+    });
+  } else {
+    initOrdersSlider();
+  }
+
+</script>
+
+{% schema %}
+{
+  "name": "t:sections.main-account.name",
+  "settings": [
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 0
+    }
+  ]
+}
+{% endschema %}

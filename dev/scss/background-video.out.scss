@@ -1,0 +1,51 @@
+@import "./settings/variables";
+@import "./settings/mixins";
+
+.background--video {
+  position: relative;
+  height: clamp(505px, size(620px), 620px);
+
+  overflow: hidden;
+
+  &.full-width {
+    max-width: none !important;
+  }
+
+  &__video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    max-width: 785px;
+    height: 100%;
+
+    .background--video__description {
+      margin: 0;
+      margin-bottom: 24px;
+
+      @include media-breakpoint-up(xl) {
+        margin-bottom: 16px;
+      }
+    }
+
+    .background--video__sign {
+      margin: 0;
+    }
+  }
+
+  * {
+    color: inherit;
+  }
+}

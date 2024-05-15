@@ -1,0 +1,161 @@
+{{ 'longevity-system.out.css' | asset_url | stylesheet_tag }}
+
+{% liquid
+    assign background_color = section.settings.background_color
+    assign title = section.settings.title
+    assign subtitle = section.settings.subtitle
+%}
+
+{%- style -%}
+    .longevity-system--{{ section.id }} {
+      padding-top: {{ section.settings.padding_top_mb }}px;
+      padding-bottom: {{ section.settings.padding_bottom_mb }}px;
+      background-color: {{ background_color }};
+    }
+  
+    @media screen and (min-width: 990px) {
+      .longevity-system--{{ section.id }} {
+        padding-top: {{ section.settings.padding_top }}px;
+        padding-bottom: {{ section.settings.padding_bottom }}px;
+      }
+    }
+{%- endstyle -%}
+
+<div class="longevity-system longevity-system--{{ section.id }}">
+    <div class="container">
+        <div class="longevity-system__collage">
+            {% if title != blank %}
+                <h2 class="longevity-system__title heading-h2 heading-h2-md">{{ title }}</h2>
+            {% endif %}
+            {% if subtitle != blank %}
+                <div class="longevity-system__subtitle body-b2 body-b2-md">{{ subtitle }}</div>
+            {% endif %}
+        </div>
+        <div class="longevity-system__wrapper">
+            <div class="longevity-system__cards">
+                {%  for block in section.blocks %}
+                    {% liquid 
+                        assign header = block.settings.header 
+                        assign icon = block.settings.icon 
+                        assign subtitle = block.settings.subtitle
+                    %}
+
+                    <div class="longevity-system__card">
+                        {% if icon != blank %}
+                            <img class="lazy" loading="lazy" src="{{ icon | img_url: '200x' }}" data-src="{{ icon | img_url: '450x' }}">
+                        {% endif %}
+                        {% if header != blank %}
+                            <h2 class="longevity-system__header heading-h3 heading-h3-md">
+                                {{ header }}
+                            </h2>
+                        {% endif %}
+                        {% if subtitle != blank %}
+                            <div class="longevity-system__subtitle body-b3 body-b3-md">
+                                {{ subtitle }}
+                            </div>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{% schema %}
+  {
+    "name": "Longevity system",
+    "max_blocks": 3,
+    "settings": [
+        {
+            "type": "color_background",
+            "id": "background_color",
+            "label": "Background color"
+        },
+        {
+            "type": "text",
+            "id": "title",
+            "default": "Three pillars of Jung’s Total Longevity System™",
+            "label": "Title"
+        },
+        {
+            "type": "richtext",
+            "id": "subtitle",
+            "default": "<p>The first precision engineered system to defy aging, increase healthspan, and achieve alpha health. We’ve reimagined the longevity clinic to make longevity accessible, effective, and effortless.</p>",
+            "label": "Subtitle"
+        },
+        {
+            "type": "header",
+            "content": "t:sections.all.padding.section_padding_heading"
+        },
+        {
+            "type": "range",
+            "id": "padding_top",
+            "min": 0,
+            "max": 160,
+            "step": 4,
+            "unit": "px",
+            "label": "Padding top desktop",
+            "default": 80
+        },
+        {
+            "type": "range",
+            "id": "padding_bottom",
+            "min": 0,
+            "max": 160,
+            "step": 4,
+            "unit": "px",
+            "label": "Padding bottom desktop",
+            "default": 148
+        },
+        {
+            "type": "range",
+            "id": "padding_top_mb",
+            "min": 0,
+            "max": 120,
+            "step": 2,
+            "unit": "px",
+            "label": "Padding top mobile",
+            "default": 80
+        },
+        {
+            "type": "range",
+            "id": "padding_bottom_mb",
+            "min": 0,
+            "max": 120,
+            "step": 2,
+            "unit": "px",
+            "label": "Padding bottom mobile",
+            "default": 80
+        }
+    ],
+    "blocks": [
+        {
+            "type": "card",
+            "name": "Card",
+            "settings": [
+                {
+                    "type": "image_picker",
+                    "id": "icon",
+                    "label": "Icon png"
+                },
+                {
+                    "type": "text",
+                    "id": "header",
+                    "label": "Header",
+                    "default": "Novel Longevity Molecules"
+                },
+                {
+                    "type": "text",
+                    "id": "subtitle",
+                    "label": "Subtitle",
+                    "default": "Compounds that have been shown to directly address aging hallmarks, or amplify behavioural mechanisms that activate longevity pathways."
+                }
+            ]
+        }
+    ],
+    "presets": [
+      {
+        "name": "Longevity system"
+      }
+    ]
+  }
+{% endschema %}

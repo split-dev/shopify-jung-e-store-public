@@ -1,0 +1,107 @@
+{{ 'videos-with-text.out.css' | asset_url | stylesheet_tag }}
+
+{% liquid 
+    assign overflow_text = section.settings.overflow_text
+    assign overflow_header = section.settings.overflow_header
+    assign video_url_1 = section.settings.video_1.sources[1].url
+    assign poster_1 = section.settings.video_1.preview_image.src
+    assign image_1 = section.settings.image_1
+    assign video_url_2 = section.settings.video_2.sources[1].url
+    assign poster_2 = section.settings.video_2.preview_image.src
+    assign image_2 = section.settings.image_2
+%}
+
+<div class="videos-with-text videos-with-text--{{ section.id }}">
+  <div class="videos-with-text__media">
+    <div class="videos-with-text__overflow-content">
+        <div class="container">
+            <div class="videos-with-text__overflow-circle">
+                {% if overflow_header != blank %}
+                    <h2 class="videos-with-text__overflow-header heading-h2 heading-h2-md">
+                        {{ overflow_header }}
+                    </h2>
+                {% endif %}
+                {% if overflow_text != blank %}
+                    <div class="videos-with-text__overflow-text body-b2 body-b2-md">
+                        {{ overflow_text }}
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+     <div class="videos-with-text__content first">
+        {% if video_url_1 != blank %}
+          <video style="object-fit: cover;" class="lazy" width="100%" height="100%" muted autoplay playsinline loop poster="{{ poster_1 | img_url: 'x1000' }}">
+            <source src="{{ video_url_1 }}" type="video/mp4">
+          </video>
+        {% elsif image_1 != blank %} 
+            <img class="lazy" loading="lazy" src="{{ image_1 | img_url: 'x1000' }}" data-src="{{ image_1 | img_url: '1000x' }}" alt="{{ image_1.alt }}">
+        {% else %}
+            {{ 'lifestyle-2' | placeholder_svg_tag: 'placeholder-svg' }}
+        {% endif %}
+    </div>
+    <div class="videos-with-text__content second">
+        {% if video_url_2 != blank %}
+          <video style="object-fit: cover;" class="lazy" width="100%" height="100%" muted autoplay playsinline loop poster="{{ poster_2 | img_url: 'x1000' }}">
+            <source src="{{ video_url_2 }}" type="video/mp4">
+          </video>
+        {% elsif image_2 != blank %} 
+            <img class="lazy" loading="lazy" src="{{ image_2 | img_url: 'x1000' }}" data-src="{{ image_2 | img_url: '1000x' }}" alt="{{ image_2.alt }}">
+        {% else %}
+            {{ 'lifestyle-2' | placeholder_svg_tag: 'placeholder-svg' }}
+        {% endif %}
+    </div>
+  </div>
+</div>
+{% schema %}
+  {
+    "name": "Videos with text",
+    "settings": [
+        {
+            "type": "text",
+            "id": "overflow_header",
+            "label": "Title",
+            "default": "The future of health is prevention."
+        },
+        {
+            "type": "text",
+            "id": "overflow_text",
+            "label": "Text",
+            "default": "Seventy-five percent of US healthcare spending, or about $37 trillion annually, goes to treating preventable chronic diseases. Chronic diseases that are driven by aging. What if, instead, we zeroed in on cellular aging and halted the decline? Welcome to longevity science - the next frontier in preventive health. At Jung, we're not just envisioning this future; we're creating it."
+        },
+        {
+            "type": "header",
+            "content": "First block"
+        },
+        {
+            "type": "video",
+            "id": "video_1",
+            "label": "A Shopify-hosted video"
+        },
+        {
+            "type": "image_picker",
+            "id": "image_1",
+            "label": "Background image"
+        },
+        {
+            "type": "header",
+            "content": "Second block"
+        },
+        {
+            "type": "video",
+            "id": "video_2",
+            "label": "A Shopify-hosted video"
+        },
+        {
+            "type": "image_picker",
+            "id": "image_2",
+            "label": "Background image"
+        }
+    ],
+    "presets": [
+      {
+        "name": "Videos with text"
+      }
+    ]
+  }
+{% endschema %}

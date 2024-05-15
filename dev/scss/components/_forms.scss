@@ -1,0 +1,93 @@
+.form {
+	&__error {
+		display: none;
+		position: absolute;
+		top: 50px;
+		left: 0;
+		@include media-breakpoint-down(lg) {
+			top: 45px;
+		}
+	}
+
+	&.form--submitted:invalid {
+		.form__error {
+			display: flex;
+		}
+
+		input {
+			border-bottom: 1px solid $red-500;
+		}
+	}
+
+	&__wrapper-submit {
+		display: flex;
+		width: 100%;
+		text-decoration: none;
+		justify-content: space-between;
+
+		&:after {
+			pointer-events: none;
+			content: '';
+			position: absolute;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			z-index: 1;
+		}
+	}
+
+	&__input-submit {
+		position: relative;
+		width: 100%;
+		margin-right: 25px;
+		caret-color: $white;
+		color: $white;
+		padding: 20px 0 12px;
+		border-bottom: 1px solid $white;
+
+		&:focus+.clear-icon {
+			display: block;
+		}
+
+		&:focus,
+		&:active {
+			padding-left: 5px;
+		}
+
+		&:focus-visible {
+			outline: none;
+			box-shadow: none;
+		}
+
+		&:focus,
+		&:active,
+		&:not(:placeholder-shown) {
+			~.form__label-submit {
+				top: 0;
+				font-size: 12px;
+			}
+		}
+	}
+
+	label {
+		position: absolute;
+		left: 0;
+		top: 20px;
+		color: $white;
+	}
+
+	.form__input-submit {
+		position: relative;
+
+		&::placeholder {
+			color: transparent;
+		}
+	}
+
+	.clear-icon {
+		position: absolute !important;
+		top: 22px;
+		right: 10px;
+		cursor: pointer;
+	}
+}

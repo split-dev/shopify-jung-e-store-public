@@ -1,0 +1,183 @@
+@import "./settings/variables";
+@import "./settings/mixins";
+@import "./settings/helpers";
+
+.personal-kit {
+    padding: 120px 0 80px;
+    // .personal-kit__header
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        gap: 49px;
+        margin-bottom: 120px;
+
+        @include media-breakpoint-down(lg){
+            gap: 0;
+            flex-direction: column;
+            margin-bottom: 100px;
+        }
+
+        h2 {
+            max-width: 536px;
+            @include media-breakpoint-down(lg){
+                margin-bottom: 16px;
+            }
+            @include media-breakpoint-down(md){
+               text-align: center;
+               margin: 0 auto 16px;
+            }
+        }
+
+        .personal-kit__section-description {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            max-width: 548px;
+            @include media-breakpoint-down(md){
+                text-align: center;
+                margin: 0 auto;
+            }
+
+            & * {
+                margin: 0;
+            }
+        }
+    }
+
+    // .personal-kit__wrapper
+
+    &__wrapper {
+        
+    }
+
+    // .personal-kit__content-block
+
+    &__content-block {
+        display: grid;
+        gap: 24px;
+        grid-template-columns: 1fr 2fr;
+        @include media-breakpoint-down(md){
+            gap: 32px;
+            grid-template-columns: 1fr;
+        }
+    }
+
+    // .personal-kit__one-time-purchase
+
+    &__one-time-purchase {
+
+        .personal-kit__richtext {
+            * {
+                margin: 19px 0 0;
+            }
+        }
+        
+    }
+
+    // .personal-kit__title
+
+    &__title {
+        text-align: center;
+        margin-bottom: 16px;
+        color: #727272;
+        @include media-breakpoint-down(md){
+            margin-bottom: 8px;
+        }
+    }
+
+    // .personal-kit__media
+
+    &__media {
+    }
+    
+
+    // .personal-kit__img-box
+
+    &__img-box {
+        aspect-ratio: 440/460;
+        overflow: hidden;
+        @include media-breakpoint-down(md){
+            aspect-ratio: 343/240;
+            display: flex;
+        }
+        img {
+            max-width: 100%;
+            object-fit: contain;
+            @include media-breakpoint-down(md){
+              max-height: 100%;
+              margin: 0 auto;
+            }
+        }
+    }
+
+    // .personal-kit__richtext
+
+    &__richtext {
+        * {
+            margin: 18px 0 0;
+        }
+
+        @include media-breakpoint-down(md){
+            padding: 0 16px;
+        }
+    }
+
+    &__block {
+        border: 1px solid #D0D0D0;
+        height: calc(100% - 33px);
+    }
+
+    &__time-purchase {
+        padding: 24px;
+
+        @include media-breakpoint-down(md){
+            padding: 24px 0;
+        }
+    }
+
+    // .personal-kit__subscribe
+
+    &__subscribe {
+        
+        .personal-kit__block {
+           display: grid;
+           grid-template-columns: 1fr 1fr;
+            @include media-breakpoint-down(md){
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .personal-kit__block-image {
+            padding: 24px;
+            @include media-breakpoint-down(md){
+                padding: 24px 0 16px;
+            }
+        }
+
+        .personal-kit__block-item-list {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-left: 1px solid #D0D0D0;
+            padding: 24px;
+                @include media-breakpoint-down(md){
+                    border-top: 1px solid #D0D0D0;
+                    border-left: none;
+                    padding: 24px 16px;
+                }
+            .personal-kit__richtext {
+                display: flex;
+                flex-direction: column;
+                gap: 24px;
+                * {
+                    margin: 0;
+                }
+                @include media-breakpoint-down(md){
+                    padding: 0;
+                    gap: 8px;
+                }
+            }
+        }
+    }
+}

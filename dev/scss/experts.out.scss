@@ -1,0 +1,185 @@
+@import "./settings/variables";
+@import "./settings/mixins";
+
+.experts {  
+    padding: 80px 0 60px;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid $white-900;
+
+    @include media-breakpoint-down(lg){
+        padding: 80px 0;
+    } 
+
+    .container {
+        @include media-breakpoint-down(lg){
+            padding: 0;
+        } 
+    }
+
+    // .experts__gradient-container
+
+    &__gradient-container {
+        position: absolute;
+        padding: 0 67px;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 0;
+
+        @include media-breakpoint-down(lg){
+            padding: 0;
+            width: 100%;
+            svg {
+                width: 100%;
+                height: fit-content;
+            }
+        } 
+    }
+
+    // .experts__content-header
+
+    &__content-header {
+        margin-bottom: 40px;
+        text-align: center;
+
+        @include media-breakpoint-down(lg){
+           margin-bottom: 32px;
+
+           .container {
+                padding: 0 16px;
+           }
+        } 
+    }
+
+    
+
+    // .experts__title
+
+    &__title {
+        z-index: 2;
+        position: relative;
+      
+    }
+
+    // .experts__wrapper
+
+    &__wrapper {
+    }
+
+    // .experts__member-content
+
+    &__member-content {
+        padding: 0px 32px 32px 32px;
+
+        @include media-breakpoint-down(lg){
+            padding: 0px 24px 32px 24px;
+        }
+    }
+
+    // .experts__members
+
+    &__members {
+        display: flex;
+        gap: 24px;
+        justify-content: center;
+
+        @include media-breakpoint-down(lg){
+            gap: 0;
+            overflow-x: scroll;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+            justify-content: flex-start;
+            &::-webkit-scrollbar {
+                width: 0;
+                height: 0;
+                background: transparent;
+                appearance: none;
+                display: none;
+            }
+
+            &::-webkit-scrollbar-thumb {
+                display: none;
+            }
+        }
+    }
+
+    // .experts__member-card
+
+    &__member-card {
+        max-width: 424px;
+        width: calc((100% / 3) - (24px * 2) / 3);
+        background-color: white;
+        border-radius: 64px;
+        overflow: hidden;
+        border: 1px solid $white-900;
+        position: relative;
+
+        @include media-breakpoint-down(lg){
+           width: 330px;
+           min-width: 330px;
+           margin-left: 16px;
+           border-radius: 48px;
+           &:last-child {
+            margin-right: 16px;
+           }    
+        }
+    }
+
+    // .experts__member-media
+
+    &__member-media {
+        width: 100%;
+        aspect-ratio: 424/310;
+        overflow: hidden;
+        margin-bottom: 32px;
+        img {
+            object-fit: cover;
+            max-width: 100%;
+            width: 100%;
+            height: 100%;
+        }
+
+        @include media-breakpoint-down(lg){
+            aspect-ratio: 330/310;
+        }
+    }
+
+    // .experts__member-richtext
+
+    &__member-richtext {
+        color: $white-900;
+        margin-bottom: 112px;
+        
+        & > * {
+            margin: 0;
+        }
+
+
+        @include media-breakpoint-down(lg){
+            margin-bottom: 105px;
+        }
+    }
+
+    // .experts__member-name
+
+    &__member-name {
+        margin-bottom: 8px;
+    }
+
+    // .experts__member-position
+
+    &__member-position {
+        margin: 0;
+        color: $white-800;
+    }
+
+    // .experts__member-content-footer
+
+    &__member-content-footer {
+        position: absolute;
+        bottom: 32px;
+        width: 100%;
+        padding: 0 32px;
+    }
+}
+

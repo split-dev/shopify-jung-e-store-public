@@ -1,0 +1,25 @@
+{
+  "sections": {
+    "24035431-08bb-4683-8b06-88b0284a1968": {
+      "type": "banner-image",
+      "settings": {
+        "header": "TERMS AND CONDITIONS",
+        "image": "shopify:\/\/shop_images\/DTS_Micro_Mouthwash_Studios_4058_2.jpg",
+        "image_mobile": "shopify:\/\/shop_images\/DTS_Micro_Mouthwash_Studios_4058_2_1.jpg",
+        "opacity": 0,
+        "container": "container",
+        "text_align": "center",
+        "banner_height": "banner-small"
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "24035431-08bb-4683-8b06-88b0284a1968",
+    "main"
+  ]
+}
